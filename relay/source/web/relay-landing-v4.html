@@ -1,0 +1,1110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cashfree Relay | Payment Automation Agents</title>
+  <meta name="description" content="Relay agents handle COD confirmations, failed payment recovery, and settlement recon automatically. Activate once. You do nothing after that." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:           oklch(98.8% 0.004 110);
+      --bg-2:         oklch(96.8% 0.006 110);
+      --ink:          oklch(13%  0.016 110);
+      --ink-2:        oklch(42%  0.014 110);
+      --ink-3:        oklch(60%  0.010 110);
+      --line:         oklch(89%  0.008 110);
+      --line-sub:     oklch(93%  0.005 110);
+      --green:        oklch(93%  0.22  130);
+      --green-dk:     oklch(34%  0.14  130);
+      --green-bg:     oklch(96%  0.055 130);
+      --green-br:     oklch(83%  0.10  130);
+      --surf:         oklch(10%  0.018 110);
+      --surf-2:       oklch(16%  0.016 110);
+      --surf-ln:      oklch(22%  0.014 110);
+      --on:           oklch(87%  0.010 110);
+      --on-2:         oklch(54%  0.010 110);
+      --cta:          oklch(8.5% 0.014 110);
+
+      --f: "Bricolage Grotesque", system-ui, sans-serif;
+      --r: 20px;
+
+      --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+      --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
+      --sp-9: 96px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--ink);
+      font-family: var(--f); font-size: 16px; line-height: 1.5;
+      -webkit-font-smoothing: antialiased; font-optical-sizing: auto;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1200px, calc(100% - var(--sp-7))); margin: 0 auto; }
+
+    /* NAV */
+    .nav {
+      position: fixed; inset: 0 0 auto; z-index: 100; height: 64px;
+      background: color-mix(in oklch, var(--bg) 90%, transparent);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line-sub);
+    }
+    .nav-i {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 100%; width: min(1200px, calc(100% - var(--sp-7))); margin: 0 auto;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 700; color: var(--ink); }
+    .lm { width: 28px; height: 28px; background: var(--ink); border-radius: 6px; position: relative; }
+    .lm::after { content: ""; position: absolute; inset: auto 4px 4px auto; width: 9px; height: 9px; background: var(--green); border-radius: 2px; }
+    .nav-lk { display: flex; gap: var(--sp-7); font-size: 14px; font-weight: 500; color: var(--ink-2); }
+    .nav-lk a:hover { color: var(--ink); }
+    .nav-ct { display: flex; gap: var(--sp-2); align-items: center; }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 38px; padding: 0 20px; border-radius: 999px;
+      font: 600 14px/1 var(--f); cursor: pointer; border: none; transition: filter 0.15s;
+    }
+    .btn:hover { filter: brightness(0.92); }
+    .ghost  { background: transparent; border: 1.5px solid var(--line); color: var(--ink); }
+    .dark   { background: var(--ink); color: var(--bg); }
+    .grn    { background: var(--green); color: var(--ink); }
+    .wht    { background: var(--bg); color: var(--ink); }
+    .ghost-w{ background: transparent; border: 1.5px solid oklch(100% 0 0 / .22); color: oklch(100% 0 0 / .78); }
+    .lg { height: 50px; padding: 0 28px; font-size: 16px; }
+    .xl { height: 58px; padding: 0 36px; font-size: 17px; }
+
+    /* HERO */
+    .hero { padding: clamp(130px,14vw,164px) 0 clamp(72px,9vw,104px); text-align: center; }
+    .badge {
+      display: inline-flex; align-items: center; gap: var(--sp-2);
+      height: 30px; padding: 0 14px; border-radius: 999px;
+      background: var(--green-bg); border: 1px solid var(--green-br);
+      font: 700 11px/1 var(--f); letter-spacing: .7px; text-transform: uppercase;
+      color: var(--green-dk); margin-bottom: var(--sp-6);
+    }
+    .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green-dk); opacity: .65; }
+    .hero-h1 {
+      font-size: clamp(40px, 5.2vw, 66px); font-weight: 800;
+      line-height: 1.0; letter-spacing: -2px;
+      color: var(--ink); max-width: 1100px; margin: 0 auto var(--sp-5);
+    }
+    .hero-sub {
+      font-size: clamp(16px,2vw,20px); font-weight: 400; line-height: 1.55;
+      color: var(--ink-2); max-width: 52ch; margin: 0 auto var(--sp-7);
+    }
+    .hero-btns {
+      display: flex; align-items: center; justify-content: center;
+      gap: var(--sp-3); flex-wrap: wrap; margin-bottom: clamp(52px,8vw,88px);
+    }
+
+    /* hero dashboard mock */
+    .h-screen {
+      width: 100%; max-width: 1100px; margin: 0 auto;
+      border-radius: 22px; overflow: hidden; background: var(--surf);
+      border: 1px solid oklch(100% 0 0 / .06);
+      box-shadow: 0 32px 80px oklch(0% 0 0 / .20), 0 2px 6px oklch(0% 0 0 / .08);
+    }
+    .h-bar { display: flex; align-items: center; gap: 7px; padding: 14px 22px; border-bottom: 1px solid oklch(100% 0 0 / .06); background: oklch(100% 0 0 / .025); }
+    .d { width: 11px; height: 11px; border-radius: 50%; }
+    .d-r{background:#ff5f57;} .d-y{background:#febc2e;} .d-g{background:#28c840;}
+    .h-lab { margin-left: var(--sp-3); font-size: 12px; font-weight: 600; color: oklch(100% 0 0 / .22); letter-spacing: .3px; }
+    .h-body { padding: var(--sp-5); display: grid; gap: 9px; }
+    .arow {
+      display: grid; grid-template-columns: 40px 1fr auto auto;
+      align-items: center; gap: var(--sp-4); padding: var(--sp-4) 20px;
+      border-radius: 13px; background: oklch(100% 0 0 / .03); border: 1px solid oklch(100% 0 0 / .07);
+    }
+    .a-ic { width: 40px; height: 40px; border-radius: 10px; background: oklch(100% 0 0 / .05); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    .a-nm { font-size: 15px; font-weight: 600; color: var(--on); letter-spacing: -.1px; }
+    .a-sb { font-size: 12px; color: var(--on-2); margin-top: 2px; }
+    .a-st { font-size: 13px; font-weight: 700; color: oklch(100% 0 0 / .3); text-align: right; white-space: nowrap; }
+    .live {
+      display: inline-flex; align-items: center; gap: 5px;
+      height: 26px; padding: 0 10px; border-radius: 999px;
+      background: oklch(93% .22 130 / .1); border: 1px solid oklch(93% .22 130 / .22);
+      font: 800 11px/1 var(--f); letter-spacing: .3px; color: var(--green); text-transform: uppercase;
+    }
+    .live::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
+
+    /* PILLARS */
+    .pillars {
+      padding: var(--sp-9) 0; background: var(--bg-2);
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    }
+    .sec-tag { font: 800 11px/1 var(--f); letter-spacing: 1.4px; text-transform: uppercase; color: var(--green-dk); margin-bottom: var(--sp-4); display: block; }
+    .sec-h2 { font-size: clamp(34px,5vw,58px); font-weight: 800; line-height: 1.0; letter-spacing: -1.5px; color: var(--ink); margin-bottom: var(--sp-5); }
+    .sec-body { font-size: 18px; line-height: 1.6; color: var(--ink-2); max-width: 58ch; }
+    .tc { text-align: center; } .tc .sec-body { margin: 0 auto; }
+    .p3 { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp-4); margin-top: var(--sp-8); }
+    .p-card { padding: clamp(24px,3vw,36px); background: var(--bg); border-radius: var(--r); border: 1px solid var(--line); }
+    .p-ic { width: 48px; height: 48px; border-radius: 12px; background: var(--green-bg); border: 1px solid var(--green-br); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: var(--sp-5); }
+    .p-h3 { font-size: 20px; font-weight: 700; line-height: 1.2; letter-spacing: -.2px; color: var(--ink); margin-bottom: var(--sp-3); }
+    .p-p { font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+
+    /* AGENTS — TABBED */
+    .agents { padding: var(--sp-9) 0; }
+    .tab-strip {
+      display: grid; grid-template-columns: repeat(5,1fr);
+      border-bottom: 1px solid var(--line); margin-top: var(--sp-8);
+    }
+    .tab-btn {
+      display: flex; flex-direction: column; align-items: center; gap: var(--sp-2);
+      padding: var(--sp-5) var(--sp-3) var(--sp-4);
+      border: none; border-bottom: 3px solid transparent; margin-bottom: -1px;
+      background: transparent; cursor: pointer; font-family: var(--f);
+      color: var(--ink-2); transition: color .15s, border-color .15s;
+    }
+    .tab-btn:hover { color: var(--ink); }
+    .tab-btn.active { border-bottom-color: var(--green-dk); color: var(--ink); }
+    .tab-ic2 { font-size: 26px; }
+    .tab-lbl { font-size: 13px; font-weight: 600; text-align: center; line-height: 1.3; }
+    .tab-panels { margin-top: var(--sp-7); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px,7vw,92px); align-items: center; }
+
+    /* shared feature text */
+    .f-tag { font: 800 11px/1 var(--f); letter-spacing: 1.4px; text-transform: uppercase; color: var(--green-dk); margin-bottom: var(--sp-4); display: block; }
+    .f-h2 { font-size: clamp(28px,3.8vw,48px); font-weight: 800; line-height: 1.02; letter-spacing: -1px; color: var(--ink); margin-bottom: var(--sp-5); }
+    .f-body { font-size: 17px; line-height: 1.65; color: var(--ink-2); margin-bottom: var(--sp-4); max-width: 58ch; }
+    .f-proof { font-size: 13px; font-weight: 500; color: var(--ink-3); line-height: 1.55; padding-top: var(--sp-4); border-top: 1px solid var(--line); margin-top: 4px; }
+
+    /* PRODUCT MOCKS */
+    .pm { border-radius: 16px; overflow: hidden; background: var(--surf); border: 1px solid oklch(100% 0 0 / .06); box-shadow: 0 24px 64px oklch(0% 0 0 / .2); }
+    .pm-bar { display: flex; align-items: center; gap: 6px; padding: 13px 18px; border-bottom: 1px solid oklch(100% 0 0 / .07); background: oklch(100% 0 0 / .02); }
+    .pm-title { margin-left: var(--sp-2); font-size: 12px; font-weight: 600; color: oklch(100% 0 0 / .24); letter-spacing: .3px; }
+
+    .wa-hd { display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-4) 18px; border-bottom: 1px solid oklch(100% 0 0 / .07); }
+    .wa-av { width: 36px; height: 36px; border-radius: 50%; background: oklch(93% .22 130 / .14); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+    .wa-nm { font-size: 14px; font-weight: 700; color: var(--on); }
+    .wa-st { font-size: 11px; color: oklch(93% .22 130 / .6); }
+    .wa-bd { padding: var(--sp-4); display: grid; gap: var(--sp-3); }
+    .wa-m { max-width: 84%; padding: 11px 14px; border-radius: 14px; font-size: 14px; line-height: 1.5; }
+    .wa-m.o { margin-left: auto; background: oklch(93% .22 130 / .14); color: oklch(94% .22 130); border-bottom-right-radius: 3px; }
+    .wa-m.i { background: oklch(100% 0 0 / .07); color: oklch(100% 0 0 / .78); border-bottom-left-radius: 3px; }
+    .wa-t { font-size: 10px; color: oklch(100% 0 0 / .28); margin-top: 4px; }
+
+    .tl-bd { padding: 18px 20px; }
+    .tl-r { display: grid; grid-template-columns: 80px 1fr; gap: var(--sp-4); padding: 12px 0 12px 16px; border-left: 2px solid oklch(100% 0 0 / .08); margin-left: var(--sp-2); position: relative; }
+    .tl-r::before { content: ""; position: absolute; left: -5px; top: 16px; width: 8px; height: 8px; border-radius: 50%; background: oklch(100% 0 0 / .18); }
+    .tl-r.w::before { background: var(--green); }
+    .tl-t { font-size: 11px; font-weight: 700; color: oklch(100% 0 0 / .28); white-space: nowrap; padding-top: 1px; }
+    .tl-e { font-size: 14px; font-weight: 500; color: oklch(100% 0 0 / .62); line-height: 1.4; }
+    .tl-e.g { color: var(--green); font-weight: 700; }
+
+    .sh-bd { padding: var(--sp-4); }
+    .sh-hd, .sh-r { display: grid; grid-template-columns: 68px 96px 76px 1fr 66px; gap: 5px; padding: 9px 11px; border-radius: 6px; font-size: 12px; }
+    .sh-hd { background: oklch(100% 0 0 / .04); color: oklch(100% 0 0 / .3); font: 800 10px/1 var(--f); letter-spacing: .6px; text-transform: uppercase; margin-bottom: 4px; }
+    .sh-r { margin-bottom: 4px; font-weight: 500; }
+    .sh-r.ok { background: oklch(100% 0 0 / .025); color: oklch(100% 0 0 / .58); border: 1px solid oklch(100% 0 0 / .06); }
+    .sh-r.fl { background: oklch(60% .22 25 / .07); color: oklch(70% .18 25); border: 1px solid oklch(60% .22 25 / .18); }
+    .stag { display: inline-flex; padding: 2px 7px; border-radius: 4px; font: 800 10px/1 var(--f); }
+    .s-ok { background: oklch(93% .22 130 / .1); color: var(--green); }
+    .s-fl { background: oklch(60% .22 25 / .12); color: oklch(68% .18 25); }
+
+    .sl-bd { padding: var(--sp-4); }
+    .sl-ch { font-size: 12px; font-weight: 700; color: oklch(100% 0 0 / .28); letter-spacing: .4px; margin-bottom: var(--sp-3); }
+    .sl-m { padding: 13px 15px; border-radius: 10px; background: oklch(100% 0 0 / .04); border: 1px solid oklch(100% 0 0 / .08); margin-bottom: var(--sp-2); }
+    .sl-sn { font-size: 13px; font-weight: 800; color: var(--green); margin-bottom: 5px; }
+    .sl-tx { font-size: 14px; color: oklch(100% 0 0 / .68); line-height: 1.5; }
+    .sl-ts { font-size: 11px; color: oklch(100% 0 0 / .22); margin-top: 5px; }
+
+    /* HOW TO BUILD */
+    .build {
+      padding: var(--sp-9) 0; background: var(--bg-2);
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    }
+    .build-split {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(56px,8vw,104px); align-items: start; margin-top: var(--sp-8);
+    }
+    .acc-item {
+      padding: var(--sp-5) 0; border-bottom: 1px solid var(--line);
+      cursor: pointer; display: grid; grid-template-columns: 4px 1fr;
+      gap: var(--sp-5); user-select: none;
+    }
+    .acc-bar { width: 4px; border-radius: 2px; background: transparent; align-self: stretch; transition: background .2s; min-height: 22px; }
+    .acc-item.open .acc-bar { background: var(--green-dk); }
+    .acc-ttl { font-size: 17px; font-weight: 700; color: var(--ink-2); line-height: 1.3; padding-top: 2px; }
+    .acc-item.open .acc-ttl { color: var(--ink); }
+    .acc-body { font-size: 15px; line-height: 1.6; color: var(--ink-2); margin-top: var(--sp-3); display: none; }
+    .acc-item.open .acc-body { display: block; }
+
+    .steps-flow { display: grid; gap: 0; }
+    .sf-step { display: grid; grid-template-columns: 44px 1fr; gap: var(--sp-4); align-items: start; padding-bottom: var(--sp-5); position: relative; }
+    .sf-step:not(:last-child)::before { content: ""; position: absolute; left: 21px; top: 44px; bottom: 0; width: 1px; background: var(--line); }
+    .sf-ic { width: 44px; height: 44px; border-radius: 10px; background: var(--bg); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .sf-lbl { padding-top: 11px; font-size: 15px; font-weight: 600; color: var(--ink-2); line-height: 1.4; }
+    .sf-lbl strong { color: var(--ink); font-weight: 700; }
+
+    /* HOW IT WORKS */
+    .how { padding: var(--sp-9) 0; }
+    .h-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; margin-top: var(--sp-8); position: relative; }
+    .h-steps::before { content: ""; position: absolute; top: 22px; left: calc(100%/6 + 24px); right: calc(100%/6 + 24px); height: 1px; background: var(--line); }
+    .h-step { padding: 0 clamp(20px,4vw,44px); position: relative; z-index: 1; }
+    .h-step:first-child { padding-left: 0; }
+    .h-step:last-child { padding-right: 0; }
+    .h-num { width: 44px; height: 44px; border-radius: 50%; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; font: 800 16px/1 var(--f); margin-bottom: var(--sp-5); }
+    .h-title { font-size: 19px; font-weight: 700; line-height: 1.25; letter-spacing: -.2px; color: var(--ink); margin-bottom: var(--sp-3); }
+    .h-body { font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+
+    /* INTEGRATIONS */
+    .ints { padding: clamp(56px,7vw,80px) 0; background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .int-row { display: flex; align-items: center; justify-content: center; gap: clamp(28px,5vw,60px); flex-wrap: wrap; margin-top: var(--sp-7); }
+    .int-i { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); }
+    .int-ic { width: 56px; height: 56px; border-radius: 14px; background: var(--bg); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 1px 4px oklch(0% 0 0 / .06); }
+    .int-nm { font-size: 13px; font-weight: 600; color: var(--ink-2); }
+
+    /* COMPARISON */
+    .cmp { padding: var(--sp-9) 0; }
+    .cmp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--sp-4); margin-top: var(--sp-7); }
+    .cc { padding: clamp(22px,3vw,32px); border-radius: var(--r); border: 1px solid var(--line); background: var(--bg); }
+    .cc.hi { background: oklch(97.5% .018 130); border-color: oklch(80% .10 130); }
+    .cc-nm { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .cc-pr { font-size: 14px; color: var(--ink-3); margin-bottom: var(--sp-5); }
+    .cc-pr.g { color: var(--green-dk); font-weight: 700; }
+    .cc-ul { list-style: none; display: grid; gap: var(--sp-3); }
+    .cc-ul li { display: flex; gap: var(--sp-3); font-size: 14px; color: var(--ink-2); line-height: 1.4; }
+    .cc-ul li::before { content: "x"; color: var(--ink-3); flex-shrink: 0; font-weight: 700; opacity: .4; }
+    .cc-ul li.y { color: var(--ink); }
+    .cc-ul li.y::before { content: "✓"; color: var(--green-dk); font-weight: 800; opacity: 1; }
+
+    /* SECURITY */
+    .sec { padding: var(--sp-9) 0; background: var(--bg-2); border-top: 1px solid var(--line); }
+    .sec-split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px,7vw,92px); align-items: center; }
+    .sec-bgs { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-top: var(--sp-5); }
+    .sec-bg { padding: 6px 14px; border-radius: 6px; border: 1px solid var(--line); font: 700 12px/1 var(--f); color: var(--ink-2); background: var(--bg); }
+    .df-card { background: var(--bg); border-radius: 16px; border: 1px solid var(--line); overflow: hidden; }
+    .df-hd { padding: 14px 22px; border-bottom: 1px solid var(--line); font: 700 13px/1 var(--f); color: var(--ink-2); background: var(--bg-2); }
+    .df-row { display: flex; gap: var(--sp-4); align-items: flex-start; padding: var(--sp-4) 22px; border-bottom: 1px solid var(--line-sub); }
+    .df-row:last-child { border-bottom: none; }
+    .df-dest { font-size: 14px; font-weight: 700; color: var(--ink); width: 110px; flex-shrink: 0; }
+    .df-what { font-size: 14px; color: var(--ink-2); line-height: 1.4; }
+
+    /* BETA CTA */
+    .cta { padding: clamp(80px,12vw,128px) 0; background: var(--cta); text-align: center; }
+    .cta-h2 { font-size: clamp(48px,8vw,90px); font-weight: 800; line-height: .96; letter-spacing: -2.5px; color: oklch(97% .010 110); margin-bottom: var(--sp-5); }
+    .cta-sub { font-size: 18px; color: oklch(97% .010 110 / .46); max-width: 50ch; margin: 0 auto var(--sp-7); line-height: 1.6; }
+    .cta-btns { display: flex; align-items: center; justify-content: center; gap: var(--sp-3); flex-wrap: wrap; margin-bottom: var(--sp-5); }
+    .cta-note { font-size: 13px; color: oklch(97% .010 110 / .26); line-height: 1.5; }
+
+    /* FAQ */
+    .faq { padding: var(--sp-9) 0; }
+    .faq-list { margin-top: var(--sp-7); max-width: 780px; }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-q {
+      width: 100%; text-align: left; background: transparent; border: none;
+      padding: var(--sp-5) 0; cursor: pointer; font-family: var(--f);
+      display: flex; justify-content: space-between; align-items: center; gap: var(--sp-4);
+    }
+    .faq-qt { font-size: 17px; font-weight: 700; color: var(--ink); line-height: 1.3; }
+    .faq-arrow {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--bg-2); border: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; flex-shrink: 0; transition: transform .2s; color: var(--ink-2);
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { font-size: 15px; line-height: 1.7; color: var(--ink-2); padding-bottom: var(--sp-5); display: none; max-width: 68ch; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* FOOTER */
+    .footer { background: oklch(7% .012 110); padding: clamp(40px,7vw,64px) 0 var(--sp-6); }
+    .ft-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: clamp(28px,5vw,56px); padding-bottom: clamp(28px,5vw,48px); border-bottom: 1px solid oklch(100% 0 0 / .07); }
+    .ft-br { font: 700 15px/1 var(--f); color: oklch(97% .010 110); margin-bottom: var(--sp-2); }
+    .ft-dc { font-size: 14px; color: oklch(97% .010 110 / .3); line-height: 1.6; max-width: 28ch; }
+    .ft-col h4 { font: 800 11px/1 var(--f); letter-spacing: 1px; text-transform: uppercase; color: oklch(97% .010 110 / .28); margin-bottom: var(--sp-4); }
+    .ft-col a { display: block; font-size: 14px; color: oklch(97% .010 110 / .46); margin-bottom: var(--sp-3); transition: color .1s; }
+    .ft-col a:hover { color: oklch(97% .010 110); }
+    .ft-bt { padding-top: var(--sp-5); display: flex; justify-content: space-between; font-size: 13px; color: oklch(97% .010 110 / .2); }
+
+    /* CAPABILITIES */
+    .caps {
+      padding: var(--sp-9) 0;
+      background: var(--bg-2);
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    }
+    .cap-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: var(--sp-4); margin-top: var(--sp-8);
+    }
+    .cap-item {
+      padding: clamp(24px,3vw,32px); background: var(--bg);
+      border-radius: var(--r); border: 1px solid var(--line);
+    }
+    .cap-ic { font-size: 26px; margin-bottom: var(--sp-4); display: block; }
+    .cap-h3 { font-size: 17px; font-weight: 700; color: var(--ink); line-height: 1.25; letter-spacing: -.15px; margin-bottom: var(--sp-3); }
+    .cap-p  { font-size: 14px; line-height: 1.6; color: var(--ink-2); }
+
+    /* AI MODELS SUB-SECTION */
+    .ai-band {
+      margin-top: var(--sp-8);
+      padding: clamp(32px,4vw,48px);
+      background: var(--surf);
+      border-radius: 24px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(40px,6vw,80px); align-items: center;
+    }
+    .ai-tag { font: 800 11px/1 var(--f); letter-spacing: 1.4px; text-transform: uppercase; color: oklch(93% .22 130 / .7); margin-bottom: var(--sp-4); display: block; }
+    .ai-h3  { font-size: clamp(22px,3vw,34px); font-weight: 800; line-height: 1.1; letter-spacing: -.5px; color: oklch(96% .010 110); margin-bottom: var(--sp-4); }
+    .ai-p   { font-size: 15px; line-height: 1.65; color: oklch(96% .010 110 / .5); }
+    .ai-models-grid {
+      display: grid; grid-template-columns: repeat(2,1fr); gap: var(--sp-3);
+    }
+    .ai-model {
+      padding: 18px 20px; border-radius: 14px;
+      background: oklch(100% 0 0 / .04); border: 1px solid oklch(100% 0 0 / .08);
+      display: flex; align-items: center; gap: var(--sp-3);
+      transition: background .15s, border-color .15s;
+    }
+    .ai-model:hover { background: oklch(100% 0 0 / .07); border-color: oklch(100% 0 0 / .14); }
+    .ai-logo {
+      width: 36px; height: 36px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .ai-logo.claude  { background: oklch(75% .14 55 / .18); }
+    .ai-logo.gpt     { background: oklch(72% .14 160 / .18); }
+    .ai-logo.gemini  { background: oklch(72% .14 250 / .18); }
+    .ai-logo.llama   { background: oklch(72% .14 30 / .18); }
+    .ai-mname { font-size: 14px; font-weight: 700; color: oklch(96% .010 110 / .82); }
+    .ai-mby   { font-size: 11px; color: oklch(96% .010 110 / .32); margin-top: 2px; }
+    .ai-model.custom {
+      grid-column: span 2;
+      border-style: dashed;
+      border-color: oklch(100% 0 0 / .12);
+    }
+    .ai-model.custom .ai-mname { color: oklch(96% .010 110 / .4); }
+
+    /* TESTIMONIALS */
+    .tms { padding: var(--sp-9) 0; }
+    .tms-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: var(--sp-5); margin-top: var(--sp-8);
+    }
+    .tm {
+      padding: clamp(28px,3.5vw,40px); border-radius: var(--r);
+      border: 1px solid var(--line); background: var(--bg);
+      display: flex; flex-direction: column; gap: var(--sp-6);
+    }
+    .tm-q {
+      font-size: clamp(17px,2vw,22px); font-weight: 700; line-height: 1.35;
+      letter-spacing: -.2px; color: var(--ink); flex: 1;
+    }
+    .tm-q::before { content: "\201C"; color: var(--green-dk); margin-right: 2px; }
+    .tm-q::after  { content: "\201D"; color: var(--green-dk); margin-left: 2px; }
+    .tm-meta { display: flex; align-items: center; gap: var(--sp-4); }
+    .tm-av {
+      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+      background: var(--green-bg); border: 1px solid var(--green-br);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px; font-weight: 800; color: var(--green-dk);
+    }
+    .tm-nm { font-size: 14px; font-weight: 700; color: var(--ink); }
+    .tm-co { font-size: 13px; color: var(--ink-3); margin-top: 2px; }
+    .tm-stat {
+      display: inline-flex; align-items: center; gap: var(--sp-2);
+      height: 26px; padding: 0 11px; border-radius: 999px;
+      background: var(--green-bg); border: 1px solid var(--green-br);
+      font: 700 12px/1 var(--f); color: var(--green-dk);
+      margin-bottom: var(--sp-3); align-self: flex-start;
+    }
+    .tm-cs {
+      margin-top: var(--sp-7); text-align: center;
+      padding: clamp(28px,4vw,44px); border-radius: var(--r);
+      background: var(--bg-2); border: 1px solid var(--line);
+    }
+    .tm-cs-hl { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: var(--sp-2); }
+    .tm-cs-sub { font-size: 14px; color: var(--ink-2); margin-bottom: var(--sp-5); }
+    .partner-band {
+      margin-top: var(--sp-7);
+      padding: clamp(24px,3vw,36px) clamp(28px,4vw,48px);
+      border-radius: var(--r); border: 1px solid var(--line);
+      background: var(--bg-2);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: var(--sp-6); flex-wrap: wrap;
+    }
+    .partner-h3 { font-size: 19px; font-weight: 700; color: var(--ink); letter-spacing: -.2px; margin-bottom: var(--sp-3); }
+    .partner-p  { font-size: 14px; line-height: 1.65; color: var(--ink-2); max-width: 56ch; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1040px) {
+      .tms-grid { grid-template-columns: 1fr; }
+      .cap-grid { grid-template-columns: repeat(2,1fr); }
+      .ai-band { grid-template-columns: 1fr; gap: 40px; }
+      .p3, .cmp-grid { grid-template-columns: repeat(2,1fr); }
+      .tab-strip { grid-template-columns: repeat(3,1fr); }
+      .tab-strip .tab-btn:nth-child(4),
+      .tab-strip .tab-btn:nth-child(5) { display: none; }
+      .tab-panel.active { grid-template-columns: 1fr; gap: 40px; }
+      .build-split, .sec-split { grid-template-columns: 1fr; gap: 40px; }
+      .h-steps { grid-template-columns: 1fr; }
+      .h-steps::before { display: none; }
+      .h-step { padding: 0 0 var(--sp-7); }
+      .ft-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .cap-grid { grid-template-columns: 1fr; }
+      .ai-models-grid { grid-template-columns: 1fr; }
+      .ai-model.custom { grid-column: span 1; }
+      .wrap, .nav-i { width: min(100% - 32px, 1200px); }
+      .nav-lk { display: none; }
+      .tab-strip { grid-template-columns: repeat(2,1fr); }
+      .tab-strip .tab-btn:nth-child(3),
+      .tab-strip .tab-btn:nth-child(4),
+      .tab-strip .tab-btn:nth-child(5) { display: none; }
+      .p3, .cmp-grid { grid-template-columns: 1fr; }
+      .sh-hd,.sh-r { grid-template-columns: 58px 80px 58px; }
+      .sh-hd span:nth-child(4),.sh-hd span:nth-child(5),
+      .sh-r  span:nth-child(4),.sh-r  span:nth-child(5) { display: none; }
+      .ft-grid { grid-template-columns: 1fr; }
+      .ft-bt { flex-direction: column; gap: var(--sp-2); text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-i">
+    <a class="logo" href="#top">
+      <span class="lm" aria-hidden="true"></span>
+      Cashfree Relay
+    </a>
+    <nav class="nav-lk">
+      <a href="#agents">Agents</a>
+      <a href="#build">How it works</a>
+      <a href="#security">Security</a>
+      <a href="https://www.cashfree.com/docs/tools-ai/relay/overview">Docs</a>
+    </nav>
+    <div class="nav-ct">
+      <a class="btn ghost" href="#demo">Book a demo</a>
+      <a class="btn dark" href="#beta">Request beta</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="badge"><span class="badge-dot"></span>&ensp;Preview Beta</div>
+    <h1 class="hero-h1">Put every payment job on autopilot.</h1>
+    <p class="hero-sub">Relay agents handle COD confirmations, failed payment recovery, and settlement recon automatically. Activate once from your Cashfree dashboard.</p>
+    <div class="hero-btns">
+      <a class="btn grn xl" href="#beta">Request beta access</a>
+      <a class="btn ghost lg" href="#demo">Book a demo</a>
+    </div>
+
+    <div class="h-screen">
+      <div class="h-bar">
+        <span class="d d-r"></span><span class="d d-y"></span><span class="d d-g"></span>
+        <span class="h-lab">Cashfree Dashboard — Relay Agents</span>
+      </div>
+      <div class="h-body">
+        <div class="arow">
+          <div class="a-ic">📦</div>
+          <div><div class="a-nm">COD Confirmation Agent</div><div class="a-sb">Confirms every COD order within 5 minutes of placement</div></div>
+          <div class="a-st">RTO: 17%</div>
+          <div class="live">Active</div>
+        </div>
+        <div class="arow">
+          <div class="a-ic">💳</div>
+          <div><div class="a-nm">Failed Payment Recovery Agent</div><div class="a-sb">WhatsApp at 15 min. Gmail at 2 hrs. Slack alert at end of day.</div></div>
+          <div class="a-st">6.2% recovered</div>
+          <div class="live">Active</div>
+        </div>
+        <div class="arow">
+          <div class="a-ic">📊</div>
+          <div><div class="a-nm">Settlement Reconciliation Agent</div><div class="a-sb">Runs daily. Appends every row to Sheets. Flags discrepancies.</div></div>
+          <div class="a-st">Next: midnight</div>
+          <div class="live">Active</div>
+        </div>
+        <div class="arow">
+          <div class="a-ic">🔔</div>
+          <div><div class="a-nm">High-Value Transaction Alert</div><div class="a-sb">Finance team pinged on Slack within 40 seconds of trigger</div></div>
+          <div class="a-st">Threshold: Rs. 50K</div>
+          <div class="live">Active</div>
+        </div>
+        <div class="arow">
+          <div class="a-ic">🛒</div>
+          <div><div class="a-nm">Abandoned Cart Recovery Agent</div><div class="a-sb">WhatsApp nudge at 10 min. Follow-up with offer at 2 hrs.</div></div>
+          <div class="a-st">4 pending today</div>
+          <div class="live">Active</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="caps">
+  <div class="wrap">
+    <div class="tc">
+      <span class="sec-tag">Platform capabilities</span>
+      <h2 class="sec-h2">Everything a payment agent needs.<br>Nothing you have to build.</h2>
+      <p class="sec-body">Relay is a full agent platform, not a notification tool. Every capability below is available to every agent you activate.</p>
+    </div>
+
+    <div class="cap-grid">
+      <div class="cap-item">
+        <span class="cap-ic">⚡</span>
+        <h3 class="cap-h3">Trigger on any payment event</h3>
+        <p class="cap-p">COD placed. Payment failed. Settlement run. Cart dropped. Refund initiated. Every Cashfree event is a trigger. Your agent decides what happens next.</p>
+      </div>
+      <div class="cap-item">
+        <span class="cap-ic">🔀</span>
+        <h3 class="cap-h3">Multi-step sequences with branching</h3>
+        <p class="cap-p">Message at 15 min. Follow-up at 2 hrs. Escalate ops at EOD. If the customer replies, the sequence stops. Build logic once. It runs every time.</p>
+      </div>
+      <div class="cap-item">
+        <span class="cap-ic">📡</span>
+        <h3 class="cap-h3">Cross-channel in one agent</h3>
+        <p class="cap-p">The same agent can send WhatsApp, log to Sheets, ping Slack, and send Gmail. No separate tools. No syncing. One agent, every channel.</p>
+      </div>
+      <div class="cap-item">
+        <span class="cap-ic">📋</span>
+        <h3 class="cap-h3">Full run history and audit log</h3>
+        <p class="cap-p">Every agent run is logged. Every message tracked. Every outcome recorded. See what ran, when it ran, and what happened.</p>
+      </div>
+      <div class="cap-item">
+        <span class="cap-ic">🔒</span>
+        <h3 class="cap-h3">PCI DSS Level 1 infrastructure</h3>
+        <p class="cap-p">Relay runs on Cashfree's own infrastructure. Your payment data never moves to a third-party server. What you send to channels is only what you configure.</p>
+      </div>
+      <div class="cap-item">
+        <span class="cap-ic">🏠</span>
+        <h3 class="cap-h3">Lives inside your Cashfree account</h3>
+        <p class="cap-p">No new login. No new tool. No new data pipeline. Open Cashfree, go to Relay, activate. Your existing account is your agent platform.</p>
+      </div>
+    </div>
+
+    <!-- AI MODELS -->
+    <div class="ai-band">
+      <div>
+        <span class="ai-tag">AI Model Control</span>
+        <h3 class="ai-h3">Pick the AI model your agent runs on.</h3>
+        <p class="ai-p">Not locked to one model. Choose the model that fits the job. Run COD confirmations on a fast, low-cost model. Run complex recon logic on a more capable one. Swap models without rebuilding the agent.</p>
+      </div>
+      <div class="ai-models-grid">
+        <div class="ai-model">
+          <div class="ai-logo claude">🤖</div>
+          <div><div class="ai-mname">Claude</div><div class="ai-mby">Anthropic</div></div>
+        </div>
+        <div class="ai-model">
+          <div class="ai-logo gpt">✦</div>
+          <div><div class="ai-mname">GPT-4o</div><div class="ai-mby">OpenAI</div></div>
+        </div>
+        <div class="ai-model">
+          <div class="ai-logo gemini">◆</div>
+          <div><div class="ai-mname">Gemini</div><div class="ai-mby">Google</div></div>
+        </div>
+        <div class="ai-model">
+          <div class="ai-logo llama">▲</div>
+          <div><div class="ai-mname">Llama 3</div><div class="ai-mby">Meta</div></div>
+        </div>
+        <div class="ai-model custom">
+          <div class="ai-logo" style="background:oklch(100% 0 0 / .05);">＋</div>
+          <div><div class="ai-mname">Bring your own model</div><div class="ai-mby">Any OpenAI-compatible endpoint</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- AGENTS — TABBED -->
+<section class="agents" id="agents">
+  <div class="wrap">
+    <span class="sec-tag">Ready-to-activate agents</span>
+    <h2 class="sec-h2">One job. One agent.<br>Activate and walk away.</h2>
+
+    <div class="tab-strip" role="tablist">
+      <button class="tab-btn active" data-tab="0" role="tab">
+        <span class="tab-ic2">📦</span>
+        <span class="tab-lbl">COD Confirmation</span>
+      </button>
+      <button class="tab-btn" data-tab="1" role="tab">
+        <span class="tab-ic2">💳</span>
+        <span class="tab-lbl">Payment Recovery</span>
+      </button>
+      <button class="tab-btn" data-tab="2" role="tab">
+        <span class="tab-ic2">📊</span>
+        <span class="tab-lbl">Settlement Recon</span>
+      </button>
+      <button class="tab-btn" data-tab="3" role="tab">
+        <span class="tab-ic2">🔔</span>
+        <span class="tab-lbl">Transaction Alerts</span>
+      </button>
+      <button class="tab-btn" data-tab="4" role="tab">
+        <span class="tab-ic2">🛒</span>
+        <span class="tab-lbl">Cart Recovery</span>
+      </button>
+    </div>
+
+    <div class="tab-panels">
+
+      <div class="tab-panel active" data-panel="0">
+        <div>
+          <span class="f-tag">COD Confirmation</span>
+          <h2 class="f-h2">Never miss a COD confirmation.</h2>
+          <p class="f-body">Every COD order gets a confirmation message within 5 minutes of placement. No reply in 4 hours, a follow-up goes out. Still nothing, ops gets flagged before the order ships.</p>
+          <p class="f-body">A confirmed order is not a risk score. It is a commitment.</p>
+          <p class="f-proof">Merchants who confirm within 5 minutes bring RTO from 28 to 32% down to 16 to 20% within 30 days.</p>
+        </div>
+        <div class="pm">
+          <div class="pm-bar"><span class="d d-r"></span><span class="d d-y"></span><span class="d d-g"></span><span class="pm-title">COD Confirmation Agent</span></div>
+          <div class="wa-hd">
+            <div class="wa-av">📦</div>
+            <div><div class="wa-nm">Cashfree Relay</div><div class="wa-st">Confirming order #8821</div></div>
+          </div>
+          <div class="wa-bd">
+            <div class="wa-m o">Hi Priya, your order #8821 is placed. Reply YES to confirm delivery or NO to cancel.<div class="wa-t">10:02 AM</div></div>
+            <div class="wa-m i">YES please deliver<div class="wa-t">10:05 AM</div></div>
+            <div class="wa-m o">Order confirmed. Marked ready for dispatch. COD flag cleared.<div class="wa-t">10:05 AM</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-panel="1">
+        <div>
+          <span class="f-tag">Payment Recovery</span>
+          <h2 class="f-h2">Recover failed payments while you sleep.</h2>
+          <p class="f-body">Every failed or dropped payment triggers a recovery message within 15 minutes. Gmail backup in 2 hours. Slack alert to ops at end of day if still unpaid.</p>
+          <p class="f-body">No Monday morning effort. No campaigns. The agent runs on every matching event automatically.</p>
+          <p class="f-proof">Merchants in beta recovering 3 to 8% of dropped checkouts with zero manual effort.</p>
+        </div>
+        <div class="pm">
+          <div class="pm-bar"><span class="d d-r"></span><span class="d d-y"></span><span class="d d-g"></span><span class="pm-title">Failed Payment Recovery</span></div>
+          <div class="tl-bd">
+            <div class="tl-r"><div class="tl-t">0 min</div><div class="tl-e">Payment failed. Agent triggered automatically.</div></div>
+            <div class="tl-r"><div class="tl-t">15 min</div><div class="tl-e">WhatsApp: "Your payment didn't go through. Retry here."</div></div>
+            <div class="tl-r"><div class="tl-t">2 hrs</div><div class="tl-e">Gmail: Your order is pending. Complete your purchase.</div></div>
+            <div class="tl-r w"><div class="tl-t">2 hrs 14 min</div><div class="tl-e g">Payment recovered. Rs. 3,200 collected.</div></div>
+            <div class="tl-r"><div class="tl-t">EOD</div><div class="tl-e">Slack: 1 payment still unpaid. Ops flagged.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-panel="2">
+        <div>
+          <span class="f-tag">Settlement Reconciliation</span>
+          <h2 class="f-h2">Close your books without a spreadsheet.</h2>
+          <p class="f-body">Runs daily, weekly, or after every settlement cycle. Pulls your Cashfree data, appends every row to Google Sheets, flags discrepancies, and notifies finance.</p>
+          <p class="f-body">Not a summary. A live recon tab your team can act on.</p>
+          <p class="f-proof">Mid-size merchants spend 40 to 160 hours a month on manual settlement recon. This agent brings that to zero.</p>
+        </div>
+        <div class="pm">
+          <div class="pm-bar"><span class="d d-r"></span><span class="d d-y"></span><span class="d d-g"></span><span class="pm-title">Settlement Recon — Daily Run</span></div>
+          <div class="sh-bd">
+            <div class="sh-hd"><span>Date</span><span>Order ID</span><span>Amount</span><span>Status</span><span>Flag</span></div>
+            <div class="sh-r ok"><span>21 May</span><span>CF-29831</span><span>Rs. 1,240</span><span>Settled</span><span><span class="stag s-ok">OK</span></span></div>
+            <div class="sh-r ok"><span>21 May</span><span>CF-29832</span><span>Rs. 4,800</span><span>Settled</span><span><span class="stag s-ok">OK</span></span></div>
+            <div class="sh-r fl"><span>21 May</span><span>CF-29834</span><span>Rs. 12,500</span><span>Pending</span><span><span class="stag s-fl">Review</span></span></div>
+            <div class="sh-r ok"><span>21 May</span><span>CF-29835</span><span>Rs. 890</span><span>Settled</span><span><span class="stag s-ok">OK</span></span></div>
+            <div class="sh-r ok"><span>21 May</span><span>CF-29836</span><span>Rs. 7,400</span><span>Settled</span><span><span class="stag s-ok">OK</span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-panel="3">
+        <div>
+          <span class="f-tag">Transaction Alerts</span>
+          <h2 class="f-h2">Know about every large payment in 40 seconds.</h2>
+          <p class="f-body">Set a threshold. Every transaction above it pings finance on Slack and logs to Sheets in 40 seconds. No morning report. No manual check.</p>
+          <p class="f-body">Your finance team sees what they need the moment it happens.</p>
+          <p class="f-proof">Works on any threshold you set. Works across payment links, checkout, and direct bank transfers.</p>
+        </div>
+        <div class="pm">
+          <div class="pm-bar"><span class="d d-r"></span><span class="d d-y"></span><span class="d d-g"></span><span class="pm-title">High-Value Alert — #finance</span></div>
+          <div class="sl-bd">
+            <div class="sl-ch"># finance-alerts</div>
+            <div class="sl-m">
+              <div class="sl-sn">Relay</div>
+              <div class="sl-tx">High-value payment received<br>Rs. 2,40,000 from Sharma Enterprises<br>Order #CF-29871 via Payment Link</div>
+              <div class="sl-ts">Row 847 added to Settlements Sheet. 40 seconds ago.</div>
+            </div>
+            <div class="sl-m">
+              <div class="sl-sn">Relay</div>
+              <div class="sl-tx">High-value payment received<br>Rs. 85,000 from Mehta Retail Group<br>Order #CF-29904 via Checkout</div>
+              <div class="sl-ts">Row 848 added to Settlements Sheet. Just now.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-panel="4">
+        <div>
+          <span class="f-tag">Cart Recovery</span>
+          <h2 class="f-h2">Bring back customers who almost paid.</h2>
+          <p class="f-body">Customer drops at checkout. WhatsApp nudge in 10 minutes. Follow-up offer in 2 hours. Triggered from the payment drop event, not a browsing event.</p>
+          <p class="f-body">Recovery at the moment of highest purchase intent. Higher conversion than browse-based abandonment flows.</p>
+          <p class="f-proof">Triggered from the actual payment event. Not a cookie. Not a session timeout.</p>
+        </div>
+        <div class="pm">
+          <div class="pm-bar"><span class="d d-r"></span><span class="d d-y"></span><span class="d d-g"></span><span class="pm-title">Cart Recovery Agent</span></div>
+          <div class="wa-hd">
+            <div class="wa-av">🛒</div>
+            <div><div class="wa-nm">Cashfree Relay</div><div class="wa-st">Recovering cart for Arjun</div></div>
+          </div>
+          <div class="wa-bd">
+            <div class="wa-m o">Hi Arjun, you left something in your cart. Your order is saved. Complete it here: cashfree.me/pay/8u3k<div class="wa-t">2:10 PM</div></div>
+            <div class="wa-m i">What discount can you give?<div class="wa-t">2:12 PM</div></div>
+            <div class="wa-m o">Here's 5% off just for you. Valid for 2 hours: cashfree.me/pay/8u3k?code=BACK5<div class="wa-t">2:12 PM</div></div>
+            <div class="wa-m i">Done, paid!<div class="wa-t">2:14 PM</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO BUILD -->
+<section class="build" id="build">
+  <div class="wrap">
+    <div class="tc">
+      <span class="sec-tag">How to build</span>
+      <h2 class="sec-h2">Activate your first agent<br>in under 5 minutes.</h2>
+      <p class="sec-body">No developer needed. No webhook setup. No new tool to learn.</p>
+    </div>
+    <div class="build-split">
+      <div class="acc-list">
+        <div class="acc-item open">
+          <div class="acc-bar"></div>
+          <div>
+            <div class="acc-ttl">Start from your Cashfree dashboard</div>
+            <div class="acc-body">No new tool to sign up for. Relay lives inside your existing Cashfree account. Find it under Tools. Every agent is ready to activate from the first time you open it.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-bar"></div>
+          <div>
+            <div class="acc-ttl">Build fast with pre-configured steps</div>
+            <div class="acc-body">Each agent comes with pre-built steps. Pick your trigger, set your message, choose where to send it. The flow is already there. You fill in the details once.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-bar"></div>
+          <div>
+            <div class="acc-ttl">Manage every agent from one place</div>
+            <div class="acc-body">See all your active agents, their run history, and performance stats. Pause, edit, or clone any agent. No developer needed at any step.</div>
+          </div>
+        </div>
+      </div>
+      <div class="steps-flow">
+        <div class="sf-step">
+          <div class="sf-ic">&#9889;</div>
+          <div class="sf-lbl"><strong>Step 1:</strong> Open the Relay tab inside your Cashfree dashboard</div>
+        </div>
+        <div class="sf-step">
+          <div class="sf-ic">&#9881;</div>
+          <div class="sf-lbl"><strong>Step 2:</strong> Pick an agent and set your trigger conditions</div>
+        </div>
+        <div class="sf-step">
+          <div class="sf-ic">&#128279;</div>
+          <div class="sf-lbl"><strong>Step 3:</strong> Connect WhatsApp, Slack, or Google Sheets</div>
+        </div>
+        <div class="sf-step">
+          <div class="sf-ic">&#10003;</div>
+          <div class="sf-lbl"><strong>Step 4:</strong> Activate. The agent runs from here. You do nothing.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="tms">
+  <div class="wrap">
+    <span class="sec-tag">Early results</span>
+    <h2 class="sec-h2">What beta merchants are seeing.</h2>
+
+    <div class="tms-grid">
+
+      <div class="tm">
+        <div>
+          <span class="tm-stat">&#8593; RTO down 14%</span>
+          <p class="tm-q">We were manually calling every COD customer before dispatch. It was one person's full day job. Relay does it in 5 minutes. RTO dropped from 31% to 17% in the first month.</p>
+        </div>
+        <div>
+          <div class="tm-meta">
+            <div class="tm-av">R</div>
+            <div>
+              <div class="tm-nm">Rahul Mehta</div>
+              <div class="tm-co">Founder, Desi Basics — Fashion</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tm">
+        <div>
+          <span class="tm-stat">&#8593; 6.2% payments recovered</span>
+          <p class="tm-q">Failed payment recovery used to be a Monday task. We'd send a batch email and recover maybe 2%. Relay catches every failure the moment it happens. We're recovering 6x what we did before.</p>
+        </div>
+        <div>
+          <div class="tm-meta">
+            <div class="tm-av">P</div>
+            <div>
+              <div class="tm-nm">Priya Nair</div>
+              <div class="tm-co">Co-founder, Aromas Studio — Beauty</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="partner-band">
+      <div>
+        <span class="sec-tag">AI Partner Program</span>
+        <h3 class="partner-h3">Build on Relay. Bring it to your clients.</h3>
+        <p class="partner-p">If you work with merchants as a consultant, agency, or integration partner — Relay has an early partner track. Help merchants activate agents. Get access before general availability.</p>
+      </div>
+      <div>
+        <a class="btn dark lg" href="https://cashfree.com/partners" target="_blank" rel="noopener">Register partner interest</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- INTEGRATIONS -->
+<section class="ints">
+  <div class="wrap tc">
+    <span class="sec-tag">Integrations</span>
+    <h2 class="sec-h2">Works where your team already works.</h2>
+    <p class="sec-body">Connect WhatsApp, Gmail, Slack, Google Sheets, and Shopify. Each agent sends only the data you choose to send.</p>
+    <div class="int-row">
+      <div class="int-i"><div class="int-ic">💬</div><div class="int-nm">WhatsApp</div></div>
+      <div class="int-i"><div class="int-ic">📧</div><div class="int-nm">Gmail</div></div>
+      <div class="int-i"><div class="int-ic">💬</div><div class="int-nm">Slack</div></div>
+      <div class="int-i"><div class="int-ic">📊</div><div class="int-nm">Google Sheets</div></div>
+      <div class="int-i"><div class="int-ic">🛍️</div><div class="int-nm">Shopify</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="cmp">
+  <div class="wrap">
+    <span class="sec-tag">Why not the alternatives</span>
+    <h2 class="sec-h2">Two things no other tool can give<br>a Cashfree merchant.</h2>
+    <div class="cmp-grid">
+      <div class="cc">
+        <div class="cc-nm">WhatsApp tools</div>
+        <div class="cc-pr">Interakt, AiSensy. Rs. 8K to 18K per month.</div>
+        <ul class="cc-ul">
+          <li>WhatsApp only. No agent for recon, recovery, or alerts.</li>
+          <li>You configure every flow yourself.</li>
+          <li>No Cashfree event awareness. You wire the webhook.</li>
+          <li>Payment data stored on third-party servers.</li>
+        </ul>
+      </div>
+      <div class="cc">
+        <div class="cc-nm">Automation tools</div>
+        <div class="cc-pr">Zapier, n8n. Rs. 4K to 12K per month plus developer time.</div>
+        <ul class="cc-ul">
+          <li>Generic APIs. No pre-built payment agents.</li>
+          <li>Needs a developer to configure Cashfree webhooks first.</li>
+          <li>Breaks silently. You find out when it fails.</li>
+          <li>Data exits Cashfree to third-party infrastructure.</li>
+        </ul>
+      </div>
+      <div class="cc hi">
+        <div class="cc-nm">Cashfree Relay</div>
+        <div class="cc-pr g">Free during beta</div>
+        <ul class="cc-ul">
+          <li class="y">Agents built for COD, failed payments, recon, and alerts. Pre-built.</li>
+          <li class="y">Activate from the Cashfree dashboard. No developer needed.</li>
+          <li class="y">Runs natively on Cashfree events. No webhook config.</li>
+          <li class="y">Your transaction data never leaves Cashfree infrastructure.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section class="sec" id="security">
+  <div class="wrap">
+    <div class="sec-split">
+      <div>
+        <span class="sec-tag">Data and security</span>
+        <h2 class="sec-h2">Your payment data stays inside Cashfree.</h2>
+        <p class="f-body">Every third-party automation tool stores your payment data on their servers. Relay runs inside Cashfree's PCI DSS Level 1 and SOC infrastructure. You control the agents. Cashfree runs them.</p>
+        <p class="f-body">Google, Slack, and WhatsApp only receive what you explicitly choose to send in each step. Nothing else leaves.</p>
+        <div class="sec-bgs">
+          <span class="sec-bg">PCI DSS Level 1</span>
+          <span class="sec-bg">SOC 2 Type II</span>
+          <span class="sec-bg">ISO 27001</span>
+        </div>
+      </div>
+      <div class="df-card">
+        <div class="df-hd">What each destination receives from Relay</div>
+        <div class="df-row"><div class="df-dest">WhatsApp</div><div class="df-what">Order ID, customer name, and the message you configure. Nothing else.</div></div>
+        <div class="df-row"><div class="df-dest">Google Sheets</div><div class="df-what">The row fields you select. Settlement data stays in Cashfree.</div></div>
+        <div class="df-row"><div class="df-dest">Slack</div><div class="df-what">Alert details you define: amount, order ID, and status.</div></div>
+        <div class="df-row"><div class="df-dest">Gmail</div><div class="df-what">Recovery email with your payment link. No card data included.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BETA CTA -->
+<section class="cta" id="beta">
+  <div class="wrap">
+    <h2 class="cta-h2">Free during beta.</h2>
+    <p class="cta-sub">All agents are free to activate and run. No per-run charges until general availability.</p>
+    <div class="cta-btns">
+      <a class="btn wht xl" href="#beta-form">Request beta access</a>
+      <a class="btn ghost-w xl" href="#demo">Book a demo</a>
+    </div>
+    <p class="cta-note">Long-term pricing: Rs. 0.50 to Rs. 1 per agent run. WhatsApp template and AI costs passed through at cost.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <span class="sec-tag">FAQ</span>
+    <h2 class="sec-h2">Questions about Relay</h2>
+    <div class="faq-list">
+
+      <div class="faq-item open">
+        <button class="faq-q">
+          <span class="faq-qt">Do I need a developer to set up Relay?</span>
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">No. Every agent activates from your Cashfree dashboard. You pick the agent, set your preferences, and switch it on. There are no webhooks to configure, no code to write, and no third-party tools to wire together.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-qt">Is Relay free right now?</span>
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">Yes. All agents are free to activate and run during the beta period. There are no per-run charges until general availability. Long-term pricing is expected to be Rs. 0.50 to Rs. 1 per agent run. WhatsApp template and AI costs pass through at cost.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-qt">What channels can agents send messages to?</span>
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">Relay agents currently support WhatsApp, Gmail, Slack, and Google Sheets. Shopify is coming soon. Each agent sends only the data fields you choose. Nothing else leaves Cashfree.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-qt">Does my payment data leave Cashfree?</span>
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">Relay runs on Cashfree's PCI DSS Level 1 infrastructure. Your transaction data stays inside Cashfree. When an agent sends a message to WhatsApp or Slack, only the fields you configure are included: order ID, amount, customer name. Nothing else is transmitted.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-qt">How is this different from using Zapier or n8n?</span>
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">Zapier and n8n are generic automation tools. They need a developer to configure Cashfree webhooks first. Relay agents are pre-built around Cashfree payment events. COD placed. Payment failed. Settlement run. The agent already knows what to do. You just activate it.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-qt">Can I customise the messages the agent sends?</span>
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">Yes. Each agent has an editable message template. You control the tone, the fields included, and the timing. You can set conditional logic too, like sending a follow-up only if there is no reply within 4 hours.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="faq-qt">Which merchants can access Relay right now?</span>
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">Relay is in private beta. We are onboarding merchants with active Cashfree accounts on a first-come basis. Request access below and we will reach out within 2 business days.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-br">Cashfree Relay</div>
+        <p class="ft-dc">AI agents for every post-payment job. Built inside Cashfree.</p>
+      </div>
+      <div class="ft-col">
+        <h4>Agents</h4>
+        <a href="#agents">COD Confirmation</a>
+        <a href="#agents">Payment Recovery</a>
+        <a href="#agents">Settlement Recon</a>
+        <a href="#agents">Transaction Alerts</a>
+        <a href="#agents">Cart Recovery</a>
+      </div>
+      <div class="ft-col">
+        <h4>Product</h4>
+        <a href="#build">How it works</a>
+        <a href="#security">Security</a>
+        <a href="https://www.cashfree.com/docs/tools-ai/relay/overview">Docs</a>
+        <a href="#beta">Pricing</a>
+      </div>
+      <div class="ft-col">
+        <h4>Contact</h4>
+        <a href="#demo">Book a demo</a>
+        <a href="#beta">Request beta</a>
+        <a href="https://www.cashfree.com">Cashfree Payments</a>
+      </div>
+    </div>
+    <div class="ft-bt">
+      <span>2026 Cashfree Payments India Pvt. Ltd.</span>
+      <span>PCI DSS Level 1. SOC 2 Type II. ISO 27001.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Tabs
+  var tabs = document.querySelectorAll('.tab-btn');
+  var panels = document.querySelectorAll('.tab-panel');
+  tabs.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var idx = btn.dataset.tab;
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      panels.forEach(function(p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelector('.tab-panel[data-panel="' + idx + '"]').classList.add('active');
+    });
+  });
+
+  // How to Build accordion
+  document.querySelectorAll('.acc-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+      item.classList.toggle('open');
+    });
+  });
+
+  // FAQ
+  document.querySelectorAll('.faq-item .faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btn.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>

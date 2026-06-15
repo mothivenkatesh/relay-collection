@@ -1,0 +1,2222 @@
+[
+  {
+    "kind": "submission",
+    "subreddit": "TwentiesIndia",
+    "id": "1s0low4",
+    "author": "void_SW",
+    "title": "UPDATE: Ordered an RTX 5090 for 3L on Amazon, got 1kg Ghadi detergent. Amazon DENIED my refund, but I'm not falling back.",
+    "body": "**Quick recap:** My friend Harsh Raj (a student at IIT BHU) and I ordered a GIGABYTE GeForce RTX 5090 WINDFORCE OC 32G for ₹2,99,995 on March 10, 2026. It was intended for work purposes and a startup server. The order was \"Fulfilled by Amazon\" (FBA), meaning it was stored and shipped directly from an Amazon warehouse. \\[OC linked in the comments\\]\n\nOn delivery day (March 14), we set up a camera for an unboxing video. While the outer Amazon shipping bag was sealed, the internal GPU box was a disaster: physical damage, sliced manufacturer seals covered in clear tape, and a fake aftermarket barcode (\"X002IVLPDX\") slapped on the front. Inside was a 1kg packet of Ghadi detergent powder.\n\nI've spent the last 8 days being strung along by Amazon’s Executive Customer Relations team (Ganesh \\[I guess he was leading the investigation\\], Bharath, Tayyabunnissa, and Soneksh).\n\nTimeline of Broken Promises: I was initially told the issue would be resolved by March 18th/19th. They then arbitrarily pushed the resolution date to March 25th, claiming a \"thorough\" investigation by multiple \"specialized teams\" was needed.\n\nToday, the mental stress became too much. I called them, explained that I hadn't received a single meaningful update, and stated that I would be moving to Consumer Court.\n\nExactly 15 minutes after that call, I received an email from \"Ganesh\" stating that based on their \"comprehensive review,\" the correct product was shipped and they would not process a refund. It is clear they ",
+    "score": "7310",
+    "num_comments": "780",
+    "created_utc": "1774186229.0",
+    "permalink": "/r/TwentiesIndia/comments/1s0low4/update_ordered_an_rtx_5090_for_3l_on_amazon_got/",
+    "clusters": [
+      "refund-mgmt",
+      "dispute-chargeback"
+    ],
+    "brands": [],
+    "tags": [
+      "PAIN"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "TwentiesIndia",
+    "id": "1sfxlsk",
+    "author": "void_SW",
+    "title": "UPDATE 3 (FINAL): I finally got my ₹3 Lakh back for the RTX 5090 detergent scam! (And how I had to force the bank to do it)",
+    "body": "Hi guys. After weeks of fighting, and massive stress, I woke up this evening to the best notification ever. The full ₹2,99,995 has been credited back to my account.\n\n\n\nWe won. But the way this was resolved revealed something terrifying. Amazon didn't willingly refund me, and **my own bank’s** sheer incompetence almost cost me the dispute.\n\n\n\nIf you missed the previous posts, here is the short version of the absolute madness:\n\n\\- Ordered a ₹3 Lakh RTX 5090 on Amazon India (Fulfilled by Amazon).  \n\\- Received a 1.56kg packet of Ghadi detergent inside a tampered Gigabyte box.  \n\\- Amazon's shipping label literally said 1.56kg. Gigabyte India officially confirmed the real GPU box weighs around 3kg.  \n\\- I dug into the invoice and uncovered that the seller was using a fake 0% GST charge, a non-existent HSN code, and closed shell companies registered right near Amazon's Okhla warehouse.\n\n\n\nAfter my last post where I called out the \"fake refund\" and how both Amazon and my bank were just infinitely stalling, something finally broke.\n\nAmazon Executive Relations reached out to me directly. **This was the first and ONLY useful email Amazon sent me throughout this entire ordeal.** In it, they clearly stated that their payment processor (PayU) had actually initiated the chargeback reversal on March 23rd. They explained that once a chargeback is filed and confirmed by the processor, Amazon cannot issue a separate standard refund, because that would result in double the amount being credite",
+    "score": "4016",
+    "num_comments": "251",
+    "created_utc": "1775665253.0",
+    "permalink": "/r/TwentiesIndia/comments/1sfxlsk/update_3_final_i_finally_got_my_3_lakh_back_for/",
+    "clusters": [
+      "refund-mgmt",
+      "payment-recovery",
+      "dispute-chargeback"
+    ],
+    "brands": [
+      "payu"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "TwentiesIndia",
+    "id": "1rtgbs1",
+    "author": "void_SW",
+    "title": "HELP!! Ordered an RTX 5090 on Amazon for 3L, got scammed instead :)",
+    "body": "I ordered a Gigabyte GeForce RTX 5090 Windforce OC 32G on Amazon for 3L. The invoice lists the seller as MOHD KHALID in New Delhi. I accepted the delivery today.\n\nThe outer Amazon shipping bag was sealed. I opened it to find the Gigabyte box. The cardboard packaging showed a lot of physical damage, which already gave me a bad sign =. The manufacturer seals were broken. Clear packing tape covered the broken seals. An aftermarket barcode sticker was placed on the front.\n\nI opened the box. It contained bubble wrap surrounding a 1kg packet of Ghadi detergent powder. I mean WTF.\n\nI contacted Amazon customer support to request a full refund. I submitted the unboxing evidence and the invoices. They got my information and told me to wait.\n\nHelp me out please. What more should I do I do not know :(\n\nEDIT: logon ko scripted lag rha, reddit pe daalne ke liye cut kiya h abhi, bhai serious issue hai, also I had made the setup on my table cuz I wanted to film an unboxing video but 😭😭\n\nEdit pe Edit: To all concerned people I have contacted amazon and notified them and they have assured me that they are investigating the matter and would take them a couple of days, I've also initiated a chargeback on my debit card, and the bank has also said they are investigating the matter, so let's just hope things get sorted out as soon as possible\n\n  \nEDIT on 22nd march from amazon : [https://www.reddit.com/r/TwentiesIndia/comments/1s0low4/update\\_ordered\\_an\\_rtx\\_5090\\_for\\_3l\\_on\\_amazon\\_got/](https",
+    "score": "840",
+    "num_comments": "286",
+    "created_utc": "1773485351.0",
+    "permalink": "/r/TwentiesIndia/comments/1rtgbs1/help_ordered_an_rtx_5090_on_amazon_for_3l_got/",
+    "clusters": [
+      "refund-mgmt",
+      "dispute-chargeback"
+    ],
+    "brands": [],
+    "tags": [
+      "PAIN"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "LegalAdviceIndia",
+    "id": "1sdbbtf",
+    "author": "void_SW",
+    "title": "Need legal advice: Amazon India ₹3 Lakh GPU Scam: Fake GST, Shell Companies, and Stalling Refunds",
+    "body": "I guess you guys might have seen this blowing up on Twitter or other subreddits recently.\n\nI've also posted this update on twitter and Twenties India subreddit would really appreciate if you engaged with it:  \n[https://x.com/autocarrrot/status/2040854776452374944?s=20](https://x.com/autocarrrot/status/2040854776452374944?s=20)  \n[https://www.reddit.com/r/TwentiesIndia/comments/1sdage8/update\\_2\\_3l\\_rtx\\_5090\\_amazon\\_faked\\_a\\_refund\\_to/](https://www.reddit.com/r/TwentiesIndia/comments/1sdage8/update_2_3l_rtx_5090_amazon_faked_a_refund_to/)\n\nhere are the links to the older reddit and x posts:  \n[https://x.com/autocarrrot/status/2035727188075696291?s=20](https://x.com/autocarrrot/status/2035727188075696291?s=20)\n\n[https://www.reddit.com/r/TwentiesIndia/comments/1rtgbs1/help\\_ordered\\_an\\_rtx\\_5090\\_on\\_amazon\\_for\\_3l\\_got/](https://www.reddit.com/r/TwentiesIndia/comments/1rtgbs1/help_ordered_an_rtx_5090_on_amazon_for_3l_got/)  \n[https://www.reddit.com/r/TwentiesIndia/comments/1s0low4/update\\_ordered\\_an\\_rtx\\_5090\\_for\\_3l\\_on\\_amazon\\_got/](https://www.reddit.com/r/TwentiesIndia/comments/1s0low4/update_ordered_an_rtx_5090_for_3l_on_amazon_got/)\n\n\n\nThe short version:\n\nI ordered a ₹3 Lakh RTX 5090 graphics card on Amazon India (\"Fulfilled by Amazon\"). I received a 1.56 kg packet of Ghadi detergent inside a tampered GPU box. The Amazon shipping label literally says the package weighs 1.56 kg (the actual GPU weighs \\~3 kg).\n\n\n\nAmazon initially denied the refund. After my posts",
+    "score": "172",
+    "num_comments": "18",
+    "created_utc": "1775414210.0",
+    "permalink": "/r/LegalAdviceIndia/comments/1sdbbtf/need_legal_advice_amazon_india_3_lakh_gpu_scam/",
+    "clusters": [
+      "refund-mgmt",
+      "dispute-chargeback"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "IndicKnowledgeSystems",
+    "id": "1ssk5co",
+    "author": "Positive_Hat_5414",
+    "title": "The Kāśyapaśilpa and the Ritual Architecture of Brick: Prathamestakā, Garbhanyāsa, and Mūrdhestakā",
+    "body": "# \n\n# The Kāśyapaśilpa in the Śilpaśāstra Tradition\n\nThe Kāśyapaśilpa occupies a distinctive position within the vast corpus of Sanskrit technical literature devoted to sacred architecture. Attributed, as its name declares, to the primordial sage Kāśyapa — one of the Saptarṣis and among the most ancient of Vedic seers — the text belongs to the broad genre of śilpaśāstra, the normative literature governing the theory and practice of image-making, temple construction, iconometry, and the ritual protocols that bind material craft to cosmological order. Like many texts in this tradition, the Kāśyapaśilpa does not present itself primarily as a technical manual in the modern sense — a handbook of engineering specifications — but rather as a dharmaśāstric-adjacent work in which the physical act of building is inseparable from, and indeed constituted by, a dense network of ritual obligations, auspicious timings, mantra-recitation, and sacrificial logic. To construct a temple according to the norms of the Kāśyapaśilpa is simultaneously to perform a yajna, to enact a cosmogony, and to instantiate divine presence in matter.\n\nThe text is particularly important in the Āgamic architectural traditions of peninsular India, where it circulates alongside major śilpaśāstra works such as the Mānasāra, the Mayamata, the Viśvakarmīyam, the Samarāṅgaṇasūtradhāra, and the Tantrasamuccaya. While the Mānasāra and Mayamata have received considerable scholarly attention — particularly following the edit",
+    "score": "93",
+    "num_comments": "0",
+    "created_utc": "1776861181.0",
+    "permalink": "/r/IndicKnowledgeSystems/comments/1ssk5co/the_kāśyapaśilpa_and_the_ritual_architecture_of/",
+    "clusters": [
+      "fee-collection"
+    ],
+    "brands": [],
+    "tags": [
+      "WORKAROUND-BUILT"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "developersIndia",
+    "id": "1su6cxh",
+    "author": "JeanLuucGodard",
+    "title": "Would you use this App? Automated Expense Tracking. - Honest responses please.",
+    "body": "\\- You make a payment in any upi app.\n\n\\- App will automatically detect the payment and ask you to select the category of payment and optional notes (No need to open the app)\n\n\\- It will add the expense to the app\n\nI built this because I was using the Wallet app which is a good expense tracker. \n\nBut the problem was, every time I make a payment, I need to open the app, manually log it\n\nNow if I didn't add it right away, I often forget to add it at all.\n\nThe app I built solved this problem. Whenever you make a payment, it will automatically detect the payment amount and open a popup over any app / the screen. You just have to select the category and it's logged in the app.\n\nI know there are 1000s of expense trackers out there but I believe I did solve a problem which at least some of us face. Please give some honest responses.",
+    "score": "93",
+    "num_comments": "142",
+    "created_utc": "1777007661.0",
+    "permalink": "/r/developersIndia/comments/1su6cxh/would_you_use_this_app_automated_expense_tracking/",
+    "clusters": [
+      "automation-tool"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "IndiaBusiness",
+    "id": "1skjl05",
+    "author": "SoSaCandles",
+    "title": "I accidentally made a car freshener that helps with motion sickness and I want to explain why it works (from a perfumer's perspective)",
+    "body": "My mother cannot sit in the backseat of a car for more than 20 minutes without feeling sick. My niece throws up on every hill drive. Half the people in my customer base message me asking some version of \"what scent is safe for someone who gets nauseous in the car.\"\n\nI didn't set out to solve this problem. I set out to make a lemon car freshener. But in trying to get lemon right  really right  I ended up learning more about how smell interacts with a moving body than I expected to.\n\nThis is what I know now. First, why the wrong car fragrance makes motion sickness worse\n\nMotion sickness is already your brain in a state of conflict. Your inner ear is registering movement. Your eyes  especially in the backseat  aren't confirming it. Your brain gets confused signals and responds with nausea.\n\nNow add a strong scent to that.A powerful synthetic fragrance expanding in a hot, enclosed car doesn't just smell bad. It adds another layer of overwhelm to a nervous system that is already struggling to reconcile contradictory information. It's not that the smell is unpleasant. It's that your brain is already at capacity and the scent is one more thing demanding processing.\n\nThis is why people say \"I was fine until someone sprayed that thing.\" The spray itself triggered the cascade.\n\nIn Indian conditions specifically  and I test everything for Indian conditions because that's where my customers live  this problem is worse. A car parked in the sun reaches temperatures that cause most commerci",
+    "score": "45",
+    "num_comments": "27",
+    "created_utc": "1776105096.0",
+    "permalink": "/r/IndiaBusiness/comments/1skjl05/i_accidentally_made_a_car_freshener_that_helps/",
+    "clusters": [
+      "recon"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "SMB"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "ecommerce",
+    "id": "1rycqz7",
+    "author": "Easterncoaster",
+    "title": "Got my First Box of Rocks Today",
+    "body": "I’ve owned my e-comm company for a little under a year (in business since 2007, I bought it a year ago from the prior owner when I retired from my 9-5).\n\nWe do around 15-18k orders a year with around 10k on Amazon and the rest Woo or eBay.\n\nI’ve had some chargebacks and my blood always boils when they happen, but this is my first “box of rocks”. Sent back a product box but instead of the product it was some rocks.\n\nGuy was a hassle to deal with beforehand. Got my product ($82), said it wasn’t great and asks for a partial refund. I stupidly offered him $15 off. He accepted and I thought we were done. Then he comes back and asks to exchange it anyway. Wanted something cheaper ($70) so I figured I’d come out ahead. I did the trusting thing- I sent out a new product with a pre-paid envelope for him to return the first product. He could’ve just never returned it and honestly I would have forgotten about him- my processes aren’t great. But no- he used the return label (costing me another $6) to send me rocks.\n\nI still have $67 of his money, but I have to imagine he’ll be filing a chargeback for that since clearly he’s a scammer.  Will be funny though if I just get to keep his money since that’s probably roughly the COGS of the two items he stole.\n\nAnyway, just venting because I went out of my way to try to please him including doing the trusting thing. I’ve done 200 orders month to date so far but lost a lot of time on him and that’s probably the thing that makes me most angry.\n\nDo",
+    "score": "40",
+    "num_comments": "37",
+    "created_utc": "1773955134.0",
+    "permalink": "/r/ecommerce/comments/1rycqz7/got_my_first_box_of_rocks_today/",
+    "clusters": [
+      "refund-mgmt",
+      "dispute-chargeback"
+    ],
+    "brands": [],
+    "tags": [
+      "SCALE-INDICATOR"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1s8ubif",
+    "author": "Able-Confidence1610",
+    "title": "“Most ‘BPO Projects’ in India Are a Scam and No One Is Talking About It”",
+    "body": "If you are thinking about starting a BPO business in India, please read this before you invest even a single rupee.\n\nLike many others, I was exploring opportunities after seeing how stable and profitable the BPO industry has been for decades. Even today, despite all the noise around AI and automation, BPO is still very much in demand. It looks like a practical entry point for new entrepreneurs, especially those who want a structured, service based business.\n\nWhile searching online for projects, I started coming across multiple “consultants” offering data entry, form filling, and customer care projects. Everything looked perfect on paper. They claimed to be working with reputed companies. They had proper websites, GST registrations, social media presence, even office addresses. They spoke professionally, shared documents, agreements, and explained everything with confidence.\n\nTheir offer sounded safe. A refundable deposit. Fixed income. Simple work. No major risk. They made it sound like a plug and play business model where you just set up a small team and start earning from day one.\n\nI did have doubts. But honestly, the way these people present themselves, it becomes very difficult to question them. Everything looks clean, structured, and legitimate. That is exactly how they win your trust.\n\nI was almost convinced and very close to investing.\n\nBy pure luck, I got connected with someone who has decades of experience in the BPO industry. He patiently explained how these schemes",
+    "score": "36",
+    "num_comments": "7",
+    "created_utc": "1774978747.0",
+    "permalink": "/r/indianstartups/comments/1s8ubif/most_bpo_projects_in_india_are_a_scam_and_no_one/",
+    "clusters": [
+      "refund-mgmt",
+      "settlement-payout"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "SaaS-Agency"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "IndiaTax",
+    "id": "1stfg7w",
+    "author": "Time-Mix3963",
+    "title": "Is anyone else finding that employee reimbursements become a nightmare the moment your CA asks for proper documentation?",
+    "body": "I run a small operations team. About 10-12 people including drivers, technicians and field staff.\n\nDay to day expenses are tiny but constant. Fuel, meals on the road, spare parts, local travel. Individually these are ₹200, ₹500, ₹1,200 type transactions. But over a full year it quietly becomes a few lakhs of misc operational expenses.\n\nDidn't think much about it until this year when our CA started preparing documents before filing.\n\nFirst question he asked: can you show a clean trail for these reimbursements?\n\nThat's where things got messy.\n\nOur usual system was drivers pay from pocket and send bills on WhatsApp. Accounts reimburses every 10-15 days through bank transfer. Sometimes bills are clear. Sometimes half torn fuel slips. Sometimes nothing at all except \"fuel 800\".\n\nWhen CA started mapping these to ledger entries it was painful. For about ₹3.8L of fuel and travel reimbursements last year, nearly 20-25% of the bills were missing or unreadable. He kept asking about GST input credit, whether invoices were in company name, whether payment trail matched. In some cases reimbursement happened weeks after the expense so transaction date vs invoice date vs bank transfer date were all different.\n\nHis line was something like: if scrutiny ever happens explaining this pile will be annoying.\n\nThings we tried:\n\nPetty cash floats first. Give ₹10-20k to a supervisor and refill when finished. Even worse from documentation side. Receipts lost, handwriting everywhere, reconciliation take",
+    "score": "36",
+    "num_comments": "15",
+    "created_utc": "1776942039.0",
+    "permalink": "/r/IndiaTax/comments/1stfg7w/is_anyone_else_finding_that_employee/",
+    "clusters": [
+      "recon"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1sc2g41",
+    "author": "Tight_System_6439",
+    "title": "Clients not paying on time is slowly killing my business — and I'm too scared of \"ruining the relationship\" to do anything about it. Anyone else?",
+    "body": "I run a small digital marketing agency out of Bangalore — just me and 2 part-time people. Been doing this for 3 years. The work is good, clients are happy, I get referrals. But , getting paid on time? Completely different story.\n\nRight now I have 6 invoices pending. Total outstanding: ₹3.4L Oldest one is from 67 days ago. The client still replies to my work messages instantly — but the moment I send a payment reminder, suddenly they go \"seen\" mode on WhatsApp. Double blue ticks. Zero reply.\n\nThe worst part is I already paid GST on those invoices. I showed ₹3.4L as revenue in my GSTR-1. I paid tax on money I haven't actually received yet. So I'm financing my clients' business with my own pocket while my rent is due.\n\nEvery time I have to follow up I spend 30–40 minutes overthinking the message. Too aggressive → client gets offended and maybe doesn't renew. Too soft → they ignore it for another 15 days. I've had a client go 90 days and then act like I was being \"unprofessional\" for chasing him.\n\nI tried setting up automatic reminders from Zoho Invoice — but they're so generic and robotic that my clients know to ignore them. \"This is an automated reminder...\" Straight to trash.\n\nWhat I actually need is something that sounds like me, knows the history with each client, and automatically decides when to be gentle vs. firm — without me having to think about it at every step. Does this exist? Or am I just supposed to keep sending \"hi, just following up 🙏\" forever?   \n\n Should I buil",
+    "score": "34",
+    "num_comments": "24",
+    "created_utc": "1775286278.0",
+    "permalink": "/r/indianstartups/comments/1sc2g41/clients_not_paying_on_time_is_slowly_killing_my/",
+    "clusters": [
+      "fee-collection",
+      "automation-tool"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "SaaS-Agency"
+  },
+  {
+    "kind": "comment",
+    "subreddit": "",
+    "id": "of0z7qy",
+    "author": "TomorrowAdvanced2749",
+    "title": "",
+    "body": "Credit cards offer chargebacks which are taken more seriously compared to chargebacks for debit cards or netbanking payments.\n\n\nUPI chargebacks being the most complicated. \n\n\nAlso, in any issues, it being a credit card also means that money isn't directly debited from your account, but a credit account, and in 99% of the chargeback cases, banks would give a temporary credit until the investigation is over, so you don't have to pay back that amount till investigation is over. \n\n\nI've personally made 2 chargeback claims, once when an intl txn happened on my HDFC Credit card, and I was refunded the amount within 1 month or so, but I was given an interim credit till investigation was underway. \n\n\nThe other was with ICICI, where a domestic online transaction happened with no OTP confirmation, this shouldn't happen. International ones don't need OTP, but domestic ones (in India) need OTP or PIN for authentication. ",
+    "score": "30",
+    "num_comments": "",
+    "created_utc": "1775667327.0",
+    "permalink": "/r/TwentiesIndia/comments/1sfxlsk/update_3_final_i_finally_got_my_3_lakh_back_for/of0z7qy/",
+    "clusters": [
+      "refund-mgmt",
+      "dispute-chargeback"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "WatchEssenceIndia",
+    "id": "1srmb59",
+    "author": "Crazy-Pumpkin1942",
+    "title": "Preowned Watches for sale Timestamp [yes] Price [yes]",
+    "body": "I am a preowned watches reseller Currently based in udaipur (Rajasthan ), all watches are checked and working properly and properly serviced. All are value for money and provided at best of their prices.\n\n1. Citizen Automatic, Black dial Eagle 7, day date - 3399 INR\n\n2. Citizen Automatic, Day date grey dial with bracelet - 2300 INR\n\n3. Alwin Manual,  17 jewels - 1800 INR\n\n4. Citizen Automatic, Grey dial, Automatic , with leather strap - 1800 INR\n\n5. Timestar manual winding, - 1800 INR\n\n6. Citizen Automatic, Square All black dial, Am strap - 1450 INR\n\nAll prices are excluding shipping charges. Only prepaid orders. COD option is not there. Space for negotiations but no lowballs.\n\nShipping all over India and also worldwide. \n\nKindly ask for more details in dms. Thanks",
+    "score": "29",
+    "num_comments": "15",
+    "created_utc": "1776774795.0",
+    "permalink": "/r/WatchEssenceIndia/comments/1srmb59/preowned_watches_for_sale_timestamp_yes_price_yes/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "IndiaBusiness",
+    "id": "1orlwv4",
+    "author": "addiechavez",
+    "title": "I run a small Indian business and tried using foreign tools, but they didn’t really fit our market. What local alternatives do you recommend?",
+    "body": "I’ve been running a small D2C brand for about a year now, mostly apparel and accessories. When I started, I went all in on popular global tools because that’s what every “startup stack” list recommended: Shopify + Mailchimp + Stripe, etc.\n\nBut honestly? They’re not really built for how we operate here in India.\n\nHalf of them don’t support COD properly, customer addresses don’t match our PIN format, and payment gateways take ages for settlement. Plus, the pricing in USD hurts when you’re bootstrapped.\n\nSo I’m thinking of moving to a more “Bharat-first” tools that actually understand Indian logistics, payments, and communication.\n\nWould love your inputs on:\n\n* What local tools or platforms are you using for shipping, payments, or CRM?\n* Anything that integrates well with Shopify or WooCommerce?\n* Bonus if it helps with COD + GST invoicing too.\n\n\n\nLet’s build a list of Indian-made tools that actually make sense for Indian sellers.\n\n",
+    "score": "26",
+    "num_comments": "15",
+    "created_utc": "1762596884.0",
+    "permalink": "/r/IndiaBusiness/comments/1orlwv4/i_run_a_small_indian_business_and_tried_using/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [
+      "stripe",
+      "shopify"
+    ],
+    "tags": [],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "3dprintIndia",
+    "id": "1s57b6x",
+    "author": "prathameshbarik",
+    "title": "Electropi.in is a scam website - Don't order please.",
+    "body": "Placed an order, paid ₹5000 via UPI — but the product was never delivered. No response on calls or emails. Order status kept showing misleading updates for days -time, money , effort wasted.\n\n\n\nFrustrating experience totally !\n\nSharing this so other can do what i did to get back my money.\n\nWhat worked:\n\nFiled complaint on National Consumer Helpline (1915)\n\nReported on Cyber Crime (1930)\n\nRaised dispute/chargeback with bank (you can chatgpt this)\n\nEscalated to payment gateway(currently cashfree payments)\n\n\n\nKey insight:\n\nThe payment gateway confirmed the merchant had insufficient balance, which clearly indicated something was wrong.\n\n\n\nAfter all escalations, I finally got my refund.\n\n\n\nLesson:\n\nIf you ever face non-delivery after payment — don’t wait. Act fast and use all official channels.\n\n\n\nSharing this so others don’t feel stuck or helpless in similar situations.\n\n\n\n\\#ConsumerRights #UPI #OnlineFraud #Chargeback #India",
+    "score": "25",
+    "num_comments": "21",
+    "created_utc": "1774625242.0",
+    "permalink": "/r/3dprintIndia/comments/1s57b6x/electropiin_is_a_scam_website_dont_order_please/",
+    "clusters": [
+      "refund-mgmt",
+      "dispute-chargeback"
+    ],
+    "brands": [
+      "cashfree"
+    ],
+    "tags": [
+      "PAIN",
+      "CASHFREE-MENTION"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "smallbusinessindia",
+    "id": "1spsif4",
+    "author": "chudgayegururu",
+    "title": "How do you handle small daily expenses when your team is constantly on the road?",
+    "body": "I run a small appliance service business with 7 field technicians. We've gone through 3 different approaches to handling their expenses in the last 6 months. \n\nFirst 2 months we did the usual reimbursement model. Techs paid for fuel or small parts and sent bills on WhatsApp.\n\nIt quickly became messy. Receipts got lost, some claims came 2 weeks later, and our accountant spent hours reconciling ₹300–₹800 expenses.\n\nThen I tried giving weekly cash advances (₹3–4k each). That solved reimbursements but tracking usage was worse and month end was chaos.\n\nLooked at tools like Happay & fyle but most of them felt built around corporate cards.\n\nWhat worked better for us was testing UPI voucher style payments. We tried cotopay where you send some kind of UPI voucher that only works for fuel or parts. \n\nit's been almost a month so can't say long term but so far it's been better than what we had\n\nCurious how others here manage driver/technician expenses at small scale.",
+    "score": "24",
+    "num_comments": "11",
+    "created_utc": "1776604059.0",
+    "permalink": "/r/smallbusinessindia/comments/1spsif4/how_do_you_handle_small_daily_expenses_when_your/",
+    "clusters": [
+      "recon"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "SaaS-Agency"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "StartUpIndia",
+    "id": "1shhfef",
+    "author": "Ok_Assumption_5891",
+    "title": "Fake Cyber Crime Complaint Against our Startup",
+    "body": "Hi everyone, my name is Vishal, and I run an online gifting portal.\n\nI want to share something that happened with me this Valentine’s — and honestly, it has been one of the most frustrating experiences of my life.\n\nA customer placed an order worth ₹848 for flower delivery in Ludhiana. Later, we realized the delivery location was nearly 40 km outside the city — a completely non-serviceable area for us.\n\nWe immediately initiated a refund through Razorpay. As many of you know, such refunds take a few days to process.\n\nBut in the meantime, out of anger, the customer filed a cyber crime complaint against our company.\n\nAnd then… something shocking happened.\n\nTwo days ago, we suddenly found that our account, phone number — everything — had been frozen by the Cyber Crime Department.\n\nNo prior notice. No verification. Just a complete shutdown.\n\nWhen we contacted them, we were told to visit our local cyber crime police station. But there, we were told: “We can’t help. You need to go to Ludhiana, find the customer, and get the complaint withdrawn.”\n\nWe called the customer again.\n\nHis response? He admitted he filed the complaint in anger… and now he doesn’t even want to be involved anymore.\n\nBut the damage is already done.\n\nOur business is disrupted. Payments are blocked. Operations are affected.\n\nAnd the most shocking part?\n\nAt the police station, I saw more than 10 people standing there — elderly men, daily wage workers — all facing the same issue. Their accounts were frozen due to com",
+    "score": "24",
+    "num_comments": "15",
+    "created_utc": "1775812586.0",
+    "permalink": "/r/StartUpIndia/comments/1shhfef/fake_cyber_crime_complaint_against_our_startup/",
+    "clusters": [
+      "refund-mgmt"
+    ],
+    "brands": [
+      "razorpay"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN",
+      "RAZORPAY-MENTION"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "IndiaBusiness",
+    "id": "1sfy37t",
+    "author": "Slight_Mode8429",
+    "title": "Recovery agents called my retired dad because of my debt. that's why i do what i do now.",
+    "body": "I don't usually post like this but i keep seeing the same questions come up here so figured i'd just say it directly.\n\nfew years ago i was deep in debt myself. personal loans, credit cards, the whole mess. recovery agents called my retired father. banks treated me like garbage when i asked for help restructuring. nobody sat on my side of the table. my case went all the way to arbitration. i don't wish that on anyone.\n\nthat whole experience is why i started ExitDebt.in. not because i wanted to build a \"debt settlement company.\" settlement is actually the last resort, not the goal. sometimes people just need someone to sit with them, look at the numbers clearly, and figure out a path that doesn't involve settlement at all. but if it comes down to that, ya we handle it end to end.\n\nthe thing i noticed with most people who reach out, they're not stupid. they're just in a zone where they can't think straight anymore. the calls, the threats, the shame. when you're in that state you make bad decisions. you sign things you shouldn't, you ignore things that matter, you panic and do something that makes it worse. i've seen it happen too many times.\n\nso the first thing we do is make the harassment stop. not \"we'll send an email and hope for the best\" type. legally, properly, within days. and it actually stops. that alone changes everything because once your head is clear you can actually make decisions.\n\nfrom there it depends on what your situation actually needs. sometimes it's just re",
+    "score": "22",
+    "num_comments": "7",
+    "created_utc": "1775666281.0",
+    "permalink": "/r/IndiaBusiness/comments/1sfy37t/recovery_agents_called_my_retired_dad_because_of/",
+    "clusters": [
+      "payment-recovery"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "AsianParentStories",
+    "id": "1snuucg",
+    "author": "MarianKitty22",
+    "title": "It's my birthday and I feel like absolute shit",
+    "body": "I asked my dad for money for basic things like clothes, a form fee and some food. Around ₹6000 total. I don’t even ask for money throughout the year, literally just on my birthday. He straight up refused and said it’s “too much.”\n\nMeanwhile, he spends on my mom and sends money to my sister all the time. I don’t understand how it’s too much for me but fine for everyone else. It just makes me feel like I’m not a priority at all. He started saying shit like I want to kill him, I want to take money from him and suck him up dry. He told me to get rid of my cats and then he’ll give me the money. One of them is missing a leg, another one is just a baby still depending on milk. Like I have to choose between things I love and basic support.\n\nI already spent some of my own savings because I thought it would be okay, and now I just feel stupid and guilty on top of everything. I also had to use my own money for form filling for an exam. That's basic stuff but I'm still not getting it. I’m not even asking for luxury stuff. I’m not asking for expensive phones or makeup or anything. Just normal things. I ordered some things for Instagram to get them as cheaper as I can, something with no refund, return, cancellation policy. Idk what to do now\n\nIt just hurts. I feel unimportant, and I hate feeling dependent like this. I wish I didn’t have to rely on anyone. I want to run away somewhere, they really can't be my parents with this level of financial abuse + making me choose between something I ",
+    "score": "22",
+    "num_comments": "11",
+    "created_utc": "1776414087.0",
+    "permalink": "/r/AsianParentStories/comments/1snuucg/its_my_birthday_and_i_feel_like_absolute_shit/",
+    "clusters": [
+      "refund-mgmt"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "IndiaBusiness",
+    "id": "1srrhtk",
+    "author": "Time-Mix3963",
+    "title": "UPI Vouchers vs prepaid corporate cards -A practical & detailed comparison",
+    "body": "I've been going back and forth on this for weeks now and honestly I'm exhausted. We're a 40 person company, mix of field staff and office team. Our prepaid card setup has been giving us problems, POS failures in smaller towns, KYC delays for new hires, idle money sitting with the card provider. Started looking at UPI voucher based alternatives like CotoPay but couldn't find a single proper comparison anywhere. \n\nSo I just sat down and did the comparison myself. Sharing it here because I'm sure other people are stuck in the same spot. \n\n**Basics**\n\nUPI vouchers work on eRUPI / UPI rails so employees can use them through apps they already have like Google Pay or BHIM. No new app needed. Worth noting though that eRUPI isn't fully supported on all UPI apps yet. Google Pay and BHIM work fine but PhonePe is still catching up.\n\nPrepaid corporate cards run on Visa / Mastercard / RuPay and usually come as physical or virtual cards. In most cases employees need the provider's app for activation, PIN management, card controls etc.\n\n**Money flow**\n\nThis is probably the biggest difference.\n\nWith UPI vouchers money leaves the company account only when the employee actually transacts. Until then the funds stay in your own bank account. If the voucher expires unused the amount just gets auto-unblocked. No refund chase.\n\nWith prepaid cards money is usually gone from your account when you load the card balance. That means idle funds sit with the provider. If someone doesn't use the balance, re",
+    "score": "21",
+    "num_comments": "15",
+    "created_utc": "1776786200.0",
+    "permalink": "/r/IndiaBusiness/comments/1srrhtk/upi_vouchers_vs_prepaid_corporate_cards_a/",
+    "clusters": [
+      "refund-mgmt",
+      "recon"
+    ],
+    "brands": [
+      "phonepe"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "CreditCardsIndia",
+    "id": "1ssogs3",
+    "author": "No_Champion5239",
+    "title": "BANK OF BARODA DENIED CHARGEBACK DISPUTE AFTER WON THE DISPUTE",
+    "body": "I made a payment through Zuel Pay for an education fee using my credit card to bank, amounting to 14,799. When I did not receive the money within 2 days, I contacted the app but got no response. Then when I checked reviews on the Play Store, I found that it has scammed many people like me.\nAfter that, I raised a dispute, and the merchant even accepted it. But the problem is that the merchant’s account is negative, so they are unable to process the refund and asked me to raise a chargeback with the bank. I did that.\nHowever, Cashfree misled the bank and falsely claimed that I am associated with the merchant and trying to take wrongful advantage of the chargeback through the payment gateway. I have proof of all of this they have already accepted the Dispute they why are shifting it...even i have all the proof now they are denying that i was also invole in this fraud like this is just Rediculous i just did the payment  cuz there was feature on it..now what should i do",
+    "score": "21",
+    "num_comments": "20",
+    "created_utc": "1776870951.0",
+    "permalink": "/r/CreditCardsIndia/comments/1ssogs3/bank_of_baroda_denied_chargeback_dispute_after/",
+    "clusters": [
+      "refund-mgmt",
+      "fee-collection",
+      "dispute-chargeback"
+    ],
+    "brands": [
+      "cashfree"
+    ],
+    "tags": [
+      "CASHFREE-MENTION"
+    ],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "IsThisAScamIndia",
+    "id": "1pshuew",
+    "author": "Vast-Train1603",
+    "title": "The e-commerce scam alert \"Readytobuy (dot) in\"",
+    "body": "The e-commerce portal \"Readytobuy (dot) in\"  is running a simple e-commerce scam. I have paid ₹999.00 to learn lessons in e-commerce diligence. I would like to share the leasons. First let me break down the scam below\n\n1) Advertise a product usually not available in India on Instagram/Facebook, below the market price.\n\n2) Offer COD, return & refund\n\n3) Ship some garbage from same product category, nowhere near close to what was ordered in quality and appearance. \n\n4) You accept COD and pay the delivery person, they don't offer open box delivery, you don't care as you can return or request refund later. \n\n5) You open box and realize you have received complete garbage. You reach out to customer support for refund or return, they ignore your message. Three days pass, window of requesting a refund or return expires.\n\n6) They pocket your money, you are left with overpriced garbage. \n\nLessons : -\n\n1) Return/ Refund guarantee doesn't mean anything to an unknown e-commerce portal. \n\n2) COD does inspire confidence but it's useless in absence of open box delivery.\n\n3) Affiliation with Shopify and e-kart doesn't mean e-commerce portal is reputable.\n\n4) If a product or its similar alternative is not available on other major e-commerce portals e.g. Amazon, Flipkart etc. that product most likely is not available in India or anywhere else. They use promotional videos from China and AI made pics of non-existent products. \n\n",
+    "score": "20",
+    "num_comments": "3",
+    "created_utc": "1766353151.0",
+    "permalink": "/r/IsThisAScamIndia/comments/1pshuew/the_ecommerce_scam_alert_readytobuy_dot_in/",
+    "clusters": [
+      "refund-mgmt",
+      "RTO"
+    ],
+    "brands": [
+      "shopify"
+    ],
+    "tags": [],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "evaaratech",
+    "id": "1sudnbz",
+    "author": "lordkira3",
+    "title": "EVAARA TECH SCAM EXPOSED? 🤯GALAXY S25 ULTRA VIA COD OPEN BOX DELIVERY✈️✈️",
+    "body": "SAMSUNG GALAXY S25 ULTRA 📱\n\nDelivered in Bangalore within 24 hours✈️✈️⚡\n\nWith COD & Open Box Delivery 🔥\n\nAT UNBEATABLE RECORD BREAKING PRICES - EXCLUSIVE WITH EVAARA TECHNOLOGY\n\nAnother super happy customer 🔥🚀\n\nGrab your favorite smartphones at crazy prices 💯\n\n✔️ COD Available\n\n✔️ Open Box Delivery (No risk, full check, pay after checking, 100% satisfaction)\n\n📦 Delivering happiness all across India 🇮🇳\n\nOrder yours now\n\n📞 74831-62093",
+    "score": "19",
+    "num_comments": "0",
+    "created_utc": "1777031937.0",
+    "permalink": "/r/evaaratech/comments/1sudnbz/evaara_tech_scam_exposed_galaxy_s25_ultra_via_cod/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1snwtzb",
+    "author": "jeettank",
+    "title": "Gen Z founders of Reddit — how many apps do you use to run your business?",
+    "body": "I'll start: I spoke to 20 young founders this week and the average was 8 different apps. WhatsApp for customers, Excel for money, Canva for design, Linktree for bio, Razorpay for payments, Notion for tasks… the list goes on.\n\n\n\nNothing talks to each other. Everything is manual. I'm trying to understand if this is a widespread problem before I build anything.\n\n\n\nQuick questions if you're a Gen Z founder (18-28) running any kind of business:\n\n\n\n1. How many tools/apps do you use to run your business daily?\n\n2. What's the one thing that wastes the most time?\n\n3. If one app replaced all of them, what's the first feature you'd want?\n\n\n\nNot selling anything. Not pitching anything. Just trying to understand the problem before I build a solution. Every response genuinely helps.",
+    "score": "18",
+    "num_comments": "32",
+    "created_utc": "1776420989.0",
+    "permalink": "/r/indianstartups/comments/1snwtzb/gen_z_founders_of_reddit_how_many_apps_do_you_use/",
+    "clusters": [
+      "whatsapp-flow"
+    ],
+    "brands": [
+      "razorpay"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "WORKAROUND-BUILT",
+      "RAZORPAY-MENTION"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1sjfyvm",
+    "author": "rajnandan1",
+    "title": "Stuck at zero sales for my Bangalore plant startup. Need a reality check on conversion and trust.",
+    "body": "Hey everyone, I recently launched my brand Florantia. We are a local business based in Bangalore focusing on indoor and balcony plants. I handle the inventory and local delivery myself, so this is not a dropshipping model.\n\nI have been running Meta ads and successfully driving traffic. People are landing on the pages and browsing, but I am still at zero sales.\n\nI am trying to figure out where I am losing people. To get my first few customers, I am currently running a 75 percent discount, but I am starting to wonder if this is actually hurting my trust factor. In a market where people are wary of scams, does a massive discount make the business look fake?\n\nI would appreciate some honest feedback on a few points:\n\n1. **Trust.** Does the site (florantia dot com) look like a legitimate local business or a generic template?\n2. **Payment Friction.** I am using Razorpay. For those who have scaled in India, do you find that certain payment methods or \"Cash on Delivery\" are mandatory to get that first sale?\n3. **The Discount.** Should I scrap the 75 percent off and go with a more realistic 10 to 15 percent?\n4. **Logistics.** Since I only deliver in Bangalore, is it a turn-off if that isn't the first thing people see?\n\nI am not looking for sales here and I'm not linking the site directly to avoid spam filters. If you want to take a look and give me a teardown, please search for **florantia dot com** or let me know and I can share the link in the comments.\n\nI just need to understand wha",
+    "score": "17",
+    "num_comments": "12",
+    "created_utc": "1776003984.0",
+    "permalink": "/r/indianstartups/comments/1sjfyvm/stuck_at_zero_sales_for_my_bangalore_plant/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [
+      "razorpay"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN",
+      "RAZORPAY-MENTION"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "ShopifyeCommerce",
+    "id": "1qu8hvw",
+    "author": "adventurepaul",
+    "title": "What's new in e-commerce? 🔥 Week of Feb 2nd, 2026",
+    "body": "Hi [r/ShopifyeCommerce](https://www.reddit.com/r/ShopifyeCommerce/) \\- I'm Paul and I follow the e-commerce industry closely for my Shopifreaks E-commerce Newsletter. Every week for the past 5 years I've posted a summary recap of the week's top stories on this subreddit, which I cover in depth with sources in the full edition. Let's dive in to this week's top e-commerce news...\n___\n**STAT OF THE WEEK:** Law enforcement requests for TikTok user information increased nearly 8,000% between 2019 and 2025, according to TikTok's annual Information Requests Report. The United States not-surprisingly led with the highest volume of total inquiries with 5,570 total requests, followed by Germany with 5,078 requests, the United Kingdom with 2,957 requests, and France with 2,344 requests. On the bottom of the request list, India, Iceland, Iraq, and several other countries had 1 request, while Cambodia, Vietnam, Philippines, Nigeria, and several other countries only had 2 requests.\n___\n**Meta** plans to launch agentic shopping tools and new AI models in the coming months as it leverages user data to personalize commerce. Mark Zuckerberg said on a recent earnings call, \"New agentic shopping tools will allow people to find just the right set of products from the businesses in our catalog.\" Investors have previously criticized Meta for failing to clearly state how its massive AI investments will translate to the company's bottom line, but Zuckerberg made it clear on the call that the AI lab's",
+    "score": "17",
+    "num_comments": "4",
+    "created_utc": "1770068141.0",
+    "permalink": "/r/ShopifyeCommerce/comments/1qu8hvw/whats_new_in_ecommerce_week_of_feb_2nd_2026/",
+    "clusters": [
+      "refund-mgmt",
+      "dispute-chargeback"
+    ],
+    "brands": [
+      "stripe"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "WORKAROUND-BUILT",
+      "PAIN"
+    ],
+    "persona": "EdTech"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "Entrepreneurs",
+    "id": "1subxsr",
+    "author": "athousand_miles",
+    "title": "UPI & Card-led employee expense management :Mistakes to avoid",
+    "body": "Writing this because I've made every mistake on this list personally.\n\nIf you're running a business and handing employees petty cash, prepaid cards, bank transfers, UPI transfers here's what you need to have in place before it stops being a headache:\n\n1. Category limits defined per role\n\nNot a single \"petty cash limit\" for everyone. A field sales executive has different expense needs than a warehouse staff member. Define what each role can spend on and how much per category per month. Without this, any system you build will have exceptions that kill the efficiency.\n\n2. Pre-approval vs. post-approval clarity\n\nDecide which categories need pre-approval (client entertainment above ₹X) and which are auto-approved within the limit (daily meals, local travel). Most systems fail because they require pre-approval for everything nobody follows it, so the process becomes theater.\n\n3. A payment method that creates an automatic audit trail\n\nCash is the worst option because it creates no automatic record. Even UPI transfers are better. Best: category-locked digital vouchers where the restriction is enforced at point of sale tools like CotoPay do this over UPI. Every transaction is categorized automatically without asking employees to do anything.\n\nOne thing I’ll add: **Separate tools for separate team types works better.** A field sales team and an office team have completely different spending patterns. One tool rarely fits both well. Prepaid cards like Zaggle or Enkash work better for of",
+    "score": "17",
+    "num_comments": "9",
+    "created_utc": "1777026847.0",
+    "permalink": "/r/Entrepreneurs/comments/1subxsr/upi_cardled_employee_expense_management_mistakes/",
+    "clusters": [
+      "recon"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "LegalAdviceIndia",
+    "id": "1sv2rjy",
+    "author": "fundmycase-India",
+    "title": "Has anyone in India successfully fought a landlord who illegally occupied their property using litigation finance?",
+    "body": "Been researching this for the past few hours after a situation a close family friend is dealing with. Their property worth several crores has been illegally occupied by the landlord they gave possession to under a leave and licence agreement. The landlord simply refused to vacate, started claiming ownership, and has now engaged lawyers to delay proceedings indefinitely.\n\nThe legal position is apparently clear the title is intact, the original agreement is registered, and the occupation has no legal basis. The problem is the sheer cost of fighting it. Property litigation in Indian courts is expensive and slow. Filing for an injunction alone costs money. Sustained representation through multiple hearings over potentially years costs more. And since the property is occupied and not generating any rent or income, the owner is simultaneously losing money every month while spending more to fight.\n\nWhat I stumbled onto while researching is that litigation finance third-party case funding is apparently available in India for exactly this kind of dispute. A company funds your entire legal case upfront. Lawyer fees, court costs, injunction applications everything. In exchange they take a share of the recovery if you win. If you lose, you owe them nothing.\n\nThis feels like it would be genuinely transformative for Indian claimants in property occupation cases where the legal merit is strong but the financial capacity to fight is limited. Property encroachment legal funding seems like a n",
+    "score": "14",
+    "num_comments": "2",
+    "created_utc": "1777093216.0",
+    "permalink": "/r/LegalAdviceIndia/comments/1sv2rjy/has_anyone_in_india_successfully_fought_a/",
+    "clusters": [
+      "payment-recovery"
+    ],
+    "brands": [],
+    "tags": [
+      "PAIN"
+    ],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "WatchEssenceIndia",
+    "id": "1smxadn",
+    "author": "Crazy-Pumpkin1942",
+    "title": "Preowned Vintage Watches for sale Timestamp [yes] Price [yes]",
+    "body": "&#x200B;\n\nI am a preowned watches reseller Currently based in udaipur (Rajasthan ), all watches are checked and working properly and properly serviced. All are value for money and provided at best of their prices.\n\n1. Citizen Automatic, Black dial Eagle 7, day date - 3399 INR\n\n2. Citizen Automatic, Day date grey dial with bracelet - 2300 INR\n\n3. Alwin Manual,  17 jewels - 1800 INR\n\n4. Citizen Automatic, Grey dial, Automatic , with leather strap - 1800 INR\n\n5. Timestar manual winding, - 1800 INR\n\n6. Citizen Automatic, Square All black dial, Am strap - 1450 INR\n\n7. Titan incabloc Swiss movement inside - 1400 INR \n\nAll prices are excluding shipping charges. Only prepaid orders. COD option is not there.\n\nShipping all over India and also worldwide. \n\nKindly ask for more details in dms. Thanks",
+    "score": "13",
+    "num_comments": "2",
+    "created_utc": "1776327258.0",
+    "permalink": "/r/WatchEssenceIndia/comments/1smxadn/preowned_vintage_watches_for_sale_timestamp_yes/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "ShopifyeCommerce",
+    "id": "1qhgsbh",
+    "author": "adventurepaul",
+    "title": "What's new in e-commerce? 🔥 Week of Jan 19th, 2026",
+    "body": "Hi r/ShopifyeCommerce - I'm Paul and I follow the e-commerce industry closely for my Shopifreaks E-commerce Newsletter. Every week for the past 5 years I've posted a summary recap of the week's top stories on this subreddit, which I cover in depth with sources in the full edition. Let's dive in to this week's top e-commerce news...\n___\n**STAT OF THE WEEK:** *The Information* reports that despite Big Tech companies like Meta, Microsoft, Alphabet, and Amazon making sweeping job cuts in recent years, their headcounts are almost collectively back to their COVID peaks. Amazon had 1.54M workers in late 2022 and 1.578M in Sep 2025, Alphabet had 190,700 employees in Mar 2023, and 190,167 in Sep 2025, Meta had 87,314 employees in Sep 2022, and 78,450 in Sep 2025, and Microsoft had the same 228,000 workers in June 2025 as it did a year earlier at its peak. The layoffs looked dramatic, but in practice the companies have mostly reshuffled roles rather than shrinking.\n___\nTo the surprise of absolutely no-one, **OpenAI** has officially announced that it will begin testing ads within its ChatGPT Go and Free plans within the next few weeks, which it says is so that “more people can benefit from our tools with fewer usage limits or without having to pay.” ChatGPT Go, its most cost effective plan, launched in India in Aug 2025 for $8/month and has since rolled out to 171 countries, including the U.S. last week. OpenAI says that the ads won’t influence the answers ChatGPT gives you, but instead",
+    "score": "12",
+    "num_comments": "3",
+    "created_utc": "1768856842.0",
+    "permalink": "/r/ShopifyeCommerce/comments/1qhgsbh/whats_new_in_ecommerce_week_of_jan_19th_2026/",
+    "clusters": [
+      "refund-mgmt",
+      "payment-recovery"
+    ],
+    "brands": [
+      "stripe"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "india",
+    "id": "1sm66ab",
+    "author": "Emergency-Pay-8393",
+    "title": "Amazon Shipping has been holding Rs 7,618 of my COD money for 50 days. 5 failed disbursements. RBI complaint. Consumer court. Still nothing. Anyone else faced this?",
+    "body": "*I run a small e-commerce business in Kerala using Amazon Shipping for COD orders. Since February 26, 2026 Amazon has been collecting cash from my customers but refusing to remit it to my bank account.*\n\n*Here's the timeline of what has happened:*\n\n*Feb 26 — Rs 2,800 remittance marked \"Payment Failed\"* *Mar 1 — Rs 745 remittance marked \"Payment Failed\"* *Mar 7 — Rs 4,073 remittance marked \"Payment Failed\"* *Mar 6 onwards — Their bank update portal completely broken, loops back to same page* *Mar 25 — They give me a UTR number saying payment sent. Bank confirms nothing received.* *Apr 7 — Their team manually adds my Federal Bank account and confirms disbursement. Still nothing credited as of today.*\n\n*Total: 5 failed disbursements. Every time they confirm payment. Every time nothing arrives.*\n\n*Additionally an approved shipping claim of Rs 1,400 was settled with Rs 0.01. Not a typo. Zero point zero one rupees.*\n\n*What I have done:* *- Filed 2 RBI Ombudsman complaints (both closed saying ASSPL is outside RBI purview)* *- Filed consumer court complaint at Pathanamthitta District Commission (active)* *- Escalated to Amazon Grievance Officer, multiple support cases, Amazon Pay team* *- Emailed Amazon India senior leadership*\n\n*While all this is happening Amazon is threatening to suspend my account for a Rs 479 invoice — while withholding Rs 9,018 from me.*\n\n*Their own team members (Seya Sen, Mohsin Akhtar, Haarshini Sundararaman) have acknowledged the failure in writing multiple t",
+    "score": "12",
+    "num_comments": "3",
+    "created_utc": "1776259806.0",
+    "permalink": "/r/india/comments/1sm66ab/amazon_shipping_has_been_holding_rs_7618_of_my/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [],
+    "tags": [
+      "PAIN"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "Kerala",
+    "id": "1stem18",
+    "author": "ExpertInfo916",
+    "title": "Mum got scammed by a Facebook clothing page- need advice!",
+    "body": "My mother came across a clothing page on Facebook while watching reels. The page was called “***Zimalbyjunaida Zimaltm***” and was posting attractive dress videos.\n\nShe decided to order one piece and paid ₹700 via UPI. After the payment, the seller asked for an additional ₹300 claiming it was required for delivery to Thrissur.\n\nAt this point, she asked them to cancel the order and refund the money. Instead of responding, they blocked her on WhatsApp.\n\nWhen I checked, I found that:\n\n* The videos they were using were actually taken from \"*NESA Boutique*\"\n* The address they provided is fake\n* They are running this as a scam using a UPI ID to collect payments\n\nTotal amount lost is ₹700.00. I have the UPI transaction details, screenshots of chats, and the page.\n\nI understand the amount is small, but I don’t want to ignore this.\n\nLooking for:\n\n* Anyone who has dealt with similar scams in Kerala\n* What actions actually worked (bank, cybercrime, police, etc.)\n* Any realistic way to recover the money or at least get the account/page taken down\n\nThis seems like a repeated scam setup, so any practical advice would help.",
+    "score": "9",
+    "num_comments": "11",
+    "created_utc": "1776939363.0",
+    "permalink": "/r/Kerala/comments/1stem18/mum_got_scammed_by_a_facebook_clothing_page_need/",
+    "clusters": [
+      "refund-mgmt"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "shopify",
+    "id": "1s223fz",
+    "author": "_mavricks",
+    "title": "Starting to get fraud orders",
+    "body": "Hey all  \nBeen running ads to my store and starting to get fraud orders that are getting through payments from other countries.\n\n  \nFor example, the last order that happened, the fraudster used three different cards where the on the third it made it through  but Shopify flagged it as high fraud.\n\nI only accept shipping within the United States but the they charged the card in India.  \nIs there a way to not accept international payments within settings?\n\nFor Fraud Prevention in Shopify payments, should I use the automated rule that Shopify has?  \nOr should I go further and select the two options within that setting?  \n\\- Decline charges that fail CVV verification  \n\\- Decline charges that fail AVS postal code verification",
+    "score": "8",
+    "num_comments": "39",
+    "created_utc": "1774320749.0",
+    "permalink": "/r/shopify/comments/1s223fz/starting_to_get_fraud_orders/",
+    "clusters": [
+      "dispute-chargeback"
+    ],
+    "brands": [
+      "shopify"
+    ],
+    "tags": [],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "FulfillmentByAmazon",
+    "id": "1s8948m",
+    "author": "SirWellenDowd",
+    "title": "PSA Junglescout changed our default feedback rules without consent, check yours.",
+    "body": "A few years back we setup JungleScout to handle clicking the review button automation. We had the basic plan to allow us to do this because we wanted to filter out refunded orders from being sent feedback (since customers were unhappy with it). We set it to 30 days since that's enough time for a customer to get an order contact us for any issues and then return it if they were unhappy. \n\nLately we noticed an uptick in our negatives (maybe in the last few months). Turns out, Junglescout put the 30 day window behind a higher tier plan and decided to reduce our existing functionality from 30 days to 5 days (which is arguably the most stupid window to check for refunds). We were not notified nor do I see any email from them mentioning that our existing feedback functionality was changing. I tried looking through their release notes, but nothing.\n\nNow understandably I could have missed this BIG update somewhere along the line, but I am sure I am not the only one. \n\nI am absolutely livid with them, but I wanted to make sure other people checked theirs if they use it.",
+    "score": "7",
+    "num_comments": "4",
+    "created_utc": "1774919052.0",
+    "permalink": "/r/FulfillmentByAmazon/comments/1s8948m/psa_junglescout_changed_our_default_feedback/",
+    "clusters": [
+      "refund-mgmt"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "IndiaBusiness",
+    "id": "1so9agh",
+    "author": "JobMuted6602",
+    "title": "Small biz owners — how do you actually handle GST filing? Genuinely curious about what's broken",
+    "body": "Hey biz owners,\n\n\n\nTech student here. I'm doing research before starting something in the tax/compliance space and I want to understand the ground reality — not what CA firms or software companies say, but what actually happens for small business owners.\n\n\n\nA few things I'm trying to understand:\n\n\n\n\\- Do you file GST yourself or through a CA? If CA — how do you share data with them (Excel, WhatsApp, drive link)?\n\n\\- Have you ever gotten a notice because of a mismatch you didn't even know about? What happened?\n\n\\- Is the GSTN portal actually usable now or still a nightmare?\n\n\\- What do you pay your CA monthly for GST compliance? (rough range is fine)\n\n\\- Is there something you wish you could just check yourself without calling your CA?\n\n\n\nI'm not building anything yet — genuinely just trying to understand where the real pain is. Most tools seem to be built for big companies. Curious what's missing for the 5-50 employee business.\n\n\n\nDrop even a one-line answer, it helps a lot. 🙏",
+    "score": "7",
+    "num_comments": "15",
+    "created_utc": "1776450469.0",
+    "permalink": "/r/IndiaBusiness/comments/1so9agh/small_biz_owners_how_do_you_actually_handle_gst/",
+    "clusters": [
+      "whatsapp-flow"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "SaaS-Agency"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "MarketingMentor",
+    "id": "1rfgkit",
+    "author": "sadstepbro69",
+    "title": "We stopped COD after massive RTO losses, now orders have almost died. Is it trust, brand, product, or ads? Need brutal feedback.",
+    "body": "(AI Rephrased text below btw)\n\nI run a small streetwear clothing brand in India and I’m trying to understand what’s actually broken in my business.\n\nLet me know what data is safe to post here so yall can check, should i post csv of perfomance marketing, social media engagement report, shopify repott, website and instagram handle?\n\nOctober:\n\nWe were doing COD.\n\nResult = heavy RTO, cancellations, fake/low-intent orders.\n\n₹2L gross → barely any real profit after returns, shipping, and losses.\n\nSo we stopped full COD and moved to partial COD / prepaid focus.\n\nNow:\n\nOrders have dropped massively.\n\nSo I’m stuck in this situation:\n\n\t•\tWhen I allow COD → I get orders but many are fake or get RTO\n\n\t•\tWhen I restrict COD / use partial COD → I get very few orders\n\nSo clearly something deeper is wrong.\n\n⸻\n\nI’m trying to understand what the real issue is:\n\nIs it:\n\n\t•\tTrust problem? (people don’t trust a new brand enough to prepay)\n\n\t•\tBrand awareness / fame problem? (no familiarity yet)\n\n\t•\tProduct problem? (design, fit, quality not strong enough)\n\n\t•\tPerceived value problem? (price vs what people think they’re getting)\n\n\t•\tGenuinity problem? (brand doesn’t feel real or established)\n\n\t•\tTransparency problem? (delivery, returns, sizing not clear enough)\n\n\t•\tAds / traffic problem? (wrong audience coming in)\n\nOr is it a combination of all of these?\n\n⸻\n\nCurrent positioning\n\n\t•\tStreetwear / slightly premium casual\n\n\t•\tOnline only\n\n\t•\tSmall, growing brand\n\n\t•\tTrying to build a premium feel, not",
+    "score": "7",
+    "num_comments": "7",
+    "created_utc": "1772127140.0",
+    "permalink": "/r/MarketingMentor/comments/1rfgkit/we_stopped_cod_after_massive_rto_losses_now/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [
+      "shopify"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "IndiaBusiness",
+    "id": "1serczu",
+    "author": "rip71de",
+    "title": "Dealing with messy payment reconciliation — how do you guys handle this?",
+    "body": "I’ve been running into this problem and it’s starting to get really frustrating.\n\nWe get a lot of payments directly into the bank (UPI / transfers), and matching them to the right customer or invoice is way more manual than I expected.\n\nTypical issues:\n\n* Names in bank don’t exactly match customer names\n* No clear reference or invoice ID in many payments\n* Same amounts from multiple customers\n* Partial payments or split payments\n\nEnd result is:\n\n* A lot of time going through statements\n* Cross-checking in Excel / Tally\n* Sometimes having to call customers to confirm\n\nCurious how others are handling this at scale:\n\n* Do you just live with the manual process?\n* Any workflows or tools that actually make this easier?\n* Or is this just one of those “painful but accepted” parts of operations?\n\nWould love to hear how you’re dealing with it.",
+    "score": "6",
+    "num_comments": "8",
+    "created_utc": "1775555130.0",
+    "permalink": "/r/IndiaBusiness/comments/1serczu/dealing_with_messy_payment_reconciliation_how_do/",
+    "clusters": [
+      "recon"
+    ],
+    "brands": [],
+    "tags": [
+      "PAIN"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "dropshipping",
+    "id": "1r7w416",
+    "author": "Zealousideal_Bit1166",
+    "title": "Is Dropshipping in India Still Profitable in 2026?",
+    "body": "I’ve been researching dropshipping in India for the past few months and wanted to share a realistic breakdown.\n\nMost YouTube videos say:  \n“Zero investment, easy money.”\n\nBut ground reality is different.\n\nFrom what I’ve understood, dropshipping in India works only if 3 things are handled properly:\n\n1. Product selection (high demand + manageable competition)\n2. Reliable Indian supplier (fast shipping + COD support)\n3. Automation (order sync, tracking updates, RTO management)\n\nManual processing becomes a mess after 20–30 orders per day.\n\nAlso, many beginners ignore:\n\n* RTO cost (huge factor in India)\n* Ads cost per order\n* Marketplace fees\n* Account health risk\n\nExample calculation I ran:\n\nProduct cost: ₹400  \nSelling price: ₹799  \nAfter marketplace fees, shipping, ads & RTO buffer → profit margin becomes much tighter than people think.\n\nSo it’s not “easy money” — it’s a system-based business.\n\nWould love to hear from people already doing Amazon or Shopify dropshipping in India.\n\nWhat’s your average margin?  \nHow do you manage RTO?",
+    "score": "6",
+    "num_comments": "3",
+    "created_utc": "1771398069.0",
+    "permalink": "/r/dropshipping/comments/1r7w416/is_dropshipping_in_india_still_profitable_in_2026/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [
+      "shopify"
+    ],
+    "tags": [
+      "SCALE-INDICATOR"
+    ],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "IndiaBusiness",
+    "id": "1or285e",
+    "author": "Ecstatic_Stress_25",
+    "title": "How courier aggregation is quietly transforming small eCommerce operations in India 🇮🇳",
+    "body": "One thing most small and mid-scale online businesses in India struggle with — shipping efficiency.\nDifferent courier partners have different rates, delivery zones, and reliability levels.\nManaging them separately eats into both profit margins and customer experience.\n\nRecently came across Shipneer, a courier aggregation platform designed for Indian sellers and D2C brands.\nIt integrates multiple courier partners into one dashboard and helps automate most logistics tasks.\n\nSome features that stood out:\n📦 Unified dashboard for rate comparison & booking\n🚚 AI-based courier selection by performance in each region\n💰 COD & RTO management to reduce losses\n⚙️ Integrations with Shopify, WooCommerce, and custom stores\n📊 Real-time tracking & performance analytics\n\nFor small business owners trying to scale online operations, tools like this remove a big operational bottleneck.\nWorth checking out if you handle your own shipping: 👉 www.shipneer.com\n",
+    "score": "6",
+    "num_comments": "0",
+    "created_utc": "1762540189.0",
+    "permalink": "/r/IndiaBusiness/comments/1or285e/how_courier_aggregation_is_quietly_transforming/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [
+      "shopify"
+    ],
+    "tags": [],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "ecommerce",
+    "id": "1sc5sac",
+    "author": "top10talks",
+    "title": "I'm losing money due to fake RTO & Weight Descripency. Tried Delhivery, Bluedart, Shiprocket, each has been disappointing. Is there any good courier/aggregator left in India?",
+    "body": "Delhivery lost a parcel and RTO is through the roof. \n\nBlueDart plays weight discrepancy games every single shipment. Shiprocket somehow manages to be the worst of both, highest RTO and weight issues.\n\n.RTO literally eats my margins alive.\n\nSomeone please tell me there's a courier out there that doesn't suck. What's actually working for you?",
+    "score": "5",
+    "num_comments": "2",
+    "created_utc": "1775298514.0",
+    "permalink": "/r/ecommerce/comments/1sc5sac/im_losing_money_due_to_fake_rto_weight/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [
+      "shiprocket"
+    ],
+    "tags": [
+      "PAIN"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "StartUpIndia",
+    "id": "1sk6nvj",
+    "author": "thebuyhive",
+    "title": "Sourcing for your startup? These are 4 things you should get right",
+    "body": "Hi everyone, quick intro.\n\nI have spent over 20 years working in sourcing and supplier management across global markets and I keep noticing these issues from early stage founders...supplier issues, margins disappearing and eating into profits. The thing is,   \n  \nEven though much of my background is in large scale procurement, the same principles apply to startups and D2C brands, especially when importing or working with third party manufacturers. only difference is scale. In startups, mistakes show up as cash flow pressure, increased returns, bad reviews, and wasted ad spend.\n\n# lesson 1:  the product price is not your real cost.\n\nOne thing that trips many founders up is confusing product price with total cost. Many compare only the quoted price and treats it as final. One supplier quotes ₹510 and another quotes ₹560, and it feels obvious to go with the lower number. But your real cost is much more than that. It includes shipping, defect rates, delivery time, refund rates, customer support time, payment gateway fees, and even ad cost volatility. If delivery is inconsistent or quality fluctuates even slightly, your return rate can increase by just a few percentage points and that alone can wipe out your margin. Cheaper unit price does not mean better margins.\n\n\n\n# Lesson 2: know who you’re sourcing from.\n\nAnother common issue is not knowing  who you are working with. Many  assume they are dealing directly with a manufacturer, when in reality it might be a trader, sourcing age",
+    "score": "5",
+    "num_comments": "2",
+    "created_utc": "1776075544.0",
+    "permalink": "/r/StartUpIndia/comments/1sk6nvj/sourcing_for_your_startup_these_are_4_things_you/",
+    "clusters": [
+      "refund-mgmt"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "GamingLaptops",
+    "id": "1sqxp7m",
+    "author": "ItsAishik",
+    "title": "$1200 USA — Gaming laptop for Everyday Use",
+    "body": "**Budget:**  $1200USD\n\n**Country:** USA\n\n**Use case:** I'm in no need of getting a full power card because I bought Minecraft Deluxe Edition just the day before, and i will be running it with shaders like 8x or 16x,COD-MW3,Fortnite,Roblox,GTA-V,Valorant and do AI/ML on the laptop and coding.\n\n**Preferred specs :** HP Omen 16(Standard)-Ryzen AI 9 365, RTX 5070-8GB,16GB DDR5-5600mt,2K 165hz,83Wh,Shadow Black-$1199\n\nHP Omen Transcend 14-Intel Core Ultra 7 255H, RTX 5060-8GB,32GB DDR5-7600mt,3K OLED IMAX Enhanced Certified,71Wh,Ceramic White-$1199\n\n**Notes:** These are the prices recorded in Black Friday. My relative from USA will bring it for me during December 2026-April 2027 and get it to India. It will be a present from my grandfather when I graduated to Class 8 in April 2027. Laptops are not allowed in school either so I will be using it my house but I still need battery life for on-the-go. I can also extend the warranty. I'm upgrading from a Asus Vivobook 15 X510UF-i5 8250U/MX130 12GB-DDR4-2400mhz, 1TB HDD-5400rpm which was painfully slow especially during Windows Updates, which is my father's laptop.",
+    "score": "5",
+    "num_comments": "0",
+    "created_utc": "1776709106.0",
+    "permalink": "/r/GamingLaptops/comments/1sqxp7m/1200_usa_gaming_laptop_for_everyday_use/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "EdTech"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "hmtforsale",
+    "id": "1spl3d6",
+    "author": "Crazy-Pumpkin1942",
+    "title": "For Sale- HMTs Timestamp [yes] Price [yes]",
+    "body": "I am a preowned watches reseller Currently based in udaipur (Rajasthan ). All watches are checked and properly serviced within 2 months period. All are value for money and provided at best of their prices.\n\n1. Hmt Chetan ( og dial & bracelet,) - 1699 INR\n\n2. HMT Pilot Black and Blue dial (AM dial and am strap) - 1750 INR\n\n3. HMT Janata Red (AM dial & AM Strap) - 1750 INR\n\n4. Timestar dress watch ( 17 jewels Manual) - 1800\n\n5. HMT Gautam ( Og dial & AM strap ) - 1399 INR\n\nCondition - HMT Gautam and Chetan are with their og dials condition of watch are 7.5/10 and giving time properly. Timestar has it's OG Dial and condition 9.5/10. Other have Aftermarket (am) dials and these are of high quality not a cheap build, so those who love to wear hmts but want some vibrant colours on their wrist then they can go for them. These are Lovely pieces. Condition wise 10/10 (as they are new). \n\nAll prices are excluding shipping charges. Only prepaid orders. COD option is not there.\n\nShipping all over India and also worldwide. \n\nKindly ask for more details in dms. Thanks",
+    "score": "5",
+    "num_comments": "0",
+    "created_utc": "1776579826.0",
+    "permalink": "/r/hmtforsale/comments/1spl3d6/for_sale_hmts_timestamp_yes_price_yes/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "TeenHerIndia",
+    "id": "1sv2l1w",
+    "author": "AdOrdinary6731",
+    "title": "Title: Savana Refund Issue: Tampered Package & \"Non-Returnable\" Innerwear Policy",
+    "body": "Hi everyone, I need some advice on dealing with Savana (clothing app).\n\nThe Issue:\n\nI ordered a set of innerwear which is almost 900rs (I'm still a high school student so 900 is a huge amount for me). When the delivery arrived, I wasn't home, so my parents collected it. Upon seeing the package I noticed the adhesive seal was torn and it was resealed using heat seal(I've received products from savana before and they always do adhesive seal, so I thought it was suspicious and just took a photo of it before opening it) and the inner transparent bag was unzipped and half the content was outside the transparent bag. I was honestly disgusted especially since it was an innerwear, I didn't even try it on and directly messaged them on their chat box, after a while I connected with a human.\n\nSavana originally refused the return, claiming innerwear is \"non-returnable.\"\n\nAfter I pressured them about the tampered packaging and threatened to go to the Consumer Forum, they approved the return. The pickup is scheduled to understand 3-5 days\n\nThe Problem:\n\nThey emailed me telling me to \"Update Bank Details\" in the app for my COD refund, but the option literally does not exist in my app UI. I have emailed them my bank account number, IFSC, and UPI ID manually, but I keep getting automated emails that ignore my manual input.\n\nMy Questions:\n\nAm I safe handing over the item even if the app hasn't confirmed my bank details yet?\n\nHas anyone else successfully gotten a COD refund from Savana via manu",
+    "score": "5",
+    "num_comments": "0",
+    "created_utc": "1777092653.0",
+    "permalink": "/r/TeenHerIndia/comments/1sv2l1w/title_savana_refund_issue_tampered_package/",
+    "clusters": [
+      "refund-mgmt",
+      "RTO"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "dropship",
+    "id": "1rv56lp",
+    "author": "ProofSuspicious2999",
+    "title": "How many new creatives should I test a month",
+    "body": "I am really stuck at this situation now as of now i am running 65 creatives ( 60 video and 5 posters)  at ₹15L/month spend on meta ( $16500 USD)  — how many new creatives should I be testing? Right now I'm adding about 2-3 new creatives per week (roughly 10-12 new creative/month) and removing the bad performing which is giving lower ROAS then break even but like last month also not alot of creatives were bad performing so i turned off only 6 old creatives and still launched 14 new one which increased my creative number i have found 2 best angles and creating creatives in that angle only butI feel like this is still holding back my scaling \n\nFor those running at this level or higher — how many fresh creatives are you testing each month? Is there a number that actually moves the needle?\n\nAlso a specific India question: given how bad the COD situation has gotten (fake orders, high RTOs), is it even worth scaling aggressively? Or does the volume of junk orders just eat into your margins and make it pointless?\nWould love to hear from Indian D2C folks at this scale, but open to anyone who's figured out the creative testing side of things.\n\nAnd sorry my native language is not english so just let it go if you found mistake in my grammar in spell 😅",
+    "score": "4",
+    "num_comments": "7",
+    "created_utc": "1773654811.0",
+    "permalink": "/r/dropship/comments/1rv56lp/how_many_new_creatives_should_i_test_a_month/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [],
+    "tags": [
+      "PAIN"
+    ],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "ecommerce",
+    "id": "1sdq3b7",
+    "author": "top10talks",
+    "title": "Help Me...Bleeding money to fake RTO & weight discrepancies. Tried Delhivery, Blue Dart & Shiprocket, all disappointing. Are there any reliable couriers/aggregators left in India?",
+    "body": "RTO is eating my margins alive. Delhivery loses parcels, BlueDart plays games with weight discrepancies every time, and Shiprocket is somehow the worst of both. Someone please tell me there's a courier out there that doesn't suck. What’s actually working for you?",
+    "score": "4",
+    "num_comments": "4",
+    "created_utc": "1775453550.0",
+    "permalink": "/r/ecommerce/comments/1sdq3b7/help_mebleeding_money_to_fake_rto_weight/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [
+      "shiprocket"
+    ],
+    "tags": [
+      "PAIN"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "ecommerce",
+    "id": "1qwknrx",
+    "author": "BigSmokeBeats",
+    "title": "How to Pay Pakistani Manufacturer",
+    "body": "Hi,\n\nI’ve run into an issue with getting my business off the ground. By the title I guess you might already have figured it out. Here’s some background to add context to the issue.\n\nI found a manufacturer through Alibaba to manufacture my clothing. I was upfront with them from the beginning that payments must be made using Alibaba’s trade assurance - to protect both parties.\n\nThrough many iterations of the product, we’ve finally come to the stage where I’m ready to make a substantial deposit to begin the large production. The seller (based in Pakistan) is pleading with me to reconsider my payment method. The seller would like a direct wire transfer. They are a reputable company by what I can tell. But we’ve been burned in the past, and don’t want to take another chance. I’m insisting on paying through Trade Assurance, but it’s causing a bottleneck in our progress. The seller claims that Alibaba will convert the payment into Rupees, charge extra fees, and create problems in respect to customs for the them.\n\nNot sure what to do. Do others have experience paying Pakistani manufactures? Is it reasonable to rely on the seller to fulfill their end of the agreement with no way to ask for a refund if the seller decides to ghost? Not sure if we should stick to our guns and insist on Trade Assurance or maybe suggest something else.\n\nIf anyone has any insight, please share.\n\nThanks!",
+    "score": "4",
+    "num_comments": "12",
+    "created_utc": "1770296466.0",
+    "permalink": "/r/ecommerce/comments/1qwknrx/how_to_pay_pakistani_manufacturer/",
+    "clusters": [
+      "refund-mgmt"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "Entrepreneur",
+    "id": "1sc4e21",
+    "author": "shivmbaba",
+    "title": "Would you pay for an AI tool that handles startup compilance/legal stuff?(India-focused)",
+    "body": "Hey everyone,\n\nI'm exploring a buisness idea and would love honest feedback from founders who've been through the early stage grind.\n\nThe problem I see : \n\n* Every Indian Startup I know (including mine) struggles with:\n* Figuring out which compilance applies to them (GST?PF?shops Act?professional tax? No clue where to start)\n* choosing the right buisness structure(LLP vs PVT Ltd) vs Partnership - each has divfferent implications\n* Missing out on Govt Schemes\n* paying 15k to 30k ruppes to CA/Lawyers for basic questions that could be answered quickly\n* Getting hit with penalties for missing filling deadlines they don't know about\n\nWhat i am considering building:\n\nAn Ai-powered platform(think ChatGPT meets legal avisor) that :    \n\nAnalyzes your buisness and tells you exactly which registerations/compilance you need  \n\nMatches you with relevant goverenment schemes \n\nGenerates basic legal documents(NDAs agreements etc)\n\nSends automated reminder for filling deadlines \n\nAnswers compilance questions 24/7\n\nConnects you with verified CA/Lawyers only when actually needed\n\nMy Questions ?\n\n1. Would you actually use this? Or do you prefer just calling your CA when needed?\n2. What's the biggest compliance headache you've faced? What made it painful?\n3. How much would you pay for something like this monthly?\n4. Trust factor: Would you trust AI for legal guidance, or does it need human verification?\n5. What features would make this a must-have vs nice-to-have?",
+    "score": "4",
+    "num_comments": "28",
+    "created_utc": "1775293353.0",
+    "permalink": "/r/Entrepreneur/comments/1sc4e21/would_you_pay_for_an_ai_tool_that_handles_startup/",
+    "clusters": [
+      "automation-tool"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "StartUpIndia",
+    "id": "1so9fhg",
+    "author": "memayankpal",
+    "title": "Is anyone building an Indian alternative to Whoop?",
+    "body": "&#x200B;\n\nI’ve been thinking about this lately. We’ve seen a pattern in India where founders take strong international consumer products and adapt them really well for the Indian market (often cheaper, sometimes even better localized).\n\nSo I’m curious, has anyone here come across an Indian company trying to build something like Whoop?\n\nNot just a generic smartwatch or fitness band, but specifically:\n\n\\- Screenless / low-distraction wearable\n\n\\- Focus on recovery, strain, sleep, HRV\n\n\\- Strong analytics + coaching layer\n\n\\- Maybe even a subscription model (though not sure that works in India)\n\nFrom what I’ve seen so far, most Indian players seem to be going in slightly different directions:\n\n\\- Smart rings (Ultrahuman, etc.)\n\n\\- Regular fitness bands (Noise, boAt, etc.)\n\n\\- Or just apps without deep hardware integration\n\nBut I haven’t seen a true “Whoop-style” product built in India yet.\n\nIs anyone here tracking this space closely or aware of startups working on it (even in stealth)?\n\nWould love to hear thoughts, especially whether:\n\n1. This is even viable in India (given pricing + subscription resistance)\n\n2. Or if the smarter move is to build software on top of existing devices",
+    "score": "4",
+    "num_comments": "7",
+    "created_utc": "1776450752.0",
+    "permalink": "/r/StartUpIndia/comments/1so9fhg/is_anyone_building_an_indian_alternative_to_whoop/",
+    "clusters": [
+      "payment-recovery"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "EdTech"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "UPI",
+    "id": "1sukwey",
+    "author": "ArpitDEVELOPER",
+    "title": "Support Needed: Friend's GPay temporarily suspended (automated bot flag). Bank is safe, but I'm anxious! 😭🆘",
+    "body": "Body:\n\n​Hi everyone, I really need some advice and someone to help me calm down because my anxiety is currently through the roof. 😭💔 I am a 17-year-old student. 🧑‍🎓\n\n​The Context: 📱💸\n\nI run a small side hustle on Telegram (selling social media services like followers, likes, and premium app subscriptions). 🚀 Since I am a minor and don't have a full merchant setup, a very good friend of mine allowed me to receive my customer payments on his Google Pay UPI ID. 🤝 He never asked for a single rupee of commission; we just used to settle the amounts at night. 🫂\n\n​What Happened Today: ⚠️\n\n​Morning: 🌅 I received two small customer payments (₹150 and ₹160) within a 25-minute interval on his GPay. 💸\n\n​Afternoon (Around 1:00 PM): 🕒 A customer messaged me a screenshot showing \"Invalid UPI ID\" when trying to pay. ❌ I thought he was faking it, but another customer reported the exact same issue. 😟\n\n​My Testing: 🔍 I tried sending ₹10 to his GPay UPI ID from my FamApp, and it immediately failed, saying \"Invalid UPI ID.\" 🚫 After 2-3 hours, his GPay QR and UPI ID completely stopped detecting. I was terrified and thought his entire bank account got frozen because of me. 🥶😨\n\n​The Relief: 😮‍💨 I then tested by sending money to his PhonePe UPI ID (which is linked to the exact same SBI bank account), and the payment went through instantly! ✅✨\n\n​The Reality: 📞 I called my friend to explain that his GPay UPI just got unlinked. But when he opened his GPay, he started panicking and told me it says: \"Your ",
+    "score": "4",
+    "num_comments": "31",
+    "created_utc": "1777048637.0",
+    "permalink": "/r/UPI/comments/1sukwey/support_needed_friends_gpay_temporarily_suspended/",
+    "clusters": [
+      "automation-tool"
+    ],
+    "brands": [
+      "phonepe"
+    ],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "LegalAdviceIndia",
+    "id": "1sfra0z",
+    "author": "TechJustice_2026",
+    "title": "How I Won a Fraud Dispute Against Unboxify: A Step-by-Step Victory Guide (April 2026)",
+    "body": "The Situation:\n\nI bought headphones from Unboxify, but the invoice was \"not legitimate.\" When I asked for a proper one, the merchant tampered with their website (edited my order history and warranty terms) to try and trick me. Here is how I beat them in just 4 days.\n\n​The Timeline of Victory:\n\n​April 4, 2026: I stopped arguing with the merchant and filed a formal Chargeback/Dispute with my father’s bank (IndusInd Bank).\n\n​The Evidence: I sent a PDF to the bank with:\n\n​The \"Kill Shot\": An official email from the brand owner (Brandeyes/Skullcandy) confirming the invoice was fake and wouldn't be accepted for warranty.\n\n​The Tampering Proof: \"Before and After\" screenshots of the website. I used Yellow Boxes to highlight exactly where they changed the text to cheat me.\n\n​April 8, 2026 (Today): VICTORY. The bank’s Grievance Redressal team reviewed my proof and issued a \"Temporary Credit.\" The money is back on the card.\n\n​⚠️ **THE #1 LESSON: YOUR PAYMENT METHOD IS YOUR SHIELD**\n\n​If you buy from \"Open Box\" or new websites in India, listen to this:\n\n​ONLY USE CREDIT CARDS: This victory was only possible because we used a Credit Card. Credit cards allow for a \"Chargeback.\"\n\n​VISA or MASTERCARD ONLY: These networks have the strongest fraud protection in the world. They force the merchant to prove they are honest.\n\n​AVOID UPI & DEBIT CARDS: In India, UPI is fast for paying, but it is the worst for refunds. Once you pay via UPI or Debit, the money is gone from your savings, and the bank ",
+    "score": "4",
+    "num_comments": "2",
+    "created_utc": "1775650955.0",
+    "permalink": "/r/LegalAdviceIndia/comments/1sfra0z/how_i_won_a_fraud_dispute_against_unboxify_a/",
+    "clusters": [
+      "refund-mgmt",
+      "dispute-chargeback"
+    ],
+    "brands": [],
+    "tags": [
+      "PAIN"
+    ],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "LegalAdviceIndia",
+    "id": "1q2kmkk",
+    "author": "Suspicious-Bat2393",
+    "title": "Scammed by an Instagram page and shopify website",
+    "body": "So I was randomly scrolling instagram and saw a page by name @billions\\_market\\_sale promoting a Buy one get one free offer on Vapes.\n\nThere was a shopify website by name VapeBillion from where I ordered a COD order of Elfbar Raya D3 25000 puffs hoping I would open and check the order before payment. This order was placed on 26th December 2025.\n\nIt got delivered on 1st of January 2026 wherein my mom received the parcel in my absence and paid the Delhivery guy 1090₹ and told me when I was back. I opened the parcel immediately only to find two bottles of wart remover in them. \n\nI feel cheated and there is no way to contact the seller. How to proceed to get my refund. I have all the evidences, opening of the box and order packet where it is written clear description of the correct order.",
+    "score": "4",
+    "num_comments": "7",
+    "created_utc": "1767413453.0",
+    "permalink": "/r/LegalAdviceIndia/comments/1q2kmkk/scammed_by_an_instagram_page_and_shopify_website/",
+    "clusters": [
+      "refund-mgmt",
+      "RTO"
+    ],
+    "brands": [
+      "shopify"
+    ],
+    "tags": [],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1sfzief",
+    "author": "Ok-Zucchini-3498",
+    "title": "Built an AI medical scribe for Indian doctors (working prototype) — looking for validation before scaling",
+    "body": "We're solving a problem most Indian doctors face daily: consultations happen in Hindi, Tamil, Kannada — but hospitals expect English SOAP notes.\n\nDoctors spend 2–3 hours/day just on documentation.\n\nWhat we've built:\n\n- Records consultation, auto-generates SOAP notes in English\n\n- Supports all major Indic languages + code-mixing\n\n- Separates doctor vs. patient voice automatically\n\n- ABHA patient identity integration\n\nWhere we're going next — post-discharge care:\n\n95% of a patient's health journey happens outside the clinic. Only 31% of Indian discharge notes contain full continuity-of-care info. Readmission\n\nrisk drops 48% with a 7-day follow-up — nobody is doing this at scale.\n\nOur next layer: use the consultation transcript to generate personalised AI check-ins via WhatsApp. Not generic reminders — questions based on that\n\npatient's diagnosis, flagging deterioration early.\n\nOther problems in the pipeline:\n\n- AI triage to fight patient misinformation before appointments\n\n- Digital consent (still paper in India)\n\n- Fragmented patient records across hospitals\n\nMarket: 101M diabetics, 315M hypertensives, NCDs = 63% of India's mortality. No structured post-discharge loop exists for most patients.\n\nTargeting private clinics + mid-size hospitals first (₹499–999/month per doctor).\n\nAnyone in Indian healthtech here? What's been your biggest GTM blocker?",
+    "score": "3",
+    "num_comments": "6",
+    "created_utc": "1775669259.0",
+    "permalink": "/r/indianstartups/comments/1sfzief/built_an_ai_medical_scribe_for_indian_doctors/",
+    "clusters": [
+      "whatsapp-flow"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "ShopifyeCommerce",
+    "id": "1sqquua",
+    "author": "No_Classic_3888",
+    "title": "What’s the best way to handle international payments for a Shopify store from India?",
+    "body": "I’m trying to understand what most Indian Shopify stores use for international payments.\n\nCurrently evaluating options like Stripe, PayPal, Wise etc., but a bit confused about:\n\n* total fees (including FX)\n* settlement delays\n* any issues with payment holds or compliance\n\nFor those already selling internationally:\n\n* what are you using today?\n* anything you wish you knew earlier?\n\nWould really appreciate real experiences.",
+    "score": "3",
+    "num_comments": "2",
+    "created_utc": "1776695030.0",
+    "permalink": "/r/ShopifyeCommerce/comments/1sqquua/whats_the_best_way_to_handle_international/",
+    "clusters": [
+      "settlement-payout"
+    ],
+    "brands": [
+      "stripe",
+      "shopify"
+    ],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "StartUpIndia",
+    "id": "1snqpbg",
+    "author": "Intelligent-Bite8121",
+    "title": "What GST filing mistakes have cost your business the most?",
+    "body": "GST compliance seems simple until mistakes start costing money better and noticed that a lot of businesses make similar mistakes that end up costing them penalties or notices.\n\nSome common ones I found:\n\n* Missing return deadlines\n* Claiming incorrect Input Tax Credit (ITC)\n* Invoice mismatches\n* Differences between GSTR-1 and GSTR-3B\n* Not reconciling data regularly\n\nFor small businesses, even small errors can become a big issue later.\n\nWould love to hear real experiences—what GST mistakes have you made or seen in startups?",
+    "score": "3",
+    "num_comments": "0",
+    "created_utc": "1776400344.0",
+    "permalink": "/r/StartUpIndia/comments/1snqpbg/what_gst_filing_mistakes_have_cost_your_business/",
+    "clusters": [
+      "recon"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "developersIndia",
+    "id": "1rzlfdq",
+    "author": "Pritom14",
+    "title": "I built an open-source chaos engineering tool for testing payment webhook handlers",
+    "body": "\n**Update (v0.6):** Added webhook resilience testing - the features you actually need before going to production.\n\n- `--webhook-repeat 5` - fires each webhook 5 times to test idempotency. Does your handler process a payment once or five times?\n- `--webhook-order random` - shuffles webhook delivery order. Gateways don't guarantee order.\n- `--webhook-signature missing` - strips signatures. Does your handler actually verify them? \n- `carbon-replay <run-id>` -  re-fire webhooks from any previous run. Regression testing after code changes.\n- `--ci` - exit code 1 if any webhook returned 5xx or timed out .Drop it into your CI pipeline.\n\n4 new India specific scenarios: UPI timeout, VPA not found, mandate rejection, settlement delay.\n\n11 scenarios, 5 gateways (Razorpay, Stripe, Cashfree, Juspay), webhook resilience testing. Still free, Apache 2.0.\n\n`pip install carbon-layer`\n\n\n\\----\n\n**Update**\n\n**v0.5.1 is out** \\- Carbon layer now supports **Juspay** alongside Razorpay, Stripe, and Cashfree.\n\nJuspay's webhook format is quite different from others : Basic Auth instead of HMAC signing, everything under `content.order`, no dispute API(dashboard-only). The adapter handles all of it.\n\n- **Juspay** : `Authorization: Basic...` (Basic Auth)\n\n```\ncarbon run dispute-spike --provider juspay --juspay-merchant-id your_mid --webhook-url https://localhost:8000/webhooks\n```\n\n\\----\n\n**Update**\n\n**v0.4 is out** \\- Carbon Layer now supports Stripe and Cashfree in addition to Razorpay. Each provider ge",
+    "score": "3",
+    "num_comments": "4",
+    "created_utc": "1774078534.0",
+    "permalink": "/r/developersIndia/comments/1rzlfdq/i_built_an_opensource_chaos_engineering_tool_for/",
+    "clusters": [
+      "refund-mgmt",
+      "settlement-payout",
+      "dispute-chargeback"
+    ],
+    "brands": [
+      "cashfree",
+      "razorpay",
+      "stripe"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN",
+      "CASHFREE-MENTION",
+      "RAZORPAY-MENTION"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "PhysicsWallah",
+    "id": "1ssru3j",
+    "author": "Impressive-Term6548",
+    "title": "Batch access REVOKED after 1 month? Paid ₹9,999, received modules, but now app says \"Failed\"! Help!",
+    "body": "Hi everyone, I’m facing a major issue with my Neev 2027 (Class 9th) Infinity Pro batch and looking for help/visibility.\n\nThe Situation:\n\nI paid ₹9,999 on March 15th via UPI (Transaction ID: 109388186114).\n\nThe payment was successful, and I already received the physical study modules and kit 20 days ago.\n\nSuddenly, my batch access has been stopped. The \"My Purchases\" section is now showing \"Failed\" for recent dates, even though the money was deducted in March and never refunded.\n\nHow can a payment \"fail\" a month later AFTER the books have already been delivered to my house? I’ve tried raising tickets but the character limit is too small to explain this mess.\n\nIf anyone from the PW team is seeing this, please fix my access. My studies are being affected",
+    "score": "3",
+    "num_comments": "2",
+    "created_utc": "1776878110.0",
+    "permalink": "/r/PhysicsWallah/comments/1ssru3j/batch_access_revoked_after_1_month_paid_9999/",
+    "clusters": [
+      "refund-mgmt"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "EdTech"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "ecommerce",
+    "id": "1qpdz3v",
+    "author": "Best-Average4539",
+    "title": "Handling failed payment retries",
+    "body": "Card expiration and insufficient funds happen all the time. I need a system that automatically retries failed payments intelligently.\n\nFor international payments, I see Razorpay international has smart retry. Is the logic built in, or do you have to set that up manually?\n\nWhat's been your experience with recovering failed subscription payments?",
+    "score": "2",
+    "num_comments": "6",
+    "created_utc": "1769613126.0",
+    "permalink": "/r/ecommerce/comments/1qpdz3v/handling_failed_payment_retries/",
+    "clusters": [
+      "payment-recovery",
+      "automation-tool"
+    ],
+    "brands": [
+      "razorpay"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "RAZORPAY-MENTION"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1s9qvbr",
+    "author": "ShowApprehensive3769",
+    "title": "Indian creators selling via Telegram/WhatsApp + UPI, what’s the biggest pain?",
+    "body": "I’ve noticed a lot of people selling:  \n• paid communities  \n• cohort courses  \n• trading groups  \n• templates / AI tools / bots\n\nMost are using some combo of:  \nUPI links + Google Forms + Telegram + manual onboarding\n\nCurious:\n\n* what breaks the most?\n* payments?\n* managing users?\n* discovery?\n* refunds?\n* taxes?\n\nTrying to understand if this is just messy but “fine”, or actually painful enough to switch.\n\nWould love brutally honest answers.",
+    "score": "2",
+    "num_comments": "6",
+    "created_utc": "1775063774.0",
+    "permalink": "/r/indianstartups/comments/1s9qvbr/indian_creators_selling_via_telegramwhatsapp_upi/",
+    "clusters": [
+      "refund-mgmt"
+    ],
+    "brands": [],
+    "tags": [
+      "PAIN"
+    ],
+    "persona": "EdTech"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "smallbusinessindia",
+    "id": "1srh6k5",
+    "author": "hrithikpahuja21",
+    "title": "Getting a lot of add to carts but barely any orders need honest advice",
+    "body": "Hey everyone,\n\nI’ve been working on a small online clothing brand for the past couple of months (mainly oversized t-shirts starts from  ₹699), and I’m a bit stuck right now.\n\nI’ve been running some ads and getting traffic, and the weird part is — people are actually showing interest.\n\nRough numbers:\n\n100+ add to carts\n\nbut only 2 orders so far\n\nSo something is clearly breaking in between.\n\nI’ve been checking session recordings and it looks like people:\n\nbrowse properly\n\nspend time on product pages\n\nadd items to cart\n\nand then just… leave\n\nI’ve already tried improving a few things based on what I could think of:\n\nadded some reviews (even included one with an image)\n\nadded COD, returns, trust badges, etc.\n\nremoved extra charges and made pricing more straightforward\n\nadded a WhatsApp option in case someone needs help\n\nBut still no real change in conversions.\n\nAt this point I’m honestly not sure if:\n\nit’s just a trust issue since the brand is new\n\npricing feels too high for a first-time buyer\n\nor I’m missing something obvious in the checkout experience\n\nIf anyone here has built something similar or dealt with this stage before, what actually helped you move from “interest” to “actual purchases”?\n\nWould really appreciate any thoughts or even guesses at this point.\n\nThanks 🙏",
+    "score": "2",
+    "num_comments": "11",
+    "created_utc": "1776758559.0",
+    "permalink": "/r/smallbusinessindia/comments/1srh6k5/getting_a_lot_of_add_to_carts_but_barely_any/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN",
+      "SCALE-INDICATOR"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "StartUpIndia",
+    "id": "1sv4b9q",
+    "author": "Bagha_boy89",
+    "title": "Built payout accuracy infrastructure — struggling to reach fintech CTOs. What worked for early customer discovery?",
+    "body": "Built RegInfra — infrastructure that sits in a payout system and catches wrong deduction amounts before money moves.  \n  \nThe problem it solves: payout systems make deduction decisions on every contractor or vendor payment. Some of those decisions are wrong. Most platforms find out when a contractor disputes it or when they discover a financial exposure months later.  \n  \nWe prevent the wrong deduction from leaving the account. Every decision documented at payment time.  \n  \nTwo independent senior practitioners validated the problem unprompted this week. Product is live.  \n  \nStruggling to get in front of fintech CTOs and payroll platform product heads efficiently. Cold LinkedIn has been slow.  \n  \nFor founders who have sold B2B infrastructure or developer tools — what actually worked for early customer discovery? Specific channels or approaches that got you past the gatekeeper.  \n  \nHappy to share what I have learned about payout accuracy in India if useful to anyone building in adjacent areas.  \n  \n",
+    "score": "2",
+    "num_comments": "0",
+    "created_utc": "1777098219.0",
+    "permalink": "/r/StartUpIndia/comments/1sv4b9q/built_payout_accuracy_infrastructure_struggling/",
+    "clusters": [
+      "settlement-payout"
+    ],
+    "brands": [],
+    "tags": [
+      "PAIN"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "StartUpIndia",
+    "id": "1sipqmi",
+    "author": "Motor-Macaroon-213",
+    "title": "Need Investment for Fintech startup",
+    "body": "&#x200B;\n\nDon’t miss the opportunity to be part of a startup solving a real, large-scale problem that will only grow — irrespective of market conditions.\n\nInformal lending never stops.\n\nIndia still runs a massive portion of credit through trust, WhatsApp chats, and manual follow-ups — with no structure, automation, or reliable recovery layer.\n\nMarket context:\n\n$200B+ – friends & family lending (Le’Udhaar)  \n\n$250–300B – vendor / khata / business credit cycles (Le’Credit)  \n\nLarge unstructured demand – MSMEs, startups & individuals needing documentation and legal support (Le’Legally)\n\nTogether, this is a massive and underserved ecosystem.\n\n\\---\n\nWhat we’re building:\n\nA fintech infrastructure layer bringing structure, automation, and recovery workflows to informal and semi-formal credit.\n\n\\- UPI AutoPay mandates  \n\n\\- Smart reminders & calling workflows (no “bhai paisa kab dega”)  \n\n\\- Micro-debit discipline (core USP)  \n\n\\- AI-assisted MoU / agreement drafting  \n\n\\- Optional legal escalation support  \n\nOur recovery flow:\n\nAuto-debit → reminders/calling → micro-debits → legal (if required)\n\nWe are seeing that \\~70–80% of cases can be resolved before legal escalation.\n\n\\---\n\nOn-ground validation:\n\nThe product is shaped through real-world validation across vendors, hospitality businesses, and cafés where khata/credit cycles actively operate.\n\nFlows are designed for practical usage, easy onboarding, and minimal behavior change.\n\n\\---\n\nWhy now:\n\nBe it growth cycles, downturns, or u",
+    "score": "2",
+    "num_comments": "1",
+    "created_utc": "1775929633.0",
+    "permalink": "/r/StartUpIndia/comments/1sipqmi/need_investment_for_fintech_startup/",
+    "clusters": [
+      "payment-recovery",
+      "whatsapp-flow"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "StartUpIndia",
+    "id": "1seluhm",
+    "author": "crazy_donke45",
+    "title": "For solo devs launching and prototyping ios + android apps -  What's your legal and financial setup ?",
+    "body": "Hey folks,\n\nI have been a software engineer for over 15 years, but mostly on the corporate side. This year I am putting serious focus on my own portfolio and planning to publish 2 to 3 iOS and Android apps as a solo developer.\n\nTo give some context on the risk profile, the apps are D2C and are in the retail and dating apps space and one more w.r.t Augmented Reality game. One of them is mostly ready and I'm thinking about publishing to the app store in the coming week or so.\n\nI am based in India and trying to figure out the smartest way to structure this legally and financially. My main goals are 1. smooth app store payouts, 2. hassle free payments for foreign AI APIs without dealing with constant RBI recurring mandate failures, and 3. protecting my personal assets. The AR game specifically has me worried about liability if a user trips and gets hurt while playing the game.\n\nRight now, I am debating a few routes and by searching around I learnt about these options \n\n1. **Sole Proprietorship (Udyam + GST):** Super low friction to start, but offers absolutely no liability shield in case I'm sued.\n2. **Indian OPC (One Person Company):** Great for liability protection, but I am hearing the mandatory CA audits and CA compliance are a massive headache and money sink for a solo dev.\n3. **US LLC:** Seems to completely solve the international payment and API subscription issues, but I am unsure about the tax filing complexity back here in India.\n\nFor anyone who has actually gone down t",
+    "score": "2",
+    "num_comments": "1",
+    "created_utc": "1775535866.0",
+    "permalink": "/r/StartUpIndia/comments/1seluhm/for_solo_devs_launching_and_prototyping_ios/",
+    "clusters": [
+      "dunning"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianbikes",
+    "id": "1suev7p",
+    "author": "AdrunkenSoul_404",
+    "title": "NOC Certificate for interstate transfer",
+    "body": "TLDR: I have got my bike NOC myself and saved a lot of money\n\nSo I live in Chennai and I’m planning to move to Hyderabad permanently. I have a 3-year-old TVS Ronin, so I needed to get an NOC from the RTO for RC Transfer.\n\nNaturally, I reached out to a few agents… and the *lowest* quote I got was ₹5,500 🤯 and I’d still have to visit the RTO myself. So I decided to try doing it on my own and I actually managed to get the NOC myself. \n\nBut yeah… it wasn’t exactly smooth.\n\nAfter applying online and submitting everything, the officer told me, \"We’ll call you once it’s approved.\"\n\nCool. I waited.\n\nNothing.\n\nDays passed.\n\nFinally, I went to the RTO to check (after 15 working days) and they casually said it had already been processed *long back*. Meanwhile, the online status was still stuck at **\"Verification pending at RTO.\"** 🙃\n\nAnyway, for anyone trying to avoid agents, here’s the full process (Tamil Nadu, Mine is Chengalpattu RTO):\n\n**1. Apply online**\n\nGo to Parivahan portal\n\nGo to Online Services - Vehicle Related Services\n\nChoose State\n\nProvide your vehicle number or Registering Authority\n\nSelect \"Application for No Objection Certificate\"\n\nEnter your vehicle details (chassis number)\n\nFill Form 28 online\n\nUpload mandatory documents - RC,Insurance,Pollution Certificate\n\n**2. Pay fees**\n\nPay the NOC fee online (₹100)\n\nBook an appointment online at your RTO\n\n**3. Submit documents at RTO**\n\nTake 3 copies of Form 28 and affix pencil print of your bike's chassis number\n\nAttach:\n\nOrig",
+    "score": "2",
+    "num_comments": "2",
+    "created_utc": "1777035106.0",
+    "permalink": "/r/indianbikes/comments/1suev7p/noc_certificate_for_interstate_transfer/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [],
+    "tags": [
+      "PAIN"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "emails",
+    "id": "1s3z1sz",
+    "author": "kagnitesh",
+    "title": "Multiple Proton accounts suspended after PayPal refund, looking for guidance",
+    "body": "We are a small team of software engineers, and I manage the team. We were testing one of our applications and needed multiple email accounts for internal testing. I asked everyone to create Proton accounts (or use their existing ones) and upgrade to Proton Mail Plus using the welcome coupon.\n\nSince PayPal is not widely used in India, I was the only one in the team with a PayPal account. So I paid for all of them on behalf of the team. Everything was fine initially, but later one of the accounts auto-renewed and I was charged around $5, which wasn’t required.\n\nI thought requesting a refund from PayPal would be enough, so I just submitted a refund. After that, all the related Proton accounts got suspended due to chargeback. I honestly wasn’t aware that doing a PayPal refund would trigger suspension for all accounts.\n\nThis feels a bit harsh, especially since some of the accounts still have active subscriptions. There was no intention to abuse anything — it was just a misunderstanding of how refunds should be handled.\n\nI’ve already contacted Proton support and shared the list of accounts. I’m willing to repay the amount if needed.\n\nHas anyone faced something similar?  \n\nWhat’s the best way to resolve this and restore the accounts?\n\nAny advice would be helpful. 🙏",
+    "score": "2",
+    "num_comments": "3",
+    "created_utc": "1774503721.0",
+    "permalink": "/r/emails/comments/1s3z1sz/multiple_proton_accounts_suspended_after_paypal/",
+    "clusters": [
+      "refund-mgmt",
+      "dispute-chargeback"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "SaaS-Agency"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "freelance_forhire",
+    "id": "1spx6b6",
+    "author": "maladroitog",
+    "title": "[Hiring] n8n Expert: Inventory & Sales Sync (POS machine ↔ E-commerce)",
+    "body": "Hey everyone,\n\nI’m looking for a skilled n8n developer to build a robust, real-time inventory and sales synchronisation bridge for a retail client.\n\nThe Project:\n\n• POS Integration: Connect a physical POS terminal (API-ready) to a website (WooCommerce/Shopify).\n\n• Inventory Sync: Real-time stock updates (add/subtract) across both platforms to prevent overselling.\n\n• Order Tracking: Automated log of transactions in a central database (Airtable or Google Sheets).\n\n• Environment: Preference for a self-hosted n8n setup (Docker/VPS) to handle high-frequency executions without scaling costs.\n\nRequirements:\n\n• Proven experience with Webhooks and REST APIs.\n\n• Solid understanding of error-handling (retries, logging, and alerts) so the sync never \"silently\" fails.\n\n• Experience with WooCommerce or Shopify APIs is a must.\n\nBudget:\n\n• Setup: Fixed fee of ₹35,000 – ₹45,000 (approx. $420–$540 USD) based on experience.\n\n• Retainer: Ongoing monthly maintenance fee for 6 months (monitoring and troubleshooting). Please include your monthly rate for this in your DM.\n\nTimeline: Looking to start within the next 7 days.\n\nIf you’ve built something similar, please DM me with:\n\n1.\tA brief summary of your relevant experience.\n\n2.\tYour preferred hosting setup for n8n (Cloud vs. Self-hosted).\n\n3.\tYour monthly maintenance rate.",
+    "score": "2",
+    "num_comments": "3",
+    "created_utc": "1776615037.0",
+    "permalink": "/r/freelance_forhire/comments/1spx6b6/hiring_n8n_expert_inventory_sales_sync_pos/",
+    "clusters": [
+      "automation-tool"
+    ],
+    "brands": [
+      "shopify"
+    ],
+    "tags": [
+      "WORKAROUND-BUILT"
+    ],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "SideProject",
+    "id": "1sung4j",
+    "author": "TheSandakelum",
+    "title": "After 8 months of building, my Telegram-monetization tool finally has paying users — here's what I got wrong",
+    "body": "Hey r/SideProject,\n\nLong post incoming. I've been lurking here for the better part of two years and have wanted to post for a while, so this is partly a launch and partly a \"thanks for the inspiration\" thing.\n\nThe project is called MemberPass. It turns a private Telegram channel into a subscription business. You connect a payment gateway (Stripe, PayPal, Razorpay, crypto, a few others — 9 in total now, more on that disaster later), set up your plans, and from then on a bot handles everything: takes the payment, sends the invite link, removes the person when their sub expires, sends renewal nudges, the lot. The creator never opens a spreadsheet again.\n\nOrigin story, because that's apparently the law on this sub:\n\nA friend of mine runs a Telegram group around forex/crypto chat. Maybe 400 paying members at the peak. He charged $15/month and managed the whole thing in a Google Sheet — a column for the join date, a column for the payment date, a column for \"kick on this date\". Every Sunday he'd spend half a day cross-referencing his Stripe payouts against the sheet, manually removing people whose subs had expired, manually re-inviting people who paid late. He hated Sundays.\n\nI told him I'd build him a script. The \"script\" took about three weeks and grew into a small dashboard. He showed it to two friends who ran similar groups, both of them wanted it. That was the moment I realised this might be a real thing and not just a favour. November 2024-ish.\n\nI started building seriously i",
+    "score": "2",
+    "num_comments": "8",
+    "created_utc": "1777054126.0",
+    "permalink": "/r/SideProject/comments/1sung4j/after_8_months_of_building_my/",
+    "clusters": [
+      "settlement-payout",
+      "automation-tool"
+    ],
+    "brands": [
+      "razorpay",
+      "stripe"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "WORKAROUND-BUILT",
+      "PAIN",
+      "RAZORPAY-MENTION"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "IndiaStartups",
+    "id": "1qzwmte",
+    "author": "Global-Radish-1015",
+    "title": "Is \"AI\" in Indian D2C actually useful, or is it just used for writing bad product descriptions?",
+    "body": "I see B2B SaaS companies automating their entire sales pipelines with AI agents. But looking at the D2C space here in India, it feels like we are still stuck in 2015.\n\n\n\nMost founders I talk to are still downloading CSVs from Shopify/Amazon and manually fixing columns in Excel to check their daily profit or RTO.\n\n\n\nHonest question for D2C operators here:\n\nAside from using ChatGPT for captions/emails, are you actually using AI for the heavy lifting? (Like predicting stockouts, catching high-risk COD orders, or analyzing ad spend?)\n\n\n\nOr is \"AI for E-commerce\" currently just a gimmick?",
+    "score": "2",
+    "num_comments": "4",
+    "created_utc": "1770617718.0",
+    "permalink": "/r/IndiaStartups/comments/1qzwmte/is_ai_in_indian_d2c_actually_useful_or_is_it_just/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [
+      "shopify"
+    ],
+    "tags": [
+      "PAIN"
+    ],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "AmazonSeller",
+    "id": "1s9juj4",
+    "author": "2900nomore",
+    "title": "A-to-Z Granted but Does Not Appear in A-to-Z claims",
+    "body": "I received an email about an A-to-Z claim that was granted and a 2nd email showing the refund processed.\n\nI went to seller central to appeal the A-to-Z, but it doesn't even appear in the A-to-Z claim list.\n\n  \nThis was a high end item that a buyer destroyed and sent back demanding a full refund. The customer even admitted it's their fault, but the A-to-Z claim said it was granted because the return was described as damaged and my photos of the returned item also show it is damaged. This was probably a stupid AI decision, but there's no A-to-Z claim in my history so I can't appeal.\n\nAnyone run into this before? Possible resolution?",
+    "score": "1",
+    "num_comments": "15",
+    "created_utc": "1775048385.0",
+    "permalink": "/r/AmazonSeller/comments/1s9juj4/atoz_granted_but_does_not_appear_in_atoz_claims/",
+    "clusters": [
+      "refund-mgmt"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "IndiaBusiness",
+    "id": "1sqqvh0",
+    "author": "No_Classic_3888",
+    "title": "Indian D2C founders --> how are you handling international payments?",
+    "body": "Indian founders / D2C operators selling internationally:\n\nHow are you currently handling international payments (Stripe, PayPal, Wise, etc.)?\n\nSpecifically trying to understand:\n\n* % fees + FX charges you end up paying\n* settlement delays (if any)\n* biggest frustration in your current setup\n* if you've tried switching tools, what stopped you?\n\nNot looking for generic answers. Real experiences would be super helpful.",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1776695069.0",
+    "permalink": "/r/IndiaBusiness/comments/1sqqvh0/indian_d2c_founders_how_are_you_handling/",
+    "clusters": [
+      "settlement-payout"
+    ],
+    "brands": [
+      "stripe"
+    ],
+    "tags": [],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "IndiaBusiness",
+    "id": "1sgmty8",
+    "author": "Asleep-Abrocoma-2633",
+    "title": "How much should I quote for this AI video system?",
+    "body": "Hey folks,\n\nA potential client reach out with a project. He had reached out earlier a month ago for [another project](https://www.reddit.com/r/FreelanceIndia/comments/1rg64k0/need_help_pricing_my_first_ever_freelance/), which I ended up quoting 20K INR and he said it was too expensive and did not discuss further even after mentioning I am open to negotiation according to their budget,   \nHe now reached out for another project and I’m a bit stuck on pricing again. Would really appreciate some perspective from people who’ve built similar AI/automation systems.\n\n# Project:\n\nThe client wants an **AI video generation system** that can create short-form content (Reels/Shorts style) with **recurring characters** (like a Dadi giving advice about parenting).\n\n# ⚙️ Scope of Work\n\n1. Character & Style Setup\n\n* Create consistent characters (Dadi, Bahu)\n* Ensure consistency across videos using prompts + references\n\n2. Content Research + Script System\n\n* Research-driven parenting/educational content\n* Generate short scripts (Hindi)\n\n3. Shot-Based Video Generation\n\n* To avoid losing context and slop, Instead of one long video, system generates multiple clips with different frames.\n\n4. Voice Generation\n\n* AI-generated Hindi voices \n\n5. Automated Video Assembly\n\n* Combine clips + audio into final video\n* Maybe some manual editing or fully automated pipeline.\n\n6. Tools\n\n* End-to-end workflow in n8n + APIs (ElevenLabs, Runway) He will be purchasing subscriptions for these. \n\n7. Initial Executio",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1775733814.0",
+    "permalink": "/r/IndiaBusiness/comments/1sgmty8/how_much_should_i_quote_for_this_ai_video_system/",
+    "clusters": [
+      "automation-tool"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST",
+      "WORKAROUND-BUILT",
+      "PAIN"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1ssv35i",
+    "author": "ElectricalProject105",
+    "title": "Do Shiprocket sellers actually lose money to wrong RTO/weight charges? Validating before building”",
+    "body": "I’m a developer thinking of building something for D2C sellers.\n\nHeard from multiple sellers that Shiprocket weight discrepancy charges and RTO fees are often wrong — and reconciling them manually in Excel takes forever.\n\nQuick questions if you’re a Shiprocket seller:\n\n1.Do you manually check your COD remittance every month?\n\n2.Have you ever missed the 7-day dispute window?\n\n3.How many hours does this take you?",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1776884937.0",
+    "permalink": "/r/indianstartups/comments/1ssv35i/do_shiprocket_sellers_actually_lose_money_to/",
+    "clusters": [
+      "recon",
+      "RTO"
+    ],
+    "brands": [
+      "shiprocket"
+    ],
+    "tags": [],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1sqgx7h",
+    "author": "moksha_99",
+    "title": "Razorpay Rize - Does it really work for Incorporation ? I am having a bad time.",
+    "body": "I paid to Razorpay Rize for my company incorporation and the experience has been very bad.\n\n  \nI got my TAN and LLP done. For LLP no certificate is received yet.\n\nThey are telling that since the start of new financial year the govt has stopped issuing new PAN and new LLP certificate. Delay from the govt site. As after year ending they are doing reconcile.\n\n  \nIs it true ? Did anyone got done with the company TAN,PAN and Incorporation this month ? ",
+    "score": "1",
+    "num_comments": "5",
+    "created_utc": "1776665266.0",
+    "permalink": "/r/indianstartups/comments/1sqgx7h/razorpay_rize_does_it_really_work_for/",
+    "clusters": [
+      "recon"
+    ],
+    "brands": [
+      "razorpay"
+    ],
+    "tags": [
+      "PAIN",
+      "RAZORPAY-MENTION"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1slysxz",
+    "author": "Cool-Banana-1721",
+    "title": "Built a COD reconciliation tool - offering 5 free audits to stress test it",
+    "body": "Built a COD reconciliation tool and want to stress test it. Offering 5 free audits to D2C founders shipping via Delhivery, Shiprocket or XpressBees. You share your Shopify CSV and remittance file, I'll send back exactly what your courier owes you. Ping me if you want in.",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1776237271.0",
+    "permalink": "/r/indianstartups/comments/1slysxz/built_a_cod_reconciliation_tool_offering_5_free/",
+    "clusters": [
+      "recon",
+      "RTO"
+    ],
+    "brands": [
+      "shopify",
+      "shiprocket"
+    ],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1sk84o1",
+    "author": "OggY-006",
+    "title": "Validate my idea , i need your feed back that I know is it right or wrong",
+    "body": "&#x200B;\n\ni am working on this idea i want some review,  please give me the results is it good 👍 \n\n1. Revenue Leakage (they are losing cash right now)\n\nThis is the fastest “yes” you’ll ever get.\n\nWhat’s happening:\n\nFailed payments (subscriptions fail silently)\n\nBilling errors\n\nUncollected invoices\n\nWhat you build:\n\n👉 AI Revenue Recovery Tool\n\nTracks failed payments\n\nAuto-retries + smart reminders\n\nFinds underbilling / missed invoices\n\nWhy they pay instantly:\n\nBecause you're literally saying:\n\n“You're losing ₹10 lakh/month. I can recover it.”",
+    "score": "1",
+    "num_comments": "1",
+    "created_utc": "1776079991.0",
+    "permalink": "/r/indianstartups/comments/1sk84o1/validate_my_idea_i_need_your_feed_back_that_i/",
+    "clusters": [
+      "payment-recovery"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1sgtx0t",
+    "author": "Puzzleheaded_Tip_801",
+    "title": "Razorpay settlements are always short — anyone else manually figuring out why?",
+    "body": "every month my Razorpay settlement is like ₹8-12K less than what the dashboard shows and it took me way too long to figure out why. processing fees + GST on those fees + failed UPI payments + refunds — all hitting the same settlement cycle.\n\ni've been tracking this in a spreadsheet but honestly it's getting annoying now that volume is growing. the worst part is when a UPI payment fails and Razorpay still shows it in the dashboard for a few days before reversing it.\n\nanyone else dealing with this? especially curious if you use Stripe too — reconciling both is a whole other headache.",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1775750737.0",
+    "permalink": "/r/indianstartups/comments/1sgtx0t/razorpay_settlements_are_always_short_anyone_else/",
+    "clusters": [
+      "refund-mgmt",
+      "recon"
+    ],
+    "brands": [
+      "razorpay",
+      "stripe"
+    ],
+    "tags": [
+      "PAIN",
+      "RAZORPAY-MENTION"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1sgtvdu",
+    "author": "MaleficentBed4279",
+    "title": "Building a tool to protect Telegram group owners from link piracy & provide a management dashboard. Need feedback.",
+    "body": "I’ve noticed a major issue for Indian creators (stock advisors, educators) who sell access to Telegram/WhatsApp groups: Link piracy.\n\nEven after a user pays via UPI, they can easily share the invite link with 10 friends who join for free. Plus, the creator has to manually verify every UPI screenshot, which is a massive time sink.\n\nI’m building a solution for this:\n\nAnti-Piracy: Generates unique, single-use invite links for every buyer. Once one person joins, the link dies.\n\nDashboard: A central place for the owner to track all payments and members across multiple groups.\n\nI need your help with two things:\n\nPricing: I'm considering a one-time setup fee (₹499) instead of a monthly subscription + percentage cut. Does this 'pay once' model appeal more to Indian creators?\n\nFeature Priority: Is the 'Security/Anti-Piracy' feature the biggest draw, or is the 'Dashboard/Accounting' side more valuable for a V1?\n\nI'm looking for honest feedback. Thanks!\"",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1775750642.0",
+    "permalink": "/r/indianstartups/comments/1sgtvdu/building_a_tool_to_protect_telegram_group_owners/",
+    "clusters": [
+      "whatsapp-flow"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1sgjx2y",
+    "author": "Z0ffer",
+    "title": "Here is a tool that I built that would help you organize your books and scale if you're looking for VC (NOT A PROMOTION DOING IT FOR FREE)",
+    "body": "Here is a tool that I built that would help you organize your books and scale if you're looking for VC\n\nhi everyone this is not a promo post\n\nI have built and automation tool that would provide you maintain your books over the Accounting software that you use\n\nFor Founders & Accountants:  \nA average business manually uploads bills, enters data, and reconciles GST for more than ten hours each week. That's just typing, not accounting. After hiring accountants to submit GST, the founders still lack real-time clarity. Messy books become a deal-breaker when it comes time to raise start up money.\n\nRegarding VCs:  \nAfter distributing funds, you pursue founders for MIS updates for weeks. Portfolio businesses lag behind. Problems don't become apparent until it's too late. WhatsApp conversations and Excel files do not constitute portfolio management.\n\nI already have a few beta users. The tool is working. There's real scope here.\n\nIf you're facing any of these problems — invoicing chaos, GST blindspots, or portfolio reporting fatigue — I'll onboard you for free as a beta user. No charge. Just honest feedback.\n\nDo let me know what you're making Manufacturing or selling ",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1775723773.0",
+    "permalink": "/r/indianstartups/comments/1sgjx2y/here_is_a_tool_that_i_built_that_would_help_you/",
+    "clusters": [
+      "recon"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "SaaS-Agency"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1sbb039",
+    "author": "Visible_Pudding417",
+    "title": "Razorpay Idea Validation for starting up personal project",
+    "body": "Why do micro-SME waster 10+ hours weekly on invoice management \n\niIs this even a real problem worth solving?\n\nDo small/micro businesses actually struggle with creating invoices, tracking payments, and reconciling everything manually — or am I overthinking it?\n\nWould love honest feedback before I spend time building something around this.",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1775215811.0",
+    "permalink": "/r/indianstartups/comments/1sbb039/razorpay_idea_validation_for_starting_up_personal/",
+    "clusters": [
+      "recon"
+    ],
+    "brands": [
+      "razorpay"
+    ],
+    "tags": [
+      "RAZORPAY-MENTION"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1sa9snh",
+    "author": "XR-LEVI",
+    "title": "Looking for D2C clients need for affordable shipping services",
+    "body": "Do you want to upscale your business and increase your market reach all over India?\n\nWorry not, Team Shipeasy is here,\n\nWe saw how much time and profit small businesses lose due to inefficient logistics. We built this platform to give startups and small businesses the same shipping power as big e-commerce players.\n\nManaging 4-5 different courier partners manually is a hectic nightmare. Between weight disputes, high RTO and fluctuating rates, it takes hours away from actually building your product.\n\nWhat ShipEasy does for you:\n\n1-CLICK DISPATCH: Save at least 2 hours of manual work every day.\n\nLOWEST RATES: Save up to 30% on shipping costs-even if you ship just 1 packet a day.\n\nSMART SELECTION: Our platform automatically suggests the best courier for each of the 29,000+ pin codes we cover.\n\nSEAMLESS INTEGRATION: Works with your existing Shopify or WooCommerce store via API.\n\nWe're currently offering a free signup with no credit card required to help you get started. Check us out at shipeasy.tech and let us know about your experience\n\nWe are happy to answer any questions and queries at any time. Feel free to reach out through the mentioned Contact number: 8130630958 or 8658116998\n\nor mail us at: shipeasy@udjosh.com",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1775111680.0",
+    "permalink": "/r/indianstartups/comments/1sa9snh/looking_for_d2c_clients_need_for_affordable/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [
+      "shopify"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1s55jn8",
+    "author": "ankit_0xd",
+    "title": "So I ended up building the gym membership tool I couldn't find — here's what 4 weeks of talking to owners taught me",
+    "body": "A few days ago I posted about gym owners not knowing how much revenue they lose from expiring memberships. A lot of people resonated with it, a few gym owners DM'd me.\n\nI decided to build something.\n\nQuick summary of what I built:\n\nGymTrack Pro — a mobile-first app for small Indian gyms (50–500 members) that tracks memberships, auto-sends WhatsApp renewal reminders, and shows the gym owner exactly how much revenue is at risk from expiring subscriptions.\n\nThe thing I'm most proud of: there's a number on the dashboard that says '₹18,000 at risk this week from 6 expiring members.' That one number has made every gym owner I've shown it to immediately understand the value.\n\nWhy India-specific:\n\n— WhatsApp-first, not email. Members here don't check email. They check WhatsApp.\n\n— INR pricing throughout. Sounds obvious but most tools show $ even when they're used in India.\n\n— ₹999/month. Not ₹5000+. The existing tools are priced for large chains, not 150-member local gyms.\n\nCurrently in final testing. Looking for gym owners (or people who know gym owners) who want to give honest feedback.",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1774621430.0",
+    "permalink": "/r/indianstartups/comments/1s55jn8/so_i_ended_up_building_the_gym_membership_tool_i/",
+    "clusters": [
+      "whatsapp-flow"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "indianstartups",
+    "id": "1s187cv",
+    "author": "EatSleepNnRepeat",
+    "title": "How does your company handle payments that failed?",
+    "body": "How are you handling payments that fail internationally other than just retargeting the person through an ad?\n\nI am eyeing razorpay international right now as they have smart retries that increases payment success rate by 90%.\n\nAlso getting their emails during checkout helps as well to send abandoned cart emails\n\nI want to know how you handle frequent payment failure?",
+    "score": "1",
+    "num_comments": "1",
+    "created_utc": "1774243419.0",
+    "permalink": "/r/indianstartups/comments/1s187cv/how_does_your_company_handle_payments_that_failed/",
+    "clusters": [
+      "payment-recovery"
+    ],
+    "brands": [
+      "razorpay"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "RAZORPAY-MENTION"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "SaaS",
+    "id": "1sscu5i",
+    "author": "danielabinav",
+    "title": "I researched every Indian payment gateway's API to find which ones allow read-only access. Here's what I found.",
+    "body": "I spent 3 weeks researching this because I needed to build a revenue verification tool for Indian SaaS founders.\n\nThe question was simple: can a founder safely share their payment data with a third party WITHOUT giving away dangerous permissions?\n\nHere's what I found:\n\n• Razorpay — Has OAuth with read\\_only scope. The ONLY Indian gateway that supports this. You need to become a Technology Partner to access it (took me 6 weeks of emails and an audit). But once approved, you can pull payments, subscriptions, plans, and invoices without any write access.\n\n• Cashfree — Full-access API keys only. No read-only option. If someone has your key, they can initiate refunds, create payment links, and access settlement data. No OAuth available for third parties.\n\n• PayU — Same problem. API keys are all-or-nothing. No granular scoping. No OAuth for external apps.\n\n• Instamojo — Basic API with full access. No read-only tier. Also their API documentation is... let's just say it's an adventure.\n\n• Stripe (global) — Has proper restricted API keys (rk\\_live\\_\\*) where you can grant read-only access to specific resources. This is why platforms like TrustMRR and Baremetrics exist in the West — Stripe makes it safe.\n\nThe takeaway: Indian payment infrastructure is years behind on API permission scoping. Razorpay is the only one that even comes close to Stripe's model, and even then you need partner-level approval.\n\nThought this might be useful for anyone building fintech tools in India. Happy to sh",
+    "score": "1",
+    "num_comments": "10",
+    "created_utc": "1776837602.0",
+    "permalink": "/r/SaaS/comments/1sscu5i/i_researched_every_indian_payment_gateways_api_to/",
+    "clusters": [
+      "refund-mgmt"
+    ],
+    "brands": [
+      "cashfree",
+      "razorpay",
+      "payu",
+      "stripe",
+      "instamojo"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "CASHFREE-MENTION",
+      "RAZORPAY-MENTION"
+    ],
+    "persona": "SaaS-Agency"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "StartUpIndia",
+    "id": "1soq3v9",
+    "author": "nehpet",
+    "title": "We kept finding out about bugs from customers. Built NotiLens to fix that.",
+    "body": "Hey r/startupindia. \n\nThe worst way to find out your payment flow is broken is a customer message. The second worst is checking your dashboard in the morning. We kept experiencing both and couldn't find a tool that solved it properly, so we built one.\n\nWe built this specifically for startups, small teams, indie developers, and AI builders who don't have a dedicated DevOps team watching dashboards 24/7. Enterprise monitoring tools are overkill and priced for enterprises. NotiLens is simple to set up, affordable, and built for how smaller teams actually work.\n\nWe shipped the first version in January. Four months later we have SDKs in Python, Node.js, Go, Rust, Ruby, PHP and Java, MCP support for AI agent monitoring, ML-based anomaly detection that learns your normal patterns, broken flow detection for multi-step sequences, and integrations with Stripe, Shopify, GitHub, AWS, Zapier, Make, n8n, LangChain and 30+ more.\n\nWhat we learned building this: every founder and developer has a story about finding out something was broken from a customer. It's avoidable. The tooling just hasn't caught up. The tooling just hasn't caught up - especially for smaller teams who need the visibility but not the complexity.\n\nNotiLens monitors your business in real time - Stripe payments, Shopify orders, servers, AI agents, background jobs - and alerts you the moment something needs attention. Including when something that should be happening isn't. No new orders in 4 hours. Payment initiated but nev",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1776494501.0",
+    "permalink": "/r/StartUpIndia/comments/1soq3v9/we_kept_finding_out_about_bugs_from_customers/",
+    "clusters": [
+      "automation-tool"
+    ],
+    "brands": [
+      "stripe",
+      "shopify"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "WORKAROUND-BUILT",
+      "PAIN"
+    ],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "StartUpIndia",
+    "id": "1smwj9a",
+    "author": "StatisticianNew705",
+    "title": "Looking for a business co-founder for blockchain fintech startup (India-focused)",
+    "body": "Building a platform that helps small manufacturers and suppliers get paid immediately instead of waiting 60-90 days for their invoices. (I'm dead sure this will be huge)\n\n**The problem:** In India, ₹10 lakh crore is locked in unpaid invoices every year. 63 million small businesses have sold their products, delivered their services, but are waiting months to get paid. Meanwhile they need cash today to pay employees and buy raw materials for the next order. Banks won't give them loans without collateral. Existing platforms require bank partnerships which 98% of these businesses don't have.\n\n**The solution:** Blockchain-based escrow that automates the entire process. Investors fund invoices, businesses get cash immediately, buyers pay at the original due date, smart contracts handle settlement automatically. No middlemen, no manual approvals, no one blocking funds.\n\n**Current status:** Product is live and functional. Competed internationally, placed well. In talks with Team1 India for initial funding and ecosystem support. College incubator is considering us for their next cohort. Currently talking to pilot customers in the manufacturing belt.\n\n**What I'm looking for:**\n\nA business-focused co-founder who can handle customer acquisition, investor conversations, and navigating regulatory pathways. Ideally someone with a stable job (shows commitment) who can dedicate real time to this. Don't need technical skills, but you should understand why decentralization matters for trust.\n\nI",
+    "score": "1",
+    "num_comments": "1",
+    "created_utc": "1776324529.0",
+    "permalink": "/r/StartUpIndia/comments/1smwj9a/looking_for_a_business_cofounder_for_blockchain/",
+    "clusters": [
+      "recon"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "EdTech"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "StartUpIndia",
+    "id": "1shvhbk",
+    "author": "cenvero",
+    "title": "We built an AI support agent with 8-layer architecture — Cenvero Orion is here 🚀",
+    "body": "Hey r/StartUpIndia, happy Saturday!\n\n\n\nWe're Cenvero, and this is Orion — our AI support agent for websites. It answers questions from your knowledge base, handles live chat, captures leads, and escalates to a human when needed.\n\n\n\n\\*\\*What makes it different — the v8 Engine:\\*\\*\n\n\n\nOrion runs on the Cenvero Orion Engine v8, an eight-layer distributed architecture built for accuracy, speed, and reliability.\n\n\n\n\\- \\*\\*Layer 1 – Ingestion:\\*\\* Every query is embedded into a 1536-dimensional vector space and distributed across edge inference nodes for instant retrieval.\n\n\\- \\*\\*Layer 2 – Semantic Retrieval:\\*\\* Multi-hop reasoning across a semantic graph — understands context across up to 12 layers of inference, not just keyword matching.\n\n\\- \\*\\*Layer 3 – Neural Sieve:\\*\\* Raw LLM output is never shown directly. Every token is cross-checked against your source knowledge. Anything below confidence threshold gets regenerated — this is our hallucination suppression layer.\n\n\\- \\*\\*Layer 4 – Cognitive Telemetry:\\*\\* Learns user behavior in real-time — scroll patterns, query drift, dwell time — and updates contextual weights within a 50ms feedback loop.\n\n\\- \\*\\*Layer 5 – Predictive Synthesis:\\*\\* Detects high-intent users using Bayesian inference and Markov chain analysis, then builds qualified lead profiles automatically.\n\n\\- \\*\\*Layer 6 – State Hydration:\\*\\* Conversation state persisted with nanosecond precision using a CRDT-consensus database. Failover and state recovery in under",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1775846933.0",
+    "permalink": "/r/StartUpIndia/comments/1shvhbk/we_built_an_ai_support_agent_with_8layer/",
+    "clusters": [
+      "payment-recovery"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "StartUpIndia",
+    "id": "1scaz8v",
+    "author": "Aestics_Leadership",
+    "title": "One mistake leads to huge problem",
+    "body": "Many small business owners are paying extra GST without realizing it.\n\nRecently I reviewed a case where input tax credit (ITC) was not fully claimed just because invoices were mismatched in GSTR-2B. The business ended up paying more tax than required.\n\nFew quick checks you can do:\n\nAlways reconcile GSTR-2B with purchase register before filing\n\nCheck if suppliers actually filed their returns (very common issue)\n\nDon’t blindly trust auto-populated data in GST portal\n\nReview ineligible ITC (like personal expenses wrongly claimed)\n\nMost people think GST filing = just uploading numbers. But small mistakes can quietly cost lakhs over time.\n\nIf anyone is stuck with GST filings, notices, or ITC issues, feel free to ask here. I’ll try to help.\n\nI'm practicing Semi qualified CA, fees based on work ranging from 500 to  1500",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1775313698.0",
+    "permalink": "/r/StartUpIndia/comments/1scaz8v/one_mistake_leads_to_huge_problem/",
+    "clusters": [
+      "recon"
+    ],
+    "brands": [],
+    "tags": [
+      "PAIN"
+    ],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "ChatbotCommerce",
+    "id": "1sskysp",
+    "author": "ilumate_Hansyn",
+    "title": "7 WATI alternatives that are actually better",
+    "body": "If you're running an e-commerce store or SMB and relying on WhatsApp for sales, support, and marketing, WATI gets the job done for basic WhatsApp + Instagram chats at $99/mo for 5 users. But it lacks built-in CRM, in-chat commerce, and a proper no-code flow builder, leaving you stitching tools together. Here are 7 better WATI alternatives, ranked by features, ease, and value.\n\n**#1: Com.bot**  \nCom.bot tops the list as the best all-in-one WhatsApp Business API platform. It gives official WhatsApp API access, a unified team inbox for multiple agents, no-code flow builder for chatbots, built-in CRM, and full conversational commerce with in-chat catalogs, carts, and checkout. AI intent detection auto-routes chats to bots or humans, and you get broadcasts without the usual template headaches. Pricing starts around $30-150/mo mid-market range, perfect for D2C brands selling directly in WhatsApp without extra tools like HubSpot. Way more full-featured than WATI, no developer needed like Twilio.\n\n**#2: Interakt**  \nInterakt is a budget pick popular in India for WhatsApp basics. It handles broadcasts and simple automations well. But no built-in CRM or in-chat payments means extra apps, and the flow builder is clunky for complex bots. Com.bot beats it with native commerce and easier no-code tools.\n\n**#3: Gallabox**  \nGallabox focuses on no-code conversational commerce for SMBs with drip sequences. Good for basic catalogs. Lacks a unified inbox and AI routing though, so support teams s",
+    "score": "1",
+    "num_comments": "10",
+    "created_utc": "1776863187.0",
+    "permalink": "/r/ChatbotCommerce/comments/1sskysp/7_wati_alternatives_that_are_actually_better/",
+    "clusters": [
+      "whatsapp-flow",
+      "automation-tool"
+    ],
+    "brands": [
+      "shopify"
+    ],
+    "tags": [],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "u_SuspiciousCareer8653",
+    "id": "1ssgaz0",
+    "author": "SuspiciousCareer8653",
+    "title": "How Can the WhatsApp Business API Boost Your Sales in 2026?",
+    "body": "[Boost your business with WhatsApp automation. Start today](https://preview.redd.it/53b4mi9mlpwg1.png?width=1536&format=png&auto=webp&s=5ff46cd9f8dfa5de09a56e54036a507fac99c07d)\n\n\n\nIn today's world, customers seek fast, easy, and reliable communication. Compared to phone calls or emails, people now prefer messaging apps. With millions of users in India actively using WhatsApp daily, the platform offers a powerful opportunity for businesses.\n\nIn 2026, the WhatsApp Business API is no longer just a chat tool; it has evolved into a complete sales engine. If used correctly, it can significantly accelerate your business growth.\n\n# What is the WhatsApp Business API?\n\nThe WhatsApp Business API is a platform that enables large and growing businesses to communicate with customers in an automated and professional way.\n\nIt is different from the standard WhatsApp or WhatsApp Business app. It allows integration with tools like CRMs, chatbots, auto-replies, and marketing software, making business communication more efficient and scalable.\n\n# Why is WhatsApp the Most Essential Sales Tool in 2026?\n\nToday’s customers expect instant responses and seamless communication.\n\n* People open WhatsApp multiple times a day\n* Message open rates are above 90%\n* Communication is fast and convenient\n\nThis is why conversations on WhatsApp have a much higher chance of converting into sales.\n\n# How Does the WhatsApp Business API Boost Sales?\n\n# 1. Immediate Responses Build Customer Trust\n\nQuick replies increas",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1776849576.0",
+    "permalink": "/r/u_SuspiciousCareer8653/comments/1ssgaz0/how_can_the_whatsapp_business_api_boost_your/",
+    "clusters": [
+      "payment-recovery",
+      "whatsapp-flow"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "SaaS-Agency"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "ToeflAdvice",
+    "id": "1sv1y4z",
+    "author": "unfinished_abm",
+    "title": "Bought a prepaid TOEFL voucher from someone claiming to be ETS India — now support says it belonged to another test taker. What should I do?",
+    "body": "I’m really frustrated and need advice.\n\nOn 23 March, I bought a prepaid TOEFL voucher from a person who contacted me claiming to be from ETS India. They used ETS branding/name and I genuinely believed it was official.\n\nWhat made it seem legitimate was that the same person had previously given me 12 free mock tests, and around the same time I also received separate ETS India promotional messages signed by Megha Saini. Because of the same name, timing, and branding, I believed this was genuine outreach.\n\nWhen I tried to use the prepaid voucher, it showed invalid.\n\nI contacted support and got conflicting responses:\n\n\t•\tOne team said the voucher was active and purchased by another test taker\n\n\t•\tTest Taker Advocacy also said it was originally issued to a different test taker\n\n\t•\tAnother team said they have no records and it came from a third party\n\n\t•\tNow they say they cannot refund because it was issued to someone else\n\nThe person who sold it to me is no longer responding.\n\nI also called a number presented as voucher support, and they already seemed aware of the issue and asked if my code was 630CEF…\n\nSo now I’m stuck:\n\n\t•\tSupport says contact seller\n\n\t•\tSeller disappeared\n\n\t•\tI paid in good faith believing it was official\n\nWhat would you do now?\n\n\t1.\tBank dispute / chargeback?\n\n\t2.\tConsumer complaint?\n\n\t3.\tKeep escalating with ETS?\n\n\t4.\tHas anyone dealt with fake ETS India reps before?",
+    "score": "1",
+    "num_comments": "2",
+    "created_utc": "1777090704.0",
+    "permalink": "/r/ToeflAdvice/comments/1sv1y4z/bought_a_prepaid_toefl_voucher_from_someone/",
+    "clusters": [
+      "refund-mgmt",
+      "dispute-chargeback"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "u_thevuetimes",
+    "id": "1srg00b",
+    "author": "thevuetimes",
+    "title": "How to Report Cyber Crime Online in India (Step-by-Step Guide + What Actually Works)",
+    "body": "If you’ve been [scammed online in India](https://thevuetimes.com/how-to-report-cyber-crime-online-in-india/) (UPI, QR code, delivery fraud), here’s a practical guide on how to report cyber crime online in India, what happens after reporting, and how to improve your chances of recovery.",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1776754317.0",
+    "permalink": "/r/u_thevuetimes/comments/1srg00b/how_to_report_cyber_crime_online_in_india/",
+    "clusters": [
+      "payment-recovery"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "LegalAdviceIndia",
+    "id": "1spm9vu",
+    "author": "mus_kan_25",
+    "title": "Newme + Shadowfax: prepaid order not delivered after 25+ days, no refund — what legal action can I take?",
+    "body": "I need legal guidance regarding a consumer issue with NEWME India and their delivery partner Shadowfax.\nFacts:\nMarch 26: Prepaid order (#9846186) placed — not delivered\nApril 3: Second order (#9916953, COD) — not delivered\nApril 4–16: Contacted support daily (10+ calls)\nStandard response each time: “Please wait 48 hours”\nDelivery issues:\nMultiple “delivery attempted” updates without actual delivery\nReceived calls to reschedule despite being available\nNo successful delivery attempt was ever made\nApp/tracking issue:\nOrder status not updating correctly in NEWME app\nTracking information appears incorrect/stagnant\nAfter April 15:\nRequested cancellation if not delivered\nNo cancellation processed, no refund issued\nCurrent situation:\nPrepaid amount is stuck\nOrders undelivered\nNo resolution despite continuous follow-ups\nEvidence available:\nCall recordings\nOrder confirmation emails\nCall logs and delivery attempt records\nQuestions:\nWhat are my legal remedies under Indian consumer law in this case?\nShould I first file a complaint via National Consumer Helpline (NCH) or proceed directly to consumer court?\nIs chargeback (for prepaid order) advisable in parallel?\nAny specific steps to ensure faster resolution?\nI have full screenshots and call logs if required.",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1776583832.0",
+    "permalink": "/r/LegalAdviceIndia/comments/1spm9vu/newme_shadowfax_prepaid_order_not_delivered_after/",
+    "clusters": [
+      "refund-mgmt",
+      "RTO",
+      "dispute-chargeback"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "Entrepreneurs",
+    "id": "1stakr9",
+    "author": "Anantyaai1",
+    "title": "Why Smart Educational Institutions Have Moved to WhatsApp API Solutions",
+    "body": "Traditional communication tools like emails, phone calls, notice boards come with an inherent problem. How many times did you have to pay an extra couple of bucks because you never got the “late fee reminder”. The main issue with primary communication tools is that the responsibility of receiving and reading the message is on the person reading it. But isn't it your responsibility to make sure that the message you're trying to relay gets actually delivered?\n\n[**WhatsApp API for the education**](https://anantya.ai/blog/whatsapp-for-education) sector solves this responsibility at the root.\n\nMessages are read within minutes. Replies come in real time. And unlike emails that get buried, WhatsApp conversations feel personal because they are.\n\nFor educational institutions managing hundreds or thousands of students, this kind of direct, instant communication isn't just convenient. It's operationally essential and responsible.\n\n\n\n# What Can Educational Institutions Do With WhatsApp Business API?\n\nIndia has 22 official languages and hundreds of dialects. A parent in Chennai shouldn't have to decode a fee reminder written in English. A student in Bengal deserves to receive scholarship alerts in Bengali.\n\nThe **WhatsApp Business API for the ed-tech industry** supports multilingual messaging natively Hindi, Tamil, Bengali, Malayalam, and more. Institutions can configure language preferences per contact and send personalised messages accordingly. At scale, this isn't just operationally sm",
+    "score": "1",
+    "num_comments": "1",
+    "created_utc": "1776925117.0",
+    "permalink": "/r/Entrepreneurs/comments/1stakr9/why_smart_educational_institutions_have_moved_to/",
+    "clusters": [
+      "fee-collection",
+      "whatsapp-flow",
+      "automation-tool"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "EdTech"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "ConsumerAffairs",
+    "id": "1sd3cf0",
+    "author": "Feisty-Category-9377",
+    "title": "Paid ~₹6K, no invoice, lost access, support ghosting for 15 days — what actually works?",
+    "body": "I’m dealing with a frustrating situation with a platform (Emergent) and wanted to get some real advice.\n\nI’ve paid around ₹6,000 total (credit top-ups + subscriptions), and here’s what’s happened so far:\n\n* Some transactions show “No Invoice” — no proper GST invoices issued\n* I lost complete access to the app and backend after paying\n* Certain recurring charges weren’t clearly disclosed upfront\n* Refund request hasn’t been approved\n* Support has been completely unresponsive for the last 15 days\n\nI even escalated this via email to the CEO (Mukesh), but there’s still been no response.\n\nAt this point, it feels like I’m just being ignored.\n\nI’ve already sent a formal notice, but I really don’t want to get stuck in a long legal process over \\~₹6K.\n\nFor people in India who’ve dealt with similar situations:\n\n* Do chargebacks actually work in practice?\n* Are consumer complaints (NCH, etc.) actually effective?\n* Any faster escalation methods that force companies to respond?\n\nLooking for real-world advice — what actually worked for you?",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1775394897.0",
+    "permalink": "/r/ConsumerAffairs/comments/1sd3cf0/paid_6k_no_invoice_lost_access_support_ghosting/",
+    "clusters": [
+      "refund-mgmt",
+      "dispute-chargeback"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "u_SilentTyler",
+    "id": "1s8fv23",
+    "author": "SilentTyler",
+    "title": "URGENT: Unauthorized Charges on Claude (Anthropic) – ₹33K Lost | Cyber Crime Complaint Filed",
+    "body": "I’m posting this to get visibility and check if anyone else has faced something similar.\n\nI was charged **₹33,242.84 (\\~$354 USD)** on my credit card for **gift card / gift subscription purchases on Claude (Anthropic)** that I never authorized.\n\n**Breakdown:**\n\n* ₹11,080.91 ($118)\n* ₹22,161.93 ($236)\n\nMy card was only set up for **Claude Pro auto-renewal**, and I have **never purchased any gift cards or subscriptions**.\n\n**What I’ve already done:**\n\n* Raised a support ticket with Anthropic (**#86108820**) — no response yet\n* Filed a complaint on **Indian Cyber Crime portal**\n* Informed my bank and preparing for **chargeback**\n\n**Concern:**  \nHow were gift purchases even made without explicit authorization? No OTP / confirmation that I approved.\n\nIf anyone here has:\n\n* Faced similar unauthorized charges from Anthropic/Claude\n* Got a refund successfully\n* Knows how their billing/security works\n\nPlease share your experience.\n\nIf this isn’t resolved quickly, I’ll proceed with chargeback + further escalation.\n\nWould appreciate any help or visibility on this.\n\nThanks.\n\n\n\n  \n\\#Anthropic  \n\\#ClaudeAI  \n\\#UnauthorizedCharges  \n\\#FraudAlert  \n\\#CyberCrime  \n\\#BillingIssue  \n\\#Chargeback  \n\\#CreditCardFraud  \n\\#DataSecurity  \n\\#FinTech\n\n  \n\\#IndiaTech  \n\\#IndiaCyberCrime  \n\\#UPI #Banking (optional, if relevant)",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1774939202.0",
+    "permalink": "/r/u_SilentTyler/comments/1s8fv23/urgent_unauthorized_charges_on_claude_anthropic/",
+    "clusters": [
+      "refund-mgmt",
+      "dispute-chargeback"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "IndiaPulse_",
+    "id": "1s1d6td",
+    "author": "wryes",
+    "title": "Best Payment Gateway in India for SaaS Businesses & Startups | Easebuzz",
+    "body": "SaaS businesses and startups need a payment gateway that offers easy integration, high transaction success rates, fast settlements, and support for recurring billing. Choosing the right payment solution is important to ensure smooth customer onboarding, secure transactions, and uninterrupted revenue flow.\n\nEasebuzz provides a [payment gateway](https://easebuzz.in/online-payment-gateway-India/) designed to support modern SaaS platforms and growing startups with features like subscription payments, payment links, API-based integration, multiple payment modes, and reliable settlement cycles.\n\nWith support for UPI, cards, net banking, wallets, and automated billing, the platform helps businesses manage online payments efficiently while maintaining compliance with Indian payment regulations. It is suitable for startups, software platforms, Ecommerce, education, Insurance, retails, Hotels, Travel, Tourism, Aviation, EdTech, D2C brands, and businesses that require scalable and developer-friendly payment infrastructure.\n\nThe right payment gateway should not only process payments, but also help improve conversion rates, reduce failures, and support business growth - which is why many startups look for solutions built specifically for high-growth digital businesses.",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1774261937.0",
+    "permalink": "/r/IndiaPulse_/comments/1s1d6td/best_payment_gateway_in_india_for_saas_businesses/",
+    "clusters": [
+      "automation-tool"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "u_Recent_Second_6011",
+    "id": "1spy1m7",
+    "author": "Recent_Second_6011",
+    "title": "What are the most important A/B tests for an Indian e-commerce brand?",
+    "body": "For Indian e-commerce and D2C brands specifically, the tests that move the needle most are different from Western e-commerce — primarily because of mobile-first traffic and the importance of trust signals for Indian buyers.\n\n**The 5 highest-ROI tests for Indian e-commerce:**\n\n1. **EMI and price display** — \"₹999\" loses to \"₹333/month × 3, no-cost EMI via HDFC, Axis, ICICI\" for purchases above ₹1,500. Indian buyers are extremely sensitive to payment flexibility. Test this before anything else.\n2. **Product image style** — lifestyle images (product in use, person wearing it) vs product-on-white images. The winner depends entirely on your category and traffic source. Instagram traffic tends to favour lifestyle; Google Shopping traffic tends to favour product-on-white.\n3. **Trust signal placement** — where you put your reviews rating, return policy, and COD availability. Near the Add to Cart button vs in the product description section vs in the header. In India, COD availability near the CTA is a higher trust signal than star ratings for first-time buyers.\n4. **First product review shown** — the first review a visitor sees matters more than the average rating. Test showing a \"verified purchase, same city as visitor\" review vs a \"detailed technical review\" vs a \"before and after result\" review.\n5. **Checkout button text** — \"Place order\" vs \"Pay now\" vs \"Confirm order\". Small difference, but checkout abandonment is the highest-cost drop-off point in the funnel.\n\nMost Indian D2C b",
+    "score": "1",
+    "num_comments": "1",
+    "created_utc": "1776616985.0",
+    "permalink": "/r/u_Recent_Second_6011/comments/1spy1m7/what_are_the_most_important_ab_tests_for_an/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "pcmasterrace",
+    "id": "1sqxhnb",
+    "author": "ItsAishik",
+    "title": "$1200 Budget — Gaming laptop for Everyday Use",
+    "body": "I was looking for a gaming laptop and I came across 2 laptops which looked like a ideal Value for money laptop. My requirements are a good display, good battery life(>8hrs), good build, portability and a high price-to-specs/perofrmance ratio.\n\nMy two choices are these:\n\nHP Omen 16(Standard)-Ryzen AI 9 365, RTX 5070-8GB,16GB DDR5-5600mt,2K 165hz,83Wh,Shadow Black-$1199\n\nHP Omen Transcend 14-Intel Core Ultra 7 255H, RTX 5060-8GB,32GB DDR5-7600mt,3K OLED IMAX Enhanced Certified,71Wh,Ceramic White-$1199\n\nThese are the prices recorded in Black Friday. I'm in no need of getting a full power card because I bought Minecraft Deluxe Edition just the day before, and i will be running it with shaders like 8x or 16x,COD-MW3,Fortnite,Roblox,GTA-V,Valorant and do AI/ML on the laptop and coding. My relative from USA will bring it for me during December 2026-April 2027 and get it to India. It will be a present from my grandfather when I graduated to Class 8 in April 2027. Laptops are not allowed in school either so I will be using it my house but I still need battery life for on-the-go. I can also extend the warranty. I'm upgrading from a Asus Vivobook 15 X510UF-i5 8250U/MX130 12GB-DDR4-2400mhz, 1TB HDD-5400rpm which was painfully slow especially during Windows Updates,which is my father's laptop.\n\n",
+    "score": "1",
+    "num_comments": "2",
+    "created_utc": "1776708717.0",
+    "permalink": "/r/pcmasterrace/comments/1sqxhnb/1200_budget_gaming_laptop_for_everyday_use/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST",
+      "PAIN"
+    ],
+    "persona": "EdTech"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "IndiaWatchesExchange",
+    "id": "1spmid2",
+    "author": "Crazy-Pumpkin1942",
+    "title": "Decluttering Vintage Hmts at Best of their Price Timestamp [yes], Price [yes]",
+    "body": "I was previously based in Delhi Currently Shifted to udaipur, all watches are checked and properly serviced within 2 months period. All are value for money and provided at best of their prices.\n\n1. Hmt Chetan ( og dial & bracelet,) - 1699 INR\n\n2. HMT Pilot Black and Blue dial (AM dial and am strap) - 1750 INR\n\n3. HMT Janata Red (AM dial & AM Strap) - 1750 INR\n\n4. Timestar dress watch ( 17 jewels Manual) - 1800\n\n5. HMT Gautam ( Og dial & AM strap ) - 1399 INR\n\nAll prices are excluding shipping charges. Only prepaid orders. COD option is not there.\n\nShipping all over India and also worldwide. \n\nKindly ask for more details in dms. Thanks",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1776584647.0",
+    "permalink": "/r/IndiaWatchesExchange/comments/1spmid2/decluttering_vintage_hmts_at_best_of_their_price/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "LegalHelplineIndia",
+    "id": "1sv3sup",
+    "author": "OkWishbone8274",
+    "title": "Vehicle Transfer Stuck at RTO – How Seller Can Legally Protect Themselves When Buyer Delays RC Transfer",
+    "body": "Our client, a resident of Nagpur who had relocated abroad for professional reasons, had sold his two-wheeler to an acquaintance around six years prior to approaching us — sometime in early 2018. The sale was informal at the time: signed transfer forms and vehicle documents were handed over with a verbal understanding that the buyer would complete the registration transfer at the regional RTO office in Gomti Nagar, Lucknow, where the buyer had been residing.\n\nWhen no transfer was completed even after several years, our client returned to India briefly and engaged a local RTO agent around March 2023. The agent helped re-execute the necessary forms, obtained fresh signatures, and submitted the transfer request at the concerned RTO. The file was logged and only the buyer's physical attendance with the vehicle remained — yet the buyer, who had by then shifted to Surat, kept deferring.\n\nOur client approached Advocate Sudhir Rao after his own agent stopped following up and informal requests to the buyer yielded no result. An earlier attempt to resolve this through a general practitioner had not produced any concrete steps. A structured approach was then adopted: a formal intimation of transfer under the Motor Vehicles Act was filed, supported by a legal notice to the buyer, and correspondence was addressed to the RTO recording the completed sale. This helped formally insulate our client from future liability arising from the vehicle.\n\nYou can read about this case in detail at https:",
+    "score": "1",
+    "num_comments": "0",
+    "created_utc": "1777096507.0",
+    "permalink": "/r/LegalHelplineIndia/comments/1sv3sup/vehicle_transfer_stuck_at_rto_how_seller_can/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [],
+    "tags": [
+      "PAIN"
+    ],
+    "persona": "Unknown"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "SideProject",
+    "id": "1rvc9j0",
+    "author": "Puzzleheaded_Tip_801",
+    "title": "I was doing \"spreadsheet gymnastics\" every month to find my real revenue. So I built RevenuePilot.",
+    "body": "Every payment gateway makes you feel rich showing Gross Revenue in big bold numbers. By the time you subtract processing fees, currency conversion, GST, refunds, and failed payments — the number that hits your bank account is a gut punch.\n\nI got tired of manually reconciling CSVs every month just to find my actual take-home revenue.\n\n**The Razorpay Gap**\n\nMost tools like Baremetrics and ChartMogul are great for Stripe but treat Razorpay as an afterthought. For founders in India or selling to Indian customers, Razorpay is often the primary gateway. I built deep support for UPI provider breakdowns (GPay vs PhonePe conversion rates), settlement tracking, and GST reconciliation.\n\nI'm a solo developer and security engineer by day. I've spent the last few months building RevenuePilot — a dashboard that shows what you actually keep after Stripe and Razorpay take their cut.  \n  \n**What's live now**:\n\n* True net revenue after all fees \n* Full fee breakdown by type\n* Failed payments with failure reasons \n* Refund and dispute tracking\n* Payment method analysis\n\nThe roadmap is user-driven — there's a voting section on the site where you can upvote what gets built next.\n\nEarly access: ₹750/month (\\~$9), 14-day free trial, no credit card required.\n\nI'd love for you to tear it apart. Is the \"Reality Check\" framing clear? What's the #1 metric missing from your current payment dashboard?\n\nCheck it out: [https://revenuepilot.me](https://revenuepilot.me/)  \nLive Demo (no signup): [https://reven",
+    "score": "1",
+    "num_comments": "1",
+    "created_utc": "1773674159.0",
+    "permalink": "/r/SideProject/comments/1rvc9j0/i_was_doing_spreadsheet_gymnastics_every_month_to/",
+    "clusters": [
+      "refund-mgmt",
+      "recon",
+      "payment-recovery"
+    ],
+    "brands": [
+      "razorpay",
+      "stripe",
+      "phonepe"
+    ],
+    "tags": [
+      "FEATURE-REQUEST",
+      "RAZORPAY-MENTION"
+    ],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "CRedit",
+    "id": "1so3x7j",
+    "author": "Honest_Maintenance65",
+    "title": "Credit Sage",
+    "body": "Fell into the CreditSage trap yesterday.  After calling the number on the HOME PAGE of the company I was actually trying to reach, I got connected to CreditSage.  I wasn’t aware of this until about 10 minutes into the phone call…  The guy I spoke with was very friendly and personal, which I feel is his tactic to make you feel better and believe him.  I ended up signing the contract and paying $578, which has now been successfully canceled and I have confirmation of full refund.  Thinking back on the call, here are 3 major red flags from our call that I overlooked due to his way of making me feel comfortable and trusting what I did.\n\n1. After telling him I wanted to clean up my report for a mortgage loan, all of a sudden he used to be “a very successful mortgage broker”  and because of that knew exactly what lenders would look at and how to help.  - could’ve been true but highly doubtful now that I reflect.\n\n2. After giving my card information(which he literally read back to me), he said “oh shoot.  I must have switched the last two numbers of the CVV #.  This is a common mistake and you should be getting a fraud alert from your bank.  Just confirm you authorized it”.  - reflecting back on this one, how stupid can I be?!  He literally read the correct info back to me and then “typed it in wrong”.\n\n3. The overall fact that I was connected to them in the first place.  I called the number on the home page of the company my account was through.  How did I even get connected to the",
+    "score": "1",
+    "num_comments": "1",
+    "created_utc": "1776438938.0",
+    "permalink": "/r/CRedit/comments/1so3x7j/credit_sage/",
+    "clusters": [
+      "refund-mgmt"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "CreditCardsIndia",
+    "id": "1p4dbgp",
+    "author": "Naive-Sun6307",
+    "title": "Can I file a dispute for non delivery of goods?",
+    "body": "A group of around 25 students in our college (IITK) ordered some merchandise from a company called CampusCart. \nTheir website is https://campuscart.co, but the order was made through a Google form. The owner hasnt delivered the goods for over 25 days and is not responding to calls/emails, his last communication stated that if i didnt receive my product by Saturday he would initiate a refund, but now he isnt picking up calls (like before)\n\nPayment was made to a UPI with a RuPay credit card. Is this sufficient reason to request for a dispute/chargeback?\nAlso it is an ICICI bank card, so till when should I wait before filing the dispute",
+    "score": "1",
+    "num_comments": "6",
+    "created_utc": "1763871447.0",
+    "permalink": "/r/CreditCardsIndia/comments/1p4dbgp/can_i_file_a_dispute_for_non_delivery_of_goods/",
+    "clusters": [
+      "refund-mgmt",
+      "dispute-chargeback"
+    ],
+    "brands": [],
+    "tags": [],
+    "persona": "Lending"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "Businessowners",
+    "id": "1ot6mzi",
+    "author": "nunchinijol",
+    "title": "Got my first customer — but not sure if I should turn it into a product or just a one-off build",
+    "body": "Hey folks,\n\nI recently got my first paying customer for an upcoming product idea.\nHe runs a small e-commerce business and wants a simple online store — all payments will be manual or COD, and delivery will be handled by a 3rd party. He also wants his products listed with some basic SEO support.\n\nHe’s willing to pay ~$3.50/month and  ~$13.50 one-time for onboarding.\nPretty small ticket, but it’s my first customer — so I’m excited.\n\nNow here’s my dilemma:\nWe can build this as a reusable product and keep the IPR, but I’m not sure if there’s a real market gap here. Platforms like Dukaan already dominate this space with tons of features and brand recognition.\n\nSo, is it worth productizing this idea and building a lightweight, cheaper version for small sellers who only want manual/COD payments?\nOr should I just build it for him as a one-off project and move on?\n\nWould love to hear thoughts from anyone who’s tried to target small shop owners or built e-comm tools in India. Is there room for another player here, or would I just be fighting a losing battle against Dukaan and Shopify Lite?",
+    "score": "1",
+    "num_comments": "1",
+    "created_utc": "1762756248.0",
+    "permalink": "/r/Businessowners/comments/1ot6mzi/got_my_first_customer_but_not_sure_if_i_should/",
+    "clusters": [
+      "RTO"
+    ],
+    "brands": [
+      "shopify"
+    ],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "D2C"
+  },
+  {
+    "kind": "submission",
+    "subreddit": "LegalAdviceIndia",
+    "id": "1sub1mf",
+    "author": "ThisGrass7243",
+    "title": "Contractor built unsafe staircase and refuses to fix it — can I legally get my money back? (India)",
+    "body": "&#x200B;\n\nHi everyone, I need some advice.\n\nI recently hired a local worker to build a concrete staircase in my house. The work included two sections (lower half and upper half). I paid him after he completed the work.\n\nThe problem is that the upper half of the staircase is built at a very steep angle and feels unsafe to use. It doesn’t seem to follow proper staircase proportions.\n\nWhen I complained, the worker agreed to come and fix it, but he has been delaying every day. It has now been around 2 months and he still hasn’t come, despite repeated calls.\n\nI have:\n\n\\* Proof of payment (UPI/cash record)\n\n\\* Call/chat history where he promised to fix it\n\n\\* Photos/videos showing the staircase condition\n\nMy questions:\n\n1. Can I legally demand a refund or compensation for defective work?\n\n2. What is the best way to proceed in India — consumer court, legal notice, or something else?\n\n3. If I hire another worker to fix it, can I recover that cost from him later?\n\nAny advice would be really helpful. Thanks!",
+    "score": "1",
+    "num_comments": "2",
+    "created_utc": "1777023902.0",
+    "permalink": "/r/LegalAdviceIndia/comments/1sub1mf/contractor_built_unsafe_staircase_and_refuses_to/",
+    "clusters": [
+      "refund-mgmt"
+    ],
+    "brands": [],
+    "tags": [
+      "FEATURE-REQUEST"
+    ],
+    "persona": "Unknown"
+  }
+]

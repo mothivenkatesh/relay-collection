@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relay — AI Workflows Inside Your Payments Stack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cf-violet: #6933D3;
+  --cf-violet-soft: #F1ECFB;
+  --cf-violet-line: #E0D4F7;
+  --cf-green: #04AB61;
+  --cf-green-soft: #E6F7EE;
+  --cf-yellow: #FBB016;
+  --cf-yellow-soft: #FEF3DC;
+  --cf-deep: #1F074F;
+  --cf-ink: #0A0118;
+  --coral: #E85D75;
+  --coral-soft: #FCEBEF;
+  --paper: #FAF7F2;
+  --paper-2: #F2EEE6;
+  --line: #E5DFD3;
+  --line-strong: #C9C0AD;
+  --text: #1A1530;
+  --text-muted: #6B6580;
+  --text-faint: #9A93AB;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'Geist Mono', 'SF Mono', Menlo, monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+.deck { position: fixed; inset: 0; }
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 56px 80px 100px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(12px);
+  overflow-y: auto;
+}
+
+.slide.active { opacity: 1; pointer-events: all; transform: translateY(0); }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  flex-shrink: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.brand-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--cf-violet);
+  border-radius: 2px;
+  position: relative;
+}
+
+.brand-dot::after {
+  content: '';
+  position: absolute;
+  inset: -2px -2px auto auto;
+  width: 4px;
+  height: 4px;
+  background: var(--cf-yellow);
+  border-radius: 50%;
+}
+
+.slide-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+}
+
+.slide-meta .num { color: var(--text); font-weight: 500; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cf-violet);
+  margin-bottom: 24px;
+}
+
+.headline {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--cf-ink);
+  margin-bottom: 32px;
+}
+
+.headline em { font-style: italic; color: var(--cf-violet); }
+
+.body-large {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text);
+  max-width: 640px;
+}
+
+/* COVER */
+.cover-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.cover-headline {
+  font-family: var(--serif);
+  font-size: clamp(72px, 9vw, 124px);
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+  color: var(--cf-ink);
+  margin-bottom: 40px;
+}
+
+.cover-headline em { font-style: italic; color: var(--cf-violet); }
+
+.cover-meta {
+  display: flex;
+  gap: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.cover-meta-item { display: flex; flex-direction: column; gap: 6px; }
+
+.cover-meta-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.cover-meta-value {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--cf-ink);
+}
+
+.cover-visual {
+  position: relative;
+  height: 460px;
+  background: var(--cf-ink);
+  border-radius: 16px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(31, 7, 79, 0.18);
+  color: white;
+}
+
+.vault-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.vault-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
+.vault-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cf-yellow);
+  box-shadow: 0 0 0 6px rgba(251, 176, 22, 0.15);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 6px rgba(251, 176, 22, 0.15); }
+  50% { box-shadow: 0 0 0 10px rgba(251, 176, 22, 0.05); }
+}
+
+.vault-center {
+  font-family: var(--serif);
+  font-size: 58px;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
+.vault-center em { font-style: italic; color: var(--cf-yellow); }
+
+.vault-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.vault-meta-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 6px;
+}
+
+.vault-meta-value {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: white;
+}
+
+/* COMPARE */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  flex: 1;
+  align-content: center;
+}
+
+.compare-card {
+  padding: 32px;
+  border-radius: 14px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+.compare-card.bad { background: var(--paper-2); border: 1px solid var(--line); }
+.compare-card.good { background: linear-gradient(165deg, var(--cf-violet) 0%, #7E48E0 100%); color: white; }
+
+.compare-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.compare-card.bad .compare-tag { color: var(--text-muted); }
+.compare-card.good .compare-tag { color: rgba(255,255,255,0.7); }
+
+.compare-title {
+  font-family: var(--serif);
+  font-size: 36px;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.compare-title em { font-style: italic; }
+.compare-card.bad .compare-title em { color: var(--cf-violet); }
+.compare-card.good .compare-title em { color: var(--cf-yellow); }
+
+.compare-body {
+  font-size: 15px;
+  line-height: 1.55;
+  margin-bottom: auto;
+}
+
+.compare-card.bad .compare-body { color: var(--text-muted); }
+.compare-card.good .compare-body { opacity: 0.9; }
+
+.compare-stat {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.compare-card.bad .compare-stat { border-color: var(--line); }
+.compare-card.good .compare-stat { border-color: rgba(255,255,255,0.2); }
+
+.compare-stat-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.compare-card.bad .compare-stat-num { color: var(--text-faint); }
+.compare-card.good .compare-stat-num { color: var(--cf-yellow); }
+
+.compare-stat-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.compare-card.good .compare-stat-label { opacity: 0.85; }
+
+/* FOUR-CARD */
+.four-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  flex: 1;
+  align-content: center;
+}
+
+.four-card {
+  padding: 24px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+}
+
+.four-icon {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 28px;
+  color: var(--cf-violet);
+  margin-bottom: 16px;
+}
+
+.four-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.1;
+  color: var(--cf-ink);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.four-body {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-bottom: auto;
+}
+
+.four-tag {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cf-violet);
+}
+
+/* THREE-CARDS */
+.three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  flex: 1;
+  align-content: center;
+}
+
+.three-card {
+  padding: 28px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+}
+
+.three-num {
+  width: 32px;
+  height: 32px;
+  background: var(--cf-violet);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+.three-title {
+  font-family: var(--serif);
+  font-size: 26px;
+  line-height: 1.1;
+  color: var(--cf-ink);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.three-body {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* STAT-BLOCKS */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.stat-block {
+  padding: 26px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.stat-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--cf-violet);
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.stat-note {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+/* PD */
+.pd-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  flex: 1;
+  align-items: center;
+}
+
+.pd-marker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.pd-num {
+  width: 36px;
+  height: 36px;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-style: italic;
+}
+
+.pd-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.pd-title {
+  font-family: var(--serif);
+  font-size: 64px;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: var(--cf-ink);
+  margin-bottom: 24px;
+}
+
+.pd-title em { font-style: italic; color: var(--cf-violet); }
+
+.pd-pill {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 7px 14px;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  color: var(--cf-violet);
+  background: var(--cf-violet-soft);
+}
+
+.pd-callout {
+  padding: 22px 24px;
+  border-left: 2px solid var(--cf-violet);
+  background: var(--paper-2);
+}
+
+.pd-callout-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.pd-callout-text {
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--cf-ink);
+}
+
+.pd-callout-text em { font-style: italic; color: var(--cf-violet); }
+
+/* PILLARS */
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  align-content: center;
+}
+
+.pillar {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  gap: 24px;
+  padding: 20px 26px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  align-items: center;
+}
+
+.pillar-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 38px;
+  color: var(--cf-violet);
+  line-height: 1;
+}
+
+.pillar-content { display: flex; flex-direction: column; gap: 4px; }
+
+.pillar-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--cf-ink);
+}
+
+.pillar-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.pillar-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cf-violet);
+  padding: 5px 11px;
+  background: var(--cf-violet-soft);
+  border-radius: 100px;
+}
+
+/* RULES */
+.rules-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  flex: 1;
+  align-content: center;
+}
+
+.rule {
+  padding: 24px;
+  background: white;
+  border-left: 3px solid var(--cf-violet);
+  border-radius: 0 10px 10px 0;
+  border-top: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.rule.bad { border-left-color: var(--coral); }
+
+.rule-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--cf-violet);
+  margin-bottom: 8px;
+}
+
+.rule.bad .rule-num { color: var(--coral); }
+
+.rule-text {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--cf-ink);
+  margin-bottom: 8px;
+}
+
+.rule-note {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* COMPETITIVE TABLE */
+.ctable {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  flex: 1;
+  align-self: center;
+  width: 100%;
+}
+
+.ctable-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  border-bottom: 1px solid var(--line);
+}
+
+.ctable-row:last-child { border-bottom: none; }
+
+.ctable-row.head {
+  background: var(--paper-2);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ctable-row.head .ctable-cell { color: var(--text-muted); font-weight: 500; }
+.ctable-row.head .ctable-cell.us { color: var(--cf-violet); }
+
+.ctable-cell {
+  padding: 16px 22px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.4;
+  border-right: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+}
+
+.ctable-cell:last-child { border-right: none; }
+
+.ctable-cell.label {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--cf-ink);
+}
+
+.ctable-cell.us {
+  background: var(--cf-violet-soft);
+  font-weight: 500;
+}
+
+.ctick { color: var(--cf-green); font-weight: 700; margin-right: 8px; }
+.ccross { color: var(--coral); font-weight: 700; margin-right: 8px; }
+.cpart { color: var(--cf-yellow); font-weight: 700; margin-right: 8px; }
+
+/* REVENUE */
+.rev-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  flex: 1;
+  align-content: center;
+}
+
+.rev-card {
+  padding: 28px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}
+
+.rev-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+
+.rev-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--cf-violet);
+}
+
+.rev-price {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--cf-violet);
+}
+
+.rev-title {
+  font-family: var(--serif);
+  font-size: 26px;
+  line-height: 1.1;
+  color: var(--cf-ink);
+  margin-bottom: 10px;
+}
+
+.rev-body {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-bottom: auto;
+}
+
+.rev-buyer {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* ROADMAP TIMELINE */
+.roadmap {
+  flex: 1;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.roadmap-col-labels {
+  display: grid;
+  grid-template-columns: 140px repeat(4, 1fr);
+  gap: 14px;
+  padding: 0 4px;
+}
+
+.roadmap-col-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.roadmap-col-label.active {
+  color: var(--cf-violet);
+  font-weight: 600;
+}
+
+.roadmap-row {
+  display: grid;
+  grid-template-columns: 140px repeat(4, 1fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.roadmap-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px 20px;
+  background: var(--cf-violet-soft);
+  border-radius: 10px;
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.2;
+  color: var(--cf-ink);
+}
+
+.roadmap-cell {
+  padding: 14px 16px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--text);
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.roadmap-cell.ship {
+  background: linear-gradient(165deg, var(--cf-violet) 0%, #7E48E0 100%);
+  color: white;
+  border-color: transparent;
+  font-weight: 500;
+}
+
+.roadmap-cell.future {
+  background: var(--paper-2);
+  color: var(--text-muted);
+  border-style: dashed;
+}
+
+.roadmap-cell strong { color: inherit; }
+.roadmap-cell.ship strong { color: var(--cf-yellow); }
+
+/* VERTICALS */
+.verticals {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  flex: 1;
+  align-content: center;
+}
+
+.vertical-card {
+  padding: 26px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-card.featured {
+  background: linear-gradient(165deg, var(--cf-violet) 0%, #7E48E0 100%);
+  color: white;
+  border-color: transparent;
+}
+
+.vertical-emoji {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 36px;
+  color: var(--cf-violet);
+  margin-bottom: 14px;
+}
+
+.vertical-card.featured .vertical-emoji { color: var(--cf-yellow); }
+
+.vertical-name {
+  font-family: var(--serif);
+  font-size: 26px;
+  line-height: 1.1;
+  color: var(--cf-ink);
+  margin-bottom: 10px;
+}
+
+.vertical-card.featured .vertical-name { color: white; }
+
+.vertical-pain {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.vertical-card.featured .vertical-pain { color: rgba(255,255,255,0.85); }
+
+.vertical-wedge {
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cf-violet);
+  line-height: 1.5;
+}
+
+.vertical-card.featured .vertical-wedge {
+  border-top-color: rgba(255,255,255,0.2);
+  color: var(--cf-yellow);
+}
+
+/* CLOSING */
+.final-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.final-mantra {
+  font-family: var(--serif);
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--cf-ink);
+}
+
+.final-mantra em { font-style: italic; color: var(--cf-violet); }
+
+.final-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.final-rule {
+  padding: 20px 22px;
+  background: white;
+  border-left: 2px solid var(--cf-violet);
+  border-radius: 0 8px 8px 0;
+}
+
+.final-rule-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--cf-violet);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.final-rule-text {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.3;
+  color: var(--cf-ink);
+}
+
+/* NAV */
+.nav {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: white;
+  padding: 10px 14px;
+  border-radius: 100px;
+  box-shadow: 0 4px 24px rgba(31, 7, 79, 0.08), 0 0 0 1px rgba(31, 7, 79, 0.06);
+  z-index: 100;
+}
+
+.nav-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover:not(:disabled) { background: var(--cf-violet); color: white; }
+.nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.nav-dots { display: flex; gap: 6px; align-items: center; }
+
+.nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--line-strong);
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-dot.active { background: var(--cf-violet); width: 24px; border-radius: 4px; }
+
+.nav-counter {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 0 8px;
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+
+.nav-counter strong { color: var(--text); font-weight: 500; }
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 50;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cf-violet), var(--cf-yellow));
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.kbd-hint {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-faint);
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 50;
+}
+
+.kbd {
+  padding: 3px 7px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 10px;
+  color: var(--text);
+}
+
+.slide::-webkit-scrollbar { width: 6px; }
+.slide::-webkit-scrollbar-track { background: transparent; }
+.slide::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 3px; }
+
+@media (max-width: 1100px) {
+  .slide { padding: 40px 48px 100px; }
+  .cover-grid, .pd-grid, .final-grid, .compare-grid { grid-template-columns: 1fr; gap: 40px; }
+  .three-grid, .rules-grid, .rev-grid { grid-template-columns: 1fr; }
+  .four-grid, .verticals { grid-template-columns: 1fr 1fr; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .roadmap-row, .roadmap-col-labels { grid-template-columns: 1fr; }
+  .ctable-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="deck" id="deck">
+
+<!-- 1: COVER -->
+<section class="slide active" data-slide="0">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Cashfree · Relay</span></div>
+    <div class="slide-meta"><span class="num">01</span> / 12</div>
+  </div>
+
+  <div class="cover-grid">
+    <div>
+      <div class="eyebrow">Product positioning / 2026</div>
+      <h1 class="cover-headline">Payments<br>that <em>act</em><br>on their own.</h1>
+      <div class="cover-meta">
+        <div class="cover-meta-item"><span class="cover-meta-label">Product</span><span class="cover-meta-value">Cashfree Relay</span></div>
+        <div class="cover-meta-item"><span class="cover-meta-label">Category</span><span class="cover-meta-value">AI workflow engine</span></div>
+        <div class="cover-meta-item"><span class="cover-meta-label">Launch</span><span class="cover-meta-value">Q3 2026</span></div>
+      </div>
+    </div>
+
+    <div class="cover-visual">
+      <div class="vault-top">
+        <div class="vault-label">Cashfree Relay</div>
+        <div class="vault-dot"></div>
+      </div>
+      <div class="vault-center">
+        Not an automation tool.<br><em>A payments brain.</em>
+      </div>
+      <div class="vault-bottom">
+        <div>
+          <div class="vault-meta-label">Lives inside</div>
+          <div class="vault-meta-value">Your payments stack</div>
+        </div>
+        <div>
+          <div class="vault-meta-label">Built for</div>
+          <div class="vault-meta-value">D2C · Edu · Travel · BFSI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2: THE GAP -->
+<section class="slide" data-slide="1">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Cashfree · Relay</span></div>
+    <div class="slide-meta"><span class="num">02</span> / 12</div>
+  </div>
+
+  <div class="eyebrow">The gap</div>
+  <h2 class="headline" style="font-size: 60px;">Every payment event is a<br>business decision. <em>Waiting.</em></h2>
+
+  <div class="compare-grid">
+    <div class="compare-card bad">
+      <div class="compare-tag">Today</div>
+      <div class="compare-title">Manual ops. Custom code. Zapier hacks.</div>
+      <div class="compare-body">Merchants copy-paste into Sheets at 11pm. Devs stitch webhooks that break. Zapier can't see refund data securely. Every new flow is a ticket in a backlog.</div>
+      <div class="compare-stat">
+        <div class="compare-stat-num">0</div>
+        <div class="compare-stat-label">Workflows a founder can ship alone</div>
+      </div>
+    </div>
+
+    <div class="compare-card good">
+      <div class="compare-tag">With Relay</div>
+      <div class="compare-title">Drag, describe, deploy.</div>
+      <div class="compare-body">Every Cashfree event becomes a trigger. Every action uses native Cashfree APIs. AI agents handle the fuzzy calls. Zero data leaves the stack.</div>
+      <div class="compare-stat">
+        <div class="compare-stat-num">15</div>
+        <div class="compare-stat-label">Min to first live workflow</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3: POSITIONING -->
+<section class="slide" data-slide="2">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Cashfree · Relay</span></div>
+    <div class="slide-meta"><span class="num">03</span> / 12</div>
+  </div>
+
+  <div class="pd-grid">
+    <div>
+      <div class="pd-marker"><div class="pd-num" style="background: var(--cf-violet);">·</div><div class="pd-label">What Relay is</div></div>
+      <h2 class="pd-title">A no-code<br>AI workflow<br>engine. <em>Native.</em></h2>
+      <div class="pd-pill">Visual builder · AI agents · MCP · Cashfree-stack aware</div>
+      <div class="pd-callout">
+        <div class="pd-callout-label">The one line</div>
+        <div class="pd-callout-text">The only workflow engine that runs <em>inside</em> your payments stack — with full access to every order, refund, payout and KYC signal.</div>
+      </div>
+    </div>
+
+    <div class="stat-grid" style="grid-template-columns: 1fr 1fr; margin-top: 0;">
+      <div class="stat-block">
+        <div class="stat-label">Triggers</div>
+        <div class="stat-num">9+</div>
+        <div class="stat-note">Payment, Refund, Dispute, Schedule, Webhook</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-label">Native actions</div>
+        <div class="stat-num">9+</div>
+        <div class="stat-note">Orders, links, refunds, Cashgram, more</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-label">Integrations</div>
+        <div class="stat-num">30+</div>
+        <div class="stat-note">WhatsApp, Sheets, Slack, OpenAI, Gemini</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-label">Data egress</div>
+        <div class="stat-num">0</div>
+        <div class="stat-note">Runs inside Cashfree infra</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4: WHO IT'S FOR -->
+<section class="slide" data-slide="3">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Cashfree · Relay</span></div>
+    <div class="slide-meta"><span class="num">04</span> / 12</div>
+  </div>
+
+  <div class="eyebrow">Who it's for</div>
+  <h2 class="headline" style="font-size: 60px;">Four verticals. <em>One</em> engine.</h2>
+
+  <div class="verticals">
+    <div class="vertical-card">
+      <div class="vertical-emoji">Dc</div>
+      <div class="vertical-name">D2C</div>
+      <div class="vertical-pain">Cart drop-offs. COD fraud. WhatsApp-first ops. Founder-led, no dev team.</div>
+      <div class="vertical-wedge">Wedge: merchant-branded WhatsApp, Sheets live sync</div>
+    </div>
+    <div class="vertical-card">
+      <div class="vertical-emoji">Ed</div>
+      <div class="vertical-name">Edtech</div>
+      <div class="vertical-pain">EMI collections. High-ticket refunds. Parent-student split comms. LMS handoffs.</div>
+      <div class="vertical-wedge">Wedge: dunning + refund logic, LMS access grants</div>
+    </div>
+    <div class="vertical-card featured">
+      <div class="vertical-emoji">Tv</div>
+      <div class="vertical-name">Travel</div>
+      <div class="vertical-pain">Inventory-timed payments. Cancellation cascades. Dispute-heavy. Fraud-prone.</div>
+      <div class="vertical-wedge">Wedge: time-bound flows, evidence auto-assembly</div>
+    </div>
+    <div class="vertical-card featured">
+      <div class="vertical-emoji">Bf</div>
+      <div class="vertical-name">BFSI</div>
+      <div class="vertical-pain">RBI audits. Maker-checker. KYC-at-checkout. Compliance-heavy ops.</div>
+      <div class="vertical-wedge">Wedge: audit trail, Secure ID inline, data residency</div>
+    </div>
+  </div>
+</section>
+
+<!-- 5: SIX PILLARS -->
+<section class="slide" data-slide="4">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Cashfree · Relay</span></div>
+    <div class="slide-meta"><span class="num">05</span> / 12</div>
+  </div>
+
+  <div class="eyebrow">The stack</div>
+  <h2 class="headline" style="font-size: 60px;">Six <em>pillars</em>. One canvas.</h2>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-num">1</div>
+      <div class="pillar-content">
+        <div class="pillar-title">Event triggers</div>
+        <div class="pillar-meta">Payment Success, Failed, Dropped · Refund Success, Cancelled, Auto · Dispute Created, Updated, Closed · Schedule · Custom webhook.</div>
+      </div>
+      <div class="pillar-tag">Triggers</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">2</div>
+      <div class="pillar-content">
+        <div class="pillar-title">Native Cashfree actions</div>
+        <div class="pillar-meta">Create Order · Payment Link · Refund · Cancel Link · Fetch Details · Cashgram · Fetch Orders · Get Refunds. No separate auth.</div>
+      </div>
+      <div class="pillar-tag">Actions</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">3</div>
+      <div class="pillar-content">
+        <div class="pillar-title">AI agent nodes</div>
+        <div class="pillar-meta">Model-routed (OpenAI, Gemini, Claude). Structured output. Tool use. RAG on merchant's own data. Plain-English workflow authoring.</div>
+      </div>
+      <div class="pillar-tag">Agents</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">4</div>
+      <div class="pillar-content">
+        <div class="pillar-title">MCP connectivity</div>
+        <div class="pillar-meta">Connect Claude, ChatGPT, or any agent to Relay via MCP. Natural language → Cashfree action. Your AI agent as a co-pilot.</div>
+      </div>
+      <div class="pillar-tag">MCP</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">5</div>
+      <div class="pillar-content">
+        <div class="pillar-title">Vertical templates</div>
+        <div class="pillar-meta">Pre-built workflows per vertical. Cart recovery (D2C). EMI dunning (edtech). Cancellation cascade (travel). KYC-at-checkout (BFSI).</div>
+      </div>
+      <div class="pillar-tag">Templates</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">6</div>
+      <div class="pillar-content">
+        <div class="pillar-title">Compliance guardrails</div>
+        <div class="pillar-meta">Audit log for every run. Maker-checker nodes. Data residency inside Cashfree infra. BFSI-grade by default, not by config.</div>
+      </div>
+      <div class="pillar-tag">Guardrails</div>
+    </div>
+  </div>
+</section>
+
+<!-- 6: WHY IT WINS -->
+<section class="slide" data-slide="5">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Cashfree · Relay</span></div>
+    <div class="slide-meta"><span class="num">06</span> / 12</div>
+  </div>
+
+  <div class="eyebrow">Why Relay wins</div>
+  <h2 class="headline" style="font-size: 60px;">Four <em>asymmetric</em> bets.</h2>
+
+  <div class="rules-grid">
+    <div class="rule">
+      <div class="rule-num">BET 01</div>
+      <div class="rule-text">Full-stack, not payments-only.</div>
+      <div class="rule-note">Relay orchestrates PG + Payouts + Secure ID + Verify. Competitors stop at payments.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-num">BET 02</div>
+      <div class="rule-text">Vertical-deep, not horizontal.</div>
+      <div class="rule-note">BFSI and travel are competitive white space. We own them before anyone else ships.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-num">BET 03</div>
+      <div class="rule-text">Inside the infra, not on top.</div>
+      <div class="rule-note">Zero data egress. Sub-second event latency. Enterprise-grade by construction.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-num">BET 04</div>
+      <div class="rule-text">Merchant-owned channels.</div>
+      <div class="rule-note">WhatsApp from merchant's own number. Google Sheets live sync. Not a partner wrapper.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 7: COMPETITIVE MATRIX -->
+<section class="slide" data-slide="6">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Cashfree · Relay</span></div>
+    <div class="slide-meta"><span class="num">07</span> / 12</div>
+  </div>
+
+  <div class="eyebrow">vs. the market</div>
+  <h2 class="headline" style="font-size: 56px;">Where we <em>win</em> on the table.</h2>
+
+  <div class="ctable">
+    <div class="ctable-row head">
+      <div class="ctable-cell">Capability</div>
+      <div class="ctable-cell us">Cashfree Relay</div>
+      <div class="ctable-cell">Razorpay Agent Studio</div>
+      <div class="ctable-cell">Zapier / n8n</div>
+    </div>
+    <div class="ctable-row">
+      <div class="ctable-cell label">No-code visual builder</div>
+      <div class="ctable-cell us"><span class="ctick">✓</span>GA at launch</div>
+      <div class="ctable-cell"><span class="cpart">~</span>Beta</div>
+      <div class="ctable-cell"><span class="ctick">✓</span>GA</div>
+    </div>
+    <div class="ctable-row">
+      <div class="ctable-cell label">AI agent nodes</div>
+      <div class="ctable-cell us"><span class="ctick">✓</span>Multi-model routed</div>
+      <div class="ctable-cell"><span class="ctick">✓</span>Claude SDK</div>
+      <div class="ctable-cell"><span class="cpart">~</span>Via 3rd party</div>
+    </div>
+    <div class="ctable-row">
+      <div class="ctable-cell label">MCP native</div>
+      <div class="ctable-cell us"><span class="ctick">✓</span>Yes</div>
+      <div class="ctable-cell"><span class="cpart">~</span>Agentic EP</div>
+      <div class="ctable-cell"><span class="ccross">✗</span>No</div>
+    </div>
+    <div class="ctable-row">
+      <div class="ctable-cell label">KYC / Secure ID orchestration</div>
+      <div class="ctable-cell us"><span class="ctick">✓</span>Native, inline</div>
+      <div class="ctable-cell"><span class="ccross">✗</span>No equivalent</div>
+      <div class="ctable-cell"><span class="ccross">✗</span>Not possible</div>
+    </div>
+    <div class="ctable-row">
+      <div class="ctable-cell label">BFSI audit + maker-checker</div>
+      <div class="ctable-cell us"><span class="ctick">✓</span>Built-in</div>
+      <div class="ctable-cell"><span class="ccross">✗</span>Not emphasized</div>
+      <div class="ctable-cell"><span class="ccross">✗</span>No</div>
+    </div>
+    <div class="ctable-row">
+      <div class="ctable-cell label">Data residency (India)</div>
+      <div class="ctable-cell us"><span class="ctick">✓</span>Inside Cashfree</div>
+      <div class="ctable-cell"><span class="cpart">~</span>Razorpay infra</div>
+      <div class="ctable-cell"><span class="ccross">✗</span>US / EU</div>
+    </div>
+    <div class="ctable-row">
+      <div class="ctable-cell label">Merchant-branded WhatsApp</div>
+      <div class="ctable-cell us"><span class="ctick">✓</span>Own number</div>
+      <div class="ctable-cell"><span class="cpart">~</span>Via SuperU / Nugget</div>
+      <div class="ctable-cell"><span class="cpart">~</span>BYO API</div>
+    </div>
+    <div class="ctable-row">
+      <div class="ctable-cell label">Vertical templates at launch</div>
+      <div class="ctable-cell us"><span class="ctick">✓</span>20+ across 4 verticals</div>
+      <div class="ctable-cell"><span class="cpart">~</span>8 generic agents</div>
+      <div class="ctable-cell"><span class="ccross">✗</span>Community-led</div>
+    </div>
+  </div>
+</section>
+
+<!-- 8: PRICING -->
+<section class="slide" data-slide="7">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Cashfree · Relay</span></div>
+    <div class="slide-meta"><span class="num">08</span> / 12</div>
+  </div>
+
+  <div class="eyebrow">Packaging</div>
+  <h2 class="headline" style="font-size: 60px;">Free to start. <em>Meter</em> to scale.</h2>
+
+  <div class="rev-grid">
+    <div class="rev-card">
+      <div class="rev-head">
+        <div class="rev-num">TIER 01</div>
+        <div class="rev-price">Free</div>
+      </div>
+      <div class="rev-title">Starter</div>
+      <div class="rev-body">All PG merchants. Up to 5 active workflows. 1,000 runs/month. Templates included. Drives dashboard stickiness and PG retention.</div>
+      <div class="rev-buyer">Buyer: self-serve · SMB / D2C</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-head">
+        <div class="rev-num">TIER 02</div>
+        <div class="rev-price">Usage</div>
+      </div>
+      <div class="rev-title">Growth</div>
+      <div class="rev-body">Unlimited workflows. Metered per run after 10K/month. AI agent runs priced per inference. WhatsApp, SMS pass-through costs.</div>
+      <div class="rev-buyer">Buyer: mid-market · edtech / travel</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-head">
+        <div class="rev-num">TIER 03</div>
+        <div class="rev-price">Custom</div>
+      </div>
+      <div class="rev-title">Enterprise</div>
+      <div class="rev-body">Dedicated infra. BFSI compliance pack. Maker-checker workflows. Audit exports. SLA 99.95%. Bundled with PG contracts.</div>
+      <div class="rev-buyer">Buyer: banks · NBFCs · fintechs</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-head">
+        <div class="rev-num">TIER 04</div>
+        <div class="rev-price">White-label</div>
+      </div>
+      <div class="rev-title">Platform</div>
+      <div class="rev-body">For Cashfree's platform merchants (Dukaan, marketplaces). Sub-merchants build their own workflows inside the parent's dashboard.</div>
+      <div class="rev-buyer">Buyer: platforms · aggregators</div>
+    </div>
+  </div>
+</section>
+
+<!-- 9: ROADMAP -->
+<section class="slide" data-slide="8">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Cashfree · Relay</span></div>
+    <div class="slide-meta"><span class="num">09</span> / 12</div>
+  </div>
+
+  <div class="eyebrow">Roadmap</div>
+  <h2 class="headline" style="font-size: 56px;">Six quarters. <em>Three</em> chapters.</h2>
+
+  <div class="roadmap">
+    <div class="roadmap-col-labels">
+      <div></div>
+      <div class="roadmap-col-label active">Q2 2026 · Beta</div>
+      <div class="roadmap-col-label active">Q3 2026 · GA</div>
+      <div class="roadmap-col-label">Q4 2026</div>
+      <div class="roadmap-col-label">2027</div>
+    </div>
+
+    <div class="roadmap-row">
+      <div class="roadmap-label">Builder</div>
+      <div class="roadmap-cell ship">Visual canvas · <strong>9 triggers, 9 actions</strong></div>
+      <div class="roadmap-cell ship">Templates gallery · <strong>20+ per vertical</strong></div>
+      <div class="roadmap-cell">NL-to-workflow authoring ("Describe a flow")</div>
+      <div class="roadmap-cell future">Community-contributed templates marketplace</div>
+    </div>
+
+    <div class="roadmap-row">
+      <div class="roadmap-label">AI & agents</div>
+      <div class="roadmap-cell ship">AI node · <strong>OpenAI, Gemini, Claude</strong></div>
+      <div class="roadmap-cell ship">Pre-built agents · <strong>Cart, refund, dispute, dunning</strong></div>
+      <div class="roadmap-cell">Voice agents (Sarvam, ElevenLabs). RAG over merchant data.</div>
+      <div class="roadmap-cell future">Autonomous ops agents. Multi-agent collaboration.</div>
+    </div>
+
+    <div class="roadmap-row">
+      <div class="roadmap-label">Connectivity</div>
+      <div class="roadmap-cell ship">MCP server · <strong>Claude & ChatGPT clients</strong></div>
+      <div class="roadmap-cell">30+ integrations · WhatsApp (branded), Sheets live, Slack, Shopify</div>
+      <div class="roadmap-cell">Shiprocket, LMS partners (edtech), GDS/PNR (travel)</div>
+      <div class="roadmap-cell future">Third-party integration SDK. Partner-published connectors.</div>
+    </div>
+
+    <div class="roadmap-row">
+      <div class="roadmap-label">Compliance</div>
+      <div class="roadmap-cell">Audit log v1. Run history. RBAC.</div>
+      <div class="roadmap-cell ship">BFSI pack · <strong>Maker-checker, audit export, residency</strong></div>
+      <div class="roadmap-cell">SOC 2 Type II. DPDP attestation. VAPT reports.</div>
+      <div class="roadmap-cell future">Regulator-ready reporting. FIU integrations.</div>
+    </div>
+
+    <div class="roadmap-row">
+      <div class="roadmap-label">Adoption</div>
+      <div class="roadmap-cell">100 merchant private beta. Internal dogfood.</div>
+      <div class="roadmap-cell ship">Public launch · <strong>Target 2–3K merchants live</strong></div>
+      <div class="roadmap-cell">10K merchants. ₹X Cr GMV touched by workflows.</div>
+      <div class="roadmap-cell future">Default layer for all new PG merchants.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 10: IMPACT -->
+<section class="slide" data-slide="9">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Cashfree · Relay</span></div>
+    <div class="slide-meta"><span class="num">10</span> / 12</div>
+  </div>
+
+  <div class="eyebrow">Year one impact</div>
+  <h2 class="headline" style="font-size: 60px;">The math <em>we're</em> playing for.</h2>
+
+  <div class="stat-grid" style="grid-template-columns: repeat(4, 1fr); margin-top: 16px;">
+    <div class="stat-block">
+      <div class="stat-label">Beta</div>
+      <div class="stat-num">100</div>
+      <div class="stat-note">Handpicked merchants · Q2 2026</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-label">6-month target</div>
+      <div class="stat-num">3K</div>
+      <div class="stat-note">Merchants live on Relay</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-label">Activation</div>
+      <div class="stat-num">15m</div>
+      <div class="stat-note">Signup → first live workflow</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-label">PG retention lift</div>
+      <div class="stat-num">+12%</div>
+      <div class="stat-note">On merchants using 1+ workflow</div>
+    </div>
+  </div>
+
+  <div class="rules-grid" style="margin-top: 28px;">
+    <div class="rule">
+      <div class="rule-num">OUTCOME 01</div>
+      <div class="rule-text">Cart recovery: 10–15% revenue lift for D2C.</div>
+      <div class="rule-note">Every abandoned cart becomes a WhatsApp nudge. No dev time.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-num">OUTCOME 02</div>
+      <div class="rule-text">Reconciliation: 3 hours → 15 minutes.</div>
+      <div class="rule-note">Daily settlement reports to Slack + Sheets automatically.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 11: RED LINES -->
+<section class="slide" data-slide="10">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Cashfree · Relay</span></div>
+    <div class="slide-meta"><span class="num">11</span> / 12</div>
+  </div>
+
+  <div class="eyebrow">What Relay is not</div>
+  <h2 class="headline" style="font-size: 60px;">Lines we <em>don't</em> cross.</h2>
+
+  <div class="rules-grid">
+    <div class="rule bad">
+      <div class="rule-num">NEVER 01</div>
+      <div class="rule-text">Not a Zapier clone.</div>
+      <div class="rule-note">If the only value is "connect these two SaaS apps", use Zapier. Relay is for payments-aware logic.</div>
+    </div>
+    <div class="rule bad">
+      <div class="rule-num">NEVER 02</div>
+      <div class="rule-text">Not open source.</div>
+      <div class="rule-note">Security and compliance guarantees rely on the sealed Cashfree runtime.</div>
+    </div>
+    <div class="rule bad">
+      <div class="rule-num">NEVER 03</div>
+      <div class="rule-text">Not a chatbot platform.</div>
+      <div class="rule-note">Agents act on transactions, not conversations. Chatbots can call us, not the other way round.</div>
+    </div>
+    <div class="rule bad">
+      <div class="rule-num">NEVER 04</div>
+      <div class="rule-text">Not a replacement for custom infra.</div>
+      <div class="rule-note">We handle 95% of merchant workflows. The hyperscale, millisecond-latency 5% stays in-house.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12: CLOSING -->
+<section class="slide" data-slide="11">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Cashfree · Relay</span></div>
+    <div class="slide-meta"><span class="num">12</span> / 12</div>
+  </div>
+
+  <div class="final-grid">
+    <div>
+      <div class="eyebrow">The one sentence</div>
+      <h2 class="final-mantra">Razorpay built<br>a <em>marketplace</em>.<br><br>We built the <em>only</em><br>workflow platform<br>regulated merchants<br>can actually use.</h2>
+    </div>
+
+    <div class="final-rules">
+      <div class="final-rule">
+        <div class="final-rule-num">TRUTH 01</div>
+        <div class="final-rule-text">The first 100 beta merchants decide the next 3,000.</div>
+      </div>
+      <div class="final-rule">
+        <div class="final-rule-num">TRUTH 02</div>
+        <div class="final-rule-text">Payments is the execution layer. Relay is the intelligence layer.</div>
+      </div>
+      <div class="final-rule">
+        <div class="final-rule-num">TRUTH 03</div>
+        <div class="final-rule-text">Every payment event is a business decision. We make it act.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div class="nav">
+  <button class="nav-btn" id="prevBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+  <div class="nav-dots" id="navDots"></div>
+  <div class="nav-counter"><strong id="currentNum">1</strong> / 12</div>
+  <button class="nav-btn" id="nextBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+</div>
+
+<div class="kbd-hint"><span class="kbd">←</span><span class="kbd">→</span> to navigate</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const navDots = document.getElementById('navDots');
+const currentNum = document.getElementById('currentNum');
+const progressFill = document.getElementById('progressFill');
+let currentSlide = 0;
+
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement('button');
+  dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+  dot.addEventListener('click', () => goToSlide(i));
+  navDots.appendChild(dot);
+}
+
+function goToSlide(n) {
+  if (n < 0 || n >= totalSlides) return;
+  slides[currentSlide].classList.remove('active');
+  currentSlide = n;
+  slides[currentSlide].classList.add('active');
+  slides[currentSlide].scrollTop = 0;
+  updateUI();
+}
+
+function updateUI() {
+  document.querySelectorAll('.nav-dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+  currentNum.textContent = currentSlide + 1;
+  prevBtn.disabled = currentSlide === 0;
+  nextBtn.disabled = currentSlide === totalSlides - 1;
+  progressFill.style.width = ((currentSlide + 1) / totalSlides * 100) + '%';
+}
+
+prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); goToSlide(currentSlide + 1); }
+  else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); goToSlide(currentSlide - 1); }
+  else if (e.key === 'Home') { e.preventDefault(); goToSlide(0); }
+  else if (e.key === 'End') { e.preventDefault(); goToSlide(totalSlides - 1); }
+});
+
+updateUI();
+</script>
+
+</body>
+</html>

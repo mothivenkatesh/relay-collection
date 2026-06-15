@@ -1,0 +1,1831 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cashfree Relay · Recover revenue. Run payment ops on autopilot.</title>
+<meta name="description" content="Cashfree Relay is a no-code AI workflow builder for payment and revenue ops. Recover failed payments, respond to disputes, score RTO, and reconcile settlements without writing code or filing engineering tickets." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+<style>
+  :root {
+    /* accent */
+    --accent-50:#F2F6FF; --accent-100:#E5EDFF; --accent-200:#CCDAFF;
+    --accent-500:#3870FF; --accent-600:#094EFF; --accent-700:#003BD1;
+    --accent-800:#002C9E; --accent-900:#001E6B;
+
+    /* neutrals */
+    --neutral-0:#000000; --neutral-50:#1B1B1B; --neutral-200:#494949;
+    --neutral-400:#767676; --neutral-600:#A4A4A4; --neutral-800:#D1D1D1;
+    --neutral-900:#E8E8E8; --neutral-950:#F2F2F2; --neutral-1000:#FFFFFC;
+
+    /* semantic */
+    --positive-50:#DCFFE9; --positive-500:#009B54; --positive-700:#005B21;
+    --negative-50:#FFE0E0; --negative-500:#B80000; --negative-700:#700000;
+    --warning-50:#FFF7E6; --warning-500:#FBB016; --warning-700:#A06D03;
+
+    /* radii */
+    --r-sm:4px; --r-md:6px; --r-lg:8px; --r-xl:12px; --r-pill:999px;
+
+    /* shadows */
+    --shadow-xs:0 1px 2px rgba(27,27,27,.06);
+    --shadow-sm:0 1px 2px rgba(27,27,27,.06), 0 1px 3px rgba(27,27,27,.08);
+    --shadow-md:0 2px 4px rgba(27,27,27,.06), 0 4px 8px rgba(27,27,27,.08);
+    --shadow-lg:0 4px 8px rgba(27,27,27,.06), 0 12px 24px rgba(27,27,27,.10);
+    --shadow-focus:0 0 0 3px rgba(9,78,255,.28);
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:"Inter", ui-sans-serif, system-ui, sans-serif;
+    color:var(--neutral-50);
+    background:var(--neutral-1000);
+    font-size:13px; line-height:19px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent-600); text-decoration:none}
+  a:hover{color:var(--accent-500)}
+  ::selection{background:var(--accent-100)}
+
+  /* type */
+  .display-1{font-family:"DM Sans"; font-weight:800; font-size:56px; line-height:1.05; letter-spacing:-0.02em; color:var(--neutral-50); margin:0}
+  .display-2{font-family:"DM Sans"; font-weight:700; font-size:40px; line-height:1.1; letter-spacing:-0.015em; margin:0}
+  .display-3{font-family:"DM Sans"; font-weight:700; font-size:32px; line-height:1.15; letter-spacing:-0.01em; margin:0}
+  .h-section{font-family:"DM Sans"; font-weight:600; font-size:20px; line-height:25px; margin:0}
+  .h-card{font-family:"DM Sans"; font-weight:600; font-size:16px; line-height:22px; margin:0}
+  .lede{font-family:"DM Sans"; font-weight:500; font-size:18px; line-height:26px; color:var(--neutral-200); margin:0}
+  .overline{font-family:"DM Sans"; font-weight:600; font-size:11px; line-height:16px; letter-spacing:0.08em; text-transform:uppercase; color:var(--neutral-400); margin:0}
+  .body{font-family:"Inter"; font-size:13px; line-height:19px; color:var(--neutral-200)}
+  .body-sm{font-family:"Inter"; font-size:12px; line-height:17px; color:var(--neutral-400)}
+  .mono{font-family:"DM Mono", monospace; font-size:12px; line-height:18px}
+
+  /* layout */
+  .container{max-width:1200px; margin:0 auto; padding:0 28px}
+  .container-wide{max-width:1280px; margin:0 auto; padding:0 28px}
+
+  /* nav */
+  .nav{
+    position:sticky; top:0; z-index:30;
+    height:56px; background:var(--neutral-1000);
+    border-bottom:1px solid var(--neutral-900);
+  }
+  .nav-inner{display:flex; align-items:center; gap:32px; height:100%}
+  .nav-logo{display:flex; align-items:center; gap:10px; font-family:"DM Sans"; font-weight:700; font-size:15px; color:var(--neutral-50)}
+  .nav-logo-mark{width:18px; height:18px; border-radius:5px; background:var(--accent-600); display:inline-block}
+  .nav-product{font-family:"DM Sans"; font-weight:500; font-size:13px; color:var(--neutral-200); padding-left:12px; border-left:1px solid var(--neutral-900); margin-left:4px}
+  .nav-links{display:flex; gap:28px; margin-left:24px; flex:1}
+  .nav-link{font-family:"DM Sans"; font-weight:500; font-size:13px; color:var(--neutral-200)}
+  .nav-link:hover{color:var(--neutral-50)}
+  .nav-actions{display:flex; gap:10px; align-items:center}
+
+  /* buttons */
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    height:36px; padding:0 16px;
+    font-family:"DM Sans"; font-weight:500; font-size:14px; line-height:18px;
+    border-radius:var(--r-md); border:1px solid transparent;
+    cursor:pointer; transition:background-color 150ms cubic-bezier(.2,0,0,1), border-color 150ms;
+    text-decoration:none;
+  }
+  .btn-primary{background:var(--accent-600); color:var(--neutral-1000)}
+  .btn-primary:hover{background:var(--accent-700); color:var(--neutral-1000)}
+  .btn-secondary{background:var(--neutral-1000); color:var(--neutral-50); border-color:var(--neutral-800)}
+  .btn-secondary:hover{background:var(--neutral-950)}
+  .btn-ghost{background:transparent; color:var(--neutral-50)}
+  .btn-ghost:hover{background:var(--neutral-950)}
+  .btn-lg{height:44px; padding:0 20px; font-size:14px}
+  .btn-sm{height:32px; padding:0 12px; font-size:12px}
+
+  /* tags & chips */
+  .tag{display:inline-flex; align-items:center; gap:6px; font-family:"DM Sans"; font-weight:700; font-size:11px; line-height:15px; letter-spacing:0.04em; text-transform:uppercase; padding:3px 8px; border-radius:var(--r-sm)}
+  .tag-accent{background:var(--accent-100); color:var(--accent-800)}
+  .tag-positive{background:var(--positive-50); color:var(--positive-700)}
+  .tag-warning{background:var(--warning-50); color:var(--warning-700)}
+  .tag-neutral{background:var(--neutral-950); color:var(--neutral-200)}
+  .chip{display:inline-flex; align-items:center; gap:6px; font-family:"DM Sans"; font-weight:500; font-size:12px; line-height:16px; padding:6px 12px; border-radius:var(--r-pill); background:var(--neutral-1000); border:1px solid var(--neutral-800); color:var(--neutral-50)}
+  .chip-active{background:var(--accent-600); border-color:var(--accent-600); color:var(--neutral-1000)}
+
+  /* hero */
+  .hero{padding:80px 0 64px; border-bottom:1px solid var(--neutral-900)}
+  .hero-grid{display:grid; grid-template-columns:1.1fr 1fr; gap:64px; align-items:center}
+  .hero-eyebrow{display:inline-flex; align-items:center; gap:8px; padding:5px 10px; background:var(--accent-100); color:var(--accent-800); font-family:"DM Sans"; font-weight:600; font-size:11px; line-height:16px; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-pill); margin-bottom:20px}
+  .hero h1{margin-bottom:20px}
+  .hero .lede{margin-bottom:32px; max-width:520px}
+  .hero-ctas{display:flex; gap:12px; align-items:center; margin-bottom:40px}
+  .hero-meta{display:flex; gap:24px; font-family:"DM Sans"; font-weight:500; font-size:12px; color:var(--neutral-400)}
+  .hero-meta-item{display:flex; align-items:center; gap:6px}
+
+  /* hero visual */
+  .hero-visual{
+    background:var(--neutral-1000);
+    border:1px solid var(--neutral-900);
+    border-radius:var(--r-lg);
+    padding:20px;
+    box-shadow:var(--shadow-md);
+  }
+  .canvas-head{display:flex; justify-content:space-between; align-items:center; padding-bottom:12px; border-bottom:1px solid var(--neutral-900); margin-bottom:16px}
+  .canvas-title{font-family:"DM Sans"; font-weight:600; font-size:13px; color:var(--neutral-50)}
+  .canvas-meta{font-family:"DM Mono"; font-size:11px; color:var(--neutral-400)}
+
+  .flow{display:grid; grid-template-columns:repeat(3, 1fr); gap:0; align-items:center; position:relative}
+  .node{
+    background:var(--neutral-1000);
+    border:1px solid var(--neutral-800);
+    border-radius:var(--r-md);
+    padding:12px;
+    position:relative;
+    z-index:1;
+  }
+  .node-trigger{border-color:var(--accent-600)}
+  .node-agent{border-color:var(--accent-200); background:var(--accent-50)}
+  .node-step{}
+  .node-head{display:flex; align-items:center; gap:8px; margin-bottom:6px}
+  .node-icon{width:20px; height:20px; display:inline-flex; align-items:center; justify-content:center; color:var(--accent-600)}
+  .node-name{font-family:"DM Sans"; font-weight:600; font-size:12px; color:var(--neutral-50)}
+  .node-sub{font-family:"DM Mono"; font-size:10px; color:var(--neutral-400); line-height:14px}
+  .node-tag{font-family:"DM Sans"; font-weight:700; font-size:9px; letter-spacing:0.04em; text-transform:uppercase; color:var(--accent-700); margin-top:6px; display:inline-block}
+  .arrow{display:flex; align-items:center; justify-content:center; color:var(--neutral-600)}
+  .arrow svg{width:16px; height:16px}
+
+  .flow-row{display:grid; grid-template-columns:1fr 24px 1fr 24px 1fr; align-items:center; margin-bottom:12px}
+  .flow-row:last-child{margin-bottom:0}
+
+  .canvas-foot{display:flex; gap:8px; padding-top:12px; border-top:1px solid var(--neutral-900); margin-top:16px}
+  .canvas-foot .chip{font-size:11px; padding:4px 10px}
+
+  /* trust strip */
+  .trust{padding:32px 0; border-bottom:1px solid var(--neutral-900); background:var(--neutral-1000)}
+  .trust-inner{display:flex; align-items:center; gap:48px; flex-wrap:wrap}
+  .trust-label{font-family:"DM Sans"; font-weight:600; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--neutral-400); white-space:nowrap}
+  .trust-list{display:flex; gap:32px; flex-wrap:wrap; flex:1}
+  .trust-item{display:flex; align-items:center; gap:8px; font-family:"DM Sans"; font-weight:600; font-size:13px; color:var(--neutral-200)}
+  .trust-item svg{width:16px; height:16px; color:var(--accent-600)}
+
+  /* DX showcase */
+  .dx{padding:88px 0; border-bottom:1px solid var(--neutral-900); background:var(--neutral-950)}
+  .dx-stage{
+    margin-top:48px;
+    background:var(--neutral-1000);
+    border:1px solid var(--neutral-900);
+    border-radius:var(--r-xl);
+    overflow:hidden;
+    box-shadow:var(--shadow-md);
+  }
+  .dx-tabs{display:flex; align-items:center; gap:0; padding:0 16px; border-bottom:1px solid var(--neutral-900); background:var(--neutral-1000)}
+  .dx-tab{
+    padding:14px 18px; font-family:"DM Sans"; font-weight:500; font-size:13px; color:var(--neutral-400);
+    border-bottom:2px solid transparent; cursor:pointer; display:flex; align-items:center; gap:8px;
+    transition:color 150ms, border-color 150ms;
+  }
+  .dx-tab.active{color:var(--accent-600); border-bottom-color:var(--accent-600); font-weight:600}
+  .dx-tab .pill{
+    width:18px; height:18px; border-radius:var(--r-pill);
+    background:var(--neutral-950); color:var(--neutral-400);
+    font-family:"DM Sans"; font-weight:700; font-size:10px;
+    display:inline-flex; align-items:center; justify-content:center;
+  }
+  .dx-tab.active .pill{background:var(--accent-100); color:var(--accent-700)}
+  .dx-tab.done .pill{background:var(--positive-50); color:var(--positive-700)}
+  .dx-arrow{color:var(--neutral-600); padding:0 4px}
+
+  .dx-frame{display:none; padding:0}
+  .dx-frame.active{display:block}
+
+  /* Step 1 — Claude chat */
+  .chat{display:grid; grid-template-columns:1fr 360px; min-height:480px}
+  .chat-main{padding:24px 32px; border-right:1px solid var(--neutral-900); display:flex; flex-direction:column; gap:14px}
+  .chat-bar{display:flex; align-items:center; justify-content:space-between; padding-bottom:14px; border-bottom:1px solid var(--neutral-900); margin-bottom:6px}
+  .chat-app{display:flex; align-items:center; gap:8px; font-family:"DM Sans"; font-weight:600; font-size:13px; color:var(--neutral-50)}
+  .chat-app-mark{width:18px; height:18px; border-radius:5px; background:#D97757; display:inline-flex; align-items:center; justify-content:center; color:#fff; font-family:"DM Sans"; font-weight:700; font-size:10px}
+  .chat-meta{font-family:"DM Mono"; font-size:11px; color:var(--neutral-400)}
+  .msg{display:flex; gap:12px; max-width:90%}
+  .msg-user{align-self:flex-end; flex-direction:row-reverse}
+  .msg-avatar{width:28px; height:28px; border-radius:var(--r-pill); flex-shrink:0; display:inline-flex; align-items:center; justify-content:center; font-family:"DM Sans"; font-weight:700; font-size:11px; color:#fff}
+  .msg-avatar.user{background:var(--accent-600)}
+  .msg-avatar.ai{background:#D97757}
+  .msg-bubble{
+    padding:10px 14px; border-radius:var(--r-lg);
+    font-family:"Inter"; font-size:13px; line-height:19px;
+    border:1px solid var(--neutral-900);
+    background:var(--neutral-1000);
+  }
+  .msg-user .msg-bubble{background:var(--accent-50); border-color:var(--accent-200); color:var(--neutral-50)}
+  .msg-ai .msg-bubble{color:var(--neutral-50)}
+  .msg-bubble code{font-family:"DM Mono"; font-size:12px; background:var(--neutral-950); padding:1px 5px; border-radius:3px; color:var(--accent-700)}
+  .msg-bubble b{color:var(--neutral-50)}
+
+  .tool-call{
+    border:1px dashed var(--accent-200); background:var(--accent-50);
+    padding:10px 12px; border-radius:var(--r-md);
+    font-family:"DM Mono"; font-size:11px; color:var(--accent-800);
+    display:flex; align-items:center; gap:10px;
+  }
+  .tool-call .dot{width:6px; height:6px; border-radius:50%; background:var(--positive-500); animation:pulse 1.4s infinite}
+  @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+  .chat-side{padding:24px; background:var(--neutral-950); display:flex; flex-direction:column; gap:14px}
+  .chat-side h5{font-family:"DM Sans"; font-weight:600; font-size:11px; line-height:16px; letter-spacing:0.08em; text-transform:uppercase; color:var(--neutral-400); margin:0 0 8px 0}
+  .side-card{background:var(--neutral-1000); border:1px solid var(--neutral-900); border-radius:var(--r-md); padding:12px}
+  .side-card .name{font-family:"DM Sans"; font-weight:600; font-size:12px; color:var(--neutral-50); display:flex; align-items:center; gap:6px}
+  .side-card .desc{font-family:"Inter"; font-size:11px; line-height:16px; color:var(--neutral-400); margin-top:4px}
+
+  .chat-input{display:flex; align-items:center; gap:8px; padding:10px 12px; border:1px solid var(--neutral-800); border-radius:var(--r-md); background:var(--neutral-1000); margin-top:auto}
+  .chat-input .placeholder{font-family:"Inter"; font-size:13px; color:var(--neutral-400); flex:1}
+  .chat-input .btn{height:28px; padding:0 10px; font-size:12px}
+
+  /* Step 2 — Workflow generation */
+  .gen{padding:32px; display:grid; grid-template-columns:1.1fr 1fr; gap:28px; min-height:480px}
+  .gen-canvas{
+    background:var(--neutral-950);
+    border:1px solid var(--neutral-900);
+    border-radius:var(--r-lg);
+    padding:20px;
+    position:relative;
+  }
+  .gen-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:16px}
+  .gen-title{font-family:"DM Sans"; font-weight:600; font-size:13px; color:var(--neutral-50); display:flex; align-items:center; gap:8px}
+  .gen-tag{display:inline-flex; align-items:center; gap:6px; padding:3px 8px; border-radius:var(--r-pill); background:var(--accent-100); color:var(--accent-700); font-family:"DM Sans"; font-weight:600; font-size:10px; letter-spacing:0.04em; text-transform:uppercase}
+  .gen-tag .dot{width:6px; height:6px; border-radius:50%; background:var(--accent-600); animation:pulse 1.2s infinite}
+
+  .gen-flow{display:flex; flex-direction:column; gap:10px}
+  .gen-step{display:flex; align-items:center; gap:12px; padding:12px; background:var(--neutral-1000); border:1px solid var(--neutral-800); border-radius:var(--r-md); animation:slideIn .4s cubic-bezier(.2,0,0,1) backwards}
+  .gen-step:nth-child(1){animation-delay:0s}
+  .gen-step:nth-child(2){animation-delay:.05s}
+  .gen-step:nth-child(3){animation-delay:.1s}
+  .gen-step:nth-child(4){animation-delay:.15s}
+  .gen-step:nth-child(5){animation-delay:.2s}
+  .gen-step:nth-child(6){animation-delay:.25s}
+  .gen-step.is-agent{border-color:var(--accent-200); background:var(--accent-50)}
+  .gen-step .num{width:22px; height:22px; border-radius:var(--r-pill); background:var(--neutral-950); color:var(--neutral-200); font-family:"DM Sans"; font-weight:700; font-size:11px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0}
+  .gen-step.is-agent .num{background:var(--accent-100); color:var(--accent-700)}
+  .gen-step .ico{width:28px; height:28px; border-radius:var(--r-md); background:var(--neutral-950); color:var(--neutral-200); display:inline-flex; align-items:center; justify-content:center; flex-shrink:0}
+  .gen-step.is-agent .ico{background:var(--accent-100); color:var(--accent-600)}
+  .gen-step .nm{font-family:"DM Sans"; font-weight:600; font-size:12px; color:var(--neutral-50)}
+  .gen-step .sb{font-family:"DM Mono"; font-size:10px; color:var(--neutral-400)}
+  .gen-step .body-block{flex:1}
+  .gen-step .meta{font-family:"DM Sans"; font-weight:500; font-size:10px; color:var(--neutral-400); white-space:nowrap}
+
+  @keyframes slideIn{from{opacity:0; transform:translateY(6px)}to{opacity:1; transform:translateY(0)}}
+
+  .gen-side{display:flex; flex-direction:column; gap:14px}
+  .gen-card{background:var(--neutral-1000); border:1px solid var(--neutral-900); border-radius:var(--r-md); padding:16px}
+  .gen-card h5{font-family:"DM Sans"; font-weight:600; font-size:11px; line-height:16px; letter-spacing:0.08em; text-transform:uppercase; color:var(--neutral-400); margin:0 0 10px 0}
+  .gen-list{display:flex; flex-direction:column; gap:8px}
+  .gen-list-row{display:flex; gap:8px; align-items:flex-start; font-family:"Inter"; font-size:12px; color:var(--neutral-200); line-height:18px}
+  .gen-list-row svg{width:14px; height:14px; color:var(--positive-500); flex-shrink:0; margin-top:2px}
+  .gen-list-row b{color:var(--neutral-50); font-weight:600}
+
+  .gen-cta{display:flex; gap:8px; margin-top:auto; padding-top:8px}
+
+  /* Step 3 — Visual builder */
+  .builder-shell{display:grid; grid-template-columns:200px 1fr 280px; min-height:520px}
+  .b-left{padding:16px 12px; border-right:1px solid var(--neutral-900); background:var(--neutral-1000)}
+  .b-left h6{font-family:"DM Sans"; font-weight:600; font-size:11px; line-height:16px; letter-spacing:0.08em; text-transform:uppercase; color:var(--neutral-400); margin:0 0 10px 0; padding:0 8px}
+  .b-item{display:flex; align-items:center; gap:8px; padding:7px 8px; border-radius:var(--r-md); font-family:"DM Sans"; font-weight:500; font-size:12px; color:var(--neutral-200); cursor:grab}
+  .b-item:hover{background:var(--neutral-950)}
+  .b-item svg{width:14px; height:14px; color:var(--neutral-400)}
+
+  .b-canvas{padding:20px; background:
+    radial-gradient(circle at 1px 1px, var(--neutral-900) 1px, transparent 0);
+    background-size:18px 18px;
+    background-color:var(--neutral-950);
+    position:relative;
+    border-right:1px solid var(--neutral-900);
+  }
+  .b-canvas-bar{display:flex; justify-content:space-between; align-items:center; padding:0 4px 14px 4px}
+  .b-canvas-title{font-family:"DM Sans"; font-weight:600; font-size:13px; color:var(--neutral-50)}
+  .b-canvas-actions{display:flex; gap:8px}
+
+  .b-flow{display:flex; flex-direction:column; gap:14px; max-width:520px; margin:0 auto}
+  .b-row{display:grid; grid-template-columns:1fr 28px 1fr; align-items:center; gap:0}
+  .b-node{
+    background:var(--neutral-1000);
+    border:1px solid var(--neutral-800);
+    border-radius:var(--r-md);
+    padding:12px;
+    box-shadow:var(--shadow-xs);
+  }
+  .b-node.selected{border-color:var(--accent-600); box-shadow:var(--shadow-focus)}
+  .b-node.is-agent{border-color:var(--accent-200); background:var(--accent-50)}
+  .b-node-head{display:flex; align-items:center; gap:8px; margin-bottom:4px}
+  .b-node .ico{width:22px; height:22px; border-radius:var(--r-md); background:var(--neutral-950); color:var(--neutral-200); display:inline-flex; align-items:center; justify-content:center; flex-shrink:0}
+  .b-node.is-agent .ico{background:var(--accent-100); color:var(--accent-600)}
+  .b-node .nm{font-family:"DM Sans"; font-weight:600; font-size:12px; color:var(--neutral-50)}
+  .b-node .sb{font-family:"DM Mono"; font-size:10px; color:var(--neutral-400)}
+  .b-conn{display:flex; align-items:center; justify-content:center; color:var(--neutral-600)}
+  .b-vert{display:flex; justify-content:center; color:var(--neutral-600)}
+
+  .b-right{padding:18px; background:var(--neutral-1000); border-left:1px solid var(--neutral-900)}
+  .b-right h6{font-family:"DM Sans"; font-weight:600; font-size:13px; color:var(--neutral-50); margin:0 0 4px 0}
+  .b-right .sub{font-family:"DM Mono"; font-size:10px; color:var(--neutral-400); margin-bottom:14px}
+  .b-prop{margin-bottom:14px}
+  .b-prop label{display:block; font-family:"DM Sans"; font-weight:500; font-size:11px; color:var(--neutral-200); margin-bottom:5px}
+  .b-prop .val{
+    width:100%; height:32px; padding:0 10px;
+    border:1px solid var(--neutral-800); border-radius:var(--r-md);
+    background:#fff;
+    font-family:"DM Sans"; font-weight:500; font-size:12px; color:var(--neutral-50);
+    display:flex; align-items:center; gap:6px;
+  }
+  .b-prop .val.code-val{font-family:"DM Mono"; font-size:11px}
+  .b-slider{height:6px; border-radius:var(--r-pill); background:var(--neutral-900); position:relative; margin:8px 0}
+  .b-slider .fill{position:absolute; left:0; top:0; bottom:0; width:72%; background:var(--accent-600); border-radius:var(--r-pill)}
+  .b-slider .knob{position:absolute; top:-4px; left:72%; width:14px; height:14px; border-radius:50%; background:var(--accent-600); transform:translateX(-50%); box-shadow:var(--shadow-sm)}
+  .b-slider-meta{display:flex; justify-content:space-between; font-family:"DM Sans"; font-weight:500; font-size:10px; color:var(--neutral-400)}
+
+  .b-tabs{display:flex; gap:4px; padding:6px; background:var(--neutral-950); border-radius:var(--r-md); margin-bottom:14px}
+  .b-tab{flex:1; padding:6px 10px; text-align:center; font-family:"DM Sans"; font-weight:500; font-size:11px; color:var(--neutral-400); border-radius:var(--r-sm); cursor:pointer}
+  .b-tab.active{background:var(--neutral-1000); color:var(--neutral-50); box-shadow:var(--shadow-xs)}
+
+  .dx-foot{display:flex; justify-content:space-between; padding:14px 20px; border-top:1px solid var(--neutral-900); background:var(--neutral-950); align-items:center}
+  .dx-foot-meta{font-family:"DM Mono"; font-size:11px; color:var(--neutral-400); display:flex; gap:14px}
+
+  /* sections */
+  .section{padding:80px 0; border-bottom:1px solid var(--neutral-900)}
+  .section-header{max-width:720px; margin-bottom:48px}
+  .section-header .overline{margin-bottom:12px}
+  .section-header h2{margin-bottom:16px}
+  .section-header .body{font-size:15px; line-height:23px}
+
+  /* feature trio */
+  .feature-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px}
+  .feature-card{
+    background:var(--neutral-1000);
+    border:1px solid var(--neutral-900);
+    border-radius:var(--r-lg);
+    padding:24px;
+    display:flex; flex-direction:column;
+    transition:border-color 150ms, box-shadow 150ms;
+  }
+  .feature-card:hover{border-color:var(--neutral-800); box-shadow:var(--shadow-sm)}
+  .feature-card .ico{width:32px; height:32px; border-radius:var(--r-md); background:var(--accent-100); color:var(--accent-600); display:inline-flex; align-items:center; justify-content:center; margin-bottom:16px}
+  .feature-card h3{margin-bottom:8px}
+  .feature-card .body{flex:1; margin-bottom:16px}
+  .feature-card ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px}
+  .feature-card li{font-family:"Inter"; font-size:12px; line-height:17px; color:var(--neutral-200); display:flex; gap:8px; align-items:flex-start}
+  .feature-card li svg{width:14px; height:14px; color:var(--positive-500); flex-shrink:0; margin-top:2px}
+
+  /* deep-dive blocks */
+  .deep{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; margin-bottom:80px}
+  .deep:last-child{margin-bottom:0}
+  .deep-reverse{direction:rtl}
+  .deep-reverse > *{direction:ltr}
+  .deep-copy h3{margin-bottom:12px}
+  .deep-copy .lede{font-size:16px; line-height:23px; margin-bottom:20px}
+  .deep-copy ul{list-style:none; padding:0; margin:0 0 24px 0; display:flex; flex-direction:column; gap:12px}
+  .deep-copy li{font-family:"Inter"; font-size:13px; line-height:19px; color:var(--neutral-200); display:flex; gap:10px}
+  .deep-copy li svg{width:16px; height:16px; color:var(--accent-600); flex-shrink:0; margin-top:2px}
+  .deep-copy li b{font-weight:600; color:var(--neutral-50)}
+  .deep-cta{display:inline-flex; align-items:center; gap:6px; font-family:"DM Sans"; font-weight:600; font-size:13px; color:var(--accent-600)}
+
+  /* code-ish visual */
+  .visual{
+    background:var(--neutral-1000);
+    border:1px solid var(--neutral-900);
+    border-radius:var(--r-lg);
+    overflow:hidden;
+  }
+  .visual-head{display:flex; justify-content:space-between; align-items:center; padding:12px 16px; border-bottom:1px solid var(--neutral-900); background:var(--neutral-950)}
+  .visual-title{font-family:"DM Sans"; font-weight:600; font-size:12px; color:var(--neutral-50)}
+  .visual-meta{font-family:"DM Mono"; font-size:11px; color:var(--neutral-400)}
+
+  .skill-list{padding:8px}
+  .skill-row{display:flex; gap:12px; padding:12px; border-radius:var(--r-md); align-items:flex-start}
+  .skill-row:hover{background:var(--neutral-950)}
+  .skill-row + .skill-row{border-top:1px solid var(--neutral-900)}
+  .skill-icon{width:32px; height:32px; border-radius:var(--r-md); background:var(--accent-100); color:var(--accent-600); display:inline-flex; align-items:center; justify-content:center; flex-shrink:0}
+  .skill-body{flex:1}
+  .skill-name{font-family:"DM Sans"; font-weight:600; font-size:13px; color:var(--neutral-50); margin-bottom:2px}
+  .skill-desc{font-family:"Inter"; font-size:12px; line-height:17px; color:var(--neutral-400)}
+  .skill-meta{display:flex; gap:8px; align-items:center; flex-shrink:0}
+
+  /* code block */
+  .code{
+    background:var(--neutral-50);
+    color:var(--neutral-1000);
+    font-family:"DM Mono", monospace;
+    font-size:12px; line-height:20px;
+    padding:20px;
+  }
+  .code .k{color:#9EB9FF}
+  .code .s{color:#82E6B5}
+  .code .c{color:#A4A4A4}
+  .code .p{color:#FBB016}
+
+  /* mcp diagram */
+  .mcp-diagram{padding:24px; display:flex; flex-direction:column; gap:12px}
+  .mcp-row{display:grid; grid-template-columns:1fr 24px 1fr; align-items:center}
+  .mcp-card{
+    background:var(--neutral-1000);
+    border:1px solid var(--neutral-800);
+    border-radius:var(--r-md);
+    padding:10px 12px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .mcp-card.is-core{border-color:var(--accent-600); background:var(--accent-50)}
+  .mcp-name{font-family:"DM Sans"; font-weight:600; font-size:12px; color:var(--neutral-50)}
+  .mcp-sub{font-family:"DM Mono"; font-size:10px; color:var(--neutral-400)}
+  .mcp-line{height:1px; background:var(--neutral-800); position:relative}
+  .mcp-line::after{content:""; position:absolute; right:-1px; top:-3px; width:0; height:0; border-left:6px solid var(--neutral-800); border-top:3px solid transparent; border-bottom:3px solid transparent}
+
+  /* security */
+  .sec-section{background:var(--neutral-50); color:var(--neutral-1000); padding:88px 0; border-bottom:1px solid var(--neutral-50)}
+  .sec-section .overline{color:var(--accent-200)}
+  .sec-section h2{color:var(--neutral-1000); margin-bottom:16px}
+  .sec-section .lede{color:var(--neutral-800); max-width:680px}
+  .sec-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:48px}
+  .sec-card{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.10);
+    border-radius:var(--r-lg);
+    padding:24px;
+  }
+  .sec-card .ico{width:32px; height:32px; border-radius:var(--r-md); background:rgba(9,78,255,0.20); color:#9EB9FF; display:inline-flex; align-items:center; justify-content:center; margin-bottom:16px}
+  .sec-card h4{font-family:"DM Sans"; font-weight:600; font-size:15px; color:var(--neutral-1000); margin:0 0 8px 0}
+  .sec-card p{font-family:"Inter"; font-size:12px; line-height:18px; color:var(--neutral-800); margin:0 0 12px 0}
+  .sec-card .mono{color:#9EB9FF; font-size:11px}
+
+  .sec-stripe{display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:48px; border:1px solid rgba(255,255,255,0.10); border-radius:var(--r-lg); overflow:hidden}
+  .sec-stat{padding:24px; border-right:1px solid rgba(255,255,255,0.10)}
+  .sec-stat:last-child{border-right:0}
+  .sec-stat .num{font-family:"DM Sans"; font-weight:700; font-size:32px; line-height:1.1; color:var(--neutral-1000); letter-spacing:-0.01em}
+  .sec-stat .lbl{font-family:"DM Sans"; font-weight:500; font-size:12px; color:var(--neutral-400); margin-top:6px}
+
+  /* use cases */
+  .uc-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:16px}
+  .uc-card{
+    background:var(--neutral-1000);
+    border:1px solid var(--neutral-900);
+    border-radius:var(--r-lg);
+    padding:24px;
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .uc-head{display:flex; gap:12px; align-items:flex-start}
+  .uc-ico{width:36px; height:36px; border-radius:var(--r-md); background:var(--accent-100); color:var(--accent-600); display:inline-flex; align-items:center; justify-content:center; flex-shrink:0}
+  .uc-meta{flex:1}
+  .uc-card h4{font-family:"DM Sans"; font-weight:600; font-size:15px; color:var(--neutral-50); margin:0 0 4px 0}
+  .uc-card .body-sm{margin:0}
+  .uc-stack{display:flex; gap:8px; flex-wrap:wrap; padding-top:8px; border-top:1px solid var(--neutral-900)}
+  .uc-stack .tag{background:var(--neutral-950); color:var(--neutral-200); font-weight:600}
+
+  /* compare table */
+  .table-wrap{border:1px solid var(--neutral-900); border-radius:var(--r-lg); overflow:hidden; background:var(--neutral-1000)}
+  table{width:100%; border-collapse:collapse}
+  th, td{text-align:left; padding:14px 16px; font-family:"Inter"; font-size:13px; line-height:19px; border-bottom:1px solid var(--neutral-900)}
+  th{font-family:"DM Sans"; font-weight:600; font-size:12px; line-height:17px; letter-spacing:0.02em; color:var(--neutral-200); background:var(--neutral-950)}
+  td:first-child{font-family:"DM Sans"; font-weight:600; color:var(--neutral-50)}
+  tr:last-child td{border-bottom:0}
+  td svg{width:16px; height:16px; vertical-align:middle}
+  .ok{color:var(--positive-500)}
+  .no{color:var(--neutral-600)}
+
+  /* CTA band */
+  .cta-band{padding:80px 0}
+  .cta-inner{
+    background:var(--accent-50);
+    border:1px solid var(--accent-200);
+    border-radius:var(--r-xl);
+    padding:48px;
+    display:grid; grid-template-columns:1fr auto; gap:32px; align-items:center;
+  }
+  .cta-inner h2{margin:0 0 8px 0}
+  .cta-inner .lede{margin:0; color:var(--neutral-200)}
+  .cta-actions{display:flex; gap:12px}
+
+  /* faq */
+  .faq{display:grid; grid-template-columns:repeat(2, 1fr); gap:24px 48px}
+  .faq-item h4{font-family:"DM Sans"; font-weight:600; font-size:14px; color:var(--neutral-50); margin:0 0 6px 0}
+  .faq-item p{font-family:"Inter"; font-size:13px; line-height:19px; color:var(--neutral-200); margin:0}
+
+  /* footer */
+  footer{padding:48px 0 32px; background:var(--neutral-1000)}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr 1fr; gap:32px; padding-bottom:32px; border-bottom:1px solid var(--neutral-900)}
+  .footer-col h5{font-family:"DM Sans"; font-weight:600; font-size:11px; line-height:16px; letter-spacing:0.08em; text-transform:uppercase; color:var(--neutral-400); margin:0 0 12px 0}
+  .footer-col a{display:block; font-family:"DM Sans"; font-weight:500; font-size:13px; color:var(--neutral-200); padding:4px 0}
+  .footer-col a:hover{color:var(--neutral-50)}
+  .footer-bottom{display:flex; justify-content:space-between; padding-top:24px; font-family:"DM Sans"; font-weight:500; font-size:12px; color:var(--neutral-400)}
+
+  /* responsive */
+  @media (max-width: 980px){
+    .hero-grid, .deep, .feature-grid, .uc-grid, .sec-grid, .cta-inner, .faq, .footer-grid{grid-template-columns:1fr; gap:32px}
+    .display-1{font-size:40px}
+    .display-2{font-size:30px}
+    .nav-links{display:none}
+    .sec-stripe{grid-template-columns:repeat(2,1fr)}
+    .sec-stat:nth-child(2){border-right:0}
+    .sec-stat:nth-child(1), .sec-stat:nth-child(2){border-bottom:1px solid rgba(255,255,255,.10)}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-mark"></span>
+      Cashfree
+      <span class="nav-product">Relay</span>
+    </a>
+    <div class="nav-links">
+      <a href="#builder" class="nav-link">Builder</a>
+      <a href="#skills" class="nav-link">Agent skills</a>
+      <a href="#mcp" class="nav-link">MCP</a>
+      <a href="#security" class="nav-link">Security</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="#docs" class="nav-link">Docs</a>
+    </div>
+    <div class="nav-actions">
+      <a href="#" class="btn btn-ghost btn-sm">Sign in</a>
+      <a href="#cta" class="btn btn-primary btn-sm">Request access</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-eyebrow">
+        <i data-lucide="sparkles" style="width:12px;height:12px"></i>
+        Now in private beta
+      </div>
+      <h1 class="display-1">Recover revenue. Run payment ops on autopilot.</h1>
+      <p class="lede">Cashfree Relay is the no-code AI workflow builder for the things your finance and ops team do every day. Failed payments. Disputes. Refunds. RTO. Settlements. Describe the workflow in plain English. Relay builds it. You publish it. No engineering tickets. No glue code. No babysitting an agent.</p>
+      <div class="hero-ctas">
+        <a href="#cta" class="btn btn-primary btn-lg">
+          Request beta access
+          <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+        </a>
+        <a href="#builder" class="btn btn-secondary btn-lg">
+          See it in action
+        </a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <i data-lucide="shield-check" style="width:14px;height:14px;color:var(--positive-500)"></i>
+          PCI DSS 4.0
+        </div>
+        <div class="hero-meta-item">
+          <i data-lucide="badge-check" style="width:14px;height:14px;color:var(--positive-500)"></i>
+          ISO 27001
+        </div>
+        <div class="hero-meta-item">
+          <i data-lucide="lock" style="width:14px;height:14px;color:var(--positive-500)"></i>
+          DPDP ready
+        </div>
+        <div class="hero-meta-item">
+          <i data-lucide="landmark" style="width:14px;height:14px;color:var(--positive-500)"></i>
+          RBI PA licensed
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO VISUAL: workflow canvas -->
+    <div class="hero-visual">
+      <div class="canvas-head">
+        <div class="canvas-title">Refund recovery workflow</div>
+        <div class="canvas-meta">v 1.4 · published</div>
+      </div>
+
+      <div class="flow-row">
+        <div class="node node-trigger">
+          <div class="node-head">
+            <span class="node-icon"><i data-lucide="zap" style="width:14px;height:14px"></i></span>
+            <span class="node-name">Webhook</span>
+          </div>
+          <div class="node-sub">payment.failed</div>
+          <span class="node-tag">trigger</span>
+        </div>
+        <div class="arrow"><i data-lucide="arrow-right"></i></div>
+        <div class="node node-step">
+          <div class="node-head">
+            <span class="node-icon"><i data-lucide="filter" style="width:14px;height:14px"></i></span>
+            <span class="node-name">Filter</span>
+          </div>
+          <div class="node-sub">amount &gt; ₹500</div>
+        </div>
+        <div class="arrow"><i data-lucide="arrow-right"></i></div>
+        <div class="node node-agent">
+          <div class="node-head">
+            <span class="node-icon"><i data-lucide="bot" style="width:14px;height:14px"></i></span>
+            <span class="node-name">Agent</span>
+          </div>
+          <div class="node-sub">Reason classifier</div>
+          <span class="node-tag">skill</span>
+        </div>
+      </div>
+
+      <div class="flow-row">
+        <div class="node node-step">
+          <div class="node-head">
+            <span class="node-icon"><i data-lucide="webhook" style="width:14px;height:14px"></i></span>
+            <span class="node-name">MCP</span>
+          </div>
+          <div class="node-sub">CRM lookup</div>
+        </div>
+        <div class="arrow"><i data-lucide="arrow-right"></i></div>
+        <div class="node node-agent">
+          <div class="node-head">
+            <span class="node-icon"><i data-lucide="message-square" style="width:14px;height:14px"></i></span>
+            <span class="node-name">Agent</span>
+          </div>
+          <div class="node-sub">Compose retry SMS</div>
+          <span class="node-tag">skill</span>
+        </div>
+        <div class="arrow"><i data-lucide="arrow-right"></i></div>
+        <div class="node node-step">
+          <div class="node-head">
+            <span class="node-icon"><i data-lucide="credit-card" style="width:14px;height:14px"></i></span>
+            <span class="node-name">Payment link</span>
+          </div>
+          <div class="node-sub">issue + send</div>
+        </div>
+      </div>
+
+      <div class="canvas-foot">
+        <span class="chip"><i data-lucide="play" style="width:12px;height:12px"></i> Run</span>
+        <span class="chip"><i data-lucide="bug" style="width:12px;height:12px"></i> Test</span>
+        <span class="chip chip-active"><i data-lucide="shield-check" style="width:12px;height:12px"></i> Audit on</span>
+        <span class="chip" style="margin-left:auto"><i data-lucide="git-branch" style="width:12px;height:12px"></i> 3 versions</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust">
+  <div class="container trust-inner">
+    <div class="trust-label">Built on the same rails as</div>
+    <div class="trust-list">
+      <div class="trust-item"><i data-lucide="users"></i> 800,000+ businesses</div>
+      <div class="trust-item"><i data-lucide="bar-chart-3"></i> ₹2 lakh crore processed annually</div>
+      <div class="trust-item"><i data-lucide="zap"></i> 99.99% uptime</div>
+      <div class="trust-item"><i data-lucide="globe"></i> 100+ payment methods</div>
+    </div>
+  </div>
+</section>
+
+<!-- DX SHOWCASE: prompt -> generated workflow -> visual builder -->
+<section class="dx" id="how">
+  <div class="container">
+    <div class="section-header">
+      <p class="overline">From prompt to live workflow</p>
+      <h2 class="display-2">Say what you want. Relay builds it. You ship it.</h2>
+      <p class="body">Your payment ops lead opens Claude. Asks for a subscription recovery flow in the language she actually uses. Relay drafts the workflow, picks the right Cashfree skills, wires in the apps her team already uses, and opens it in the visual builder. She reviews, approves, publishes. The whole thing happens before her coffee gets cold.</p>
+    </div>
+
+    <div class="dx-stage">
+      <!-- Stage tabs -->
+      <div class="dx-tabs">
+        <div class="dx-tab done" data-step="1">
+          <span class="pill">1</span>
+          <i data-lucide="message-square" style="width:14px;height:14px"></i>
+          Prompt in Claude
+        </div>
+        <span class="dx-arrow"><i data-lucide="chevron-right" style="width:16px;height:16px"></i></span>
+        <div class="dx-tab done" data-step="2">
+          <span class="pill">2</span>
+          <i data-lucide="sparkles" style="width:14px;height:14px"></i>
+          Workflow generated
+        </div>
+        <span class="dx-arrow"><i data-lucide="chevron-right" style="width:16px;height:16px"></i></span>
+        <div class="dx-tab active" data-step="3">
+          <span class="pill">3</span>
+          <i data-lucide="layout-grid" style="width:14px;height:14px"></i>
+          Visual builder
+        </div>
+        <div style="margin-left:auto; padding:14px 8px"><span class="tag tag-positive">LIVE WALKTHROUGH</span></div>
+      </div>
+
+      <!-- STEP 1: Claude chat -->
+      <div class="dx-frame active" data-frame="1">
+        <div class="chat">
+          <div class="chat-main">
+            <div class="chat-bar">
+              <div class="chat-app">
+                <span class="chat-app-mark">C</span>
+                Claude · Cashfree Relay MCP connected
+              </div>
+              <div class="chat-meta">session 4f2b · ap-south-1</div>
+            </div>
+
+            <div class="msg msg-user">
+              <span class="msg-avatar user">PA</span>
+              <div class="msg-bubble">
+                I run payment ops at a D2C brand on Cashfree. When a UPI mandate fails on subscription renewal above ₹500, I want to retry on the right rail, send a recovery SMS if it still fails, and only post the refund manually if a finance reviewer approves above ₹10,000. Build me this workflow.
+              </div>
+            </div>
+
+            <div class="msg msg-ai">
+              <span class="msg-avatar ai">R</span>
+              <div class="msg-bubble">
+                I will compose this in Cashfree Relay. Picking up <code>payment.failed</code> events, gating on amount, classifying with the <b>Subscription Recovery</b> skill, retrying on the secondary rail via the Cashfree connector, and adding an approval gate on <code>amount &gt; 10000</code>. Let me wire it up.
+              </div>
+            </div>
+
+            <div class="tool-call">
+              <span class="dot"></span>
+              <span>relay.workflow.compose</span>
+              <span style="margin-left:auto; color:var(--accent-700)">name=subscription-recovery · region=ap-south-1</span>
+            </div>
+            <div class="tool-call">
+              <span class="dot"></span>
+              <span>relay.skills.attach</span>
+              <span style="margin-left:auto; color:var(--accent-700)">subscription_recovery · θ 0.68</span>
+            </div>
+            <div class="tool-call">
+              <span class="dot"></span>
+              <span>relay.mcp.bind</span>
+              <span style="margin-left:auto; color:var(--accent-700)">cashfree, twilio, slack</span>
+            </div>
+
+            <div class="msg msg-ai">
+              <span class="msg-avatar ai">R</span>
+              <div class="msg-bubble">
+                Workflow drafted as <code>wf_subscription_recovery_v0</code>. Six steps. PII redaction strict. Audit on. Opening it in the visual builder so you can review the policy gate before publish.
+              </div>
+            </div>
+
+            <div class="chat-input">
+              <i data-lucide="paperclip" style="width:14px;height:14px;color:var(--neutral-400)"></i>
+              <span class="placeholder">Refine the workflow, add a step, or change the threshold</span>
+              <button class="btn btn-primary btn-sm">Send</button>
+            </div>
+          </div>
+
+          <div class="chat-side">
+            <h5>Connected MCP servers</h5>
+            <div class="side-card">
+              <div class="name"><i data-lucide="server" style="width:14px;height:14px;color:var(--accent-600)"></i> Cashfree</div>
+              <div class="desc">payments, payouts, refunds, subscriptions, payment links</div>
+            </div>
+            <div class="side-card">
+              <div class="name"><i data-lucide="message-square" style="width:14px;height:14px;color:var(--neutral-400)"></i> Twilio</div>
+              <div class="desc">SMS recovery messages</div>
+            </div>
+            <div class="side-card">
+              <div class="name"><i data-lucide="users" style="width:14px;height:14px;color:var(--neutral-400)"></i> Slack</div>
+              <div class="desc">approval handoff to finance</div>
+            </div>
+
+            <h5 style="margin-top:8px">Skill access</h5>
+            <div class="side-card">
+              <div class="name"><i data-lucide="repeat" style="width:14px;height:14px;color:var(--accent-600)"></i> Subscription Recovery</div>
+              <div class="desc">θ 0.68 · live</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dx-foot">
+          <div class="dx-foot-meta">
+            <span><i data-lucide="shield-check" style="width:12px;height:12px;color:var(--positive-500); vertical-align:middle"></i> PII redaction strict</span>
+            <span><i data-lucide="map-pin" style="width:12px;height:12px;color:var(--positive-500); vertical-align:middle"></i> ap-south-1</span>
+            <span><i data-lucide="lock" style="width:12px;height:12px;color:var(--positive-500); vertical-align:middle"></i> credentials scoped to workflow</span>
+          </div>
+          <div class="body-sm">step 1 of 3 · prompt</div>
+        </div>
+      </div>
+
+      <!-- STEP 2: Workflow generated -->
+      <div class="dx-frame" data-frame="2">
+        <div class="gen">
+          <div class="gen-canvas">
+            <div class="gen-head">
+              <div class="gen-title">
+                <i data-lucide="sparkles" style="width:14px;height:14px;color:var(--accent-600)"></i>
+                wf_subscription_recovery_v0
+              </div>
+              <span class="gen-tag"><span class="dot"></span> Generating</span>
+            </div>
+
+            <div class="gen-flow">
+              <div class="gen-step">
+                <span class="num">1</span>
+                <span class="ico"><i data-lucide="zap" style="width:14px;height:14px"></i></span>
+                <div class="body-block">
+                  <div class="nm">Trigger · Webhook</div>
+                  <div class="sb">event = payment.failed (subscription)</div>
+                </div>
+                <span class="meta">cashfree</span>
+              </div>
+
+              <div class="gen-step">
+                <span class="num">2</span>
+                <span class="ico"><i data-lucide="filter" style="width:14px;height:14px"></i></span>
+                <div class="body-block">
+                  <div class="nm">Filter</div>
+                  <div class="sb">amount &gt; 500</div>
+                </div>
+                <span class="meta">condition</span>
+              </div>
+
+              <div class="gen-step is-agent">
+                <span class="num">3</span>
+                <span class="ico"><i data-lucide="bot" style="width:14px;height:14px"></i></span>
+                <div class="body-block">
+                  <div class="nm">Agent · Subscription Recovery</div>
+                  <div class="sb">classify failure reason · θ 0.68</div>
+                </div>
+                <span class="meta">skill</span>
+              </div>
+
+              <div class="gen-step">
+                <span class="num">4</span>
+                <span class="ico"><i data-lucide="rotate-ccw" style="width:14px;height:14px"></i></span>
+                <div class="body-block">
+                  <div class="nm">Retry on secondary rail</div>
+                  <div class="sb">cashfree.subscription.retry · max=2</div>
+                </div>
+                <span class="meta">cashfree</span>
+              </div>
+
+              <div class="gen-step is-agent">
+                <span class="num">5</span>
+                <span class="ico"><i data-lucide="message-square" style="width:14px;height:14px"></i></span>
+                <div class="body-block">
+                  <div class="nm">Agent · Recovery message</div>
+                  <div class="sb">compose SMS · context = classify, customer</div>
+                </div>
+                <span class="meta">twilio</span>
+              </div>
+
+              <div class="gen-step">
+                <span class="num">6</span>
+                <span class="ico"><i data-lucide="user-check" style="width:14px;height:14px"></i></span>
+                <div class="body-block">
+                  <div class="nm">Approval gate</div>
+                  <div class="sb">if amount &gt; 10000 → finance review</div>
+                </div>
+                <span class="meta">slack</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gen-side">
+            <div class="gen-card">
+              <h5>Generated by Relay</h5>
+              <div class="gen-list">
+                <div class="gen-list-row"><i data-lucide="check-circle-2"></i><span><b>6 steps</b> wired across 3 connectors</span></div>
+                <div class="gen-list-row"><i data-lucide="check-circle-2"></i><span><b>2 agent skills</b> attached with confidence floors</span></div>
+                <div class="gen-list-row"><i data-lucide="check-circle-2"></i><span><b>1 approval gate</b> at ₹10,000 threshold</span></div>
+                <div class="gen-list-row"><i data-lucide="check-circle-2"></i><span><b>Audit lineage</b> on by default</span></div>
+              </div>
+            </div>
+
+            <div class="gen-card">
+              <h5>Policy applied</h5>
+              <div class="gen-list">
+                <div class="gen-list-row"><i data-lucide="shield-check"></i><span>PII redaction <b>strict</b></span></div>
+                <div class="gen-list-row"><i data-lucide="map-pin"></i><span>Region <b>ap-south-1</b></span></div>
+                <div class="gen-list-row"><i data-lucide="key-round"></i><span>Credentials scoped to <b>this workflow only</b></span></div>
+                <div class="gen-list-row"><i data-lucide="git-commit-horizontal"></i><span>Saved as <b>v 0.1 draft</b></span></div>
+              </div>
+            </div>
+
+            <div class="gen-cta">
+              <a href="#" class="btn btn-secondary btn-sm">View YAML</a>
+              <a href="#" class="btn btn-primary btn-sm" style="flex:1; justify-content:center">Open in builder <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dx-foot">
+          <div class="dx-foot-meta">
+            <span><i data-lucide="zap" style="width:12px;height:12px;color:var(--accent-600); vertical-align:middle"></i> generated in 1.4s</span>
+            <span><i data-lucide="git-commit-horizontal" style="width:12px;height:12px; vertical-align:middle"></i> v 0.1 draft</span>
+            <span><i data-lucide="file-text" style="width:12px;height:12px; vertical-align:middle"></i> 64 lines yaml</span>
+          </div>
+          <div class="body-sm">step 2 of 3 · generation</div>
+        </div>
+      </div>
+
+      <!-- STEP 3: Visual builder -->
+      <div class="dx-frame" data-frame="3">
+        <div class="builder-shell">
+
+          <!-- left palette -->
+          <div class="b-left">
+            <h6>Triggers</h6>
+            <div class="b-item"><i data-lucide="zap"></i> Webhook</div>
+            <div class="b-item"><i data-lucide="clock"></i> Schedule</div>
+            <div class="b-item"><i data-lucide="server"></i> MCP event</div>
+
+            <h6 style="margin-top:14px">Logic</h6>
+            <div class="b-item"><i data-lucide="filter"></i> Filter</div>
+            <div class="b-item"><i data-lucide="git-branch"></i> Branch</div>
+            <div class="b-item"><i data-lucide="rotate-ccw"></i> Retry</div>
+            <div class="b-item"><i data-lucide="user-check"></i> Approval</div>
+
+            <h6 style="margin-top:14px">Agents</h6>
+            <div class="b-item"><i data-lucide="bot"></i> Skill</div>
+            <div class="b-item"><i data-lucide="plus"></i> Custom skill</div>
+
+            <h6 style="margin-top:14px">Actions</h6>
+            <div class="b-item"><i data-lucide="credit-card"></i> Cashfree</div>
+            <div class="b-item"><i data-lucide="message-square"></i> Twilio</div>
+            <div class="b-item"><i data-lucide="users"></i> Slack</div>
+            <div class="b-item"><i data-lucide="webhook"></i> HTTP</div>
+          </div>
+
+          <!-- canvas -->
+          <div class="b-canvas">
+            <div class="b-canvas-bar">
+              <div class="b-canvas-title">Subscription recovery · v 0.1 draft</div>
+              <div class="b-canvas-actions">
+                <button class="btn btn-secondary btn-sm"><i data-lucide="play" style="width:12px;height:12px"></i> Test</button>
+                <button class="btn btn-secondary btn-sm"><i data-lucide="git-branch" style="width:12px;height:12px"></i> Branch</button>
+                <button class="btn btn-primary btn-sm">Publish v 1</button>
+              </div>
+            </div>
+
+            <div class="b-flow">
+              <div class="b-node">
+                <div class="b-node-head">
+                  <span class="ico" style="background:var(--accent-100); color:var(--accent-600)"><i data-lucide="zap" style="width:12px;height:12px"></i></span>
+                  <span class="nm">Webhook trigger</span>
+                </div>
+                <div class="sb">payment.failed · cashfree</div>
+              </div>
+
+              <div class="b-vert"><i data-lucide="arrow-down" style="width:14px;height:14px"></i></div>
+
+              <div class="b-row">
+                <div class="b-node">
+                  <div class="b-node-head">
+                    <span class="ico"><i data-lucide="filter" style="width:12px;height:12px"></i></span>
+                    <span class="nm">Filter</span>
+                  </div>
+                  <div class="sb">amount &gt; 500</div>
+                </div>
+                <div class="b-conn"><i data-lucide="arrow-right" style="width:14px;height:14px"></i></div>
+                <div class="b-node is-agent selected">
+                  <div class="b-node-head">
+                    <span class="ico"><i data-lucide="bot" style="width:12px;height:12px"></i></span>
+                    <span class="nm">Subscription Recovery</span>
+                  </div>
+                  <div class="sb">classify · θ 0.68</div>
+                </div>
+              </div>
+
+              <div class="b-vert"><i data-lucide="arrow-down" style="width:14px;height:14px"></i></div>
+
+              <div class="b-row">
+                <div class="b-node">
+                  <div class="b-node-head">
+                    <span class="ico"><i data-lucide="rotate-ccw" style="width:12px;height:12px"></i></span>
+                    <span class="nm">Retry on rail</span>
+                  </div>
+                  <div class="sb">cashfree.subscription.retry</div>
+                </div>
+                <div class="b-conn"><i data-lucide="arrow-right" style="width:14px;height:14px"></i></div>
+                <div class="b-node is-agent">
+                  <div class="b-node-head">
+                    <span class="ico"><i data-lucide="message-square" style="width:12px;height:12px"></i></span>
+                    <span class="nm">Recovery SMS</span>
+                  </div>
+                  <div class="sb">twilio.send</div>
+                </div>
+              </div>
+
+              <div class="b-vert"><i data-lucide="arrow-down" style="width:14px;height:14px"></i></div>
+
+              <div class="b-node" style="max-width:240px; margin:0 auto">
+                <div class="b-node-head">
+                  <span class="ico" style="background:var(--warning-50); color:var(--warning-500)"><i data-lucide="user-check" style="width:12px;height:12px"></i></span>
+                  <span class="nm">Approval gate</span>
+                </div>
+                <div class="sb">amount &gt; 10000 → finance</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- right inspector -->
+          <div class="b-right">
+            <div class="b-tabs">
+              <div class="b-tab active">Properties</div>
+              <div class="b-tab">Test</div>
+              <div class="b-tab">Lineage</div>
+            </div>
+
+            <h6>Subscription Recovery</h6>
+            <div class="sub">step_03 · agent_skill</div>
+
+            <div class="b-prop">
+              <label>Skill</label>
+              <div class="val">
+                <i data-lucide="bot" style="width:12px;height:12px;color:var(--accent-600)"></i>
+                Subscription Recovery
+              </div>
+            </div>
+
+            <div class="b-prop">
+              <label>Confidence threshold</label>
+              <div class="b-slider">
+                <div class="fill"></div>
+                <div class="knob"></div>
+              </div>
+              <div class="b-slider-meta">
+                <span>0.0</span>
+                <span style="color:var(--accent-700)">θ 0.68</span>
+                <span>1.0</span>
+              </div>
+            </div>
+
+            <div class="b-prop">
+              <label>On below threshold</label>
+              <div class="val">
+                <i data-lucide="inbox" style="width:12px;height:12px;color:var(--warning-500)"></i>
+                Route to manual queue
+              </div>
+            </div>
+
+            <div class="b-prop">
+              <label>Context inputs</label>
+              <div class="val code-val">$.payment, $.customer, $.history</div>
+            </div>
+
+            <div class="b-prop" style="display:flex; gap:8px; align-items:center">
+              <span class="tag tag-positive">AUDIT ON</span>
+              <span class="tag tag-accent">PII REDACTED</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dx-foot">
+          <div class="dx-foot-meta">
+            <span><i data-lucide="check-circle-2" style="width:12px;height:12px;color:var(--positive-500); vertical-align:middle"></i> 0 errors · 0 warnings</span>
+            <span><i data-lucide="git-commit-horizontal" style="width:12px;height:12px; vertical-align:middle"></i> v 0.1 → v 1</span>
+            <span><i data-lucide="play" style="width:12px;height:12px; vertical-align:middle"></i> tested on 12 sample events</span>
+          </div>
+          <div class="body-sm">step 3 of 3 · publish</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- benefits row -->
+    <div class="feature-grid" style="margin-top:48px">
+      <div class="feature-card">
+        <span class="ico"><i data-lucide="message-square"></i></span>
+        <h3 class="h-card">Describe it like you would to a teammate</h3>
+        <p class="body">No flow charts. No JSON. Tell Relay what should happen on a failed payment, a chargeback, or an abandoned cart. It picks the right skills and apps.</p>
+      </div>
+      <div class="feature-card">
+        <span class="ico"><i data-lucide="layout-grid"></i></span>
+        <h3 class="h-card">See it on a canvas before you ship it</h3>
+        <p class="body">The draft opens in a visual builder you can read at a glance. Drag a step in. Move an approval up. Change the amount that needs sign-off. No code, ever.</p>
+      </div>
+      <div class="feature-card">
+        <span class="ico"><i data-lucide="rocket"></i></span>
+        <h3 class="h-card">Live the moment you click publish</h3>
+        <p class="body">Test on real events from last week. Run two versions side by side. When you publish, every run is recorded so finance and risk can sleep at night.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE PILLARS -->
+<section class="section" id="builder">
+  <div class="container">
+    <div class="section-header">
+      <p class="overline">What you get</p>
+      <h2 class="display-2">Three things, working together. Money moves. You sleep.</h2>
+      <p class="body">Other workflow tools were built to send marketing emails. Relay was built for the workflows that actually move your revenue. Failed payments. Chargebacks. RTO. Subscription churn. Settlement reconciliation. Every part of the product is designed for the people who own those numbers, not the people who write the code.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <span class="ico"><i data-lucide="layout-grid"></i></span>
+        <h3 class="h-card">Visual workflow builder</h3>
+        <p class="body">A canvas your ops lead can read in fifteen seconds. Drag a step. Add a branch. Insert an approval. Roll back to last week if something breaks. No code, no JSON, no engineering ticket.</p>
+        <ul>
+          <li><i data-lucide="check-circle-2"></i> Build it the way you draw it on a whiteboard</li>
+          <li><i data-lucide="check-circle-2"></i> Add an approval step before any rupee leaves</li>
+          <li><i data-lucide="check-circle-2"></i> Roll back a workflow with one click</li>
+          <li><i data-lucide="check-circle-2"></i> Test on real events from the past 30 days</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <span class="ico"><i data-lucide="bot"></i></span>
+        <h3 class="h-card">Agent Skills</h3>
+        <p class="body">Ready-made specialists trained for the jobs your team does by hand today. Refund triage, dispute response, RTO scoring, subscription recovery. Each one tells you how confident it is and only acts when you say it can.</p>
+        <ul>
+          <li><i data-lucide="check-circle-2"></i> Specialists, not a generic chatbot</li>
+          <li><i data-lucide="check-circle-2"></i> You decide how confident the agent must be</li>
+          <li><i data-lucide="check-circle-2"></i> Anything below your bar lands in the manual queue</li>
+          <li><i data-lucide="check-circle-2"></i> Build a custom one by describing it in English</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <span class="ico"><i data-lucide="webhook"></i></span>
+        <h3 class="h-card">MCP and connectors</h3>
+        <p class="body">Plug Relay into the apps your team already lives in. HubSpot, Zoho, Shopify, Slack, Sheets, your warehouse. Cashfree itself is connected by default, so payment data flows in without any setup.</p>
+        <ul>
+          <li><i data-lucide="check-circle-2"></i> Cashfree connected the moment you sign up</li>
+          <li><i data-lucide="check-circle-2"></i> 10 ready connectors for the apps you already use</li>
+          <li><i data-lucide="check-circle-2"></i> Pull data from your own warehouse and CRM</li>
+          <li><i data-lucide="check-circle-2"></i> Logins are kept inside Cashfree, not the agent</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEEP DIVE: VISUAL BUILDER -->
+<section class="section">
+  <div class="container">
+    <div class="deep">
+      <div class="deep-copy">
+        <p class="overline">Visual workflow builder</p>
+        <h3 class="display-3">Looks like a flow chart. Behaves like a finance team.</h3>
+        <p class="lede">Your refund policy is not in an LLM. It is in your team's heads. The visual builder lets you put it on paper, exactly the way you would explain it to a new hire.</p>
+        <ul>
+          <li><i data-lucide="git-branch"></i><span><b>Different paths for different cases.</b> Send small refunds straight through. Route the big ones to a reviewer. Branch by customer segment, channel, or amount.</span></li>
+          <li><i data-lucide="rotate-ccw"></i><span><b>Retries you can actually see.</b> Decide how many times Relay retries and what happens when it gives up. No silent failures sitting in a queue for three days.</span></li>
+          <li><i data-lucide="user-check"></i><span><b>A human in the loop, when you want one.</b> Drop in an approval step. Relay pings the right person on Slack or email and waits. Nothing moves until they say yes.</span></li>
+          <li><i data-lucide="git-commit-horizontal"></i><span><b>Last week's version, one click away.</b> Every change is saved. If something breaks today, roll back to Friday. Or run last week and this week side by side and compare.</span></li>
+        </ul>
+        <a href="#" class="deep-cta">See the builder in action <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+      </div>
+
+      <div class="visual">
+        <div class="visual-head">
+          <div class="visual-title">Step inspector · Payout policy gate</div>
+          <div class="visual-meta">step_03 · approval</div>
+        </div>
+        <div style="padding:20px">
+          <div style="display:flex; gap:12px; padding:12px; border:1px solid var(--neutral-900); border-radius:var(--r-md); margin-bottom:12px">
+            <span class="skill-icon"><i data-lucide="user-check"></i></span>
+            <div style="flex:1">
+              <div class="skill-name">Approval required</div>
+              <div class="skill-desc">If amount &gt; ₹2,00,000, route to <b style="color:var(--neutral-50)">Finance Lead</b> via Slack. Wait up to 30 min, then escalate.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; padding:12px; border:1px solid var(--neutral-900); border-radius:var(--r-md); margin-bottom:12px">
+            <span class="skill-icon" style="background:var(--warning-50); color:var(--warning-500)"><i data-lucide="alert-triangle"></i></span>
+            <div style="flex:1">
+              <div class="skill-name">On timeout</div>
+              <div class="skill-desc">Move to <b style="color:var(--neutral-50)">manual review queue</b>. Agent does not retry without human input.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; padding:12px; border:1px solid var(--neutral-900); border-radius:var(--r-md)">
+            <span class="skill-icon" style="background:var(--positive-50); color:var(--positive-500)"><i data-lucide="check-circle-2"></i></span>
+            <div style="flex:1">
+              <div class="skill-name">On approval</div>
+              <div class="skill-desc">Continue to <b style="color:var(--neutral-50)">payout.create</b>. Log approver ID, decision time, and policy version.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:8px; margin-top:16px">
+            <span class="tag tag-positive">AUDIT ON</span>
+            <span class="tag tag-accent">v 1.4</span>
+            <span class="tag tag-neutral">LAST RUN 14:32</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEEP DIVE: AGENT SKILLS -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="deep deep-reverse">
+      <div class="deep-copy">
+        <p class="overline">Agent Skills</p>
+        <h3 class="display-3">Hire a specialist for every payment job. By the action.</h3>
+        <p class="lede">A generic chatbot does not know how to write a chargeback response that wins. Our skills do. Each one is trained for one job, ships with the context Cashfree sees on every transaction, and only acts when it is sure.</p>
+        <ul>
+          <li><i data-lucide="target"></i><span><b>You set the bar, the skill clears it.</b> Pick how confident the agent must be before it acts. Anything below that lands in your manual queue with the agent's reasoning attached.</span></li>
+          <li><i data-lucide="activity"></i><span><b>You see what the agent did, and why.</b> Every decision is on a dashboard. Drill in, replay it, change the bar, and watch the new result.</span></li>
+          <li><i data-lucide="pencil-line"></i><span><b>Build a custom one in English.</b> Describe what you want the agent to do. Point it at the data. Test it on real events. Turn it on when you are happy.</span></li>
+          <li><i data-lucide="layers"></i><span><b>A growing library of specialists.</b> Refund Triage. Dispute Responder. RTO Scorer. Subscription Recovery. Settlement Reconciler. Anomaly Watcher. We add more every month.</span></li>
+        </ul>
+        <a href="#" class="deep-cta">See every skill <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+      </div>
+
+      <div class="visual">
+        <div class="visual-head">
+          <div class="visual-title">Skill library</div>
+          <div class="visual-meta">8 active · 2 in beta</div>
+        </div>
+        <div class="skill-list">
+          <div class="skill-row">
+            <span class="skill-icon"><i data-lucide="rotate-ccw"></i></span>
+            <div class="skill-body">
+              <div class="skill-name">Refund Triage</div>
+              <div class="skill-desc">Classify refund reason, route by policy, propose response.</div>
+            </div>
+            <div class="skill-meta">
+              <span class="tag tag-positive">LIVE</span>
+              <span class="body-sm">θ 0.72</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <span class="skill-icon"><i data-lucide="shield-alert"></i></span>
+            <div class="skill-body">
+              <div class="skill-name">Dispute Responder</div>
+              <div class="skill-desc">Gather proof, draft contestation, calculate win probability.</div>
+            </div>
+            <div class="skill-meta">
+              <span class="tag tag-positive">LIVE</span>
+              <span class="body-sm">θ 0.70</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <span class="skill-icon"><i data-lucide="package-x"></i></span>
+            <div class="skill-body">
+              <div class="skill-name">RTO Scorer</div>
+              <div class="skill-desc">Score address and order signals, flag high RTO risk pre-shipment.</div>
+            </div>
+            <div class="skill-meta">
+              <span class="tag tag-positive">LIVE</span>
+              <span class="body-sm">θ 0.65</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <span class="skill-icon"><i data-lucide="repeat"></i></span>
+            <div class="skill-body">
+              <div class="skill-name">Subscription Recovery</div>
+              <div class="skill-desc">Detect churn intent, retry with smart timing, propose offer.</div>
+            </div>
+            <div class="skill-meta">
+              <span class="tag tag-positive">LIVE</span>
+              <span class="body-sm">θ 0.68</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <span class="skill-icon"><i data-lucide="scale"></i></span>
+            <div class="skill-body">
+              <div class="skill-name">Settlement Reconciler</div>
+              <div class="skill-desc">Match settlement payouts to merchant ledger, flag mismatches.</div>
+            </div>
+            <div class="skill-meta">
+              <span class="tag tag-warning">BETA</span>
+              <span class="body-sm">θ 0.80</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <span class="skill-icon"><i data-lucide="plus"></i></span>
+            <div class="skill-body">
+              <div class="skill-name">Build a custom skill</div>
+              <div class="skill-desc">Describe the job in plain English. Attach context. Set the floor.</div>
+            </div>
+            <div class="skill-meta">
+              <span class="tag tag-accent">BYO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEEP DIVE: MCP -->
+<section class="section" id="mcp">
+  <div class="container">
+    <div class="deep">
+      <div class="deep-copy">
+        <p class="overline">MCP and connectors</p>
+        <h3 class="display-3">Connects to the apps your team already uses.</h3>
+        <p class="lede">Your customer data is in HubSpot. Your tickets are in Freshdesk. Your books are in Zoho. Your team lives in Slack. Relay plugs into all of it on day one, so workflows can read, write, and act across your stack.</p>
+        <ul>
+          <li><i data-lucide="server"></i><span><b>Cashfree, on tap.</b> Payments, refunds, payouts, settlements, disputes, payment links. No keys to copy. No scopes to wire. It just works the moment you sign up.</span></li>
+          <li><i data-lucide="plug"></i><span><b>10 apps connected on day one.</b> HubSpot, Zoho, Freshdesk, Slack, Sheets, Snowflake, Shopify, S3, AWS, Twilio. More every month.</span></li>
+          <li><i data-lucide="code-2"></i><span><b>Add your own.</b> Got an internal tool, a warehouse, or a homegrown ERP? Your engineering team can plug it in via MCP. The ops team uses it like any other connector.</span></li>
+          <li><i data-lucide="key-round"></i><span><b>Logins stay safe.</b> Each workflow has its own credentials, locked to that workflow. The agent never sees the password. Rotation is a click.</span></li>
+        </ul>
+        <a href="#" class="deep-cta">See every connector <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+      </div>
+
+      <div class="visual">
+        <div class="visual-head">
+          <div class="visual-title">MCP topology</div>
+          <div class="visual-meta">workflow_id wf_payments_19</div>
+        </div>
+        <div class="mcp-diagram">
+          <div class="mcp-row">
+            <div class="mcp-card is-core">
+              <span class="skill-icon"><i data-lucide="bot"></i></span>
+              <div>
+                <div class="mcp-name">Relay agent runtime</div>
+                <div class="mcp-sub">eval-gated · audited</div>
+              </div>
+            </div>
+            <div class="mcp-line"></div>
+            <div class="mcp-card is-core">
+              <span class="skill-icon"><i data-lucide="server"></i></span>
+              <div>
+                <div class="mcp-name">Cashfree MCP</div>
+                <div class="mcp-sub">payments, payouts, refunds</div>
+              </div>
+            </div>
+          </div>
+          <div class="mcp-row">
+            <div class="mcp-card">
+              <span class="skill-icon" style="background:var(--neutral-950); color:var(--neutral-200)"><i data-lucide="users"></i></span>
+              <div>
+                <div class="mcp-name">HubSpot connector</div>
+                <div class="mcp-sub">contacts, deals</div>
+              </div>
+            </div>
+            <div class="mcp-line"></div>
+            <div class="mcp-card">
+              <span class="skill-icon" style="background:var(--neutral-950); color:var(--neutral-200)"><i data-lucide="database"></i></span>
+              <div>
+                <div class="mcp-name">Snowflake connector</div>
+                <div class="mcp-sub">read-only</div>
+              </div>
+            </div>
+          </div>
+          <div class="mcp-row">
+            <div class="mcp-card">
+              <span class="skill-icon" style="background:var(--neutral-950); color:var(--neutral-200)"><i data-lucide="code-2"></i></span>
+              <div>
+                <div class="mcp-name">Custom MCP server</div>
+                <div class="mcp-sub">internal-erp.acme.in</div>
+              </div>
+            </div>
+            <div class="mcp-line"></div>
+            <div class="mcp-card">
+              <span class="skill-icon" style="background:var(--neutral-950); color:var(--neutral-200)"><i data-lucide="webhook"></i></span>
+              <div>
+                <div class="mcp-name">HTTP node</div>
+                <div class="mcp-sub">fallback for any API</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding:16px 20px; border-top:1px solid var(--neutral-900); background:var(--neutral-950)">
+          <div class="mono" style="color:var(--neutral-200)">
+            <span style="color:var(--accent-600)">$</span> cashfree mcp register --workflow wf_payments_19 --server internal-erp.acme.in
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY & COMPLIANCE -->
+<section class="sec-section" id="security">
+  <div class="container-wide">
+    <div class="section-header">
+      <p class="overline">Security and compliance</p>
+      <h2 class="display-2">AI workflows are new. The rails under them are not.</h2>
+      <p class="lede">Cashfree already runs payments for 800,000 businesses on rails that handle ₹2 lakh crore a year. Relay sits on those same rails. Every agent action is logged, every rupee that moves needs your approval rules, and your customer data never leaves India.</p>
+    </div>
+
+    <div class="sec-grid">
+      <div class="sec-card">
+        <span class="ico"><i data-lucide="file-clock"></i></span>
+        <h4>The agent never moves money quietly</h4>
+        <p>Every action the agent takes is recorded. What it did. Why it did it. What data it saw. Which version of the workflow ran. Risk and finance can sign off without chasing screenshots.</p>
+        <div class="mono">audit log · 90 day retention · exportable</div>
+      </div>
+      <div class="sec-card">
+        <span class="ico"><i data-lucide="shield-check"></i></span>
+        <h4>Nothing happens unless the agent is sure</h4>
+        <p>You set how confident the agent must be before it can act. If it is not sure, it does not move on. The action goes to your team's queue with the reasoning, ready for a human to review.</p>
+        <div class="mono">your bar · agent's call · your queue</div>
+      </div>
+      <div class="sec-card">
+        <span class="ico"><i data-lucide="key-round"></i></span>
+        <h4>Logins are kept far from the AI</h4>
+        <p>The agent never sees a password. Every workflow has its own credentials, locked to that workflow alone. Rotation is one click, no redeploy needed, no engineer needed.</p>
+        <div class="mono">vault per workflow · one click rotation</div>
+      </div>
+      <div class="sec-card">
+        <span class="ico"><i data-lucide="user-x"></i></span>
+        <h4>Card and Aadhaar data never reach the agent</h4>
+        <p>Card numbers, Aadhaar, PAN, account numbers, and phone numbers are masked before any data reaches the AI. Only tokens move through the workflow.</p>
+        <div class="mono">XXXX XXXX 1234 · pan ***Y</div>
+      </div>
+      <div class="sec-card">
+        <span class="ico"><i data-lucide="map-pin"></i></span>
+        <h4>Your data stays in India</h4>
+        <p>Every byte Relay touches lives in Indian data centers. Workflow runs, audit logs, and embeddings never leave the country. DPDP consent and erasure are baked in.</p>
+        <div class="mono">region · India · DPDP ready</div>
+      </div>
+      <div class="sec-card">
+        <span class="ico"><i data-lucide="users"></i></span>
+        <h4>Different teams, different powers</h4>
+        <p>Builders draft. Approvers sign off. Auditors read. Finance reviewers gate the big amounts. Read-only roles can never publish a workflow. Approvals always need a second human.</p>
+        <div class="mono">builder · approver · reviewer · auditor</div>
+      </div>
+    </div>
+
+    <div class="sec-stripe">
+      <div class="sec-stat">
+        <div class="num">PCI DSS 4.0</div>
+        <div class="lbl">Level 1 service provider</div>
+      </div>
+      <div class="sec-stat">
+        <div class="num">ISO 27001</div>
+        <div class="lbl">Certified ISMS scope incl. Relay</div>
+      </div>
+      <div class="sec-stat">
+        <div class="num">SOC 2 Type II</div>
+        <div class="lbl">Annual audit, available on request</div>
+      </div>
+      <div class="sec-stat">
+        <div class="num">RBI PA</div>
+        <div class="lbl">Payment Aggregator licence</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <p class="overline">What teams ship in week one</p>
+      <h2 class="display-2">The workflows your team is doing by hand right now.</h2>
+      <p class="body">Relay is in private beta with finance, growth, and operations teams at D2C brands, subscription businesses, and lenders across India. These are the six workflows most of them ship in their first week.</p>
+    </div>
+
+    <div class="uc-grid">
+      <div class="uc-card">
+        <div class="uc-head">
+          <div class="uc-ico"><i data-lucide="rotate-ccw"></i></div>
+          <div class="uc-meta">
+            <h4>Refund every customer in minutes, not days</h4>
+            <p class="body-sm">Refund tickets pile up. Relay reads each one, decides if it is genuine, drafts the reply your CX team would have sent, and posts the refund. Anything above ₹10,000 waits for finance to click approve.</p>
+          </div>
+        </div>
+        <div class="uc-stack">
+          <span class="tag">REFUND TRIAGE</span>
+          <span class="tag">FRESHDESK</span>
+          <span class="tag">APPROVAL</span>
+        </div>
+      </div>
+
+      <div class="uc-card">
+        <div class="uc-head">
+          <div class="uc-ico"><i data-lucide="shield-alert"></i></div>
+          <div class="uc-meta">
+            <h4>Win the chargebacks you have been losing</h4>
+            <p class="body-sm">Most disputes go uncontested because writing the response is a job no one wants. Relay gathers the proof, drafts the packet, scores the win odds, and submits when the odds look good. You read the summary in Slack.</p>
+          </div>
+        </div>
+        <div class="uc-stack">
+          <span class="tag">DISPUTE RESPONDER</span>
+          <span class="tag">CASHFREE</span>
+          <span class="tag">SLACK</span>
+        </div>
+      </div>
+
+      <div class="uc-card">
+        <div class="uc-head">
+          <div class="uc-ico"><i data-lucide="package-x"></i></div>
+          <div class="uc-meta">
+            <h4>Stop bleeding cash to RTO</h4>
+            <p class="body-sm">Every COD order goes through a risk score. The risky ones get a prepay nudge before you ship. Fraud-shaped orders go to manual review. Your warehouse never packs a return waiting to happen.</p>
+          </div>
+        </div>
+        <div class="uc-stack">
+          <span class="tag">RTO SCORER</span>
+          <span class="tag">SHOPIFY</span>
+          <span class="tag">SMS NUDGE</span>
+        </div>
+      </div>
+
+      <div class="uc-card">
+        <div class="uc-head">
+          <div class="uc-ico"><i data-lucide="repeat"></i></div>
+          <div class="uc-meta">
+            <h4>Save the subscriptions that almost churned</h4>
+            <p class="body-sm">A renewal fails. Most teams send the same generic email. Relay figures out why it failed, retries on the right rail, and only writes the customer if it is still stuck. Recovered revenue you would have written off.</p>
+          </div>
+        </div>
+        <div class="uc-stack">
+          <span class="tag">SUBSCRIPTION</span>
+          <span class="tag">UPI AUTOPAY</span>
+          <span class="tag">TWILIO</span>
+        </div>
+      </div>
+
+      <div class="uc-card">
+        <div class="uc-head">
+          <div class="uc-ico"><i data-lucide="scale"></i></div>
+          <div class="uc-meta">
+            <h4>Reconcile settlements without a single tab open</h4>
+            <p class="body-sm">Settlement files in. Ledger out. Relay matches every row, flags the mismatches with a sentence of explanation, and posts the entries to Zoho Books once your finance lead clicks approve.</p>
+          </div>
+        </div>
+        <div class="uc-stack">
+          <span class="tag">SETTLEMENT</span>
+          <span class="tag">SHEETS</span>
+          <span class="tag">ZOHO BOOKS</span>
+        </div>
+      </div>
+
+      <div class="uc-card">
+        <div class="uc-head">
+          <div class="uc-ico"><i data-lucide="bell"></i></div>
+          <div class="uc-meta">
+            <h4>Hear about a problem before your customers do</h4>
+            <p class="body-sm">Success rate dipped. UPI volume tanked. A specific bank went down. Relay watches every metric you care about and pings the right person on Slack with the suspected cause.</p>
+          </div>
+        </div>
+        <div class="uc-stack">
+          <span class="tag">ANOMALY</span>
+          <span class="tag">SLACK</span>
+          <span class="tag">CASHFREE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CODE / DEVELOPER ANGLE -->
+<section class="section">
+  <div class="container">
+    <div class="deep">
+      <div class="deep-copy">
+        <p class="overline">If your team has engineers too</p>
+        <h3 class="display-3">Visual when ops needs it. Code when engineering wants it.</h3>
+        <p class="lede">Ops draws the workflow on the canvas. Engineering reviews the same workflow as YAML in a pull request. One version of the truth, two ways to look at it. Nobody is locked out, nobody is locked in.</p>
+        <ul>
+          <li><i data-lucide="git-pull-request"></i><span><b>Every workflow is a file.</b> Export the YAML, drop it in git, review changes the way you review code. The canvas and the file stay in sync, always.</span></li>
+          <li><i data-lucide="terminal"></i><span><b>A CLI for the engineers who want one.</b> Deploy, run, replay, and debug workflows from a terminal. Local-test on real events from your staging account.</span></li>
+          <li><i data-lucide="webhook"></i><span><b>Start a workflow any way you want.</b> A webhook from your app. A scheduled run. A queue message. Or a single line of code in your backend.</span></li>
+          <li><i data-lucide="file-text"></i><span><b>Pricing on the page, not behind a sales call.</b> Free during beta. After that, you pay for what you run. The bill is itemized so you can see every action.</span></li>
+        </ul>
+      </div>
+
+      <div class="visual">
+        <div class="visual-head">
+          <div class="visual-title">workflow.yaml</div>
+          <div class="visual-meta">wf_payments_19 · v 1.4</div>
+        </div>
+<pre class="code"><code><span class="c"># Refund recovery workflow</span>
+<span class="k">name</span>: refund-recovery
+<span class="k">version</span>: <span class="s">"1.4"</span>
+<span class="k">trigger</span>:
+  <span class="k">type</span>: webhook
+  <span class="k">event</span>: <span class="s">payment.failed</span>
+
+<span class="k">steps</span>:
+  - <span class="k">id</span>: filter_amount
+    <span class="k">type</span>: condition
+    <span class="k">when</span>: <span class="s">"$.amount &gt; 500"</span>
+
+  - <span class="k">id</span>: classify
+    <span class="k">type</span>: agent_skill
+    <span class="k">skill</span>: refund_triage
+    <span class="k">threshold</span>: <span class="p">0.72</span>
+    <span class="k">on_below</span>: manual_queue
+
+  - <span class="k">id</span>: enrich
+    <span class="k">type</span>: mcp
+    <span class="k">server</span>: hubspot
+    <span class="k">tool</span>: contact.lookup
+
+  - <span class="k">id</span>: compose_sms
+    <span class="k">type</span>: agent_skill
+    <span class="k">skill</span>: retry_message
+    <span class="k">context</span>: [classify, enrich]
+
+  - <span class="k">id</span>: send_link
+    <span class="k">type</span>: cashfree
+    <span class="k">action</span>: payment_link.create_and_send
+
+<span class="k">policy</span>:
+  <span class="k">audit</span>: on
+  <span class="k">pii_redaction</span>: strict
+  <span class="k">region</span>: <span class="s">ap-south-1</span></code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <p class="overline">Why we built this</p>
+      <h2 class="display-2">An agent that improvises is fun in a chat. Scary in a finance system.</h2>
+      <p class="body">Other AI tools let the agent decide what to do, when to do it, and how. That works when the worst case is a wrong joke. It does not work when the worst case is a wrong refund. Relay puts your workflow in charge and lets the agent help inside the lines you draw.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th>Cashfree Relay</th>
+            <th>Agent-only platforms</th>
+            <th>Generic workflow tools</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>The workflow is in charge, not the agent</td>
+            <td><i data-lucide="check" class="ok"></i> Yes</td>
+            <td><i data-lucide="x" class="no"></i> Agent improvises</td>
+            <td><i data-lucide="check" class="ok"></i> Yes, but no AI</td>
+          </tr>
+          <tr>
+            <td>Agent waits for your confidence bar</td>
+            <td><i data-lucide="check" class="ok"></i> Set per skill</td>
+            <td><i data-lucide="x" class="no"></i> Best guess</td>
+            <td><i data-lucide="x" class="no"></i> No agents</td>
+          </tr>
+          <tr>
+            <td>Cashfree connected on day one</td>
+            <td><i data-lucide="check" class="ok"></i> Built in</td>
+            <td><i data-lucide="x" class="no"></i> Wire it yourself</td>
+            <td><i data-lucide="x" class="no"></i> Third-party plugin</td>
+          </tr>
+          <tr>
+            <td>Connects to your CRM, helpdesk, books</td>
+            <td><i data-lucide="check" class="ok"></i> 10+ apps</td>
+            <td><i data-lucide="check" class="ok"></i> Some</td>
+            <td><i data-lucide="check" class="ok"></i> Most</td>
+          </tr>
+          <tr>
+            <td>Data stays in India</td>
+            <td><i data-lucide="check" class="ok"></i> By default</td>
+            <td><i data-lucide="x" class="no"></i> US default</td>
+            <td><i data-lucide="x" class="no"></i> US default</td>
+          </tr>
+          <tr>
+            <td>Every agent action is logged for audit</td>
+            <td><i data-lucide="check" class="ok"></i> By default</td>
+            <td><i data-lucide="x" class="no"></i> Basic logs</td>
+            <td><i data-lucide="check" class="ok"></i> Workflow only</td>
+          </tr>
+          <tr>
+            <td>Engineers can review the workflow as code</td>
+            <td><i data-lucide="check" class="ok"></i> Export YAML</td>
+            <td><i data-lucide="x" class="no"></i> Vendor format</td>
+            <td><i data-lucide="check" class="ok"></i> Some tools</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band" id="cta">
+  <div class="container">
+    <div class="cta-inner">
+      <div>
+        <h2 class="display-3">Stop running payment ops by hand.</h2>
+        <p class="lede">Get on the Relay private beta. Built on the rails 800,000 Indian businesses already trust for payments. Free during beta. Bring one workflow, ship it in a week.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="#" class="btn btn-primary btn-lg">
+          Request access
+          <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+        </a>
+        <a href="#" class="btn btn-secondary btn-lg">Talk to sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <p class="overline">Common questions</p>
+      <h2 class="display-2">Things our beta merchants asked first.</h2>
+    </div>
+
+    <div class="faq">
+      <div class="faq-item">
+        <h4>Is Relay live yet?</h4>
+        <p>Private beta. Free for the businesses on it. Once we open it up, you pay for what you run, and you can see every action on the bill before it gets billed.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Will the agent move money without asking me?</h4>
+        <p>Not unless you tell it to. Every skill has a confidence bar. Every step can wait for a human to approve. Anything the agent is unsure about lands in your team's queue.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Where does my data live?</h4>
+        <p>In Indian data centers. Always. Card and Aadhaar data never reach the AI. Logs, runs, and embeddings stay inside the country. DPDP consent and erasure are part of the platform.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do I need engineers to use this?</h4>
+        <p>No. The whole product is built so a payment ops or finance ops lead can ship a workflow on her own. Engineers can dive in if they want a CLI or YAML. They do not need to.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How is this different from the Cashfree MCP server?</h4>
+        <p>The MCP server lets external AI tools call Cashfree. Relay is the place where your team builds and runs workflows inside Cashfree. Most teams end up using both.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What happens if a workflow breaks at 2am?</h4>
+        <p>It does not break silently. Every failure goes to a queue with the reason. Retries run on the schedule you set. Critical anomalies page the right person on Slack.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="#" class="nav-logo" style="margin-bottom:12px">
+          <span class="nav-logo-mark"></span>
+          Cashfree
+          <span class="nav-product">Relay</span>
+        </a>
+        <p class="body-sm" style="max-width:280px">The no-code AI workflow builder for payment and revenue ops. Built on the rails 800,000 Indian businesses already trust.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <a href="#">Visual builder</a>
+        <a href="#">Agent skills</a>
+        <a href="#">MCP and connectors</a>
+        <a href="#">Pricing</a>
+        <a href="#">Changelog</a>
+      </div>
+      <div class="footer-col">
+        <h5>Developers</h5>
+        <a href="#">Documentation</a>
+        <a href="#">CLI reference</a>
+        <a href="#">Webhooks</a>
+        <a href="#">SDKs</a>
+        <a href="#">Status</a>
+      </div>
+      <div class="footer-col">
+        <h5>Trust</h5>
+        <a href="#">Security</a>
+        <a href="#">Compliance</a>
+        <a href="#">Data residency</a>
+        <a href="#">DPDP</a>
+        <a href="#">Subprocessors</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="#">About Cashfree</a>
+        <a href="#">Customers</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Cashfree Payments India Pvt. Ltd. RBI Authorised Payment Aggregator.</span>
+      <span>Mumbai · Bengaluru · Hyderabad</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  if (window.lucide) { window.lucide.createIcons(); }
+
+  // DX showcase tab switcher
+  (function(){
+    const tabs = document.querySelectorAll('.dx-tab');
+    const frames = document.querySelectorAll('.dx-frame');
+    let auto = null;
+
+    function activate(step){
+      tabs.forEach(t => {
+        const s = parseInt(t.dataset.step, 10);
+        t.classList.toggle('active', s === step);
+        t.classList.toggle('done', s < step);
+      });
+      frames.forEach(f => {
+        f.classList.toggle('active', parseInt(f.dataset.frame, 10) === step);
+      });
+    }
+
+    tabs.forEach(t => {
+      t.addEventListener('click', () => {
+        clearInterval(auto);
+        activate(parseInt(t.dataset.step, 10));
+      });
+    });
+
+    // Auto-cycle through the 3 frames every 6s
+    let current = 1;
+    activate(current);
+    auto = setInterval(() => {
+      current = current >= 3 ? 1 : current + 1;
+      activate(current);
+    }, 6000);
+  })();
+</script>
+</body>
+</html>

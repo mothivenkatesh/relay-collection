@@ -1,0 +1,90 @@
+{
+  "total": 13976,
+  "by_source": {
+    "dev.to": 4966,
+    "hashnode": 4579,
+    "github": 4382,
+    "indiehackers": 24,
+    "twitter": 25
+  },
+  "by_tag": {
+    "PAIN": 3507,
+    "WANT": 2181,
+    "BUILT-OWN": 832,
+    "TOOL-MENTION": 1798,
+    "MCP-AWARE": 3366,
+    "PAYMENT-CONTEXT": 880,
+    "INDIA-DEV": 585,
+    "PRICE-SENSITIVE": 1759,
+    "RAZORPAY-AWARE": 24,
+    "WORKFLOW": 3623,
+    "AGENT-BUILDER": 39
+  },
+  "by_source_tag": {
+    "dev.to": {
+      "PAIN": 342,
+      "WANT": 355,
+      "BUILT-OWN": 388,
+      "TOOL-MENTION": 216,
+      "MCP-AWARE": 1136,
+      "PAYMENT-CONTEXT": 369,
+      "INDIA-DEV": 517,
+      "PRICE-SENSITIVE": 694,
+      "RAZORPAY-AWARE": 6,
+      "WORKFLOW": 1227,
+      "AGENT-BUILDER": 9
+    },
+    "hashnode": {
+      "PAIN": 549,
+      "WANT": 506,
+      "BUILT-OWN": 320,
+      "TOOL-MENTION": 67,
+      "MCP-AWARE": 764,
+      "PAYMENT-CONTEXT": 221,
+      "INDIA-DEV": 40,
+      "PRICE-SENSITIVE": 724,
+      "RAZORPAY-AWARE": 3,
+      "WORKFLOW": 944,
+      "AGENT-BUILDER": 13
+    },
+    "github": {
+      "PAIN": 2599,
+      "WANT": 1308,
+      "BUILT-OWN": 120,
+      "TOOL-MENTION": 1503,
+      "MCP-AWARE": 1449,
+      "PAYMENT-CONTEXT": 265,
+      "INDIA-DEV": 8,
+      "PRICE-SENSITIVE": 329,
+      "RAZORPAY-AWARE": 0,
+      "WORKFLOW": 1433,
+      "AGENT-BUILDER": 16
+    },
+    "indiehackers": {
+      "PAIN": 9,
+      "WANT": 4,
+      "BUILT-OWN": 2,
+      "TOOL-MENTION": 7,
+      "MCP-AWARE": 4,
+      "PAYMENT-CONTEXT": 6,
+      "INDIA-DEV": 6,
+      "PRICE-SENSITIVE": 5,
+      "RAZORPAY-AWARE": 3,
+      "WORKFLOW": 10,
+      "AGENT-BUILDER": 0
+    },
+    "twitter": {
+      "PAIN": 8,
+      "WANT": 8,
+      "BUILT-OWN": 2,
+      "TOOL-MENTION": 5,
+      "MCP-AWARE": 13,
+      "PAYMENT-CONTEXT": 19,
+      "INDIA-DEV": 14,
+      "PRICE-SENSITIVE": 7,
+      "RAZORPAY-AWARE": 12,
+      "WORKFLOW": 9,
+      "AGENT-BUILDER": 1
+    }
+  }
+}

@@ -1,0 +1,48 @@
+# --- Raw scrape dumps (regenerable via reddit-scraper / tweet-harvest / review-scrape) ---
+*.csv
+research/**/raw/
+research/**/data/
+research/**/*signals.json
+research/**/*signals.csv
+research/**/tagged.json
+research/**/reddit_signals.json
+research/**/reddit_india_filtered.json
+research/**/merchant_clean.json
+
+# Allow our small curated artifacts
+!research/**/top_quotes.json
+!research/**/summary.json
+!research/**/shortlist.json
+!research/**/tool_mentions.json
+!research/**/quotes.json
+!research/**/fresh_posts.json
+!research/**/deep_threads.json
+
+# --- OS / editor noise ---
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# --- Secrets ---
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+secrets.json
+
+# --- Build / dependency junk ---
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+dist/
+build/
+
+# --- Temp / log files ---
+*.log
+*.tmp
+*~
+.cache/

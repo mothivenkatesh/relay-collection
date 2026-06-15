@@ -1,0 +1,1729 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cashfree Relay | AI Agents for Post-Payment Operations</title>
+    <meta
+      name="description"
+      content="Relay gives D2C brands specialized AI agents for COD confirmation, failed payment recovery, RTO prevention, and settlement recon. Activate once. You do nothing after that."
+    />
+    <style>
+      :root {
+        --paper: #f5f3ef;
+        --paper-2: #ffffff;
+        --ink: #0d0f0c;
+        --muted: #5c5f56;
+        --subtle: #9a9d94;
+        --line: rgba(13, 15, 12, 0.1);
+        --green: #c7ff2e;
+        --green-dark: #4a6212;
+        --green-mid: #7da61a;
+        --black: #060706;
+        --white: #fffef9;
+        --surface: #111410;
+        --surface-2: #1a1e18;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      /* ── NAV ── */
+      .nav {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 100;
+        background: rgba(245, 243, 239, 0.9);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+        width: min(1280px, calc(100% - 56px));
+        margin: 0 auto;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: -0.3px;
+      }
+
+      .logo-mark {
+        width: 32px;
+        height: 32px;
+        background: var(--ink);
+        border-radius: 8px;
+        position: relative;
+        flex-shrink: 0;
+      }
+
+      .logo-mark::after {
+        content: "";
+        position: absolute;
+        bottom: 4px;
+        right: 4px;
+        width: 12px;
+        height: 12px;
+        background: var(--green);
+        border-radius: 3px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--muted);
+      }
+
+      .nav-links a:hover { color: var(--ink); }
+
+      .nav-ctas {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        height: 40px;
+        padding: 0 18px;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 700;
+        border: 1.5px solid var(--line);
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+        transition: background 0.15s, border-color 0.15s;
+      }
+
+      .btn:hover { background: var(--line); }
+
+      .btn.primary {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: var(--white);
+      }
+
+      .btn.primary:hover { background: #2a2d28; }
+
+      .btn.lg {
+        height: 50px;
+        padding: 0 24px;
+        font-size: 15px;
+        border-radius: 999px;
+      }
+
+      /* ── LAYOUT ── */
+      .container {
+        width: min(1280px, calc(100% - 56px));
+        margin: 0 auto;
+      }
+
+      .section { padding: 96px 0; }
+
+      /* ── HERO ── */
+      .hero {
+        padding: 148px 0 80px;
+        text-align: center;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        height: 30px;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: rgba(199, 255, 46, 0.22);
+        border: 1px solid rgba(74, 98, 18, 0.24);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        color: var(--green-dark);
+        margin-bottom: 22px;
+      }
+
+      .badge .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--green-mid);
+      }
+
+      .hero-h1 {
+        font-size: clamp(52px, 8.5vw, 112px);
+        font-weight: 900;
+        line-height: 0.9;
+        letter-spacing: -2px;
+        max-width: 960px;
+        margin: 0 auto 28px;
+      }
+
+      .hero-h1 .line2 {
+        color: var(--muted);
+      }
+
+      .hero-sub {
+        max-width: 700px;
+        margin: 0 auto 36px;
+        font-size: clamp(17px, 2vw, 22px);
+        font-weight: 450;
+        line-height: 1.5;
+        color: var(--muted);
+      }
+
+      .hero-ctas {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 72px;
+      }
+
+      /* ── HERO DASHBOARD MOCK ── */
+      .hero-mock {
+        width: min(1100px, 100%);
+        margin: 0 auto;
+        border-radius: 24px;
+        background: var(--surface);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.28);
+        overflow: hidden;
+      }
+
+      .mock-titlebar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 24px;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+      }
+
+      .tbar-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+      .tbar-dot.r { background: #ff5f57; }
+      .tbar-dot.y { background: #ffbd2e; }
+      .tbar-dot.g { background: #28c840; }
+
+      .tbar-label {
+        margin-left: 10px;
+        font-size: 12px;
+        font-weight: 700;
+        color: rgba(255,255,255,0.3);
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+      }
+
+      .mock-body {
+        padding: 28px 28px 32px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .agent-row {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        align-items: center;
+        gap: 16px;
+        padding: 18px 22px;
+        border-radius: 14px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.07);
+        color: var(--white);
+      }
+
+      .agent-name {
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -0.1px;
+      }
+
+      .agent-meta {
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(255,255,255,0.42);
+        margin-top: 3px;
+      }
+
+      .agent-stat {
+        font-size: 13px;
+        font-weight: 700;
+        color: rgba(255,255,255,0.5);
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        height: 28px;
+        padding: 0 11px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+        text-transform: uppercase;
+      }
+
+      .status-pill.on {
+        background: rgba(199,255,46,0.14);
+        color: var(--green);
+        border: 1px solid rgba(199,255,46,0.24);
+      }
+
+      .status-pill.on::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--green);
+      }
+
+      /* ── STATS BAR ── */
+      .stats-bar {
+        padding: 56px 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: var(--paper-2);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        divide-x: 1px solid var(--line);
+        gap: 0;
+      }
+
+      .stat-item {
+        padding: 0 40px;
+        border-right: 1px solid var(--line);
+      }
+
+      .stat-item:first-child { padding-left: 0; }
+      .stat-item:last-child { border-right: none; }
+
+      .stat-num {
+        font-size: clamp(36px, 4.5vw, 56px);
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -1.5px;
+        color: var(--ink);
+        margin-bottom: 8px;
+      }
+
+      .stat-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--muted);
+        line-height: 1.4;
+      }
+
+      .stat-source {
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--subtle);
+        margin-top: 4px;
+      }
+
+      /* ── SECTION LABELS ── */
+      .section-tag {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: var(--green-dark);
+        background: rgba(199,255,46,0.18);
+        padding: 5px 10px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+
+      .section-h2 {
+        font-size: clamp(38px, 5.5vw, 72px);
+        font-weight: 900;
+        line-height: 0.92;
+        letter-spacing: -1.5px;
+        margin-bottom: 24px;
+      }
+
+      .section-body {
+        font-size: clamp(17px, 1.8vw, 21px);
+        font-weight: 450;
+        line-height: 1.5;
+        color: var(--muted);
+        max-width: 620px;
+      }
+
+      /* ── PROBLEM SECTION ── */
+      .problem-section {
+        background: var(--paper-2);
+      }
+
+      .problem-intro {
+        max-width: 800px;
+        margin-bottom: 56px;
+      }
+
+      .cost-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 15px;
+      }
+
+      .cost-table th {
+        text-align: left;
+        padding: 12px 20px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--subtle);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .cost-table td {
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--line);
+        font-weight: 500;
+        color: var(--ink);
+      }
+
+      .cost-table td:last-child {
+        font-weight: 700;
+        color: #c0392b;
+      }
+
+      .cost-table .total-row td {
+        font-size: 16px;
+        font-weight: 800;
+        border-bottom: none;
+        padding-top: 24px;
+      }
+
+      .cost-table .total-row td:first-child {
+        color: var(--muted);
+      }
+
+      .cost-table .total-row td:last-child {
+        color: var(--ink);
+        font-size: 18px;
+      }
+
+      .problem-quote {
+        margin-top: 48px;
+        padding: 32px 36px;
+        border-left: 3px solid var(--green);
+        background: rgba(199,255,46,0.06);
+        border-radius: 0 12px 12px 0;
+      }
+
+      .problem-quote blockquote {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: var(--ink);
+        font-style: italic;
+      }
+
+      .problem-quote cite {
+        display: block;
+        margin-top: 12px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--muted);
+        font-style: normal;
+        letter-spacing: 0.2px;
+      }
+
+      /* ── AGENTS SECTION ── */
+      .agents-intro {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 80px;
+      }
+
+      .agent-feature {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+        margin-bottom: 96px;
+      }
+
+      .agent-feature:last-child { margin-bottom: 0; }
+
+      .agent-feature.flip { direction: rtl; }
+      .agent-feature.flip > * { direction: ltr; }
+
+      .agent-tag {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: var(--green-dark);
+        margin-bottom: 16px;
+      }
+
+      .agent-h3 {
+        font-size: clamp(28px, 3.5vw, 44px);
+        font-weight: 900;
+        line-height: 1.0;
+        letter-spacing: -0.8px;
+        margin-bottom: 20px;
+      }
+
+      .agent-copy {
+        font-size: 17px;
+        font-weight: 450;
+        line-height: 1.6;
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
+
+      .proof-note {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--subtle);
+        line-height: 1.5;
+      }
+
+      /* ── AGENT VISUAL PANELS ── */
+      .agent-visual {
+        border-radius: 20px;
+        background: var(--surface);
+        border: 1px solid rgba(255,255,255,0.07);
+        overflow: hidden;
+        min-height: 360px;
+        position: relative;
+      }
+
+      .agent-visual .v-header {
+        padding: 16px 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .agent-visual .v-title {
+        font-size: 13px;
+        font-weight: 700;
+        color: rgba(255,255,255,0.5);
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+      }
+
+      .agent-visual .v-body {
+        padding: 20px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .v-msg {
+        padding: 14px 16px;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.5;
+      }
+
+      .v-msg.outbound {
+        background: rgba(199,255,46,0.12);
+        color: var(--green);
+        border: 1px solid rgba(199,255,46,0.2);
+        margin-left: 40px;
+      }
+
+      .v-msg.inbound {
+        background: rgba(255,255,255,0.06);
+        color: rgba(255,255,255,0.75);
+        border: 1px solid rgba(255,255,255,0.1);
+        margin-right: 40px;
+      }
+
+      .v-msg .msg-label {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        opacity: 0.55;
+        margin-bottom: 5px;
+      }
+
+      .v-timeline {
+        padding: 20px;
+        display: grid;
+        gap: 0;
+      }
+
+      .v-tl-item {
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        gap: 12px;
+        padding: 12px 0;
+        border-left: 2px solid rgba(255,255,255,0.08);
+        margin-left: 8px;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .v-tl-item::before {
+        content: "";
+        position: absolute;
+        left: -5px;
+        top: 19px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.2);
+      }
+
+      .v-tl-item.recovered::before { background: var(--green); }
+
+      .v-tl-time {
+        font-size: 11px;
+        font-weight: 800;
+        color: rgba(255,255,255,0.35);
+        white-space: nowrap;
+        letter-spacing: 0.2px;
+        padding-top: 1px;
+      }
+
+      .v-tl-event {
+        font-size: 14px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.7);
+        line-height: 1.4;
+      }
+
+      .v-tl-event.highlighted { color: var(--green); }
+
+      .v-sheet {
+        padding: 16px;
+        display: grid;
+        gap: 6px;
+      }
+
+      .sheet-row {
+        display: grid;
+        grid-template-columns: 80px 90px 90px 1fr 80px;
+        gap: 8px;
+        padding: 10px 12px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .sheet-row.header {
+        background: rgba(255,255,255,0.06);
+        color: rgba(255,255,255,0.35);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+      }
+
+      .sheet-row.data {
+        background: rgba(255,255,255,0.03);
+        color: rgba(255,255,255,0.65);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .sheet-row.flagged {
+        background: rgba(255,80,80,0.08);
+        border: 1px solid rgba(255,80,80,0.2);
+        color: rgba(255,120,100,0.9);
+      }
+
+      .flag-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 7px;
+        border-radius: 4px;
+        background: rgba(255,80,80,0.15);
+        color: #ff8070;
+        font-size: 10px;
+        font-weight: 800;
+      }
+
+      .ok-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 7px;
+        border-radius: 4px;
+        background: rgba(199,255,46,0.1);
+        color: var(--green);
+        font-size: 10px;
+        font-weight: 800;
+      }
+
+      .v-slack {
+        padding: 20px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .slack-channel {
+        font-size: 12px;
+        font-weight: 800;
+        color: rgba(255,255,255,0.35);
+        letter-spacing: 0.4px;
+        margin-bottom: 4px;
+      }
+
+      .slack-msg {
+        padding: 14px 16px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.09);
+      }
+
+      .slack-sender {
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--green);
+        margin-bottom: 6px;
+      }
+
+      .slack-text {
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(255,255,255,0.7);
+        line-height: 1.5;
+      }
+
+      .slack-meta {
+        margin-top: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.3);
+      }
+
+      /* ── HOW IT WORKS ── */
+      .how-section {
+        background: var(--paper-2);
+      }
+
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        margin-top: 56px;
+      }
+
+      .step-card {
+        padding: 32px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--paper);
+      }
+
+      .step-num {
+        font-size: 48px;
+        font-weight: 900;
+        color: rgba(13,15,12,0.08);
+        line-height: 1;
+        margin-bottom: 20px;
+        letter-spacing: -2px;
+      }
+
+      .step-title {
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 12px;
+        letter-spacing: -0.3px;
+      }
+
+      .step-copy {
+        font-size: 15px;
+        font-weight: 450;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      /* ── COMPARISON SECTION ── */
+      .comparison-section {
+        background: var(--black);
+        color: var(--white);
+      }
+
+      .comparison-section .section-body {
+        color: rgba(255,253,246,0.55);
+      }
+
+      .comparison-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 56px;
+      }
+
+      .compare-card {
+        padding: 28px;
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.03);
+      }
+
+      .compare-card.relay-card {
+        background: rgba(199,255,46,0.06);
+        border-color: rgba(199,255,46,0.2);
+      }
+
+      .compare-title {
+        font-size: 17px;
+        font-weight: 800;
+        color: var(--white);
+        margin-bottom: 6px;
+        letter-spacing: -0.2px;
+      }
+
+      .compare-price {
+        font-size: 14px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.45);
+        margin-bottom: 20px;
+      }
+
+      .compare-price.relay { color: var(--green); }
+
+      .compare-list {
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+
+      .compare-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(255,255,255,0.55);
+        line-height: 1.4;
+      }
+
+      .compare-list li::before {
+        content: "–";
+        color: rgba(255,255,255,0.25);
+        flex-shrink: 0;
+      }
+
+      .compare-list li.win {
+        color: rgba(255,255,255,0.8);
+      }
+
+      .compare-list li.win::before {
+        content: "✓";
+        color: var(--green);
+        font-weight: 800;
+      }
+
+      /* ── SECURITY SECTION ── */
+      .security-section {
+        background: var(--paper-2);
+      }
+
+      .security-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+
+      .security-badges {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 32px;
+      }
+
+      .sec-badge {
+        padding: 8px 16px;
+        border-radius: 8px;
+        border: 1.5px solid var(--line);
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--muted);
+        letter-spacing: 0.2px;
+      }
+
+      .data-flow {
+        background: var(--surface);
+        border-radius: 20px;
+        padding: 28px;
+        border: 1px solid rgba(255,255,255,0.07);
+      }
+
+      .df-label {
+        font-size: 11px;
+        font-weight: 800;
+        color: rgba(255,255,255,0.3);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+
+      .df-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .df-row:last-child { border-bottom: none; }
+
+      .df-source {
+        font-size: 13px;
+        font-weight: 700;
+        color: rgba(255,255,255,0.5);
+        width: 140px;
+        flex-shrink: 0;
+      }
+
+      .df-arrow {
+        font-size: 12px;
+        color: rgba(255,255,255,0.2);
+      }
+
+      .df-gets {
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.55);
+        line-height: 1.4;
+      }
+
+      /* ── CUSTOM AGENT ── */
+      .custom-section {
+        text-align: center;
+        background: var(--paper);
+      }
+
+      .prompt-demo {
+        max-width: 720px;
+        margin: 48px auto 0;
+        background: var(--surface);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .prompt-demo-inner {
+        padding: 28px 32px;
+        text-align: left;
+      }
+
+      .prompt-label {
+        font-size: 11px;
+        font-weight: 800;
+        color: rgba(255,255,255,0.3);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .prompt-text {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--white);
+        line-height: 1.5;
+        font-style: italic;
+      }
+
+      .prompt-text em {
+        font-style: normal;
+        color: var(--green);
+        font-weight: 700;
+      }
+
+      .prompt-result {
+        padding: 18px 32px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(199,255,46,0.05);
+      }
+
+      .prompt-result-text {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--green);
+        letter-spacing: 0.2px;
+      }
+
+      /* ── BETA CTA ── */
+      .beta-section {
+        padding: 96px 0;
+        background: var(--ink);
+        color: var(--white);
+        text-align: center;
+      }
+
+      .beta-h2 {
+        font-size: clamp(48px, 7vw, 88px);
+        font-weight: 900;
+        line-height: 0.9;
+        letter-spacing: -2px;
+        margin-bottom: 24px;
+      }
+
+      .beta-sub {
+        max-width: 600px;
+        margin: 0 auto 40px;
+        font-size: 19px;
+        font-weight: 450;
+        color: rgba(255,253,246,0.55);
+        line-height: 1.5;
+      }
+
+      .beta-ctas {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 32px;
+      }
+
+      .btn.white {
+        background: var(--white);
+        border-color: var(--white);
+        color: var(--black);
+      }
+
+      .btn.white:hover { background: #e8e6e0; }
+
+      .btn.ghost-white {
+        background: transparent;
+        border-color: rgba(255,255,255,0.24);
+        color: rgba(255,253,246,0.8);
+      }
+
+      .btn.ghost-white:hover { background: rgba(255,255,255,0.06); }
+
+      .beta-pricing-note {
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255,253,246,0.35);
+        line-height: 1.5;
+      }
+
+      /* ── FOOTER ── */
+      .footer {
+        background: var(--black);
+        padding: 56px 0 40px;
+        border-top: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.8fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 48px;
+      }
+
+      .footer-brand {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 10px;
+      }
+
+      .footer-desc {
+        font-size: 14px;
+        font-weight: 450;
+        color: rgba(255,255,255,0.35);
+        line-height: 1.6;
+        max-width: 280px;
+      }
+
+      .footer-col h4 {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.35);
+        margin-bottom: 16px;
+      }
+
+      .footer-col a {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(255,255,255,0.55);
+        margin-bottom: 10px;
+        transition: color 0.1s;
+      }
+
+      .footer-col a:hover { color: var(--white); }
+
+      .footer-bottom {
+        padding-top: 24px;
+        border-top: 1px solid rgba(255,255,255,0.07);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(255,255,255,0.25);
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 1024px) {
+        .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        .stat-item { border-right: none; border-bottom: 1px solid var(--line); padding: 24px 0; }
+        .stat-item:nth-child(even) { padding-left: 40px; }
+        .agent-feature,
+        .agent-feature.flip,
+        .security-grid,
+        .footer-grid { grid-template-columns: 1fr; direction: ltr; }
+        .steps-grid,
+        .comparison-cards { grid-template-columns: repeat(2, 1fr); }
+      }
+
+      @media (max-width: 680px) {
+        .container, .nav-inner { width: min(100% - 32px, 1280px); }
+        .nav-links { display: none; }
+        .hero { padding-top: 120px; }
+        .hero-h1 { letter-spacing: -1px; }
+        .sheet-row { grid-template-columns: 60px 1fr 60px; }
+        .sheet-row span:nth-child(3),
+        .sheet-row span:nth-child(4) { display: none; }
+        .steps-grid,
+        .comparison-cards { grid-template-columns: 1fr; }
+        .footer-grid { grid-template-columns: 1fr 1fr; }
+        .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <header class="nav">
+      <div class="nav-inner">
+        <a class="logo" href="#top">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span>Cashfree Relay</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#agents">Agents</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#security">Security</a>
+          <a href="https://www.cashfree.com/docs/tools-ai/relay/overview">Docs</a>
+        </nav>
+        <div class="nav-ctas">
+          <a class="btn" href="#demo">Book a demo</a>
+          <a class="btn primary" href="#beta">Request beta</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container">
+          <div class="badge"><span class="dot"></span>Preview Beta</div>
+          <h1 class="hero-h1">
+            Every post-payment job<br>
+            <span class="line2">handled automatically.</span>
+          </h1>
+          <p class="hero-sub">
+            Relay gives D2C brands specialized AI agents for COD confirmation, failed payment recovery, RTO prevention, and settlement recon. Activate once. You do nothing after that.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn primary lg" href="#beta">Request beta access</a>
+            <a class="btn lg" href="#demo">Book a demo</a>
+          </div>
+
+          <!-- Agent Dashboard Mock -->
+          <div class="hero-mock">
+            <div class="mock-titlebar">
+              <span class="tbar-dot r"></span>
+              <span class="tbar-dot y"></span>
+              <span class="tbar-dot g"></span>
+              <span class="tbar-label">Cashfree Relay — Your Agents</span>
+            </div>
+            <div class="mock-body">
+              <div class="agent-row">
+                <div>
+                  <div class="agent-name">COD Confirmation Agent</div>
+                  <div class="agent-meta">Confirms every COD order within 5 minutes of placement</div>
+                </div>
+                <div class="agent-stat">RTO: 17%</div>
+                <div class="status-pill on">Active</div>
+              </div>
+              <div class="agent-row">
+                <div>
+                  <div class="agent-name">Failed Payment Recovery Agent</div>
+                  <div class="agent-meta">WhatsApp at 15 min. Gmail at 2 hrs. Slack alert at end of day.</div>
+                </div>
+                <div class="agent-stat">6.2% recovered</div>
+                <div class="status-pill on">Active</div>
+              </div>
+              <div class="agent-row">
+                <div>
+                  <div class="agent-name">Settlement Reconciliation Agent</div>
+                  <div class="agent-meta">Runs daily. Appends to Sheets. Flags discrepancies.</div>
+                </div>
+                <div class="agent-stat">Next: midnight</div>
+                <div class="status-pill on">Active</div>
+              </div>
+              <div class="agent-row">
+                <div>
+                  <div class="agent-name">High-Value Transaction Alert</div>
+                  <div class="agent-meta">Pings finance on Slack within 40 seconds of trigger</div>
+                </div>
+                <div class="agent-stat">Threshold: ₹50K</div>
+                <div class="status-pill on">Active</div>
+              </div>
+              <div class="agent-row">
+                <div>
+                  <div class="agent-name">Abandoned Cart Recovery Agent</div>
+                  <div class="agent-meta">WhatsApp nudge at 10 min. Follow-up with offer at 2 hrs.</div>
+                </div>
+                <div class="agent-stat">4 pending today</div>
+                <div class="status-pill on">Active</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS BAR -->
+      <div class="stats-bar">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-num">16%</div>
+              <div class="stat-label">COD RTO with confirmation agents, down from 28 to 32%</div>
+              <div class="stat-source">CampaignHQ 2026</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">3-8%</div>
+              <div class="stat-label">Failed checkouts recovered. No campaigns. No Monday morning effort.</div>
+              <div class="stat-source">Relay beta merchants</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">160 hrs</div>
+              <div class="stat-label">Monthly settlement recon work eliminated for mid-size D2C brands</div>
+              <div class="stat-source">Kani survey 2025</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">₹80K</div>
+              <div class="stat-label">Monthly ops cost a ₹30L GMV brand spends before Relay</div>
+              <div class="stat-source">Relay merchant research</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROBLEM SECTION -->
+      <section class="section problem-section">
+        <div class="container">
+          <div class="problem-intro">
+            <div class="section-tag">The problem</div>
+            <h2 class="section-h2">₹40K to ₹80K a month. And it still breaks.</h2>
+            <p class="section-body">
+              A D2C brand doing ₹30L GMV is running COD confirmations by phone, chasing failed payments by hand, and exporting CSVs for settlement recon. Every week. Here is what that costs.
+            </p>
+          </div>
+
+          <table class="cost-table">
+            <thead>
+              <tr>
+                <th>What you are doing manually</th>
+                <th>Tool or person</th>
+                <th>Monthly cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>WhatsApp COD confirmations and RTO follow-ups</td>
+                <td>Interakt, AiSensy</td>
+                <td>₹8K to ₹18K</td>
+              </tr>
+              <tr>
+                <td>Cashfree event routing to Sheets and CRM</td>
+                <td>Zapier, Pabbly</td>
+                <td>₹4K to ₹12K</td>
+              </tr>
+              <tr>
+                <td>COD ops and RTO management</td>
+                <td>Manual ops person</td>
+                <td>₹20K to ₹35K</td>
+              </tr>
+              <tr>
+                <td>Failed payment follow-up</td>
+                <td>Manual, Excel</td>
+                <td>2 hrs every day</td>
+              </tr>
+              <tr>
+                <td>Settlement reconciliation</td>
+                <td>Google Sheets + manual</td>
+                <td>40 to 160 hrs/month</td>
+              </tr>
+              <tr class="total-row">
+                <td colspan="2">Total monthly cost</td>
+                <td>₹40K to ₹80K</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="problem-quote">
+            <blockquote>
+              "Version 1 was embarrassing. The final system took 2 months, 44 nodes, 2 AI agents, 8 conversation stages." He was building a WhatsApp flow for his family's clothing store.
+            </blockquote>
+            <cite>r/n8n, ops lead building payment automation for a D2C brand</cite>
+          </div>
+        </div>
+      </section>
+
+      <!-- AGENTS SECTION -->
+      <section class="section" id="agents">
+        <div class="container">
+          <div class="agents-intro">
+            <div class="section-tag">The agents</div>
+            <h2 class="section-h2">One agent. One job. Runs forever.</h2>
+            <p class="section-body">Each agent is built for one post-payment problem. Activate it from your Cashfree dashboard. It runs automatically on every matching event after that.</p>
+          </div>
+
+          <!-- COD Confirmation Agent -->
+          <div class="agent-feature">
+            <div>
+              <div class="agent-tag">COD Confirmation</div>
+              <h3 class="agent-h3">COD RTO drops to 16% within 30 days.</h3>
+              <p class="agent-copy">
+                Every COD order gets a confirmation within 5 minutes of placement. No reply in 4 hours, a follow-up goes out. Still nothing, ops gets flagged before the order ships. A confirmed order is not a risk score. It is a commitment.
+              </p>
+              <p class="proof-note">
+                Shipway: national RTO rate is 26%. Average loss per RTO: ₹800. Merchants who confirm within 5 minutes bring RTO from 28 to 32% down to 16 to 20% in 30 days. CampaignHQ 2026.
+              </p>
+            </div>
+            <div class="agent-visual">
+              <div class="v-header">
+                <span class="v-title">COD Confirmation Agent</span>
+                <div class="status-pill on">Active</div>
+              </div>
+              <div class="v-body">
+                <div class="v-msg outbound">
+                  <div class="msg-label">Order placed (5 min ago)</div>
+                  Hi Priya, your Kurta Set order #8821 is confirmed. Reply YES to confirm delivery or NO to cancel.
+                </div>
+                <div class="v-msg inbound">
+                  <div class="msg-label">Customer reply (3 min later)</div>
+                  YES please deliver
+                </div>
+                <div class="v-msg outbound">
+                  <div class="msg-label">Agent action</div>
+                  Order confirmed. Marked ready for dispatch. COD flag cleared.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Failed Payment Recovery -->
+          <div class="agent-feature flip">
+            <div>
+              <div class="agent-tag">Failed Payment Recovery</div>
+              <h3 class="agent-h3">Recover 3 to 8% of dropped checkouts. No campaigns.</h3>
+              <p class="agent-copy">
+                Every failed or dropped payment triggers a recovery message within 15 minutes. Gmail backup in 2 hours. Slack alert to ops at end of day if still unpaid. Covers one-time payments, COD, payment links, and checkout drops.
+              </p>
+              <p class="proof-note">
+                Merchants in beta are recovering 3 to 8% of dropped checkouts. No Monday morning effort. No campaigns. The agent runs on every event automatically.
+              </p>
+            </div>
+            <div class="agent-visual">
+              <div class="v-header">
+                <span class="v-title">Failed Payment Recovery</span>
+                <div class="status-pill on">Active</div>
+              </div>
+              <div class="v-timeline">
+                <div class="v-tl-item">
+                  <div class="v-tl-time">0 min</div>
+                  <div class="v-tl-event">Payment failed. Agent triggered.</div>
+                </div>
+                <div class="v-tl-item">
+                  <div class="v-tl-time">15 min</div>
+                  <div class="v-tl-event">WhatsApp: "Your payment didn't go through. Retry here."</div>
+                </div>
+                <div class="v-tl-item">
+                  <div class="v-tl-time">2 hrs</div>
+                  <div class="v-tl-event">Gmail: Order pending, complete your purchase.</div>
+                </div>
+                <div class="v-tl-item recovered">
+                  <div class="v-tl-time">2 hrs 14 min</div>
+                  <div class="v-tl-event highlighted">Payment recovered. ₹3,200 collected.</div>
+                </div>
+                <div class="v-tl-item">
+                  <div class="v-tl-time">EOD</div>
+                  <div class="v-tl-event">Slack: 1 payment still unpaid. Ops flagged.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Settlement Recon -->
+          <div class="agent-feature">
+            <div>
+              <div class="agent-tag">Settlement Reconciliation</div>
+              <h3 class="agent-h3">40 to 160 hours of recon work. Eliminated.</h3>
+              <p class="agent-copy">
+                Runs daily, weekly, or after every settlement cycle. Pulls your Cashfree data, appends every row to Google Sheets, flags discrepancies, and notifies finance. Not a summary. A live recon tab your team can act on.
+              </p>
+              <p class="proof-note">
+                Mid-size D2C brands spend 40 to 160 hours a month on manual settlement recon. Kani survey 2025. This agent brings that to zero.
+              </p>
+            </div>
+            <div class="agent-visual">
+              <div class="v-header">
+                <span class="v-title">Settlement Recon — Daily Run</span>
+                <div class="status-pill on">Active</div>
+              </div>
+              <div class="v-sheet">
+                <div class="sheet-row header">
+                  <span>Date</span>
+                  <span>Order ID</span>
+                  <span>Amount</span>
+                  <span>Status</span>
+                  <span>Flag</span>
+                </div>
+                <div class="sheet-row data">
+                  <span>21 May</span>
+                  <span>CF-29831</span>
+                  <span>₹1,240</span>
+                  <span>Settled</span>
+                  <span><span class="ok-badge">OK</span></span>
+                </div>
+                <div class="sheet-row data">
+                  <span>21 May</span>
+                  <span>CF-29832</span>
+                  <span>₹4,800</span>
+                  <span>Settled</span>
+                  <span><span class="ok-badge">OK</span></span>
+                </div>
+                <div class="sheet-row flagged">
+                  <span>21 May</span>
+                  <span>CF-29834</span>
+                  <span>₹12,500</span>
+                  <span>Pending</span>
+                  <span><span class="flag-badge">Review</span></span>
+                </div>
+                <div class="sheet-row data">
+                  <span>21 May</span>
+                  <span>CF-29835</span>
+                  <span>₹890</span>
+                  <span>Settled</span>
+                  <span><span class="ok-badge">OK</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- High-Value Alert -->
+          <div class="agent-feature flip">
+            <div>
+              <div class="agent-tag">High-Value Transaction Alert</div>
+              <h3 class="agent-h3">Finance knows about every big payment in 40 seconds.</h3>
+              <p class="agent-copy">
+                Set a threshold. When a transaction crosses it, Slack pings your finance team and a row is appended to Sheets within 40 seconds. No morning report. No one needs to ask.
+              </p>
+              <p class="proof-note">
+                Works on any transaction type: one-time payment, payout, or payment link. You set the threshold. The agent handles the rest.
+              </p>
+            </div>
+            <div class="agent-visual">
+              <div class="v-header">
+                <span class="v-title">High-Value Alert</span>
+                <div class="status-pill on">Active</div>
+              </div>
+              <div class="v-slack">
+                <div class="slack-channel"># finance-alerts</div>
+                <div class="slack-msg">
+                  <div class="slack-sender">Relay</div>
+                  <div class="slack-text">
+                    High-value payment received<br>
+                    ₹2,40,000 from Sharma Enterprises<br>
+                    Order #CF-29871 via Payment Link
+                  </div>
+                  <div class="slack-meta">Row 847 added to Settlements Sheet. 40 seconds ago.</div>
+                </div>
+                <div class="slack-msg">
+                  <div class="slack-sender">Relay</div>
+                  <div class="slack-text">
+                    High-value payment received<br>
+                    ₹85,000 from Mehta Retail Group<br>
+                    Order #CF-29904 via Checkout
+                  </div>
+                  <div class="slack-meta">Row 848 added to Settlements Sheet. 12 seconds ago.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Abandoned Cart -->
+          <div class="agent-feature">
+            <div>
+              <div class="agent-tag">Abandoned Cart Recovery</div>
+              <h3 class="agent-h3">Recover carts at the moment of highest intent.</h3>
+              <p class="agent-copy">
+                Customer drops off at checkout. WhatsApp nudge goes out within 10 minutes. No response in 2 hours, a follow-up with an offer follows. Triggered from the actual payment drop event. The agent knows the customer had intent, not just browsing interest.
+              </p>
+              <p class="proof-note">
+                Timed to the moment of payment drop, not a general cart event. Higher intent, higher recovery rate.
+              </p>
+            </div>
+            <div class="agent-visual">
+              <div class="v-header">
+                <span class="v-title">Abandoned Cart Recovery</span>
+                <div class="status-pill on">Active</div>
+              </div>
+              <div class="v-timeline">
+                <div class="v-tl-item">
+                  <div class="v-tl-time">0 min</div>
+                  <div class="v-tl-event">Customer drops at payment. Agent triggered.</div>
+                </div>
+                <div class="v-tl-item">
+                  <div class="v-tl-time">10 min</div>
+                  <div class="v-tl-event">WhatsApp: "You left something behind. Your cart is still saved."</div>
+                </div>
+                <div class="v-tl-item">
+                  <div class="v-tl-time">2 hrs</div>
+                  <div class="v-tl-event">Follow-up: "Here's 10% off to complete your order."</div>
+                </div>
+                <div class="v-tl-item recovered">
+                  <div class="v-tl-time">2 hrs 31 min</div>
+                  <div class="v-tl-event highlighted">Order placed. ₹2,100 recovered.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="section how-section" id="how-it-works">
+        <div class="container">
+          <div style="max-width: 580px; margin-bottom: 0;">
+            <div class="section-tag">How it works</div>
+            <h2 class="section-h2">Activate once. Done.</h2>
+            <p class="section-body">No developer needed. No webhook setup. No third-party tool to wire together.</p>
+          </div>
+          <div class="steps-grid">
+            <div class="step-card">
+              <div class="step-num">01</div>
+              <div class="step-title">Pick an agent from your Cashfree dashboard.</div>
+              <p class="step-copy">Go to Relay inside your existing Cashfree account. Choose the agent that matches your problem.</p>
+            </div>
+            <div class="step-card">
+              <div class="step-num">02</div>
+              <div class="step-title">Set your rules.</div>
+              <p class="step-copy">COD confirmation threshold. Recovery message timing. Alert amount. You decide once.</p>
+            </div>
+            <div class="step-card">
+              <div class="step-num">03</div>
+              <div class="step-title">Activate. Walk away.</div>
+              <p class="step-copy">The agent runs automatically on every matching Cashfree payment event. You do nothing after activation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPARISON SECTION -->
+      <section class="section comparison-section">
+        <div class="container">
+          <div style="max-width: 640px; margin-bottom: 0;">
+            <div class="section-tag" style="background: rgba(199,255,46,0.12); color: var(--green);">Why not the alternatives</div>
+            <h2 class="section-h2" style="color: var(--white);">Two things no other tool can give a Cashfree merchant.</h2>
+            <p class="section-body">Agents built specifically for payment problems. And data that stays inside Cashfree.</p>
+          </div>
+          <div class="comparison-cards">
+            <div class="compare-card">
+              <div class="compare-title">WhatsApp tools</div>
+              <div class="compare-price">Interakt, AiSensy (₹8K to ₹18K/mo)</div>
+              <ul class="compare-list">
+                <li>WhatsApp only. No agent for RTO, recon, or failed payments.</li>
+                <li>You configure every flow yourself.</li>
+                <li>No Cashfree event awareness. You wire the webhook.</li>
+                <li>Transaction data stored on third-party servers.</li>
+              </ul>
+            </div>
+            <div class="compare-card">
+              <div class="compare-title">Automation tools</div>
+              <div class="compare-price">Zapier, n8n (₹4K to ₹12K/mo + developer)</div>
+              <ul class="compare-list">
+                <li>Generic APIs. No pre-built payment agents.</li>
+                <li>Needs a developer to configure the Cashfree webhook before anything starts.</li>
+                <li>Breaks silently. You find out when it fails.</li>
+                <li>Data exits Cashfree to third-party infrastructure.</li>
+              </ul>
+            </div>
+            <div class="compare-card relay-card">
+              <div class="compare-title" style="color: var(--white);">Cashfree Relay</div>
+              <div class="compare-price relay">Free during beta</div>
+              <ul class="compare-list">
+                <li class="win">Agents built for COD, RTO, failed payments, and recon. Pre-built.</li>
+                <li class="win">Activate from the Cashfree dashboard. No developer.</li>
+                <li class="win">Runs on Cashfree payment events natively. No webhook config.</li>
+                <li class="win">Your transaction data never leaves Cashfree infrastructure.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECURITY SECTION -->
+      <section class="section security-section" id="security">
+        <div class="container">
+          <div class="security-grid">
+            <div>
+              <div class="section-tag">Data and security</div>
+              <h2 class="section-h2">Your transaction data stays inside Cashfree.</h2>
+              <p class="section-body">
+                Every third-party automation tool stores your payment data on their servers. Relay runs inside Cashfree's PCI DSS Level 1 and SOC infrastructure. You control the agents. Cashfree runs them.
+              </p>
+              <p class="section-body" style="margin-top: 16px;">
+                Google, Slack, and WhatsApp only receive the specific data you choose to send in each step. Nothing else leaves.
+              </p>
+              <div class="security-badges">
+                <span class="sec-badge">PCI DSS Level 1</span>
+                <span class="sec-badge">SOC 2 Type II</span>
+                <span class="sec-badge">ISO 27001</span>
+              </div>
+            </div>
+            <div class="data-flow">
+              <div class="df-label">What each destination receives</div>
+              <div class="df-row">
+                <div class="df-source">WhatsApp</div>
+                <div class="df-arrow">→</div>
+                <div class="df-gets">Order ID, customer name, and the message you configure. Nothing else.</div>
+              </div>
+              <div class="df-row">
+                <div class="df-source">Google Sheets</div>
+                <div class="df-arrow">→</div>
+                <div class="df-gets">The row fields you select. Settlement data stays in Cashfree.</div>
+              </div>
+              <div class="df-row">
+                <div class="df-source">Slack</div>
+                <div class="df-arrow">→</div>
+                <div class="df-gets">Alert details you define. Amount, order ID, and status.</div>
+              </div>
+              <div class="df-row">
+                <div class="df-source">Gmail</div>
+                <div class="df-arrow">→</div>
+                <div class="df-gets">Recovery email template with your payment link. No card data.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CUSTOM AGENT SECTION -->
+      <section class="section custom-section">
+        <div class="container">
+          <div class="section-tag">Custom agents</div>
+          <h2 class="section-h2" style="max-width: 600px; margin: 0 auto 16px;">Need something specific? Describe it.</h2>
+          <p class="section-body" style="margin: 0 auto; text-align: center;">
+            Tell Relay what you need in plain language. It builds the agent for you.
+          </p>
+          <div class="prompt-demo">
+            <div class="prompt-demo-inner">
+              <div class="prompt-label">You describe it</div>
+              <div class="prompt-text">
+                "When a refund above <em>₹5,000</em> is requested, send a Slack approval to the finance head <em>before</em> it goes through."
+              </div>
+            </div>
+            <div class="prompt-result">
+              <div class="prompt-result-text">Relay builds it. You activate it. Done.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BETA CTA -->
+      <section class="beta-section" id="beta">
+        <div class="container">
+          <h2 class="beta-h2">Free during beta.</h2>
+          <p class="beta-sub">
+            All agents are free to activate and run during the preview period. No per-run charges until general availability. Activate today.
+          </p>
+          <div class="beta-ctas">
+            <a class="btn white lg" href="#beta-form">Request beta access</a>
+            <a class="btn ghost-white lg" href="#demo">Book a demo</a>
+          </div>
+          <p class="beta-pricing-note">
+            Long-term pricing: ₹0.50 to ₹1 per agent run. WhatsApp template and AI costs passed through at cost.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">Cashfree Relay</div>
+            <p class="footer-desc">Specialized AI agents for every post-payment problem. COD confirmation, failed payment recovery, RTO prevention, and settlement recon. Built inside Cashfree.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Agents</h4>
+            <a href="#agents">COD Confirmation</a>
+            <a href="#agents">Failed Payment Recovery</a>
+            <a href="#agents">Settlement Recon</a>
+            <a href="#agents">High-Value Alerts</a>
+            <a href="#agents">Abandoned Cart</a>
+          </div>
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#how-it-works">How it works</a>
+            <a href="#security">Security</a>
+            <a href="https://www.cashfree.com/docs/tools-ai/relay/overview">Documentation</a>
+            <a href="#beta">Pricing</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="#demo">Book a demo</a>
+            <a href="#beta">Request beta</a>
+            <a href="https://www.cashfree.com">Cashfree Payments</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>2026 Cashfree Payments India Pvt. Ltd.</span>
+          <span>PCI DSS Level 1 Certified. SOC 2 Type II. ISO 27001.</span>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

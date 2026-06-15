@@ -1,0 +1,1181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cashfree Relay | Agentic fintech workflow orchestration</title>
+    <meta
+      name="description"
+      content="Cashfree Relay turns payment events into governed, agentic workflows across approvals, alerts, CRM updates, customer nudges, and external systems."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --paper: #ede8dc;
+        --paper-2: #f6f1e7;
+        --ink: #090a07;
+        --muted: #595b52;
+        --soft: #d9d2c2;
+        --line: rgba(9, 10, 7, 0.14);
+        --green: #c7ff2e;
+        --green-dark: #607c14;
+        --black: #050605;
+        --white: #fffdf6;
+        --orange: #ff8a3d;
+        --blue: #7ac7ff;
+        --purple: #ad8cff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      p,
+      h1,
+      h2,
+      h3 {
+        margin-top: 0;
+      }
+
+      .nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 20;
+        background: rgba(237, 232, 220, 0.86);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: min(1440px, calc(100% - 64px));
+        height: 80px;
+        margin: 0 auto;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 20px;
+        font-weight: 900;
+      }
+
+      .brand-icon {
+        position: relative;
+        width: 38px;
+        height: 38px;
+      }
+
+      .brand-icon::before,
+      .brand-icon::after {
+        position: absolute;
+        content: "";
+        background: var(--ink);
+      }
+
+      .brand-icon::before {
+        top: 0;
+        left: 0;
+        width: 38px;
+        height: 19px;
+        border-radius: 38px 38px 0 0;
+      }
+
+      .brand-icon::after {
+        right: 0;
+        bottom: 0;
+        width: 19px;
+        height: 19px;
+        border-radius: 0 0 19px 0;
+        background: var(--green);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        color: #202119;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 18px;
+        border: 1px solid var(--ink);
+        border-radius: 999px;
+        background: transparent;
+        color: var(--ink);
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .btn.primary {
+        border-color: var(--green);
+        background: var(--green);
+      }
+
+      .btn.dark {
+        border-color: var(--black);
+        background: var(--black);
+        color: var(--white);
+      }
+
+      .btn.big {
+        min-height: 54px;
+        padding: 0 26px;
+        font-size: 16px;
+      }
+
+      .page {
+        overflow: hidden;
+      }
+
+      .section {
+        padding: 112px 0;
+      }
+
+      .container {
+        width: min(1320px, calc(100% - 64px));
+        margin: 0 auto;
+      }
+
+      .hero {
+        min-height: 980px;
+        padding: 154px 0 88px;
+        text-align: center;
+      }
+
+      .mini {
+        display: inline-block;
+        margin-bottom: 18px;
+        font-size: 20px;
+        font-weight: 850;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .mega {
+        margin: 0 auto 24px;
+        font-size: clamp(76px, 13.4vw, 210px);
+        font-weight: 950;
+        line-height: 0.78;
+        letter-spacing: 0;
+      }
+
+      .mega span {
+        display: block;
+      }
+
+      .mega .echo {
+        color: transparent;
+        -webkit-text-stroke: 1.6px rgba(9, 10, 7, 0.26);
+      }
+
+      .hero-copy {
+        max-width: 850px;
+        margin: 0 auto;
+        color: #24261e;
+        font-size: clamp(22px, 2.3vw, 32px);
+        font-weight: 560;
+        line-height: 1.18;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      .hero-media {
+        position: relative;
+        width: min(1160px, 100%);
+        min-height: 420px;
+        margin: 82px auto 0;
+        overflow: hidden;
+        border-radius: 34px;
+        background:
+          linear-gradient(120deg, rgba(199, 255, 46, 0.36), transparent 42%),
+          linear-gradient(140deg, #1a1e18 0%, #090b09 58%, #30382d 100%);
+        box-shadow: 0 34px 90px rgba(24, 24, 18, 0.32);
+      }
+
+      .hero-media::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+        background-size: 72px 72px;
+        mask-image: linear-gradient(to bottom, black, transparent 92%);
+      }
+
+      .video-pill {
+        position: absolute;
+        top: 22px;
+        left: 22px;
+        z-index: 2;
+        padding: 10px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 999px;
+        background: rgba(5, 6, 5, 0.46);
+        color: var(--white);
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .studio-panel {
+        position: absolute;
+        top: 78px;
+        right: 46px;
+        bottom: 42px;
+        left: 46px;
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 18px;
+        z-index: 1;
+      }
+
+      .prompt,
+      .canvas {
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 24px;
+        background: rgba(9, 10, 7, 0.74);
+        color: var(--white);
+      }
+
+      .prompt {
+        padding: 24px;
+        text-align: left;
+      }
+
+      .prompt small,
+      .node small {
+        display: block;
+        color: #a9b19f;
+        font-size: 12px;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .prompt p {
+        margin: 34px 0 0;
+        font-size: 21px;
+        line-height: 1.3;
+      }
+
+      .canvas {
+        position: relative;
+        padding: 20px;
+      }
+
+      .node {
+        position: absolute;
+        width: 210px;
+        min-height: 92px;
+        padding: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 18px;
+        background: #111610;
+        text-align: left;
+      }
+
+      .node strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 17px;
+      }
+
+      .node.one {
+        top: 24px;
+        left: 22px;
+      }
+
+      .node.two {
+        top: 70px;
+        left: 260px;
+      }
+
+      .node.three {
+        top: 190px;
+        left: 120px;
+      }
+
+      .node.four {
+        right: 28px;
+        bottom: 36px;
+      }
+
+      .center-copy {
+        max-width: 980px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .display {
+        margin-bottom: 26px;
+        font-size: clamp(54px, 9vw, 144px);
+        font-weight: 950;
+        line-height: 0.78;
+        letter-spacing: 0;
+      }
+
+      .display .echo {
+        display: block;
+        color: transparent;
+        -webkit-text-stroke: 1.4px rgba(9, 10, 7, 0.24);
+      }
+
+      .display .solid {
+        display: block;
+      }
+
+      .body {
+        color: var(--muted);
+        font-size: 24px;
+        font-weight: 520;
+        line-height: 1.32;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 0.88fr 1.12fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .image-card {
+        position: relative;
+        min-height: 560px;
+        overflow: hidden;
+        border-radius: 34px;
+        background:
+          radial-gradient(circle at 70% 18%, rgba(199, 255, 46, 0.36), transparent 18rem),
+          linear-gradient(135deg, #171b15, #070807);
+      }
+
+      .image-card.light {
+        background:
+          radial-gradient(circle at 76% 20%, rgba(199, 255, 46, 0.44), transparent 18rem),
+          linear-gradient(135deg, #fbf7ec, #d8d1bf);
+      }
+
+      .black-band {
+        background: var(--black);
+        color: var(--white);
+      }
+
+      .black-band .display .echo {
+        -webkit-text-stroke-color: rgba(255, 253, 246, 0.25);
+      }
+
+      .black-band .body,
+      .black-band .feature-copy,
+      .black-band .mini {
+        color: #c8cbbf;
+      }
+
+      .feature-stack {
+        display: grid;
+        gap: 90px;
+      }
+
+      .feature {
+        display: grid;
+        grid-template-columns: 0.92fr 1.08fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .feature:nth-child(even) {
+        grid-template-columns: 1.08fr 0.92fr;
+      }
+
+      .feature:nth-child(even) .feature-copy-wrap {
+        order: 2;
+      }
+
+      .feature-title {
+        margin-bottom: 20px;
+        font-size: clamp(42px, 6vw, 96px);
+        font-weight: 950;
+        line-height: 0.82;
+        letter-spacing: 0;
+      }
+
+      .feature-title span {
+        display: block;
+      }
+
+      .feature-title .echo {
+        color: transparent;
+        -webkit-text-stroke: 1.2px currentColor;
+        opacity: 0.28;
+      }
+
+      .feature-copy {
+        max-width: 560px;
+        color: var(--muted);
+        font-size: 22px;
+        font-weight: 520;
+        line-height: 1.34;
+      }
+
+      .mock-ui {
+        position: absolute;
+        inset: 38px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .mock-top {
+        display: flex;
+        gap: 8px;
+        height: 44px;
+        align-items: center;
+        padding: 0 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--green);
+      }
+
+      .mock-row {
+        display: grid;
+        grid-template-columns: 90px 1fr 84px;
+        gap: 12px;
+        align-items: center;
+        padding: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        border-radius: 20px;
+        background: rgba(5, 6, 5, 0.56);
+        color: var(--white);
+      }
+
+      .mock-row span {
+        color: #c2cab6;
+        font-size: 13px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .pill {
+        display: inline-flex;
+        justify-content: center;
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: var(--green);
+        color: var(--black);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .cap-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 56px;
+      }
+
+      .cap {
+        min-height: 282px;
+        padding: 26px;
+        border: 1px solid rgba(255, 253, 246, 0.12);
+        border-radius: 28px;
+        background: #10120f;
+      }
+
+      .cap small {
+        display: block;
+        margin-bottom: 52px;
+        color: var(--green);
+        font-weight: 900;
+      }
+
+      .cap h3 {
+        margin-bottom: 12px;
+        font-size: 28px;
+        line-height: 1;
+      }
+
+      .cap p {
+        margin: 0;
+        color: #b9bdb2;
+        font-size: 17px;
+        line-height: 1.45;
+      }
+
+      .use-layout {
+        display: grid;
+        grid-template-columns: 330px 1fr;
+        gap: 34px;
+      }
+
+      .tabs {
+        display: grid;
+        gap: 12px;
+        align-content: start;
+      }
+
+      .tab {
+        padding: 19px 20px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: transparent;
+        color: var(--muted);
+        font-size: 18px;
+        font-weight: 850;
+      }
+
+      .tab.active {
+        background: var(--ink);
+        color: var(--white);
+      }
+
+      .use-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .use-card {
+        min-height: 286px;
+        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: 30px;
+        background: var(--paper-2);
+      }
+
+      .use-card small {
+        display: block;
+        margin-bottom: 54px;
+        color: var(--green-dark);
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .use-card h3 {
+        margin-bottom: 12px;
+        font-size: 31px;
+        line-height: 0.95;
+      }
+
+      .use-card p {
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.35;
+      }
+
+      .partner {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 18px;
+        padding: 18px;
+        border-radius: 42px;
+        background: var(--black);
+        color: var(--white);
+      }
+
+      .partner-copy {
+        padding: 64px 54px;
+      }
+
+      .partner .display .echo {
+        -webkit-text-stroke-color: rgba(255, 253, 246, 0.26);
+      }
+
+      .partner .body {
+        color: #c9ccbf;
+      }
+
+      .partner-art {
+        min-height: 480px;
+        border-radius: 30px;
+        background:
+          radial-gradient(circle at 70% 28%, rgba(199, 255, 46, 0.42), transparent 16rem),
+          linear-gradient(135deg, #1b2017, #080908);
+      }
+
+      .final {
+        padding: 120px 0;
+      }
+
+      .final-card {
+        min-height: 600px;
+        padding: 74px 48px;
+        overflow: hidden;
+        border-radius: 44px;
+        background:
+          radial-gradient(circle at 52% 14%, rgba(199, 255, 46, 0.46), transparent 18rem),
+          linear-gradient(135deg, #11150f, #050605);
+        color: var(--white);
+        text-align: center;
+      }
+
+      .final-card .mega .echo {
+        -webkit-text-stroke-color: rgba(255, 253, 246, 0.28);
+      }
+
+      .final-card .hero-copy {
+        color: #d2d6c9;
+      }
+
+      .date {
+        display: inline-flex;
+        margin: 26px 0 0;
+        padding: 12px 17px;
+        border: 1px solid rgba(255, 253, 246, 0.24);
+        border-radius: 999px;
+        color: var(--green);
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .footer {
+        padding: 60px 0;
+        background: var(--black);
+        color: #9da292;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.6fr repeat(4, 1fr);
+        gap: 28px;
+      }
+
+      .footer h4 {
+        margin: 0 0 14px;
+        color: var(--white);
+      }
+
+      .footer a,
+      .footer span {
+        display: block;
+        margin: 9px 0;
+        font-size: 15px;
+      }
+
+      @media (max-width: 1020px) {
+        .nav-links {
+          display: none;
+        }
+
+        .studio-panel,
+        .split,
+        .feature,
+        .feature:nth-child(even),
+        .partner,
+        .use-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .studio-panel {
+          position: relative;
+          inset: auto;
+          padding: 78px 22px 28px;
+        }
+
+        .hero-media {
+          min-height: auto;
+        }
+
+        .node {
+          position: relative;
+          top: auto !important;
+          right: auto !important;
+          bottom: auto !important;
+          left: auto !important;
+          width: auto;
+          margin-bottom: 12px;
+        }
+
+        .feature:nth-child(even) .feature-copy-wrap {
+          order: 0;
+        }
+
+        .cap-grid,
+        .use-cards,
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 680px) {
+        .container,
+        .nav-inner {
+          width: min(100% - 28px, 1320px);
+        }
+
+        .nav-actions .btn:not(.primary) {
+          display: none;
+        }
+
+        .brand {
+          font-size: 16px;
+        }
+
+        .hero {
+          min-height: auto;
+          padding-top: 130px;
+        }
+
+        .mega {
+          font-size: 70px;
+        }
+
+        .display {
+          font-size: 58px;
+        }
+
+        .section {
+          padding: 78px 0;
+        }
+
+        .cap-grid,
+        .use-cards,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-media,
+        .image-card,
+        .partner,
+        .final-card {
+          border-radius: 28px;
+        }
+
+        .partner-copy,
+        .final-card {
+          padding: 40px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="nav">
+        <div class="nav-inner">
+          <a class="brand" href="#top">
+            <span class="brand-icon" aria-hidden="true"></span>
+            <span>Cashfree Relay</span>
+          </a>
+          <nav class="nav-links" aria-label="Primary navigation">
+            <a href="#platform">Products</a>
+            <a href="#use-cases">Use cases</a>
+            <a href="#partners">Partners</a>
+            <a href="#ai-day">Events</a>
+          </nav>
+          <div class="nav-actions">
+            <a class="btn" href="#demo">Book a demo</a>
+            <a class="btn primary" href="#beta">Request beta</a>
+          </div>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="container">
+            <div class="mini">Beta</div>
+            <h1 class="mega">
+              <span class="echo">Relay</span>
+              <span>Agent Studio</span>
+            </h1>
+            <p class="hero-copy">
+              Turn every payment event into an intelligent workflow. Build payment-led agents that
+              take action, then test, activate, and optimize with full control.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary big" href="#beta">Request beta access</a>
+              <a class="btn big" href="#demo">Book a demo</a>
+            </div>
+            <div class="hero-media">
+              <div class="video-pill">Product video placeholder</div>
+              <div class="studio-panel">
+                <div class="prompt">
+                  <small>Plain language prompt</small>
+                  <p>
+                    When a payment above Rs. 1 lakh succeeds, log it in Sheets, notify finance, and
+                    create a CRM task if the payment form says enterprise onboarding.
+                  </p>
+                </div>
+                <div class="canvas">
+                  <div class="node one">
+                    <small>Trigger</small>
+                    <strong>Payment Success</strong>
+                  </div>
+                  <div class="node two">
+                    <small>Branch</small>
+                    <strong>Check Amount</strong>
+                  </div>
+                  <div class="node three">
+                    <small>Action</small>
+                    <strong>Sheets + Slack</strong>
+                  </div>
+                  <div class="node four">
+                    <small>Observe</small>
+                    <strong>Execution Log</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container center-copy">
+            <h2 class="display">
+              <span class="echo">From payment</span>
+              <span class="solid">to workflow in minutes</span>
+            </h2>
+            <p class="body">
+              Embedded in your Cashfree context, Relay workflows can recover failed payments,
+              approve refunds, update CRM records, notify teams, validate orders, book appointments,
+              and keep external systems in sync.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container split">
+            <div>
+              <h2 class="feature-title">
+                <span class="echo">Code: optional.</span>
+                <span>Context: automatic.</span>
+              </h2>
+              <p class="feature-copy">
+                Just describe what you want to build. Relay creates the workflow structure through
+                the Relay MCP Server. Know exactly how you want it wired? Take the wheel in the
+                Cashfree Dashboard.
+              </p>
+            </div>
+            <div class="image-card light">
+              <div class="mock-ui">
+                <div class="mock-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                <div class="mock-row">
+                  <span>Trigger</span>
+                  <strong>Cashfree payment failed</strong>
+                  <div class="pill">Ready</div>
+                </div>
+                <div class="mock-row">
+                  <span>Action</span>
+                  <strong>Send WhatsApp reminder</strong>
+                  <div class="pill">Set</div>
+                </div>
+                <div class="mock-row">
+                  <span>Action</span>
+                  <strong>Notify owner on Slack</strong>
+                  <div class="pill">Set</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section black-band" id="platform">
+          <div class="container">
+            <div class="center-copy">
+              <div class="mini">Skills: plain language, real work</div>
+              <h2 class="display">
+                <span class="echo">Already</span>
+                <span class="solid">connected</span>
+              </h2>
+              <p class="body">
+                Relay is built around payment-native triggers, workflow control, approval gates,
+                integration nodes, and observable execution.
+              </p>
+            </div>
+            <div class="cap-grid">
+              <article class="cap">
+                <small>01</small>
+                <h3>Event triggers</h3>
+                <p>Start from Cashfree payments, refunds, payouts, verification, forms, and webhooks.</p>
+              </article>
+              <article class="cap">
+                <small>02</small>
+                <h3>Workflow builder</h3>
+                <p>Create visually or use the Relay MCP Server to generate workflows from intent.</p>
+              </article>
+              <article class="cap">
+                <small>03</small>
+                <h3>Human approvals</h3>
+                <p>Pause sensitive flows before refunds, escalations, COD validation, or exceptions.</p>
+              </article>
+              <article class="cap">
+                <small>04</small>
+                <h3>Smart branching</h3>
+                <p>Route by amount, status, customer type, form input, risk signal, or business rule.</p>
+              </article>
+              <article class="cap">
+                <small>05</small>
+                <h3>Integration nodes</h3>
+                <p>Connect Slack, WhatsApp, email, Google Sheets, CRMs, Calendly, Shopify, and more.</p>
+              </article>
+              <article class="cap">
+                <small>06</small>
+                <h3>Execution logs</h3>
+                <p>Track runs, branches, retries, failures, approvals, and every completed action.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container feature-stack">
+            <div class="feature">
+              <div class="feature-copy-wrap">
+                <h2 class="feature-title">
+                  <span class="echo">Ship with confidence,</span>
+                  <span>not crossed fingers</span>
+                </h2>
+                <p class="feature-copy">
+                  Build fast, ship carefully. Test workflows in beta, request activation for
+                  production, and keep a human in the loop when money movement or customer
+                  communication needs review.
+                </p>
+              </div>
+              <div class="image-card">
+                <div class="mock-ui">
+                  <div class="mock-row">
+                    <span>Test</span>
+                    <strong>Run workflow in sandbox</strong>
+                    <div class="pill">Safe</div>
+                  </div>
+                  <div class="mock-row">
+                    <span>Review</span>
+                    <strong>Approve refund above threshold</strong>
+                    <div class="pill">Gate</div>
+                  </div>
+                  <div class="mock-row">
+                    <span>Live</span>
+                    <strong>Activate for production events</strong>
+                    <div class="pill">On</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="feature-copy-wrap">
+                <h2 class="feature-title">
+                  <span class="echo">Here, there,</span>
+                  <span>everywhere</span>
+                </h2>
+                <p class="feature-copy">
+                  Slack. WhatsApp. Email. Google Sheets. CRM. Calendly. Shopify. Your teams already
+                  work across systems. Relay lets the same payment event take the right action in
+                  the right place.
+                </p>
+              </div>
+              <div class="image-card light">
+                <div class="mock-ui">
+                  <div class="mock-row"><span>Slack</span><strong>Finance team notified</strong><div class="pill">Sent</div></div>
+                  <div class="mock-row"><span>Sheet</span><strong>Transaction logged</strong><div class="pill">Done</div></div>
+                  <div class="mock-row"><span>CRM</span><strong>Enterprise lead routed</strong><div class="pill">Done</div></div>
+                  <div class="mock-row"><span>WhatsApp</span><strong>Payment reminder queued</strong><div class="pill">Live</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="feature-copy-wrap">
+                <h2 class="feature-title">
+                  <span class="echo">Your workflows.</span>
+                  <span>Your guardrails.</span>
+                </h2>
+                <p class="feature-copy">
+                  Relay is agentic where it helps and structured where it matters. Define triggers,
+                  branches, policies, and approvals so fintech automation stays traceable,
+                  governable, and safe to run.
+                </p>
+              </div>
+              <div class="image-card">
+                <div class="mock-ui">
+                  <div class="mock-row"><span>Policy</span><strong>Refund above Rs. 5,000</strong><div class="pill">Approve</div></div>
+                  <div class="mock-row"><span>Risk</span><strong>COD order needs validation</strong><div class="pill">Check</div></div>
+                  <div class="mock-row"><span>Audit</span><strong>Decision log captured</strong><div class="pill">Saved</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="use-cases">
+          <div class="container">
+            <div class="center-copy" style="margin-bottom: 64px">
+              <div class="mini">Use cases</div>
+              <h2 class="display">
+                <span class="echo">How teams</span>
+                <span class="solid">use Relay</span>
+              </h2>
+              <p class="body">
+                Start with ready templates for workflows merchants already run manually.
+              </p>
+            </div>
+            <div class="use-layout">
+              <div class="tabs">
+                <div class="tab active">Payment operations</div>
+                <div class="tab">Finance teams</div>
+                <div class="tab">Growth teams</div>
+                <div class="tab">Risk teams</div>
+                <div class="tab">Customer experience</div>
+              </div>
+              <div class="use-cards">
+                <article class="use-card">
+                  <small>Use case</small>
+                  <h3>Payment failure recovery</h3>
+                  <p>Notify the right team, nudge the customer, and trigger recovery flows.</p>
+                </article>
+                <article class="use-card">
+                  <small>Use case</small>
+                  <h3>Refund approval</h3>
+                  <p>Route refunds above a threshold to human approvers before the flow continues.</p>
+                </article>
+                <article class="use-card">
+                  <small>Use case</small>
+                  <h3>High-value transaction tracking</h3>
+                  <p>Log transactions into Google Sheets and alert finance teams in real time.</p>
+                </article>
+                <article class="use-card">
+                  <small>Use case</small>
+                  <h3>CRM routing from payment forms</h3>
+                  <p>Use Cashfree Payment Form parameters to trigger sales and onboarding journeys.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="partners">
+          <div class="container">
+            <div class="partner">
+              <div class="partner-copy">
+                <h2 class="display">
+                  <span class="echo">Onboard as</span>
+                  <span class="solid">an AI partner</span>
+                </h2>
+                <p class="body">
+                  Bring your AI intelligence to power next-generation agents built for real
+                  business outcomes across payments, payouts, verification, approvals, customer
+                  engagement, risk, and operations.
+                </p>
+                <div class="hero-actions" style="justify-content: flex-start">
+                  <a class="btn primary big" href="#partner-form">Build With Us</a>
+                </div>
+              </div>
+              <div class="partner-art"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="beta">
+          <div class="container center-copy">
+            <h2 class="display">
+              <span class="echo">Build and test</span>
+              <span class="solid">free during beta</span>
+            </h2>
+            <p class="body">
+              Create and test workflows for free during beta. When you are ready to run in
+              production, request activation from Cashfree and go live with control.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary big" href="#beta-form">Request beta access</a>
+              <a class="btn big" href="#demo">Book a demo</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="final" id="ai-day">
+          <div class="container">
+            <div class="final-card">
+              <div class="mini">AI Day</div>
+              <h2 class="mega">
+                <span class="echo">Build your</span>
+                <span>own agent</span>
+              </h2>
+              <p class="hero-copy">
+                Join us at AI Day and see how Cashfree Relay helps merchants build agentic fintech
+                workflows for real business outcomes.
+              </p>
+              <div class="date">June 25, 2026</div>
+              <div class="hero-actions">
+                <a class="btn primary big" href="#register">Register for AI Day</a>
+                <a class="btn big" href="#demo" style="border-color: rgba(255,255,255,.36); color: var(--white)">Talk to Cashfree</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer-grid">
+          <div>
+            <h4>Cashfree Relay</h4>
+            <span>Agentic fintech workflow orchestration for merchants.</span>
+          </div>
+          <div>
+            <h4>Product</h4>
+            <a href="#platform">Platform</a>
+            <a href="#use-cases">Use cases</a>
+            <a href="#beta">Beta</a>
+          </div>
+          <div>
+            <h4>Build</h4>
+            <a href="#partners">AI partners</a>
+            <a href="#demo">Demo</a>
+          </div>
+          <div>
+            <h4>Event</h4>
+            <a href="#ai-day">AI Day</a>
+            <a href="#register">Register</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="#demo">Book a demo</a>
+            <a href="#beta">Request beta</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

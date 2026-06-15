@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Cashfree Relay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --paper:#FBFBFB; --ink:#0F1F1B; --ink-soft:#1B302A; --ink-mid:#44524C;
+  --muted:#5E6A66;
+  --line:rgba(15,31,27,0.10); --line-s:rgba(15,31,27,0.22);
+  --green:#00B488; --green-soft:#2DCCA0; --green-tint:rgba(0,180,136,0.08);
+  --green-ink:#007A55;
+  --red:#C0392B; --red-tint:rgba(192,57,43,0.08);
+  --amber:#92400E; --amber-tint:rgba(146,64,14,0.06);
+  --sans:'Google Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{background:#1E1E1E;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;}
+.deck{padding:55px;display:flex;flex-direction:column;gap:55px;align-items:center;}
+.slide{width:1280px;height:720px;background:var(--paper);position:relative;overflow:hidden;box-shadow:0 34px 89px rgba(0,0,0,.45);display:flex;flex-direction:column;}
+.chrome-top,.chrome-bottom{position:absolute;left:72px;right:72px;display:flex;justify-content:space-between;align-items:center;font-size:12px;line-height:1;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500;}
+.chrome-top{top:18px;} .chrome-bottom{bottom:14px;}
+.chrome-bottom .num{font-weight:600;color:var(--ink);}
+.brand-mark{display:inline-flex;align-items:center;gap:8px;color:var(--ink-mid);}
+.brand-mark::before{content:'';width:7px;height:7px;background:var(--green);border-radius:50%;}
+.body{flex:1;padding:48px 80px 36px;display:flex;flex-direction:column;min-height:0;}
+.eyebrow{font-size:12px;letter-spacing:.20em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:20px;display:flex;align-items:center;gap:13px;}
+.eyebrow::before{content:'';width:18px;height:1px;background:var(--green);flex-shrink:0;}
+.h-display{font-weight:300;font-size:88px;line-height:.97;letter-spacing:-.034em;}
+.h-display em{font-style:italic;font-weight:400;}
+.h2{font-weight:500;font-size:38px;line-height:1.18;letter-spacing:-.022em;}
+.h2 em{font-style:italic;font-weight:400;}
+.lede{font-weight:300;font-size:21px;line-height:1.42;letter-spacing:-.012em;color:var(--ink-soft);font-style:italic;}
+.ul{background-image:linear-gradient(transparent 76%,rgba(0,180,136,.22) 76%);background-repeat:no-repeat;padding-bottom:2px;}
+.insight{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-style:italic;font-size:16px;line-height:1.4;color:var(--ink);}
+.insight::before{content:'=> ';color:var(--green-ink);font-style:normal;font-weight:600;margin-right:6px;}
+.dark{background:var(--ink);}
+.dark .chrome-top,.dark .chrome-bottom{color:rgba(244,241,234,.4);}
+.dark .chrome-bottom .num{color:#FBFBFB;}
+.dark .brand-mark::before{background:var(--green-soft);}
+.dark .brand-mark{color:rgba(244,241,234,.6);}
+.dark .eyebrow{color:rgba(244,241,234,.5);}
+.dark .eyebrow::before{background:var(--green-soft);}
+.col2{display:grid;gap:24px;align-items:start;}
+.c5050{grid-template-columns:1fr 1fr;}
+.c4060{grid-template-columns:4fr 6fr;}
+.c6040{grid-template-columns:6fr 4fr;}
+.c3{grid-template-columns:1fr 1fr 1fr;}
+.c5{grid-template-columns:1fr 1fr 1fr 1fr 1fr;}
+/* quote block */
+.qb{border-left:2px solid var(--amber);padding:11px 14px;background:var(--amber-tint);}
+.qb-body{font-size:13px;color:var(--ink-mid);line-height:1.6;font-style:italic;}
+.qb-src{font-size:11px;color:var(--muted);margin-top:5px;letter-spacing:.10em;text-transform:uppercase;font-weight:600;}
+/* step */
+.step{padding:12px 15px;border-left:2px solid var(--line);}
+.step.g{border-left-color:var(--green);}
+.step.r{border-left-color:var(--red);}
+.step-lbl{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;font-weight:600;}
+.step.g .step-lbl{color:var(--green-ink);}
+.step.r .step-lbl{color:var(--red);}
+.step-body{font-size:13.5px;line-height:1.55;color:var(--ink-mid);}
+/* tag */
+.tag{display:inline-block;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:2px;}
+.tag-g{background:var(--green-tint);color:var(--green-ink);}
+.tag-r{background:var(--red-tint);color:var(--red);}
+.tag-k{background:var(--ink);color:#FBFBFB;}
+/* property box */
+.pbox{border:1px solid var(--ink);}
+.prow{display:grid;grid-template-columns:130px 1fr;border-bottom:1px solid var(--line);align-items:baseline;}
+.prow:last-child{border-bottom:none;}
+.plbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:12px 16px;}
+.pval{font-size:13.5px;line-height:1.5;color:var(--ink-soft);padding:12px 12px 12px 0;}
+.prow.g{background:var(--green-tint);}
+.prow.g .plbl{color:var(--green-ink);}
+.prow.g .pval{color:var(--ink);font-weight:500;}
+/* num list */
+.nl{list-style:none;counter-reset:n;padding:0;}
+.nl li{counter-increment:n;position:relative;padding:13px 0 13px 42px;border-bottom:1px solid var(--line);}
+.nl li:last-child{border-bottom:none;}
+.nl li::before{content:counter(n,decimal-leading-zero);position:absolute;left:0;top:17px;font-weight:500;font-size:12px;letter-spacing:.14em;color:var(--green-ink);}
+.nl li strong{display:block;font-size:14px;font-weight:600;line-height:1.3;margin-bottom:3px;color:var(--ink);}
+.nl li span{font-size:13px;line-height:1.55;color:var(--ink-mid);display:block;}
+/* table */
+table.dt{width:100%;border-collapse:collapse;}
+.dt th{text-align:left;font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:13px 12px 9px;border-bottom:1px solid var(--ink);}
+.dt td{padding:10px 12px;border-bottom:1px solid var(--line);font-size:13.5px;line-height:1.5;color:var(--ink-mid);}
+.dt td:first-child{font-weight:600;color:var(--ink);}
+.dt tr:last-child td{border-bottom:none;}
+.dt tr.hl{background:var(--green-tint);}
+.dt tr.hl td{color:var(--green-ink);font-weight:600;}
+.dt tr.hl td:first-child{color:var(--green-ink);}
+/* box */
+.box{border:1.5px solid var(--line);padding:14px 16px;}
+.box.g{border-color:var(--green);background:var(--green-tint);}
+.box.k{border-color:var(--ink);background:rgba(15,31,27,0.03);}
+.box-lbl{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:7px;}
+.box.g .box-lbl{color:var(--green-ink);}
+.box.k .box-lbl{color:var(--ink);}
+.ts-meta{font-size:12px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;font-weight:500;}
+@page{size:1280px 720px;margin:0;}
+@media print{html,body{background:#fff;}.deck{padding:0;gap:0;}.slide{box-shadow:none;}}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- 00 TITLE -->
+<section class="slide">
+  <div class="chrome-top"><span class="brand-mark">Cashfree · Relay</span><span>Early Beta · cashfree.com/relay</span></div>
+  <div style="position:absolute;right:0;top:0;width:400px;height:720px;background:linear-gradient(135deg,rgba(0,180,136,0.05) 0%,transparent 60%);border-left:1px solid rgba(0,180,136,0.09);pointer-events:none;"></div>
+  <div style="position:absolute;right:64px;top:90px;width:272px;height:460px;border:1px solid rgba(0,180,136,0.07);pointer-events:none;"></div>
+  <div class="body" style="justify-content:flex-end;padding-bottom:80px;z-index:1;">
+    <h1 class="h-display" style="max-width:780px;">
+      For years, software helped you<br/><em style="color:var(--green);">see the problem.</em>
+    </h1>
+    <div class="lede" style="margin-top:22px;max-width:600px;">
+      This is software that fixes it. Cashfree Relay puts specialized AI agents on your payment events. Automatically. Without you.
+    </div>
+    <div class="ts-meta" style="margin-top:22px;">Cashfree Payments · Early Beta · Free to activate</div>
+  </div>
+  <div class="chrome-bottom"><span></span><span class="num">00</span></div>
+</section>
+
+<!-- 01 DARK DIVIDER: YOUR MORNING -->
+<section class="slide dark">
+  <div class="chrome-top"><span class="brand-mark" style="color:rgba(244,241,234,.6);">Section 01</span></div>
+  <div class="body" style="justify-content:center;">
+    <div class="eyebrow">Before we talk about the product</div>
+    <h1 class="h-display" style="color:#FBFBFB;max-width:980px;">
+      Walk us through<br/><em style="color:var(--green-soft);">your Monday morning.</em>
+    </h1>
+  </div>
+  <div class="chrome-bottom"><span></span><span class="num">01 / 10</span></div>
+</section>
+
+<!-- 02 THE MORNING -->
+<section class="slide">
+  <div class="chrome-top"><span class="brand-mark">the morning</span></div>
+  <div class="body">
+    <div class="eyebrow">D2C founder · ₹30L–5Cr monthly GMV · 40%+ COD</div>
+    <h2 class="h2">You open your phone at 8am. <em>The ops work is already waiting.</em></h2>
+    <div class="col2 c5050" style="margin-top:18px;gap:20px;flex:1;align-items:stretch;">
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div class="step r">
+          <div class="step-lbl">8:05am · COD confirmations</div>
+          <div class="step-body">47 COD orders came in overnight. You open WhatsApp and start sending confirmation messages one by one. This takes until 9:30am. Three people already didn't pick up. You'll call again later.</div>
+        </div>
+        <div class="step r">
+          <div class="step-lbl">9:45am · Failed payments</div>
+          <div class="step-body">14 payments failed yesterday. You export the list, open a spreadsheet, and start writing recovery messages. You've sent 6 when a supplier calls. You'll finish the rest after lunch. You probably won't.</div>
+        </div>
+        <div class="step r">
+          <div class="step-lbl">After lunch · Settlement recon</div>
+          <div class="step-body">Settlement ran on Friday. Finance is asking if the numbers match. You open Cashfree, export the CSV, open Sheets, start matching rows. This takes the rest of the afternoon. You've been doing this every week for 14 months.</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div class="qb">
+          <div class="qb-body">"Last month alone, 23% of COD orders were fake or undelivered. Average loss per order around ₹350. We've tried OTP verification, restricting postal codes, charging extra for COD. Nothing is really helping."</div>
+          <div class="qb-src">r/IndiaStartups · Nov 2025 · 78 upvotes · 68 comments</div>
+        </div>
+        <div class="qb">
+          <div class="qb-body">"The customer dropped off — whether they couldn't understand the offers or had last-minute doubts. I wanted a nudge to go automatically. I was sending it manually."</div>
+          <div class="qb-src">Merchant founder · Ohsou · ₹20L GMV/month · Cashfree demo call</div>
+        </div>
+        <div class="qb">
+          <div class="qb-body">"Version 1 was embarrassing. The final system took 2 months — 44 nodes, 2 AI agents, 8 conversation stages. And this was just for WhatsApp replies."</div>
+          <div class="qb-src">r/n8n · March 2026 · 356 upvotes · Developer building for family's clothing store in Jaipur</div>
+        </div>
+        <div style="background:var(--ink);color:#FBFBFB;padding:10px 14px;margin-top:2px;display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,241,234,.4);font-weight:500;">271 posts scraped</span>
+          <span style="font-size:13.5px;color:var(--green-soft);">Zero merchants said "we use X and it works."</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span></span><span class="num">02 / 10</span></div>
+</section>
+
+<!-- 03 THE COST TABLE -->
+<section class="slide">
+  <div class="chrome-top"><span class="brand-mark">what it costs</span></div>
+  <div class="body">
+    <div class="eyebrow">You're already paying for this problem</div>
+    <h2 class="h2">₹40,000 to ₹80,000 every month. <em>And it still breaks on weekends.</em></h2>
+    <div style="margin-top:16px;border:1.5px solid var(--ink);">
+      <div style="display:grid;grid-template-columns:3.8fr 1.6fr;background:rgba(15,31,27,0.04);border-bottom:1.5px solid var(--ink);">
+        <div style="padding:9px 16px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted);">What you're doing manually</div>
+        <div style="padding:9px 16px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted);">What it costs</div>
+      </div>
+      <div style="display:grid;grid-template-columns:3.8fr 1.6fr;border-bottom:1px solid var(--line);">
+        <div style="padding:12px 16px;font-size:14px;font-weight:600;color:var(--ink);">WhatsApp COD confirmations. Sent one by one, every morning.</div>
+        <div style="padding:12px 16px;font-size:14px;font-weight:700;color:var(--amber);">₹8,000 – ₹18,000 / mo</div>
+      </div>
+      <div style="display:grid;grid-template-columns:3.8fr 1.6fr;border-bottom:1px solid var(--line);background:rgba(15,31,27,0.02);">
+        <div style="padding:12px 16px;font-size:14px;font-weight:600;color:var(--ink);">Connecting Cashfree events to Sheets, CRM, Slack. Done manually.</div>
+        <div style="padding:12px 16px;font-size:14px;font-weight:700;color:var(--amber);">₹4,000 – ₹12,000 / mo</div>
+      </div>
+      <div style="display:grid;grid-template-columns:3.8fr 1.6fr;border-bottom:1px solid var(--line);">
+        <div style="padding:12px 16px;font-size:14px;font-weight:600;color:var(--ink);">COD RTO ops. Calling, flagging, chasing before dispatch.</div>
+        <div style="padding:12px 16px;font-size:14px;font-weight:700;color:var(--amber);">₹20,000 – ₹35,000 / mo</div>
+      </div>
+      <div style="display:grid;grid-template-columns:3.8fr 1.6fr;border-bottom:1px solid var(--line);background:rgba(15,31,27,0.02);">
+        <div style="padding:12px 16px;font-size:14px;font-weight:600;color:var(--ink);">Failed payment follow-ups. Export, message, track manually.</div>
+        <div style="padding:12px 16px;font-size:14px;font-weight:700;color:var(--amber);">2 hrs every day</div>
+      </div>
+      <div style="display:grid;grid-template-columns:3.8fr 1.6fr;">
+        <div style="padding:12px 16px;font-size:14px;font-weight:600;color:var(--ink);">Settlement reconciliation. CSV export, Sheets matching, finance review.</div>
+        <div style="padding:12px 16px;font-size:14px;font-weight:700;color:var(--amber);">40 – 160 hrs / month</div>
+      </div>
+    </div>
+    <div class="col2 c5050" style="margin-top:12px;gap:12px;">
+      <div class="qb">
+        <div class="qb-body">"I was paying ₹6,000/month for automation tools and a freelance developer to maintain three workflows. Still had to check everything myself."</div>
+        <div class="qb-src">Early Beta merchant · D2C apparel brand</div>
+      </div>
+      <div style="background:var(--ink);color:#FBFBFB;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;">
+        <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,241,234,.4);">The problem isn't the cost</span>
+        <span style="font-size:14px;color:var(--green-soft);max-width:480px;text-align:right;">It's that you're spending this money and still doing the work.</span>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span></span><span class="num">03 / 10</span></div>
+</section>
+
+<!-- 04 DARK DIVIDER: THE SHIFT -->
+<section class="slide dark">
+  <div class="chrome-top"><span class="brand-mark" style="color:rgba(244,241,234,.6);">Section 02</span></div>
+  <div class="body" style="justify-content:center;">
+    <div class="eyebrow">The shift</div>
+    <h1 class="h-display" style="color:#FBFBFB;max-width:1040px;line-height:.95;">
+      Not another dashboard.<br/><em style="color:var(--green-soft);">A team that does the work.</em>
+    </h1>
+    <div style="margin-top:28px;max-width:720px;font-size:19px;font-weight:300;color:rgba(244,241,234,.6);line-height:1.5;font-style:italic;">
+      "For years, software had businesses see what is happening — dashboards, reports, alerts. But the work, you still had to do it. What you see today is different."
+    </div>
+    <div style="font-size:12px;color:rgba(244,241,234,.3);margin-top:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;">The shift the entire industry is making</div>
+  </div>
+  <div class="chrome-bottom"><span></span><span class="num">04 / 10</span></div>
+</section>
+
+<!-- 05 WHAT RELAY IS -->
+<section class="slide">
+  <div class="chrome-top"><span class="brand-mark">what relay is</span></div>
+  <div class="body">
+    <div class="eyebrow">One sentence</div>
+    <h2 class="h2">Specialized AI agents for every post-payment problem. <em>Activate once. They run on every event after that.</em></h2>
+    <div class="col2 c3" style="margin-top:20px;gap:16px;">
+      <div style="border:1.5px solid var(--green);display:flex;flex-direction:column;">
+        <div style="padding:10px 14px;border-bottom:1px solid rgba(0,180,136,.18);background:var(--green-tint);">
+          <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--green-ink);">Event-triggered or scheduled</div>
+        </div>
+        <div style="padding:14px;font-size:13.5px;color:var(--ink-mid);line-height:1.6;flex:1;">Trigger on a Cashfree payment event (COD placed, payment failed, refund initiated, dispute raised) and the AI agent acts within minutes. Or run on a schedule: daily recon, weekly reports, recurring recovery sweeps. Both are built in.</div>
+        <div style="padding:10px 14px;border-top:1px solid rgba(0,180,136,.12);background:rgba(0,180,136,.04);">
+          <div style="font-size:13px;font-weight:700;color:var(--green-ink);">COD order in at 2pm · confirmation out by 2:05pm</div>
+        </div>
+      </div>
+      <div style="border:1.5px solid var(--line);display:flex;flex-direction:column;">
+        <div style="padding:10px 14px;border-bottom:1px solid var(--line);background:rgba(15,31,27,0.03);">
+          <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--muted);">No developer needed</div>
+        </div>
+        <div style="padding:14px;font-size:13.5px;color:var(--ink-mid);line-height:1.6;flex:1;">Activate from inside the Cashfree dashboard. Set your guardrails once: what to send, when to escalate, when to flag you. The AI agent follows those rules on every qualifying event. No Slack tickets to engineering. No webhook setup. No API keys to manage.</div>
+        <div style="padding:10px 14px;border-top:1px solid var(--line);background:rgba(15,31,27,0.02);">
+          <div style="font-size:13px;font-weight:600;color:var(--ink-mid);">You set the rules once. The AI agent runs forever.</div>
+        </div>
+      </div>
+      <div style="border:1.5px solid var(--line);display:flex;flex-direction:column;">
+        <div style="padding:10px 14px;border-bottom:1px solid var(--line);background:rgba(15,31,27,0.03);">
+          <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--muted);">Data stays in Cashfree</div>
+        </div>
+        <div style="padding:14px;font-size:13.5px;color:var(--ink-mid);line-height:1.6;flex:1;">Every third-party tool stores your transaction data on their servers. Relay runs inside Cashfree's PCI DSS Level 1 and SOC infrastructure. Google, Slack, and WhatsApp only receive the specific fields you send them in each step. Nothing else leaves.</div>
+        <div style="padding:10px 14px;border-top:1px solid var(--line);background:rgba(15,31,27,0.02);">
+          <div style="font-size:13px;font-weight:600;color:var(--ink-mid);">You control the AI agents. Cashfree runs them.</div>
+        </div>
+      </div>
+    </div>
+    <div class="insight" style="margin-top:14px;">Most tools need your payment data passed to them. Relay already has it. That is the entire difference.</div>
+  </div>
+  <div class="chrome-bottom"><span></span><span class="num">05 / 10</span></div>
+</section>
+
+<!-- 06 CONNECTORS -->
+<section class="slide">
+  <div class="chrome-top"><span class="brand-mark">what relay connects to</span><span>10 integrations built in · no developer needed</span></div>
+  <div class="body">
+    <div class="eyebrow">Trigger from Cashfree. Act everywhere else.</div>
+    <h2 class="h2">Your payment event happens. <em>Relay takes it from there.</em></h2>
+    <div style="margin-top:18px;display:grid;grid-template-columns:1fr 1px 1.6fr 1px 1fr;gap:0;flex:1;align-items:start;">
+
+      <!-- Trigger column -->
+      <div style="padding:0 28px 0 0;display:flex;flex-direction:column;gap:14px;">
+        <div style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--green-ink);margin-bottom:4px;">Trigger</div>
+        <div style="border:1.5px solid var(--green);padding:14px;background:var(--green-tint);">
+          <div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:5px;">Cashfree Payments</div>
+          <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.55;margin-bottom:10px;">11 actions — payments, refunds, disputes, settlement, payment links, cashgrams.</div>
+          <div style="font-size:12px;color:var(--green-ink);font-weight:600;letter-spacing:.04em;">Your existing Cashfree account.<br/>No extra setup.</div>
+        </div>
+        <div style="border:1px solid var(--line);padding:14px;">
+          <div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:5px;">Schedule</div>
+          <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.55;">Daily, weekly, or custom cadence. Recon sweeps, recovery batches, periodic reports.</div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div style="background:var(--line-s);height:100%;margin:0 0;"></div>
+
+      <!-- Act column -->
+      <div style="padding:0 28px;display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:4px;">Act via</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;">
+          <div style="border:1px solid var(--line);padding:11px 13px;">
+            <div style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:3px;">WhatsApp Business</div>
+            <div style="font-size:11.5px;color:var(--muted);">2 actions</div>
+          </div>
+          <div style="border:1px solid var(--line);padding:11px 13px;">
+            <div style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:3px;">Google Sheets</div>
+            <div style="font-size:11.5px;color:var(--muted);">1 action</div>
+          </div>
+          <div style="border:1px solid var(--line);padding:11px 13px;">
+            <div style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:3px;">Slack</div>
+            <div style="font-size:11.5px;color:var(--muted);">4 actions</div>
+          </div>
+          <div style="border:1px solid var(--line);padding:11px 13px;">
+            <div style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:3px;">Gmail</div>
+            <div style="font-size:11.5px;color:var(--muted);">2 actions</div>
+          </div>
+          <div style="border:1px solid var(--line);padding:11px 13px;">
+            <div style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:3px;">Google Calendar</div>
+            <div style="font-size:11.5px;color:var(--muted);">2 actions</div>
+          </div>
+          <div style="border:1px solid var(--line);padding:11px 13px;">
+            <div style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:3px;">Calendly</div>
+            <div style="font-size:11.5px;color:var(--muted);">1 action</div>
+          </div>
+          <div style="border:1px solid var(--line);padding:11px 13px;grid-column:1/-1;">
+            <div style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:3px;">HTTP</div>
+            <div style="font-size:11.5px;color:var(--muted);">1 action · call any endpoint</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div style="background:var(--line-s);height:100%;"></div>
+
+      <!-- AI column -->
+      <div style="padding:0 0 0 28px;display:flex;flex-direction:column;gap:14px;">
+        <div style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:4px;">AI inside the agent</div>
+        <div style="border:1px solid var(--line);padding:14px;">
+          <div style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:5px;">Google Gemini</div>
+          <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.55;">6 actions. Add an AI decision step inside any agent — classify an order, draft a reply, score a risk.</div>
+        </div>
+        <div style="border:1px solid var(--line);padding:14px;">
+          <div style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:5px;">OpenAI</div>
+          <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.55;">9 actions. Use GPT models for more complex reasoning, summarisation, or classification steps.</div>
+        </div>
+        <div style="background:var(--ink);padding:11px 14px;margin-top:2px;">
+          <div style="font-size:12.5px;color:var(--green-soft);line-height:1.5;">AI is a step inside your agent. Not a separate subscription.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="chrome-bottom"><span></span><span class="num">06 / 10</span></div>
+</section>
+
+<!-- 07 THE FIVE AGENTS -->
+<section class="slide">
+  <div class="chrome-top"><span class="brand-mark">the agents</span><span>Each one has one job · runs on every qualifying event</span></div>
+  <div class="body">
+    <div class="eyebrow">Pick the one that hurts most right now</div>
+    <h2 class="h2">Five things you do manually today. <span class="ul">Five AI agents that do them instead.</span></h2>
+    <div class="col2 c5" style="margin-top:16px;gap:10px;flex:1;">
+
+      <div style="border:1.5px solid var(--green);display:flex;flex-direction:column;">
+        <div style="padding:9px 12px;border-bottom:1px solid rgba(0,180,136,.18);background:var(--green-tint);display:flex;align-items:center;justify-content:space-between;">
+          <span class="tag tag-g">COD</span>
+          <span style="font-size:11px;color:var(--green-ink);font-weight:600;letter-spacing:.04em;">Most activated</span>
+        </div>
+        <div style="padding:12px;display:flex;flex-direction:column;gap:7px;flex:1;">
+          <div style="font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.3;">COD Confirmation AI Agent</div>
+          <div style="font-size:12px;color:var(--ink-mid);line-height:1.58;flex:1;">Every COD order confirmed within 5 minutes. No reply in 4 hours? A nudge goes out. Still nothing? Ops is flagged before dispatch. Runs at 2am. Runs on Sunday. You don't send a single message.</div>
+          <div style="padding-top:8px;border-top:1px solid rgba(0,180,136,.15);">
+            <div style="font-size:12.5px;font-weight:700;color:var(--green-ink);">RTO: 28–32% → 16–20%</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px;">Within 30 days · CampaignHQ 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:1.5px solid var(--line);display:flex;flex-direction:column;">
+        <div style="padding:9px 12px;border-bottom:1px solid var(--line);background:rgba(15,31,27,0.03);">
+          <span class="tag tag-k">Recovery</span>
+        </div>
+        <div style="padding:12px;display:flex;flex-direction:column;gap:7px;flex:1;">
+          <div style="font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.3;">Failed Payment Recovery</div>
+          <div style="font-size:12px;color:var(--ink-mid);line-height:1.58;flex:1;">WhatsApp within 15 minutes. Gmail backup at 2 hours. Slack alert to ops at end of day if still unpaid. Covers one-time payments, COD, payment links, checkout drops.</div>
+          <div style="padding-top:8px;border-top:1px solid var(--line);">
+            <div style="font-size:12.5px;font-weight:700;color:var(--green-ink);">3–8% of drops recovered</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px;">Early Beta merchants · no ops involvement</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:1.5px solid var(--line);display:flex;flex-direction:column;">
+        <div style="padding:9px 12px;border-bottom:1px solid var(--line);background:rgba(15,31,27,0.03);">
+          <span class="tag tag-k">Cart</span>
+        </div>
+        <div style="padding:12px;display:flex;flex-direction:column;gap:7px;flex:1;">
+          <div style="font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.3;">Abandoned Cart Recovery</div>
+          <div style="font-size:12px;color:var(--ink-mid);line-height:1.58;flex:1;">Customer drops at checkout. WhatsApp within 10 minutes. No reply at 2 hours. Follow-up with an offer goes out. Triggered from the payment drop event, not browsing. The agent knows they had intent.</div>
+          <div style="padding-top:8px;border-top:1px solid var(--line);">
+            <div style="font-size:12.5px;font-weight:700;color:var(--green-ink);">Timed to highest intent</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px;">Triggered at payment drop · not browsing</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:1.5px solid var(--line);display:flex;flex-direction:column;">
+        <div style="padding:9px 12px;border-bottom:1px solid var(--line);background:rgba(15,31,27,0.03);">
+          <span class="tag tag-k">Recon</span>
+        </div>
+        <div style="padding:12px;display:flex;flex-direction:column;gap:7px;flex:1;">
+          <div style="font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.3;">Settlement Recon AI Agent</div>
+          <div style="font-size:12px;color:var(--ink-mid);line-height:1.58;flex:1;">Runs daily, weekly, or after every settlement. Pulls every row, appends to Google Sheets, flags discrepancies, notifies finance. Not a summary. A live tab your finance team can act on.</div>
+          <div style="padding-top:8px;border-top:1px solid var(--line);">
+            <div style="font-size:12.5px;font-weight:700;color:var(--green-ink);">40–160 hrs / month → 0</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px;">Kani survey 2025 · mid-size D2C brands</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:1.5px solid var(--line);display:flex;flex-direction:column;">
+        <div style="padding:9px 12px;border-bottom:1px solid var(--line);background:rgba(15,31,27,0.03);">
+          <span class="tag tag-k">Alert</span>
+        </div>
+        <div style="padding:12px;display:flex;flex-direction:column;gap:7px;flex:1;">
+          <div style="font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.3;">High-Value Transaction Alert</div>
+          <div style="font-size:12px;color:var(--ink-mid);line-height:1.58;flex:1;">Transaction crosses a threshold you set. Slack ping to finance and Sheets row appended within 40 seconds. No morning report needed. No "did you see the big order?" on WhatsApp.</div>
+          <div style="padding-top:8px;border-top:1px solid var(--line);">
+            <div style="font-size:12.5px;font-weight:700;color:var(--green-ink);">40 seconds · threshold set by you</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px;">Transaction to Slack alert</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="chrome-bottom"><span></span><span class="num">07 / 10</span></div>
+</section>
+
+<!-- 07 COD BEFORE/AFTER -->
+<section class="slide">
+  <div class="chrome-top"><span class="brand-mark">before / after · COD confirmation</span></div>
+  <div class="body">
+    <div class="eyebrow">The most urgent problem first</div>
+    <h2 class="h2">Most RTO tools score the risk and stop. <em>This agent confirms the order before dispatch.</em></h2>
+    <div class="col2 c5050" style="margin-top:16px;gap:20px;flex:1;align-items:stretch;">
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="border:1.5px solid var(--line);padding:16px;">
+          <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:12px;">Before · every morning</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-size:13.5px;color:var(--ink);font-weight:500;display:flex;gap:10px;"><span style="color:var(--red);flex-shrink:0;">✕</span>Open Cashfree. Export COD orders from last night.</div>
+            <div style="font-size:13.5px;color:var(--ink);font-weight:500;display:flex;gap:10px;"><span style="color:var(--red);flex-shrink:0;">✕</span>Open WhatsApp. Start sending confirmation messages.</div>
+            <div style="font-size:13.5px;color:var(--ink);font-weight:500;display:flex;gap:10px;"><span style="color:var(--red);flex-shrink:0;">✕</span>7 people didn't reply. Note them down. Send nudges at 2pm.</div>
+            <div style="font-size:13.5px;color:var(--ink);font-weight:500;display:flex;gap:10px;"><span style="color:var(--red);flex-shrink:0;">✕</span>Flag 3 high-risk orders to ops before they go for dispatch.</div>
+            <div style="font-size:13.5px;color:var(--ink);font-weight:500;display:flex;gap:10px;"><span style="color:var(--red);flex-shrink:0;">✕</span>Repeat tomorrow. And the day after.</div>
+          </div>
+          <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:13.5px;font-weight:700;color:var(--amber);">1.5 to 2 hours, every single morning.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div style="border:1.5px solid var(--line);padding:13px;">
+            <div style="font-weight:300;font-size:44px;line-height:1;letter-spacing:-.04em;color:var(--ink);margin-bottom:4px;">26<span style="font-size:22px;color:var(--muted);font-weight:400;">%</span></div>
+            <div style="font-size:12.5px;color:var(--ink-mid);">National RTO rate. Shipway 2025.</div>
+          </div>
+          <div style="border:1.5px solid var(--line);padding:13px;">
+            <div style="font-weight:300;font-size:44px;line-height:1;letter-spacing:-.04em;color:var(--ink);margin-bottom:4px;">₹800</div>
+            <div style="font-size:12.5px;color:var(--ink-mid);">Avg. loss per RTO. WareIQ.</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="border:1.5px solid var(--green);background:var(--green-tint);padding:16px;flex:1;display:flex;flex-direction:column;">
+          <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--green-ink);margin-bottom:12px;">After · COD Confirmation AI Agent</div>
+          <div style="display:flex;flex-direction:column;gap:8px;flex:1;">
+            <div style="font-size:13.5px;color:var(--ink);font-weight:500;display:flex;gap:10px;"><span style="color:var(--green);flex-shrink:0;">✓</span>COD order placed. Agent sends confirmation in 5 minutes.</div>
+            <div style="font-size:13.5px;color:var(--ink);font-weight:500;display:flex;gap:10px;"><span style="color:var(--green);flex-shrink:0;">✓</span>No reply in 4 hours. Agent sends nudge. Automatically.</div>
+            <div style="font-size:13.5px;color:var(--ink);font-weight:500;display:flex;gap:10px;"><span style="color:var(--green);flex-shrink:0;">✓</span>Still no reply. Ops flagged before dispatch. Order held.</div>
+            <div style="font-size:13.5px;color:var(--ink);font-weight:500;display:flex;gap:10px;"><span style="color:var(--green);flex-shrink:0;">✓</span>Runs at 2am on Sunday. Runs during your supplier meeting.</div>
+            <div style="font-size:13.5px;color:var(--ink);font-weight:500;display:flex;gap:10px;"><span style="color:var(--green);flex-shrink:0;">✓</span>You don't send a single message. You never open Cashfree for this again.</div>
+          </div>
+          <div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(0,180,136,.2);">
+            <div style="font-weight:300;font-size:42px;line-height:1;letter-spacing:-.04em;color:var(--ink);margin-bottom:4px;">28–32% <span style="font-size:22px;color:var(--muted);font-weight:300;">→</span> 16–20%</div>
+            <div style="font-size:12.5px;color:var(--ink-mid);">RTO rate within 30 days of activation. CampaignHQ 2026.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span></span><span class="num">08 / 10</span></div>
+</section>
+
+<!-- 08 WHAT RELAY DOES -->
+<section class="slide">
+  <div class="chrome-top"><span class="brand-mark">what relay does</span><span>Four things built into the product</span></div>
+  <div class="body">
+    <div class="eyebrow">Purpose-built for payment events</div>
+    <h2 class="h2">Four things you can't get from a generic automation tool. <em>Because this isn't one.</em></h2>
+    <div style="margin-top:18px;display:flex;flex-direction:column;gap:0;border:1.5px solid var(--ink);flex:1;">
+      <div style="display:grid;grid-template-columns:220px 1fr;border-bottom:1px solid var(--line);align-items:stretch;">
+        <div style="padding:18px 20px;border-right:1px solid var(--line);background:rgba(15,31,27,0.03);">
+          <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--green-ink);margin-bottom:6px;">Two trigger types</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.5;">Event or schedule. Both built in.</div>
+        </div>
+        <div style="padding:18px 20px;font-size:13.5px;color:var(--ink-mid);line-height:1.6;">Trigger on a Cashfree payment event (COD placed, payment failed, refund initiated, dispute raised) and the AI agent acts within minutes. Or run on a schedule: daily recon, weekly reports, recurring recovery sweeps. You pick which fits the job.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:220px 1fr;border-bottom:1px solid var(--line);align-items:stretch;">
+        <div style="padding:18px 20px;border-right:1px solid var(--line);background:rgba(15,31,27,0.03);">
+          <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--green-ink);margin-bottom:6px;">No developer needed</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.5;">Activate from your dashboard.</div>
+        </div>
+        <div style="padding:18px 20px;font-size:13.5px;color:var(--ink-mid);line-height:1.6;">No webhook to parse. No API mapping. No logic to write before the job starts. Set your guardrails once: what to send, when to escalate, what threshold. The AI agent follows them on every qualifying event from that point forward.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:220px 1fr;border-bottom:1px solid var(--line);align-items:stretch;background:var(--green-tint);">
+        <div style="padding:18px 20px;border-right:1px solid rgba(0,180,136,.2);background:rgba(0,180,136,0.05);">
+          <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--green-ink);margin-bottom:6px;">Data stays in Cashfree</div>
+          <div style="font-size:13px;color:var(--green-ink);opacity:.7;line-height:1.5;">PCI DSS Level 1 · SOC.</div>
+        </div>
+        <div style="padding:18px 20px;font-size:13.5px;color:var(--ink);line-height:1.6;font-weight:500;">Relay runs inside Cashfree's payment infrastructure. Your transaction data never has to move to a third-party server before an action runs. Only the specific fields you choose reach WhatsApp or Slack. Message text, order ID. Everything else stays.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:220px 1fr;align-items:stretch;">
+        <div style="padding:18px 20px;border-right:1px solid var(--line);background:rgba(15,31,27,0.03);">
+          <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--green-ink);margin-bottom:6px;">Payment context built in</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.5;">Not a generic workflow engine.</div>
+        </div>
+        <div style="padding:18px 20px;font-size:13.5px;color:var(--ink-mid);line-height:1.6;">The AI agents know what COD confirmation means. What a failed payment recovery looks like. What to flag before dispatch. What a settlement discrepancy is. You don't teach it payments from scratch. It already speaks the language.</div>
+      </div>
+    </div>
+    <div class="insight">The event is already inside Cashfree. The action runs from inside Cashfree. You just decide what happens in between.</div>
+  </div>
+  <div class="chrome-bottom"><span></span><span class="num">09 / 10</span></div>
+</section>
+
+<!-- 09 GET STARTED -->
+<section class="slide">
+  <div class="chrome-top"><span class="brand-mark">getting started</span><span>Free during Early Beta · No developer · No credit card</span></div>
+  <div class="body">
+    <div class="eyebrow">15 minutes to your first live AI agent</div>
+    <h2 class="h2">Three steps. <em>Then you do nothing.</em></h2>
+    <div class="col2 c3" style="margin-top:16px;gap:14px;">
+      <div style="border:1.5px solid var(--green);display:flex;flex-direction:column;">
+        <div style="padding:10px 14px;border-bottom:1px solid rgba(0,180,136,.18);background:var(--green-tint);display:flex;align-items:baseline;gap:10px;">
+          <span style="font-weight:300;font-size:30px;line-height:1;letter-spacing:-.04em;color:var(--green);">01</span>
+          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--green-ink);">Pick an agent</span>
+        </div>
+        <div style="padding:14px;font-size:13.5px;color:var(--ink-mid);line-height:1.6;flex:1;">Go to Relay inside your Cashfree dashboard. Browse the AI agents. Pick the one for the problem you feel most right now: COD confirmations eating your morning, failed payments you're chasing manually, or settlement recon taking your Fridays.</div>
+      </div>
+      <div style="border:1.5px solid var(--line);display:flex;flex-direction:column;">
+        <div style="padding:10px 14px;border-bottom:1px solid var(--line);background:rgba(15,31,27,0.03);display:flex;align-items:baseline;gap:10px;">
+          <span style="font-weight:300;font-size:30px;line-height:1;letter-spacing:-.04em;color:var(--muted);">02</span>
+          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--muted);">Set your guardrails</span>
+        </div>
+        <div style="padding:14px;font-size:13.5px;color:var(--ink-mid);line-height:1.6;flex:1;">What message to send. When to send a nudge. When to flag ops. What threshold to use. 10 minutes. The AI agent follows these rules on every qualifying event from that point forward. No further input from you.</div>
+      </div>
+      <div style="border:1.5px solid var(--green);display:flex;flex-direction:column;">
+        <div style="padding:10px 14px;border-bottom:1px solid rgba(0,180,136,.18);background:var(--green-tint);display:flex;align-items:baseline;gap:10px;">
+          <span style="font-weight:300;font-size:30px;line-height:1;letter-spacing:-.04em;color:var(--green);">03</span>
+          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--green-ink);">You do nothing</span>
+        </div>
+        <div style="padding:14px;font-size:13.5px;color:var(--ink-mid);line-height:1.6;flex:1;">The AI agent runs on every event. Day and night. Weekend. Holiday. Supplier meeting. Your only job from here: decide which AI agent to activate next. The morning you've been doing manually every day stops being yours.</div>
+      </div>
+    </div>
+    <div style="margin-top:14px;">
+      <div class="pbox">
+        <div class="prow">
+          <div class="plbl">Pricing</div>
+          <div class="pval">Free to activate during Early Beta. Per-run pricing at GA: directionally ₹0.50 to ₹1 per run. WhatsApp template costs at cost. No platform fee during Early Beta.</div>
+        </div>
+        <div class="prow">
+          <div class="plbl">Data</div>
+          <div class="pval">PCI DSS Level 1 and SOC-certified. Same infrastructure that processes your payments. Your transaction data does not leave Cashfree.</div>
+        </div>
+        <div class="prow g">
+          <div class="plbl">Access</div>
+          <div class="pval">Ask for access on your next Cashfree call, or write to <strong>mothi.venkatesh@cashfree.com</strong>. We're activating merchants in batches during Early Beta. Currently free.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span></span><span class="num">10 / 10</span></div>
+</section>
+
+<!-- CLOSING -->
+<section class="slide dark">
+  <div class="chrome-top"><span class="brand-mark" style="color:rgba(244,241,234,.6);">Cashfree · Relay</span><span style="color:rgba(244,241,234,.3);">Early Beta · cashfree.com/relay</span></div>
+  <svg id="closing-word" width="1280" height="720" viewBox="0 0 1280 720" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></svg>
+  <div class="body" style="justify-content:center;position:relative;z-index:1;">
+    <div class="eyebrow" style="color:var(--green-soft);">The only question left</div>
+    <h1 class="h-display" style="color:#FBFBFB;font-size:72px;max-width:1000px;line-height:.96;">
+      Which problem do you<br/><em style="color:var(--green-soft);">want to stop doing by hand?</em>
+    </h1>
+    <div style="margin-top:28px;border-left:2px solid var(--green);padding:14px 20px;background:rgba(0,180,136,0.07);max-width:660px;">
+      <div style="font-size:14px;color:rgba(244,241,234,.85);line-height:1.6;">Write to <span style="color:var(--green-soft);font-weight:600;">mothi.venkatesh@cashfree.com</span> to get activated during Early Beta.</div>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span></span><span class="num">··</span></div>
+</section>
+
+</div>
+<script>
+(function(){
+  var NS='http://www.w3.org/2000/svg';
+  var FONT="'Google Sans',system-ui,sans-serif";
+  function mk(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e;}
+  function ap(p,c){p.appendChild(c);return c;}
+  (function(){
+    var svg=document.getElementById('closing-word');if(!svg)return;
+    var word='RELAY',y=55,sz=252,tw=1210,op=0.16,sw=0.85;
+    while(sz>5){
+      var bl=Math.round(y+sz*0.84);
+      var t=mk('text',{x:640,y:bl,'font-family':FONT,'font-weight':800,'font-size':Math.round(sz),
+        'text-anchor':'middle',fill:'none',
+        stroke:'rgba(255,255,252,'+op.toFixed(3)+')',
+        'stroke-width':sw.toFixed(2),
+        textLength:Math.round(tw),lengthAdjust:'spacingAndGlyphs'});
+      t.textContent=word;
+      ap(svg,t);
+      y+=sz;sz*=0.74;tw*=0.74;op*=0.68;sw*=0.80;
+    }
+  })();
+})();
+</script>
+</body>
+</html>

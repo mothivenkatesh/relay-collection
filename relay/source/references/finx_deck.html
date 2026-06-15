@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finx — The Private Network for BFSI Operators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cf-violet: #6933D3;
+  --cf-violet-soft: #F1ECFB;
+  --cf-violet-line: #E0D4F7;
+  --cf-green: #04AB61;
+  --cf-green-soft: #E6F7EE;
+  --cf-yellow: #FBB016;
+  --cf-yellow-soft: #FEF3DC;
+  --cf-deep: #1F074F;
+  --cf-ink: #0A0118;
+  --discord: #5865F2;
+  --discord-soft: #EEF0FE;
+  --coral: #E85D75;
+  --coral-soft: #FCEBEF;
+  --paper: #FAF7F2;
+  --paper-2: #F2EEE6;
+  --line: #E5DFD3;
+  --line-strong: #C9C0AD;
+  --text: #1A1530;
+  --text-muted: #6B6580;
+  --text-faint: #9A93AB;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'Geist Mono', 'SF Mono', Menlo, monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+.deck { position: fixed; inset: 0; }
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 56px 80px 100px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(12px);
+  overflow-y: auto;
+}
+
+.slide.active { opacity: 1; pointer-events: all; transform: translateY(0); }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  flex-shrink: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.brand-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--cf-violet);
+  border-radius: 2px;
+  position: relative;
+}
+
+.brand-dot::after {
+  content: '';
+  position: absolute;
+  inset: -2px -2px auto auto;
+  width: 4px;
+  height: 4px;
+  background: var(--cf-yellow);
+  border-radius: 50%;
+}
+
+.slide-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+}
+
+.slide-meta .num { color: var(--text); font-weight: 500; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cf-violet);
+  margin-bottom: 24px;
+}
+
+.headline {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--cf-ink);
+  margin-bottom: 32px;
+}
+
+.headline em { font-style: italic; color: var(--cf-violet); }
+
+.body-large {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text);
+  max-width: 640px;
+}
+
+/* COVER */
+.cover-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.cover-headline {
+  font-family: var(--serif);
+  font-size: clamp(72px, 9vw, 124px);
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+  color: var(--cf-ink);
+  margin-bottom: 40px;
+}
+
+.cover-headline em { font-style: italic; color: var(--cf-violet); }
+
+.cover-meta {
+  display: flex;
+  gap: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.cover-meta-item { display: flex; flex-direction: column; gap: 6px; }
+
+.cover-meta-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.cover-meta-value {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--cf-ink);
+}
+
+/* COVER VISUAL: vault card */
+.cover-visual {
+  position: relative;
+  height: 460px;
+  background: var(--cf-ink);
+  border-radius: 16px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(31, 7, 79, 0.18);
+  color: white;
+}
+
+.vault-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.vault-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
+.vault-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cf-yellow);
+  box-shadow: 0 0 0 6px rgba(251, 176, 22, 0.15);
+}
+
+.vault-center {
+  font-family: var(--serif);
+  font-size: 64px;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.vault-center em { font-style: italic; color: var(--cf-yellow); }
+
+.vault-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.vault-meta-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 6px;
+}
+
+.vault-meta-value {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: white;
+}
+
+/* TWO-COLUMN COMPARE */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  flex: 1;
+  align-content: center;
+}
+
+.compare-card {
+  padding: 32px;
+  border-radius: 14px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+.compare-card.bad { background: var(--paper-2); border: 1px solid var(--line); }
+.compare-card.good { background: linear-gradient(165deg, var(--cf-violet) 0%, #7E48E0 100%); color: white; }
+
+.compare-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.compare-card.bad .compare-tag { color: var(--text-muted); }
+.compare-card.good .compare-tag { color: rgba(255,255,255,0.7); }
+
+.compare-title {
+  font-family: var(--serif);
+  font-size: 36px;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.compare-title em { font-style: italic; }
+.compare-card.bad .compare-title em { color: var(--cf-violet); }
+.compare-card.good .compare-title em { color: var(--cf-yellow); }
+
+.compare-body {
+  font-size: 15px;
+  line-height: 1.55;
+  margin-bottom: auto;
+}
+
+.compare-card.bad .compare-body { color: var(--text-muted); }
+.compare-card.good .compare-body { opacity: 0.9; }
+
+.compare-stat {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.compare-card.bad .compare-stat { border-color: var(--line); }
+.compare-card.good .compare-stat { border-color: rgba(255,255,255,0.2); }
+
+.compare-stat-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.compare-card.bad .compare-stat-num { color: var(--text-faint); }
+.compare-card.good .compare-stat-num { color: var(--cf-yellow); }
+
+.compare-stat-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.compare-card.good .compare-stat-label { opacity: 0.85; }
+
+/* THREE-CARDS */
+.three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  flex: 1;
+  align-content: center;
+}
+
+.three-card {
+  padding: 28px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+}
+
+.three-num {
+  width: 32px;
+  height: 32px;
+  background: var(--cf-violet);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+.three-title {
+  font-family: var(--serif);
+  font-size: 26px;
+  line-height: 1.1;
+  color: var(--cf-ink);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.three-body {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* STAT-BLOCKS */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.stat-block {
+  padding: 26px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.stat-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--cf-violet);
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.stat-note {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+/* DETAIL GRID */
+.pd-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  flex: 1;
+  align-items: center;
+}
+
+.pd-marker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.pd-num {
+  width: 36px;
+  height: 36px;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-style: italic;
+}
+
+.pd-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.pd-title {
+  font-family: var(--serif);
+  font-size: 64px;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: var(--cf-ink);
+  margin-bottom: 24px;
+}
+
+.pd-title em { font-style: italic; color: var(--cf-violet); }
+
+.pd-pill {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 7px 14px;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  color: var(--cf-violet);
+  background: var(--cf-violet-soft);
+}
+
+.pd-callout {
+  padding: 22px 24px;
+  border-left: 2px solid var(--cf-violet);
+  background: var(--paper-2);
+}
+
+.pd-callout-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.pd-callout-text {
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--cf-ink);
+}
+
+.pd-callout-text em { font-style: italic; color: var(--cf-violet); }
+
+/* PILLAR ROWS */
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+  align-content: center;
+}
+
+.pillar {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  gap: 24px;
+  padding: 22px 26px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  align-items: center;
+}
+
+.pillar-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 38px;
+  color: var(--cf-violet);
+  line-height: 1;
+}
+
+.pillar-content { display: flex; flex-direction: column; gap: 4px; }
+
+.pillar-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--cf-ink);
+}
+
+.pillar-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.pillar-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cf-violet);
+  padding: 5px 11px;
+  background: var(--cf-violet-soft);
+  border-radius: 100px;
+}
+
+/* RULES LIST */
+.rules-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  flex: 1;
+  align-content: center;
+}
+
+.rule {
+  padding: 24px;
+  background: white;
+  border-left: 3px solid var(--cf-violet);
+  border-radius: 0 10px 10px 0;
+  border-top: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.rule.bad { border-left-color: var(--coral); }
+
+.rule-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--cf-violet);
+  margin-bottom: 8px;
+}
+
+.rule.bad .rule-num { color: var(--coral); }
+
+.rule-text {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--cf-ink);
+  margin-bottom: 8px;
+}
+
+.rule-note {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* REVENUE / TABLE */
+.rev-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  flex: 1;
+  align-content: center;
+}
+
+.rev-card {
+  padding: 28px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}
+
+.rev-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+
+.rev-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--cf-violet);
+}
+
+.rev-price {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--cf-violet);
+}
+
+.rev-title {
+  font-family: var(--serif);
+  font-size: 26px;
+  line-height: 1.1;
+  color: var(--cf-ink);
+  margin-bottom: 10px;
+}
+
+.rev-body {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-bottom: auto;
+}
+
+.rev-buyer {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* CHECKLIST */
+.check-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  flex: 1;
+  align-content: center;
+}
+
+.check-col {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.check-col-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.check-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 30px;
+  color: var(--cf-violet);
+  line-height: 1;
+}
+
+.check-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--cf-ink);
+}
+
+.check-row {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+
+.check-row:last-child { border-bottom: none; }
+
+.check-box {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--cf-violet);
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.check-box.bad { border-color: var(--coral); }
+
+.check-text { font-size: 14px; line-height: 1.4; color: var(--text); }
+.check-text strong { color: var(--cf-ink); font-weight: 600; }
+
+/* CLOSING */
+.final-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.final-mantra {
+  font-family: var(--serif);
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--cf-ink);
+}
+
+.final-mantra em { font-style: italic; color: var(--cf-violet); }
+
+.final-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.final-rule {
+  padding: 20px 22px;
+  background: white;
+  border-left: 2px solid var(--cf-violet);
+  border-radius: 0 8px 8px 0;
+}
+
+.final-rule-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--cf-violet);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.final-rule-text {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.3;
+  color: var(--cf-ink);
+}
+
+/* NAV */
+.nav {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: white;
+  padding: 10px 14px;
+  border-radius: 100px;
+  box-shadow: 0 4px 24px rgba(31, 7, 79, 0.08), 0 0 0 1px rgba(31, 7, 79, 0.06);
+  z-index: 100;
+}
+
+.nav-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover:not(:disabled) { background: var(--cf-violet); color: white; }
+.nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.nav-dots { display: flex; gap: 6px; align-items: center; }
+
+.nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--line-strong);
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-dot.active { background: var(--cf-violet); width: 24px; border-radius: 4px; }
+
+.nav-counter {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 0 8px;
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+
+.nav-counter strong { color: var(--text); font-weight: 500; }
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 50;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cf-violet), var(--cf-yellow));
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.kbd-hint {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-faint);
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 50;
+}
+
+.kbd {
+  padding: 3px 7px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 10px;
+  color: var(--text);
+}
+
+.slide::-webkit-scrollbar { width: 6px; }
+.slide::-webkit-scrollbar-track { background: transparent; }
+.slide::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 3px; }
+
+@media (max-width: 1100px) {
+  .slide { padding: 40px 48px 100px; }
+  .cover-grid, .pd-grid, .final-grid, .compare-grid { grid-template-columns: 1fr; gap: 40px; }
+  .three-grid, .rules-grid, .check-grid, .rev-grid { grid-template-columns: 1fr; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="deck" id="deck">
+
+<!-- 1: COVER -->
+<section class="slide active" data-slide="0">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Finx · The Private Network</span></div>
+    <div class="slide-meta"><span class="num">01</span> / 11</div>
+  </div>
+
+  <div class="cover-grid">
+    <div>
+      <div class="eyebrow">For BFSI operators / 2026</div>
+      <h1 class="cover-headline">For the people<br>who've <em>sat</em><br>in the chair.</h1>
+      <div class="cover-meta">
+        <div class="cover-meta-item"><span class="cover-meta-label">Access</span><span class="cover-meta-value">Invite only</span></div>
+        <div class="cover-meta-item"><span class="cover-meta-label">Year one</span><span class="cover-meta-value">500 members</span></div>
+        <div class="cover-meta-item"><span class="cover-meta-label">Industry</span><span class="cover-meta-value">BFSI India</span></div>
+      </div>
+    </div>
+
+    <div class="cover-visual">
+      <div class="vault-top">
+        <div class="vault-label">Finx membership</div>
+        <div class="vault-dot"></div>
+      </div>
+      <div class="vault-center">
+        Not a platform.<br><em>A room.</em>
+      </div>
+      <div class="vault-bottom">
+        <div>
+          <div class="vault-meta-label">Vetted by</div>
+          <div class="vault-meta-value">Charter + tenure</div>
+        </div>
+        <div>
+          <div class="vault-meta-label">Grown by</div>
+          <div class="vault-meta-value">Peer vouch</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2: THE GAP -->
+<section class="slide" data-slide="1">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Finx · The Private Network</span></div>
+    <div class="slide-meta"><span class="num">02</span> / 11</div>
+  </div>
+
+  <div class="eyebrow">The gap</div>
+  <h2 class="headline" style="font-size: 60px;">BFSI runs on <em>trust</em>.<br>And has no room for it.</h2>
+
+  <div class="compare-grid">
+    <div class="compare-card bad">
+      <div class="compare-tag">Today</div>
+      <div class="compare-title">LinkedIn, WhatsApp, conferences.</div>
+      <div class="compare-body">LinkedIn is performative. WhatsApp leaks. Slack groups die. Conferences happen once a year. Operators end up texting each other at 11pm.</div>
+      <div class="compare-stat">
+        <div class="compare-stat-num">0</div>
+        <div class="compare-stat-label">Trusted rooms</div>
+      </div>
+    </div>
+
+    <div class="compare-card good">
+      <div class="compare-tag">What's needed</div>
+      <div class="compare-title">A private, always-on room.</div>
+      <div class="compare-body">Vetted peers. Function-specific. NDA-grade norms. Always on. A place where the real numbers get shared.</div>
+      <div class="compare-stat">
+        <div class="compare-stat-num">1</div>
+        <div class="compare-stat-label">Finx</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3: THE POSITIONING -->
+<section class="slide" data-slide="2">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Finx · The Private Network</span></div>
+    <div class="slide-meta"><span class="num">03</span> / 11</div>
+  </div>
+
+  <div class="pd-grid">
+    <div>
+      <div class="pd-marker"><div class="pd-num" style="background: var(--cf-violet);">·</div><div class="pd-label">What Finx is</div></div>
+      <h2 class="pd-title">A room of <em>peers</em>.<br>Not an audience.</h2>
+      <div class="pd-pill">Invite only. Peer vouched. Quiet by design.</div>
+      <div class="pd-callout">
+        <div class="pd-callout-label">The rule</div>
+        <div class="pd-callout-text">The value of the room is a function of <em>who else</em> is in it.</div>
+      </div>
+    </div>
+
+    <div class="stat-grid" style="grid-template-columns: 1fr 1fr; margin-top: 0;">
+      <div class="stat-block">
+        <div class="stat-label">Universe</div>
+        <div class="stat-num">5,000</div>
+        <div class="stat-note">Senior operators running India's BFSI</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-label">Year one cap</div>
+        <div class="stat-num">500</div>
+        <div class="stat-note">Hand picked. Six month review cycles.</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-label">Industry size</div>
+        <div class="stat-num">$5T</div>
+        <div class="stat-note">BFSI assets in India</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-label">Entry</div>
+        <div class="stat-num">2</div>
+        <div class="stat-note">Peer vouches needed to apply</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4: WHO'S IN -->
+<section class="slide" data-slide="3">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Finx · The Private Network</span></div>
+    <div class="slide-meta"><span class="num">04</span> / 11</div>
+  </div>
+
+  <div class="eyebrow">Who belongs</div>
+  <h2 class="headline" style="font-size: 60px;">Three filters. <em>All</em> apply.</h2>
+
+  <div class="three-grid">
+    <div class="three-card">
+      <div class="three-num">1</div>
+      <div class="three-title">Charter</div>
+      <div class="three-body">Head of function, founder, or senior operator. You own a number on a board deck.</div>
+    </div>
+    <div class="three-card">
+      <div class="three-num" style="background: var(--cf-green);">2</div>
+      <div class="three-title">Tenure</div>
+      <div class="three-body">You've shipped under regulation. Taken the late night calls. Seen the P&L from the inside.</div>
+    </div>
+    <div class="three-card">
+      <div class="three-num" style="background: var(--cf-yellow);">3</div>
+      <div class="three-title">Vouch</div>
+      <div class="three-body">Two existing members vouch for you. Their vouch stays on their record.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 5: WHAT MEMBERS GET -->
+<section class="slide" data-slide="4">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Finx · The Private Network</span></div>
+    <div class="slide-meta"><span class="num">05</span> / 11</div>
+  </div>
+
+  <div class="eyebrow">What members get</div>
+  <h2 class="headline" style="font-size: 60px;">Six <em>pillars</em>. One room.</h2>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-num">1</div>
+      <div class="pillar-content">
+        <div class="pillar-title">Rooms</div>
+        <div class="pillar-meta">Private rooms by function. Risk, Growth, Product, Compliance, Treasury, Fraud. Plus P&L Room, Regulator Room.</div>
+      </div>
+      <div class="pillar-tag">Network</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">2</div>
+      <div class="pillar-content">
+        <div class="pillar-title">Intel</div>
+        <div class="pillar-meta">Weekly regulator digest. Anonymised benchmarks across 200 BFSI metrics. 48 hour teardowns of every launch.</div>
+      </div>
+      <div class="pillar-tag">Signal</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">3</div>
+      <div class="pillar-content">
+        <div class="pillar-title">Playbooks</div>
+        <div class="pillar-meta">Operator authored. KYC stacks, fraud engines, partner programs, collection strategies. First person, signed, dated.</div>
+      </div>
+      <div class="pillar-tag">Playbooks</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">4</div>
+      <div class="pillar-content">
+        <div class="pillar-title">People</div>
+        <div class="pillar-meta">Directory by charter, stack, stage. Two way warm intros. "3 peers vouch" signal.</div>
+      </div>
+      <div class="pillar-tag">Intros</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">5</div>
+      <div class="pillar-content">
+        <div class="pillar-title">Career &amp; capital</div>
+        <div class="pillar-meta">Off market CXO roles. Fractional mandates. Angel rounds. Board seats. Peer referred only.</div>
+      </div>
+      <div class="pillar-tag">Mobility</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">6</div>
+      <div class="pillar-content">
+        <div class="pillar-title">In person</div>
+        <div class="pillar-meta">Quarterly city dinners in BLR, Mumbai, DEL. One annual Finx Summit that matters.</div>
+      </div>
+      <div class="pillar-tag">IRL</div>
+    </div>
+  </div>
+</section>
+
+<!-- 6: WHY PEOPLE STAY -->
+<section class="slide" data-slide="5">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Finx · The Private Network</span></div>
+    <div class="slide-meta"><span class="num">06</span> / 11</div>
+  </div>
+
+  <div class="eyebrow">Why people stay</div>
+  <h2 class="headline" style="font-size: 60px;">Status, trust, <em>belonging</em>.</h2>
+
+  <div class="rules-grid">
+    <div class="rule">
+      <div class="rule-num">LEVER 01</div>
+      <div class="rule-text">Status you don't have to post.</div>
+      <div class="rule-note">Being in Finx is a quiet flex. No badge on LinkedIn.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-num">LEVER 02</div>
+      <div class="rule-text">Scarcity by design.</div>
+      <div class="rule-note">500 seats in year one. The door is narrow on purpose.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-num">LEVER 03</div>
+      <div class="rule-text">Control over what you share.</div>
+      <div class="rule-note">Anonymous posting. Identity reveal on request. Watermarked playbooks.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-num">LEVER 04</div>
+      <div class="rule-text">Trust that scales with you.</div>
+      <div class="rule-note">Every number shared is NDA grade. Every member vetted.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 7: REVENUE -->
+<section class="slide" data-slide="6">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Finx · The Private Network</span></div>
+    <div class="slide-meta"><span class="num">07</span> / 11</div>
+  </div>
+
+  <div class="eyebrow">Revenue model</div>
+  <h2 class="headline" style="font-size: 60px;">One SKU. Three <em>rails</em>.</h2>
+
+  <div class="rev-grid">
+    <div class="rev-card">
+      <div class="rev-head">
+        <div class="rev-num">STREAM 01</div>
+        <div class="rev-price">₹1L / yr</div>
+      </div>
+      <div class="rev-title">Operator membership</div>
+      <div class="rev-body">Full access to the room. One flat tier. Usually reimbursed by the member's company.</div>
+      <div class="rev-buyer">Buyer: the operator</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-head">
+        <div class="rev-num">STREAM 02</div>
+        <div class="rev-price">₹15 to 40L</div>
+      </div>
+      <div class="rev-title">Corporate programs</div>
+      <div class="rev-body">Bulk seats for a company's leadership bench. Each seat still individually vetted.</div>
+      <div class="rev-buyer">Buyer: banks, NBFCs, fintechs, insurers</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-head">
+        <div class="rev-num">STREAM 03</div>
+        <div class="rev-price">₹1.5L / yr</div>
+      </div>
+      <div class="rev-title">Finx Intel</div>
+      <div class="rev-body">Benchmarks, teardowns, regulator digest. Read only. Non members priced out of the room, not the data.</div>
+      <div class="rev-buyer">Buyer: VCs, consultants, vendors</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-head">
+        <div class="rev-num">STREAM 04</div>
+        <div class="rev-price">8.33% / 15%</div>
+      </div>
+      <div class="rev-title">Talent take rate</div>
+      <div class="rev-body">Placement fee on roles sourced through the network. Full time or fractional.</div>
+      <div class="rev-buyer">Buyer: hiring company</div>
+    </div>
+  </div>
+</section>
+
+<!-- 8: UNIT ECONOMICS -->
+<section class="slide" data-slide="7">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Finx · The Private Network</span></div>
+    <div class="slide-meta"><span class="num">08</span> / 11</div>
+  </div>
+
+  <div class="eyebrow">Unit economics</div>
+  <h2 class="headline" style="font-size: 60px;">The math <em>works</em> on few.</h2>
+
+  <div class="stat-grid" style="grid-template-columns: repeat(4, 1fr); margin-top: 16px;">
+    <div class="stat-block">
+      <div class="stat-label">Member ACV</div>
+      <div class="stat-num">₹1L</div>
+      <div class="stat-note">One flat tier. 90% gross margin.</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-label">Member LTV</div>
+      <div class="stat-num">₹3.6L</div>
+      <div class="stat-note">Four year average life</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-label">LTV to CAC</div>
+      <div class="stat-num">15x</div>
+      <div class="stat-note">Founder led in year one</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-label">Enterprise LTV</div>
+      <div class="stat-num">₹64L</div>
+      <div class="stat-note">25x LTV to CAC</div>
+    </div>
+  </div>
+
+  <div class="rules-grid" style="margin-top: 24px;">
+    <div class="rule">
+      <div class="rule-num">WHY IT WORKS 01</div>
+      <div class="rule-text">Higher ACV means fewer members needed.</div>
+      <div class="rule-note">Fewer members is the product.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-num">WHY IT WORKS 02</div>
+      <div class="rule-text">Retention compounds.</div>
+      <div class="rule-note">The network is the switching cost.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 9: YEAR 3 ARR -->
+<section class="slide" data-slide="8">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Finx · The Private Network</span></div>
+    <div class="slide-meta"><span class="num">09</span> / 11</div>
+  </div>
+
+  <div class="eyebrow">Year three target</div>
+  <h2 class="headline" style="font-size: 60px;">~₹27Cr <em>ARR</em>.</h2>
+
+  <div class="three-grid" style="grid-template-columns: repeat(4, 1fr);">
+    <div class="three-card">
+      <div class="three-num">1</div>
+      <div class="three-title" style="font-size: 22px;">Members</div>
+      <div class="three-body">1,800 × ₹1L</div>
+      <div style="margin-top: auto; padding-top: 16px; font-family: var(--serif); font-style: italic; font-size: 28px; color: var(--cf-violet);">₹18.0Cr</div>
+    </div>
+    <div class="three-card">
+      <div class="three-num" style="background: var(--cf-green);">2</div>
+      <div class="three-title" style="font-size: 22px;">Enterprise</div>
+      <div class="three-body">25 × ₹25L</div>
+      <div style="margin-top: auto; padding-top: 16px; font-family: var(--serif); font-style: italic; font-size: 28px; color: var(--cf-green);">₹6.3Cr</div>
+    </div>
+    <div class="three-card">
+      <div class="three-num" style="background: var(--cf-yellow); color: var(--cf-ink);">3</div>
+      <div class="three-title" style="font-size: 22px;">Intel</div>
+      <div class="three-body">120 × ₹1.5L</div>
+      <div style="margin-top: auto; padding-top: 16px; font-family: var(--serif); font-style: italic; font-size: 28px; color: #B8810E;">₹1.8Cr</div>
+    </div>
+    <div class="three-card">
+      <div class="three-num" style="background: var(--coral);">4</div>
+      <div class="three-title" style="font-size: 22px;">Summit</div>
+      <div class="three-body">Sponsors + talent</div>
+      <div style="margin-top: auto; padding-top: 16px; font-family: var(--serif); font-style: italic; font-size: 28px; color: var(--coral);">₹1.0Cr</div>
+    </div>
+  </div>
+</section>
+
+<!-- 10: RED LINES -->
+<section class="slide" data-slide="9">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Finx · The Private Network</span></div>
+    <div class="slide-meta"><span class="num">10</span> / 11</div>
+  </div>
+
+  <div class="eyebrow">What Finx is not</div>
+  <h2 class="headline" style="font-size: 60px;">Lines we <em>don't</em> cross.</h2>
+
+  <div class="rules-grid">
+    <div class="rule bad">
+      <div class="rule-num">NEVER 01</div>
+      <div class="rule-text">No open sign ups.</div>
+      <div class="rule-note">Application and vouch only. No pay to enter.</div>
+    </div>
+    <div class="rule bad">
+      <div class="rule-num">NEVER 02</div>
+      <div class="rule-text">No recruiters in the room.</div>
+      <div class="rule-note">Roles flow peer to peer. Recruiters get Intel, not access.</div>
+    </div>
+    <div class="rule bad">
+      <div class="rule-num">NEVER 03</div>
+      <div class="rule-text">No vendor pitches.</div>
+      <div class="rule-note">Vendors can sponsor research. They cannot sit in rooms.</div>
+    </div>
+    <div class="rule bad">
+      <div class="rule-num">NEVER 04</div>
+      <div class="rule-text">No content creators.</div>
+      <div class="rule-note">Operators, not commentators.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 11: CLOSING -->
+<section class="slide" data-slide="10">
+  <div class="topbar">
+    <div class="brand"><div class="brand-dot"></div><span>Finx · The Private Network</span></div>
+    <div class="slide-meta"><span class="num">11</span> / 11</div>
+  </div>
+
+  <div class="final-grid">
+    <div>
+      <div class="eyebrow">The one thing</div>
+      <h2 class="final-mantra">Curation is<br>the <em>moat</em>.</h2>
+    </div>
+
+    <div class="final-rules">
+      <div class="final-rule">
+        <div class="final-rule-num">RULE 01</div>
+        <div class="final-rule-text">The first 200 invites decide the next 2,000.</div>
+      </div>
+      <div class="final-rule">
+        <div class="final-rule-num">RULE 02</div>
+        <div class="final-rule-text">Willing to say no. That's what new members are watching for.</div>
+      </div>
+      <div class="final-rule">
+        <div class="final-rule-num">RULE 03</div>
+        <div class="final-rule-text">Everything else is recoverable. Vetting is not.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div class="nav">
+  <button class="nav-btn" id="prevBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+  <div class="nav-dots" id="navDots"></div>
+  <div class="nav-counter"><strong id="currentNum">1</strong> / 11</div>
+  <button class="nav-btn" id="nextBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+</div>
+
+<div class="kbd-hint"><span class="kbd">←</span><span class="kbd">→</span> to navigate</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const navDots = document.getElementById('navDots');
+const currentNum = document.getElementById('currentNum');
+const progressFill = document.getElementById('progressFill');
+let currentSlide = 0;
+
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement('button');
+  dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+  dot.addEventListener('click', () => goToSlide(i));
+  navDots.appendChild(dot);
+}
+
+function goToSlide(n) {
+  if (n < 0 || n >= totalSlides) return;
+  slides[currentSlide].classList.remove('active');
+  currentSlide = n;
+  slides[currentSlide].classList.add('active');
+  slides[currentSlide].scrollTop = 0;
+  updateUI();
+}
+
+function updateUI() {
+  document.querySelectorAll('.nav-dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+  currentNum.textContent = currentSlide + 1;
+  prevBtn.disabled = currentSlide === 0;
+  nextBtn.disabled = currentSlide === totalSlides - 1;
+  progressFill.style.width = ((currentSlide + 1) / totalSlides * 100) + '%';
+}
+
+prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); goToSlide(currentSlide + 1); }
+  else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); goToSlide(currentSlide - 1); }
+  else if (e.key === 'Home') { e.preventDefault(); goToSlide(0); }
+  else if (e.key === 'End') { e.preventDefault(); goToSlide(totalSlides - 1); }
+});
+
+updateUI();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,3344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relay — Cashfree Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    /* ── Cashmere tokens (content area) ── */
+    :root {
+      --accent-50:  #F2F6FF;
+      --accent-100: #E5EDFF;
+      --accent-200: #CCDAFF;
+      --accent-600: #094EFF;
+      --accent-700: #003BD1;
+      --accent-800: #002C9E;
+
+      --neutral-50:   #1B1B1B;
+      --neutral-200:  #494949;
+      --neutral-400:  #767676;
+      --neutral-600:  #A4A4A4;
+      --neutral-800:  #D1D1D1;
+      --neutral-900:  #E8E8E8;
+      --neutral-950:  #F2F2F2;
+      --neutral-1000: #FFFFFC;
+
+      --positive-50:  #DCFFE9;
+      --positive-600: #009B54;
+      --positive-800: #005B21;
+      --warning-50:   #FFF7E6;
+      --warning-700:  #A06D03;
+
+      --radius-sm: 4px;
+      --radius-md: 6px;
+      --radius-lg: 8px;
+      --radius-xl: 12px;
+      --radius-pill: 999px;
+
+      --shadow-sm: 0 1px 2px rgba(27,27,27,.06), 0 1px 3px rgba(27,27,27,.08);
+
+      --font-display: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+      --font-body:    "Inter", ui-sans-serif, system-ui, sans-serif;
+      --font-mono:    "DM Mono", ui-monospace, monospace;
+
+      /* Cashfree dashboard chrome */
+      --cf-nav-bg:     #1B1C3A;
+      --cf-purple:     #5B4FCF;
+      --cf-purple-100: #EEF0FB;
+      --cf-purple-200: #D8D4F5;
+      --cf-sidebar-w:  220px;
+
+      /* Semantic aliases (mockup token compatibility) */
+      --bg-default:     #FFFFFC;
+      --bg-subtle:      #F2F2F2;
+      --text-primary:   #1B1B1B;
+      --text-secondary: #494949;
+      --text-tertiary:  #767676;
+      --border-subtle:  #E8E8E8;
+      --border-default: #D1D1D1;
+      --negative-500:   #B80000;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      background: #F4F5F7;
+      color: var(--neutral-50);
+      font-family: var(--font-body);
+      font-size: 13px;
+      line-height: 19px;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ══════════════════════════════════
+       CASHFREE DASHBOARD TOPNAV
+    ══════════════════════════════════ */
+    .cf-topnav {
+      height: 56px;
+      background: var(--cf-nav-bg);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 16px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+
+    .cf-topnav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .cf-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Payment gateway label */
+    .cf-pg-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 15px;
+      color: #FFFFFF;
+    }
+
+    .cf-pg-icon {
+      width: 22px;
+      height: 22px;
+      background: linear-gradient(135deg, #4ECDC4, #44AF69);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .cf-divider-v {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.15);
+      flex-shrink: 0;
+    }
+
+    .cf-search {
+      flex: 1;
+      max-width: 400px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 36px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-pill);
+      padding: 0 14px;
+      color: rgba(255,255,255,0.5);
+      font-family: var(--font-body);
+      font-size: 13px;
+    }
+
+    .cf-search-beta {
+      padding: 2px 7px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-pill);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 9px;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+    }
+
+    .cf-topnav-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+    }
+
+    .cf-topnav-btn {
+      height: 32px;
+      padding: 0 14px;
+      border-radius: var(--radius-md);
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 13px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 150ms;
+    }
+
+    .cf-topnav-btn:hover { opacity: 0.85; }
+
+    .cf-btn-create {
+      background: var(--cf-purple);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .cf-btn-outline {
+      background: transparent;
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .cf-btn-switch {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.85);
+    }
+
+    .cf-topnav-icon-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: none;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.7);
+      cursor: pointer;
+      transition: background 150ms;
+    }
+
+    .cf-topnav-icon-btn:hover { background: rgba(255,255,255,0.1); }
+
+    .cf-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--cf-purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 13px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* ══════════════════════════════════
+       CASHFREE LEFT SIDEBAR
+    ══════════════════════════════════ */
+    .shell {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .cf-sidebar {
+      width: var(--cf-sidebar-w);
+      flex-shrink: 0;
+      background: #FFFFFF;
+      border-right: 1px solid #E5E7EB;
+      overflow-y: auto;
+      height: calc(100vh - 56px);
+      position: sticky;
+      top: 56px;
+    }
+
+    .cf-sidebar::-webkit-scrollbar { width: 4px; }
+    .cf-sidebar::-webkit-scrollbar-thumb { background: #E5E7EB; border-radius: 2px; }
+
+    .cf-nav-section {
+      padding: 16px 12px 4px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #9CA3AF;
+    }
+
+    .cf-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 18px;
+      color: #374151;
+      cursor: pointer;
+      border-left: 3px solid transparent;
+      transition: background 120ms, color 120ms;
+      position: relative;
+    }
+
+    .cf-nav-item:hover {
+      background: #F9FAFB;
+      color: #111827;
+    }
+
+    .cf-nav-item.active {
+      background: var(--cf-purple-100);
+      color: var(--cf-purple);
+      border-left-color: var(--cf-purple);
+      font-weight: 600;
+    }
+
+    .cf-nav-item .nav-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      color: #6B7280;
+    }
+
+    .cf-nav-item.active .nav-icon { color: var(--cf-purple); }
+
+    .cf-nav-item .nav-arrow {
+      margin-left: auto;
+      color: #9CA3AF;
+    }
+
+    .cf-nav-sub {
+      padding-left: 36px;
+    }
+
+    .cf-nav-sub .cf-nav-item {
+      font-size: 12px;
+      padding: 6px 12px 6px 0;
+    }
+
+    /* Relay section highlight in sidebar */
+    .cf-nav-relay-section {
+      background: var(--accent-50);
+      margin: 8px 0;
+      border-top: 1px solid var(--neutral-900);
+      border-bottom: 1px solid var(--neutral-900);
+    }
+
+    /* ══════════════════════════════════
+       MAIN CONTENT AREA
+    ══════════════════════════════════ */
+    .main {
+      flex: 1;
+      min-width: 0;
+      overflow-y: auto;
+      height: calc(100vh - 56px);
+    }
+
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .content {
+      padding: 28px 32px 72px;
+      max-width: 1200px;
+    }
+
+    /* ── Cashmere content components ── */
+    .overline {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 11px;
+      line-height: 16px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--neutral-400);
+    }
+
+    .page-heading {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 28px;
+      letter-spacing: -0.01em;
+      color: var(--neutral-50);
+      margin-bottom: 3px;
+    }
+
+    .page-subheading {
+      font-family: var(--font-body);
+      font-size: 13px;
+      line-height: 19px;
+      color: var(--neutral-400);
+    }
+
+    /* Tags */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 11px;
+      line-height: 15px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .tag-accent   { background: var(--accent-100);  color: var(--accent-800); }
+    .tag-success  { background: var(--positive-50); color: var(--positive-800); }
+    .tag-neutral  { background: var(--neutral-950); color: var(--neutral-400); }
+    .tag-warning  { background: var(--warning-50);  color: var(--warning-700); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 36px;
+      padding: 0 16px;
+      border-radius: var(--radius-md);
+      border: none;
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      cursor: pointer;
+      transition: background 150ms, color 150ms;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .btn-primary { background: var(--accent-600); color: #FFFFFC; }
+    .btn-primary:hover { background: var(--accent-700); }
+    .btn-secondary { background: #FFFFFC; color: var(--neutral-50); border: 1px solid var(--neutral-800); }
+    .btn-secondary:hover { background: var(--neutral-950); }
+
+    /* ── Page header + KPI strip (from mockup) ── */
+    .cm-page-heading { font-family: var(--font-display); font-weight: 700; font-size: 32px; line-height: 40px; letter-spacing: -0.01em; color: var(--text-primary); }
+    .cm-page-subtext { font-family: var(--font-display); font-weight: 500; font-size: 14px; line-height: 20px; color: var(--text-secondary); }
+    .cm-section-heading { font-family: var(--font-display); font-weight: 600; font-size: 20px; line-height: 25px; color: var(--text-primary); }
+    .cm-section-overline { font-family: var(--font-display); font-weight: 600; font-size: 11px; line-height: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+    .page-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; gap: 24px; }
+    .page-header-text { flex: 1; }
+    .page-header-text .cm-page-subtext { margin-top: 4px; }
+    .kpi-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+    .kpi-card { background: var(--bg-default); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 16px; }
+    .kpi-label { font-family: var(--font-display); font-weight: 500; font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+    .kpi-value { font-family: var(--font-display); font-weight: 700; font-size: 24px; line-height: 29px; letter-spacing: -0.01em; color: var(--text-primary); margin-bottom: 4px; }
+    .kpi-delta { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-body); font-weight: 500; font-size: 12px; color: var(--positive-600); }
+    .kpi-delta.negative { color: var(--negative-500); }
+    .kpi-delta-meta { color: var(--text-tertiary); font-weight: 400; margin-left: 4px; }
+    .section-row { display: flex; justify-content: space-between; align-items: center; margin: 32px 0 16px; }
+    .section-row .cm-section-overline { color: var(--text-tertiary); }
+
+    /* ── Agent grid (from mockup) ── */
+    .agent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 32px; }
+    .agent-card { background: var(--bg-default); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 20px; display: flex; flex-direction: column; cursor: pointer; transition: all 150ms; min-height: 220px; }
+    .agent-card:hover { border-color: var(--border-default); box-shadow: 0 1px 2px rgba(27,27,27,.06), 0 1px 3px rgba(27,27,27,.08); }
+    .agent-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .agent-icon { width: 32px; height: 32px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 14px; }
+    .agent-icon.acc { background: var(--accent-100); color: var(--accent-700); }
+    .agent-icon.pos { background: var(--positive-50); color: var(--positive-800); }
+    .agent-icon.warn { background: var(--warning-50); color: var(--warning-700); }
+    .agent-icon.neg { background: #FFE0E0; color: #700000; }
+    .agent-icon.neu { background: var(--bg-subtle); color: var(--text-secondary); }
+    .agent-name { font-family: var(--font-display); font-weight: 600; font-size: 14px; color: var(--text-primary); }
+    .agent-status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--positive-600); margin-left: auto; }
+    .agent-headline { font-family: var(--font-display); font-weight: 600; font-size: 18px; line-height: 24px; letter-spacing: -0.01em; color: var(--text-primary); margin-bottom: 12px; }
+    .agent-headline .stat-num { color: var(--accent-600); }
+    .agent-meta { display: flex; align-items: center; gap: 12px; margin-bottom: auto; padding-bottom: 16px; }
+    .agent-meta-item { font-family: var(--font-body); font-size: 12px; color: var(--text-tertiary); }
+    .agent-meta-item strong { color: var(--text-secondary); font-weight: 500; }
+    .agent-card-foot { display: flex; align-items: center; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border-subtle); }
+    .integration-pill { width: 22px; height: 22px; border-radius: var(--radius-sm); background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 9px; color: var(--text-secondary); }
+    .integration-pill.cf { background: var(--accent-600); color: white; }
+    .integration-pill.wa { background: #25D366; color: white; }
+    .integration-pill.sl { background: #4A154B; color: white; }
+    .integration-pill.gs { background: #0F9D58; color: white; }
+    .integration-pill.sh { background: #95BF47; color: white; }
+    .agent-card-cta { margin-left: auto; font-family: var(--font-display); font-weight: 500; font-size: 12px; color: var(--accent-600); display: inline-flex; align-items: center; gap: 4px; }
+
+    /* ── Filter bar (from mockup) ── */
+    .filter-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .filter-search { flex: 0 0 280px; position: relative; }
+    .filter-search input { width: 100%; height: 36px; padding: 0 12px 0 36px; border: 1px solid var(--border-default); border-radius: var(--radius-md); background: var(--bg-default); font-family: var(--font-display); font-weight: 500; font-size: 13px; color: var(--text-primary); outline: none; }
+    .filter-search input::placeholder { color: var(--text-tertiary); }
+    .filter-search input:focus { border-color: var(--accent-600); box-shadow: 0 0 0 3px rgba(9,78,255,0.1); }
+    .filter-search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-tertiary); width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; }
+    .chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 1px solid var(--border-default); background: var(--bg-default); border-radius: var(--radius-pill); font-family: var(--font-display); font-weight: 500; font-size: 12px; color: var(--text-primary); cursor: pointer; transition: all 150ms; }
+    .chip:hover { background: var(--bg-subtle); }
+    .chip.active { background: var(--accent-600); border-color: var(--accent-600); color: white; }
+    .chip-count { font-family: var(--font-display); font-weight: 600; font-size: 11px; color: var(--text-tertiary); margin-left: 2px; }
+    .chip.active .chip-count { color: rgba(255,255,255,0.7); }
+
+    /* ── Lucide icon sizing ── */
+    .icon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .icon svg { stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .icon-14 svg { width: 14px; height: 14px; }
+    .icon-16 svg { width: 16px; height: 16px; }
+
+    /* ── Overview cards (Cashfree dashboard style) ── */
+    .overview-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .ov-card {
+      background: var(--neutral-1000);
+      border: 1px solid var(--neutral-900);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .ov-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 16px 9px;
+      border-bottom: 1px solid var(--neutral-900);
+    }
+
+    .ov-card-header-left { display: flex; align-items: center; gap: 6px; }
+
+    .ov-card-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--neutral-400);
+    }
+
+    .ov-card-period {
+      font-family: var(--font-body);
+      font-size: 10px;
+      color: var(--neutral-600);
+      padding: 1px 6px;
+      background: var(--neutral-950);
+      border-radius: var(--radius-sm);
+    }
+
+    .ov-metrics { display: flex; flex-direction: column; }
+
+    .ov-metric-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--neutral-900);
+      gap: 10px;
+    }
+    .ov-metric-row:last-child { border-bottom: none; }
+
+    .ov-metric-left { display: flex; align-items: center; gap: 8px; }
+
+    .ov-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .ov-dot-green  { background: var(--positive-600); }
+    .ov-dot-red    { background: #DC2626; }
+    .ov-dot-blue   { background: var(--accent-600); }
+    .ov-dot-grey   { background: var(--neutral-800); }
+    .ov-dot-orange { background: #D97706; }
+
+    .ov-metric-label {
+      font-family: var(--font-body);
+      font-size: 12px;
+      line-height: 17px;
+      color: var(--neutral-400);
+    }
+
+    .ov-metric-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .ov-metric-value {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 1;
+      color: var(--neutral-50);
+      min-width: 24px;
+      text-align: right;
+    }
+
+    .ov-metric-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--neutral-900);
+      color: var(--neutral-600);
+      text-decoration: none;
+      transition: background 150ms, color 150ms, border-color 150ms;
+      flex-shrink: 0;
+    }
+    .ov-metric-link:hover { background: var(--neutral-950); color: var(--neutral-400); border-color: var(--neutral-800); }
+
+    /* Section header */
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 21px;
+      color: var(--neutral-50);
+    }
+
+    .use-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--accent-600);
+      transition: color 150ms;
+    }
+    .use-link:hover { color: var(--accent-700); }
+
+    /* Divider */
+    .divider { height: 1px; background: var(--neutral-900); margin: 28px 0; }
+
+    /* Modes grid */
+    .modes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .mode-card {
+      background: var(--neutral-1000);
+      border: 1px solid var(--neutral-900);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: border-color 150ms, box-shadow 150ms;
+    }
+    .mode-card:hover { border-color: var(--neutral-800); box-shadow: var(--shadow-sm); }
+    .mode-card.active { border-color: var(--accent-600); background: var(--accent-50); }
+
+    .mode-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-md);
+      background: var(--neutral-950);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--neutral-200);
+      flex-shrink: 0;
+    }
+    .mode-card.active .mode-icon { background: var(--accent-100); color: var(--accent-600); }
+
+    .mode-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      color: var(--neutral-50);
+      margin-bottom: 4px;
+    }
+    .mode-desc {
+      font-family: var(--font-body);
+      font-size: 12px;
+      line-height: 17px;
+      color: var(--neutral-400);
+      margin-bottom: 14px;
+    }
+    .mode-steps { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .mode-step { display: flex; align-items: flex-start; gap: 8px; }
+    .step-num {
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--neutral-900);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-weight: 600; font-size: 9px;
+      color: var(--neutral-400); flex-shrink: 0; margin-top: 1px;
+    }
+    .mode-card.active .step-num { background: var(--accent-100); color: var(--accent-700); }
+    .step-text { font-family: var(--font-body); font-size: 12px; line-height: 17px; color: var(--neutral-200); }
+
+    /* Tab bar */
+    .tab-bar {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      border-bottom: 1px solid var(--neutral-900);
+      margin-bottom: 20px;
+    }
+
+    .tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 20px;
+      color: var(--neutral-400);
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      cursor: pointer;
+      transition: color 150ms;
+      white-space: nowrap;
+    }
+    .tab-btn:hover { color: var(--neutral-200); }
+    .tab-btn.active { color: var(--neutral-50); font-weight: 600; border-bottom-color: var(--accent-600); }
+
+    .tab-count {
+      min-width: 18px; height: 18px; padding: 0 5px;
+      border-radius: var(--radius-pill);
+      background: var(--neutral-950);
+      font-size: 11px; font-weight: 600;
+      color: var(--neutral-400);
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .tab-btn.active .tab-count { background: var(--accent-100); color: var(--accent-800); }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Template grid */
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .tpl-card {
+      background: var(--neutral-1000);
+      border: 1px solid var(--neutral-900);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: border-color 150ms, box-shadow 150ms;
+      position: relative;
+    }
+    .tpl-card:not(.coming-soon) { cursor: pointer; }
+    .tpl-card:hover { border-color: var(--neutral-800); box-shadow: var(--shadow-sm); }
+
+    .tpl-card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+
+    .tpl-icon {
+      width: 32px; height: 32px; border-radius: var(--radius-md);
+      background: var(--accent-100); color: var(--accent-600);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .tpl-icon.schedule { background: var(--warning-50); color: var(--warning-700); }
+    .tpl-icon.refund   { background: #FFF1F2; color: #BE123C; }
+    .tpl-icon.muted    { background: var(--neutral-950); color: var(--neutral-400); }
+
+    .tpl-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 18px;
+      color: var(--neutral-50);
+      margin-bottom: 5px;
+    }
+
+    .tpl-desc {
+      font-family: var(--font-body);
+      font-size: 12px;
+      line-height: 17px;
+      color: var(--neutral-400);
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .tpl-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid var(--neutral-900);
+      margin-top: auto;
+    }
+
+    .conn-pills { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+
+    .conn-pill {
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+      background: var(--neutral-950);
+      border: 1px solid var(--neutral-900);
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 15px;
+      color: var(--neutral-200);
+    }
+
+    .tpl-card.coming-soon { opacity: 0.68; }
+
+    /* ── Flow chain (n8n-style trigger → action visual) ── */
+    .flow-chain {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .flow-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 11px;
+      background: var(--accent-100);
+      color: var(--accent-800);
+      border: 1px solid var(--accent-200);
+      white-space: nowrap;
+    }
+
+    .flow-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 11px;
+      background: var(--neutral-950);
+      color: var(--neutral-200);
+      border: 1px solid var(--neutral-900);
+      white-space: nowrap;
+    }
+
+    .flow-arrow {
+      color: var(--neutral-600);
+      font-size: 12px;
+      flex-shrink: 0;
+      font-family: var(--font-display);
+      line-height: 1;
+    }
+
+    /* ── Featured card ── */
+    .tpl-card.featured {
+      border-color: var(--accent-600);
+      background: var(--accent-50);
+    }
+    .tpl-card.featured:hover {
+      border-color: var(--accent-700);
+      box-shadow: 0 0 0 3px rgba(9,78,255,0.07), var(--shadow-sm);
+    }
+    .tpl-card.featured .tpl-icon { background: var(--accent-100); color: var(--accent-600); }
+
+    /* ── Roadmap vote button ── */
+    .vote-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: var(--radius-sm);
+      background: var(--neutral-950);
+      border: 1px solid var(--neutral-900);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 11px;
+      color: var(--neutral-400);
+      cursor: pointer;
+      transition: background 150ms, color 150ms, border-color 150ms;
+    }
+    .vote-btn:hover { background: var(--accent-50); color: var(--accent-700); border-color: var(--accent-200); }
+    .vote-btn.voted { background: var(--accent-100); color: var(--accent-700); border-color: var(--accent-200); pointer-events: none; }
+
+    /* ── Proof bar ── */
+    .proof-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      background: var(--positive-50);
+      border: 1px solid #A7F0C4;
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: 12px;
+      line-height: 17px;
+      color: var(--positive-800);
+      margin-bottom: 20px;
+    }
+
+    /* ── Overview empty-state hint ── */
+    .ov-metric-hint {
+      font-family: var(--font-body);
+      font-size: 10px;
+      color: var(--neutral-600);
+      margin-top: 2px;
+    }
+
+    /* ── Introducing Relay banner ── */
+    .intro-banner {
+      background: var(--cf-nav-bg);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin-bottom: 20px;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .intro-banner-overline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 8px;
+    }
+
+    .intro-banner-heading {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+
+    .intro-banner-desc {
+      font-family: var(--font-body);
+      font-size: 13px;
+      line-height: 19px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 18px;
+      max-width: 520px;
+    }
+
+    .intro-banner-ctas { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+    .intro-banner-btn-primary {
+      height: 34px; padding: 0 16px;
+      background: #FFFFFF; color: var(--cf-nav-bg);
+      border: none; border-radius: var(--radius-md);
+      font-family: var(--font-display); font-weight: 600; font-size: 13px;
+      cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+      text-decoration: none; transition: opacity 150ms;
+    }
+    .intro-banner-btn-primary:hover { opacity: 0.9; }
+
+    .intro-banner-btn-ghost {
+      height: 34px; padding: 0 16px;
+      background: transparent; color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: var(--radius-md);
+      font-family: var(--font-display); font-weight: 500; font-size: 13px;
+      cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+      text-decoration: none; transition: background 150ms;
+    }
+    .intro-banner-btn-ghost:hover { background: rgba(255,255,255,0.08); }
+
+    .intro-banner-dismiss {
+      position: absolute; top: 14px; right: 14px;
+      width: 26px; height: 26px; border-radius: 50%;
+      border: none; background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.6);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background 150ms; flex-shrink: 0;
+    }
+    .intro-banner-dismiss:hover { background: rgba(255,255,255,0.2); }
+
+    /* ── Relay prompt — Claude-style ── */
+    .rp-surface {
+      background: #fff;
+      border: 1px solid var(--neutral-900);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 1px 2px rgba(27,27,27,.04), 0 2px 8px rgba(27,27,27,.06);
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    .rp-input-wrap {
+      position: relative;
+      padding: 18px 18px 58px;
+    }
+
+    .rp-textarea {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 23px;
+      color: var(--neutral-50);
+      resize: none;
+      min-height: 76px;
+    }
+
+    .rp-textarea::placeholder { color: var(--neutral-600); }
+
+    .rp-send {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-md);
+      background: var(--accent-600);
+      color: #fff;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 150ms;
+    }
+
+    .rp-send:hover { background: var(--accent-700); }
+
+    .rp-send.empty {
+      background: var(--neutral-900);
+      color: var(--neutral-600);
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .rp-divider { height: 1px; background: var(--neutral-900); }
+
+    .rp-suggestions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 6px;
+      gap: 2px;
+    }
+
+    .rp-chip {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      gap: 3px;
+      padding: 10px 12px;
+      border-radius: var(--radius-md);
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      transition: background 120ms;
+    }
+
+    .rp-chip:hover { background: var(--neutral-950); }
+
+    .rp-chip-title {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--neutral-200);
+      line-height: 18px;
+    }
+
+    .rp-chip-desc {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--neutral-600);
+      line-height: 17px;
+    }
+
+    .rp-footer {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px 13px;
+      border-top: 1px solid var(--neutral-900);
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--neutral-600);
+    }
+
+    .rp-footer a { color: var(--accent-600); font-weight: 500; text-decoration: none; }
+    .rp-footer a:hover { text-decoration: underline; }
+
+    /* ── Prompt box ── */
+    .prompt-card {
+      background: var(--accent-50);
+      border: 1px solid var(--accent-200);
+      border-radius: var(--radius-xl);
+      padding: 22px 24px;
+    }
+
+    .prompt-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      color: var(--neutral-50);
+      margin-bottom: 3px;
+    }
+
+    .prompt-desc {
+      font-family: var(--font-body);
+      font-size: 12px;
+      line-height: 17px;
+      color: var(--neutral-400);
+      margin-bottom: 14px;
+    }
+
+    .prompt-chips {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .prompt-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--accent-200);
+      background: var(--neutral-1000);
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--accent-800);
+      cursor: pointer;
+      transition: background 150ms;
+    }
+    .prompt-chip:hover { background: var(--accent-100); }
+
+    .prompt-input-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+    }
+
+    .prompt-textarea {
+      flex: 1;
+      min-height: 68px;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--neutral-800);
+      background: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 13px;
+      line-height: 19px;
+      color: var(--neutral-50);
+      resize: none;
+      outline: none;
+      transition: border-color 150ms, box-shadow 150ms;
+    }
+    .prompt-textarea::placeholder { color: var(--neutral-600); }
+    .prompt-textarea:focus {
+      border-color: var(--accent-600);
+      box-shadow: 0 0 0 3px rgba(9,78,255,0.12);
+    }
+
+    .prompt-submit {
+      height: 40px; padding: 0 18px;
+      background: var(--accent-600); color: #FFFFFC;
+      border: none; border-radius: var(--radius-md);
+      font-family: var(--font-display); font-weight: 600; font-size: 13px;
+      cursor: pointer;
+      display: inline-flex; align-items: center; gap: 6px;
+      flex-shrink: 0; white-space: nowrap;
+      transition: background 150ms;
+    }
+    .prompt-submit:hover { background: var(--accent-700); }
+
+    .prompt-success {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: var(--positive-50);
+      border: 1px solid #A7F0C4;
+      border-radius: var(--radius-md);
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--positive-800);
+    }
+    .prompt-success.visible { display: flex; }
+
+    /* ── Connectors ── */
+    .connector-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 20px;
+      background: var(--neutral-1000);
+      border: 1px solid var(--neutral-900);
+      border-radius: var(--radius-lg);
+      flex-wrap: wrap;
+    }
+
+    .connector-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--neutral-900);
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--neutral-200);
+    }
+
+    .conn-sep {
+      width: 1px;
+      height: 16px;
+      background: var(--neutral-900);
+      flex-shrink: 0;
+    }
+
+    /* ── Connectors card (redesigned) ── */
+    .connectors-card {
+      background: var(--neutral-1000);
+      border: 1px solid var(--neutral-900);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .connectors-section {
+      padding: 16px 20px;
+    }
+
+    .connectors-section-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .connectors-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .conn-pill-rich {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px 4px 5px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--neutral-900);
+      background: var(--neutral-1000);
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--neutral-200);
+      transition: border-color 120ms, background 120ms;
+      cursor: default;
+    }
+    .conn-pill-rich:hover { border-color: var(--neutral-800); background: var(--neutral-950); }
+    .conn-pill-rich.soon { opacity: 0.5; }
+
+    .conn-pill-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .connectors-divider { height: 1px; background: var(--neutral-900); }
+
+    /* Request bar */
+    .connectors-request-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 20px;
+      background: var(--accent-50);
+      flex-wrap: wrap;
+    }
+
+    .conn-req-label {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--neutral-50);
+    }
+
+    .conn-req-hint {
+      font-family: var(--font-body);
+      font-size: 11px;
+      color: var(--neutral-400);
+      margin-top: 2px;
+    }
+
+    .conn-req-inputs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .conn-req-input {
+      flex: 1;
+      height: 34px;
+      padding: 0 12px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--accent-200);
+      background: #fff;
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--neutral-50);
+      outline: none;
+      transition: border-color 150ms, box-shadow 150ms;
+    }
+    .conn-req-input::placeholder { color: var(--neutral-600); }
+    .conn-req-input:focus { border-color: var(--accent-600); box-shadow: 0 0 0 2px rgba(9,78,255,0.1); }
+
+    .conn-req-btn {
+      height: 34px;
+      padding: 0 14px;
+      background: var(--accent-600);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-md);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 150ms;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .conn-req-btn:hover { background: var(--accent-700); }
+
+    .conn-req-success {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--positive-800);
+    }
+
+    /* ── FAQ ── */
+    .faq-card {
+      background: var(--neutral-1000);
+      border: 1px solid var(--neutral-900);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .faq-header-row {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--neutral-900);
+    }
+
+    .faq-heading {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 21px;
+      color: var(--neutral-50);
+    }
+
+    .faq-item { border-bottom: 1px solid var(--neutral-900); }
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 24px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      width: 100%;
+      text-align: left;
+      transition: background 150ms;
+    }
+    .faq-q:hover { background: var(--neutral-950); }
+
+    .faq-q-text {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 19px;
+      color: var(--neutral-50);
+    }
+
+    .faq-chevron {
+      color: var(--accent-600);
+      flex-shrink: 0;
+      transition: transform 200ms cubic-bezier(0.2,0,0,1);
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+    .faq-a {
+      display: none;
+      padding: 0 24px 16px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      line-height: 19px;
+      color: var(--neutral-200);
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── Get started steps ── */
+    .steps-col { display: flex; flex-direction: column; gap: 10px; }
+
+    .step-card {
+      background: var(--neutral-1000);
+      border: 1px solid var(--neutral-900);
+      border-radius: var(--radius-lg);
+      padding: 14px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .step-badge {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--accent-100); color: var(--accent-700);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-weight: 700; font-size: 10px;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 18px;
+      color: var(--neutral-50);
+      margin-bottom: 3px;
+    }
+
+    .step-desc {
+      font-family: var(--font-body);
+      font-size: 12px;
+      line-height: 17px;
+      color: var(--neutral-400);
+    }
+
+    .cta-card {
+      background: var(--neutral-950);
+      border: 1px solid var(--neutral-900);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    /* ══════════════════════════════════
+       MCP VIEW
+    ══════════════════════════════════ */
+
+    /* MCP hero banner (flat blue, no gradient) */
+    .mcp-hero {
+      background: var(--accent-600);
+      border-radius: var(--radius-xl);
+      padding: 32px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle grid pattern overlay */
+    .mcp-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    .mcp-hero-text { position: relative; z-index: 1; }
+
+    .mcp-hero-overline {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 10px;
+    }
+
+    .mcp-hero-heading {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+
+    .mcp-hero-desc {
+      font-family: var(--font-body);
+      font-size: 13px;
+      line-height: 19px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 24px;
+      max-width: 460px;
+    }
+
+    .mcp-hero-ctas { display: flex; align-items: center; gap: 8px; }
+
+    .mcp-btn-white {
+      height: 36px;
+      padding: 0 18px;
+      background: #FFFFFF;
+      color: var(--accent-700);
+      border: none;
+      border-radius: var(--radius-md);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 150ms;
+      text-decoration: none;
+    }
+    .mcp-btn-white:hover { opacity: 0.92; }
+
+    .mcp-btn-ghost {
+      height: 36px;
+      padding: 0 18px;
+      background: transparent;
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: var(--radius-md);
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 150ms;
+      text-decoration: none;
+    }
+    .mcp-btn-ghost:hover { background: rgba(255,255,255,0.1); }
+
+    /* Visual: floating icon circles */
+    .mcp-hero-visual {
+      position: relative;
+      width: 180px;
+      height: 140px;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+
+    .mcp-orb {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .mcp-orb-center {
+      width: 64px; height: 64px;
+      top: 38px; left: 58px;
+      background: rgba(255,255,255,0.18);
+    }
+
+    .mcp-orb-sm1 { width: 40px; height: 40px; top: 6px; left: 90px; }
+    .mcp-orb-sm2 { width: 36px; height: 36px; top: 58px; left: 4px; }
+    .mcp-orb-sm3 { width: 36px; height: 36px; top: 90px; left: 106px; }
+    .mcp-orb-sm4 { width: 30px; height: 30px; top: 14px; left: 24px; }
+
+    /* MCP tools grid */
+    .mcp-tools-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .mcp-tool-card {
+      background: var(--neutral-1000);
+      border: 1px solid var(--neutral-900);
+      border-radius: var(--radius-lg);
+      padding: 14px 16px;
+      transition: border-color 150ms, box-shadow 150ms;
+    }
+    .mcp-tool-card:hover { border-color: var(--neutral-800); box-shadow: var(--shadow-sm); }
+
+    .mcp-tool-name {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      line-height: 16px;
+      color: var(--accent-600);
+      margin-bottom: 5px;
+    }
+
+    .mcp-tool-desc {
+      font-family: var(--font-body);
+      font-size: 11px;
+      line-height: 16px;
+      color: var(--neutral-400);
+    }
+
+    /* MCP setup card */
+    .mcp-setup-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .mcp-setup-card {
+      background: var(--neutral-1000);
+      border: 1px solid var(--neutral-900);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+    }
+
+    .mcp-code-block {
+      background: var(--neutral-50);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-top: 12px;
+      overflow-x: auto;
+    }
+
+    .mcp-code-block pre {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      line-height: 18px;
+      color: var(--neutral-1000);
+      white-space: pre;
+    }
+
+    .mcp-code-comment { color: #6B7280; }
+    .mcp-code-key     { color: #93C5FD; }
+    .mcp-code-str     { color: #86EFAC; }
+    .mcp-code-env     { color: #FCA5A5; }
+
+    .mcp-setup-steps { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+
+    .mcp-setup-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .mcp-step-num {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--accent-100); color: var(--accent-700);
+      font-family: var(--font-display); font-weight: 700; font-size: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .mcp-step-text {
+      font-family: var(--font-body);
+      font-size: 12px;
+      line-height: 17px;
+      color: var(--neutral-200);
+    }
+
+    .mcp-step-text strong {
+      font-weight: 600;
+      color: var(--neutral-50);
+    }
+
+    /* ── Pill + input + button consistency overrides ── */
+    .chip { height: 28px; padding: 0 12px; }
+    .conn-pill-rich { height: 28px; padding: 0 12px 0 6px; }
+    .integration-pill { width: 24px; height: 24px; }
+    .conn-req-input { height: 36px; }
+    .conn-req-btn { height: 36px; }
+    .intro-banner-btn-primary { height: 36px; }
+    .intro-banner-btn-ghost { height: 36px; }
+
+    /* ── Agent library section labels ── */
+    .agents-section-label {
+      display: flex; align-items: center; gap: 10px;
+      margin: 0 0 12px;
+    }
+    .agents-section-line {
+      flex: 1; height: 1px; background: var(--border-subtle);
+    }
+    .agents-section-label-text {
+      font-family: var(--font-display); font-weight: 600; font-size: 11px;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary);
+      white-space: nowrap;
+    }
+    .agent-live-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 3px 10px; border-radius: var(--radius-pill);
+      background: var(--positive-50); color: var(--positive-800);
+      font-family: var(--font-display); font-weight: 600; font-size: 11px;
+      border: 1px solid #A7F0C4; white-space: nowrap; flex-shrink: 0;
+    }
+    .agent-live-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--positive-600);
+      animation: livePulse 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes livePulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    /* Coming-soon card state */
+    .agent-card.coming-soon {
+      opacity: 0.62; cursor: default;
+      background: var(--bg-subtle);
+    }
+    .agent-card.coming-soon:hover {
+      border-color: var(--border-subtle);
+      box-shadow: none;
+    }
+    /* Agent headline — promoted to hero after flow-chain removal */
+    .agent-headline { font-size: 17px; line-height: 24px; letter-spacing: -0.005em; font-weight: 600; margin-bottom: 14px; }
+    .agent-card { min-height: 190px; }
+    .agent-card-head { margin-bottom: 14px; }
+
+    /* ══════════════════════════════════════════════════════
+       TYPOGRAPHY UNIFICATION (Claude UX Chief pass)
+       Single canonical type scale — applied everywhere:
+       H1   32 / 40 / 700 / -0.01em   (page heading)
+       H2   20 / 26 / 600 / -0.005em  (section heading)
+       H3   15 / 21 / 600             (card heading)
+       BODY 14 / 20 / 500             (page subtext, kpi label)
+       META 13 / 19 / 400             (default body)
+       SM   12 / 17 / 500             (meta, captions)
+       OVL  11 / 16 / 600 / 0.08em UPR (overlines, tags)
+       STAT 24 / 29 / 700             (kpi value)
+    ══════════════════════════════════════════════════════ */
+
+    /* Legacy heading classes promoted to canonical scale */
+    .page-heading {
+      font-family: var(--font-display); font-size: 32px; line-height: 40px;
+      font-weight: 700; letter-spacing: -0.01em; color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .page-subheading {
+      font-family: var(--font-display); font-size: 14px; line-height: 20px;
+      font-weight: 500; color: var(--text-secondary);
+    }
+    .section-title, .faq-heading {
+      font-family: var(--font-display); font-size: 20px; line-height: 26px;
+      font-weight: 600; letter-spacing: -0.005em; color: var(--text-primary);
+    }
+    /* Hero heading slightly bigger but on same scale */
+    .mcp-hero-heading { font-size: 24px; line-height: 30px; letter-spacing: -0.005em; font-weight: 700; }
+    /* Card-internal heading (small, used inside mcp-setup-card) */
+    .mcp-setup-card .section-title { font-size: 14px; line-height: 19px; }
+
+    /* Section header pattern — unified spacing */
+    .section-row, .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 40px 0 16px;
+      gap: 16px;
+    }
+    /* First section after KPI strip gets tighter top */
+    .kpi-strip + .section-row,
+    .kpi-strip + .section-header { margin-top: 32px; }
+
+    /* Collapse inter-section dividers — headings provide separation */
+    .divider { display: none; }
+    .agent-grid,
+    .mcp-tools-grid,
+    .mcp-setup-grid,
+    .modes-grid,
+    .overview-strip,
+    .template-grid { margin-bottom: 0; }
+
+    /* Section-row right-side meta — unified style */
+    .section-meta {
+      font-family: var(--font-body); font-size: 13px;
+      color: var(--text-tertiary); flex-shrink: 0;
+    }
+
+    /* Small badge variant (used for SOON / BETA) */
+    .tag-sm { font-size: 9px; padding: 2px 6px; letter-spacing: 0.06em; line-height: 13px; }
+
+    /* ══════════════════════════════════
+       CONNECTIONS VIEW
+    ══════════════════════════════════ */
+    .cn-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 0;
+    }
+    .cn-card {
+      background: var(--bg-default);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 180px;
+      transition: border-color 150ms, box-shadow 150ms;
+    }
+    .cn-card:hover {
+      border-color: var(--border-default);
+      box-shadow: 0 1px 2px rgba(27,27,27,.06), 0 1px 3px rgba(27,27,27,.08);
+    }
+    .cn-card.unavailable { opacity: 0.62; }
+    .cn-card.unavailable:hover { border-color: var(--border-subtle); box-shadow: none; }
+
+    .cn-card-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cn-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cn-card-name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 20px;
+      color: var(--text-primary);
+    }
+    .cn-card-account {
+      font-family: var(--font-body);
+      font-size: 12px;
+      line-height: 16px;
+      color: var(--text-tertiary);
+      margin-top: 2px;
+    }
+    .cn-status {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .cn-status.connected {
+      background: var(--positive-50);
+      color: var(--positive-800);
+      border: 1px solid #A7F0C4;
+    }
+    .cn-status.available {
+      background: var(--bg-subtle);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+    }
+    .cn-status.soon {
+      background: var(--warning-50);
+      color: var(--warning-700);
+      border: 1px solid #F5D58F;
+    }
+    .cn-status-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: currentColor;
+    }
+    .cn-card-desc {
+      font-family: var(--font-body);
+      font-size: 13px;
+      line-height: 19px;
+      color: var(--text-secondary);
+    }
+    .cn-card-meta {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+    .cn-card-foot {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .cn-link {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--text-secondary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 0;
+    }
+    .cn-link:hover { color: var(--text-primary); }
+    .cn-link.danger:hover { color: var(--negative-500); }
+    .cn-link.primary { color: var(--accent-600); }
+    .cn-link.primary:hover { color: var(--accent-700); }
+    .cn-btn-connect {
+      margin-left: auto;
+      height: 28px;
+      padding: 0 12px;
+      background: var(--text-primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-md);
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: opacity 150ms;
+    }
+    .cn-btn-connect:hover { opacity: 0.85; }
+    .cn-btn-manage {
+      margin-left: auto;
+      height: 28px;
+      padding: 0 12px;
+      background: var(--bg-default);
+      color: var(--text-primary);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-md);
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: background 150ms;
+    }
+    .cn-btn-manage:hover { background: var(--bg-subtle); }
+
+    /* ── Responsive ── */
+    @media (max-width: 1100px) {
+      .template-grid, .mcp-tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .cf-sidebar { display: none; }
+      .template-grid, .modes-grid, .overview-strip, .mcp-setup-grid { grid-template-columns: 1fr; }
+      .mcp-tools-grid { grid-template-columns: repeat(2, 1fr); }
+      .cf-search { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       CASHFREE DASHBOARD TOPNAV
+  ══════════════════════════════════ -->
+  <header class="cf-topnav">
+    <div class="cf-topnav-logo">
+      <!-- Cashfree PG logo -->
+      <div class="cf-pg-icon">
+        <i data-lucide="check" style="width:13px;height:13px;stroke-width:3;"></i>
+      </div>
+      <span class="cf-pg-label">Payment Gateway</span>
+    </div>
+
+    <div class="cf-divider-v" style="margin:0 8px;"></div>
+
+    <!-- Search -->
+    <div class="cf-search">
+      <i data-lucide="sparkles" style="width:13px;height:13px;color:rgba(255,255,255,0.5);"></i>
+      <span>Success rate...</span>
+      <div style="margin-left:6px;"><span class="cf-search-beta">BETA</span></div>
+      <i data-lucide="mic" style="width:13px;height:13px;margin-left:auto;"></i>
+    </div>
+
+    <div class="cf-topnav-actions">
+      <button class="cf-topnav-btn cf-btn-create">
+        <i data-lucide="plus" style="width:13px;height:13px;"></i>
+        + Create
+      </button>
+      <button class="cf-topnav-btn cf-btn-outline">Developers</button>
+      <button class="cf-topnav-btn cf-btn-switch">Switch to Test</button>
+      <div class="cf-divider-v"></div>
+      <button class="cf-topnav-icon-btn"><i data-lucide="bell" style="width:16px;height:16px;"></i></button>
+      <button class="cf-topnav-icon-btn"><i data-lucide="bell-ring" style="width:16px;height:16px;"></i></button>
+      <button class="cf-topnav-icon-btn"><i data-lucide="settings" style="width:16px;height:16px;"></i></button>
+      <div class="cf-avatar">C</div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════
+       SHELL: SIDEBAR + MAIN
+  ══════════════════════════════════ -->
+  <div class="shell">
+
+    <!-- ── Cashfree left sidebar ── -->
+    <aside class="cf-sidebar">
+
+      <!-- Summary -->
+      <div class="cf-nav-item" style="padding-top:12px;">
+        <i data-lucide="layout-dashboard" class="nav-icon"></i>
+        Summary
+        <i data-lucide="chevron-up" class="nav-arrow" style="width:14px;height:14px;"></i>
+      </div>
+      <div class="cf-nav-sub">
+        <div class="cf-nav-item">Overview</div>
+        <div class="cf-nav-item">Analytics</div>
+      </div>
+
+      <div class="cf-nav-item">
+        <i data-lucide="arrow-left-right" class="nav-icon"></i>
+        Transactions
+        <i data-lucide="chevron-down" class="nav-arrow" style="width:14px;height:14px;"></i>
+      </div>
+      <div class="cf-nav-item">
+        <i data-lucide="banknote" class="nav-icon"></i>
+        Settlements
+        <i data-lucide="chevron-down" class="nav-arrow" style="width:14px;height:14px;"></i>
+      </div>
+      <div class="cf-nav-item">
+        <i data-lucide="building-2" class="nav-icon"></i>
+        VBA Configuration
+        <i data-lucide="chevron-down" class="nav-arrow" style="width:14px;height:14px;"></i>
+      </div>
+      <div class="cf-nav-item">
+        <i data-lucide="link" class="nav-icon"></i>
+        Payment Links
+        <i data-lucide="chevron-down" class="nav-arrow" style="width:14px;height:14px;"></i>
+      </div>
+      <div class="cf-nav-item">
+        <i data-lucide="grid-2x2" class="nav-icon"></i>
+        Apps
+      </div>
+      <div class="cf-nav-item">
+        <i data-lucide="users" class="nav-icon"></i>
+        Customers
+        <i data-lucide="chevron-down" class="nav-arrow" style="width:14px;height:14px;"></i>
+      </div>
+
+      <!-- PG Products -->
+      <div class="cf-nav-section">PG Products</div>
+      <div class="cf-nav-item">
+        <i data-lucide="mouse-pointer-click" class="nav-icon"></i>
+        One Click Checkout
+        <i data-lucide="chevron-down" class="nav-arrow" style="width:14px;height:14px;"></i>
+      </div>
+      <div class="cf-nav-item">
+        <i data-lucide="split" class="nav-icon"></i>
+        Easy Split
+      </div>
+      <div class="cf-nav-item">
+        <i data-lucide="file-text" class="nav-icon"></i>
+        Payment Forms
+        <i data-lucide="chevron-down" class="nav-arrow" style="width:14px;height:14px;"></i>
+      </div>
+      <div class="cf-nav-item">
+        <i data-lucide="square-mouse-pointer" class="nav-icon"></i>
+        Payment Buttons
+      </div>
+      <div class="cf-nav-item">
+        <i data-lucide="package" class="nav-icon"></i>
+        Product Links
+      </div>
+      <div class="cf-nav-item">
+        <i data-lucide="smartphone" class="nav-icon"></i>
+        SoftPOS
+        <i data-lucide="chevron-down" class="nav-arrow" style="width:14px;height:14px;"></i>
+      </div>
+      <div class="cf-nav-item">
+        <i data-lucide="git-branch" class="nav-icon"></i>
+        flowWise
+      </div>
+      <div class="cf-nav-item">
+        <i data-lucide="layers" class="nav-icon"></i>
+        Embeddable Components
+      </div>
+
+      <!-- Relay section -->
+      <div class="cf-nav-relay-section">
+        <div class="cf-nav-section" style="color:var(--accent-800);">Relay</div>
+        <div class="cf-nav-item active" id="nav-builder" onclick="switchView('builder')">
+          <i data-lucide="workflow" class="nav-icon"></i>
+          Agent builder
+        </div>
+        <div class="cf-nav-item" id="nav-connections" onclick="switchView('connections')">
+          <i data-lucide="plug-zap" class="nav-icon"></i>
+          Connections
+        </div>
+        <div class="cf-nav-item" id="nav-mcp" onclick="switchView('mcp')">
+          <i data-lucide="terminal" class="nav-icon"></i>
+          MCP server
+        </div>
+      </div>
+
+      <div class="cf-nav-item">
+        <i data-lucide="shield" class="nav-icon"></i>
+        RiskShield
+        <i data-lucide="chevron-down" class="nav-arrow" style="width:14px;height:14px;"></i>
+      </div>
+      <div class="cf-nav-item">
+        <i data-lucide="bar-chart-2" class="nav-icon"></i>
+        Reports
+      </div>
+      <div class="cf-nav-item">
+        <i data-lucide="code-2" class="nav-icon"></i>
+        Developers
+        <i data-lucide="chevron-down" class="nav-arrow" style="width:14px;height:14px;"></i>
+      </div>
+      <div class="cf-nav-item" style="margin-bottom:16px;">
+        <i data-lucide="alert-triangle" class="nav-icon"></i>
+        Downtimes
+      </div>
+
+    </aside>
+
+    <!-- ══════════════════════════════════
+         MAIN CONTENT
+    ══════════════════════════════════ -->
+    <div class="main">
+
+      <!-- ══ VIEW: WORKFLOW BUILDER ══ -->
+      <div id="view-builder" class="view active">
+        <div class="content">
+
+          <!-- Page header -->
+          <div class="page-header">
+            <div class="page-header-text">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+                <span class="cm-section-overline" style="color:var(--accent-600);">Agentic Workflows</span>
+                <span class="tag tag-accent tag-sm">BETA</span>
+              </div>
+              <h1 class="cm-page-heading">Relay</h1>
+              <p class="cm-page-subtext">Turn payment events into business outcomes — automatically, without code or a developer.</p>
+            </div>
+            <div style="display:flex;gap:8px;align-items:flex-end;padding-bottom:4px;">
+              <button class="btn btn-secondary" onclick="switchView('mcp')"><span class="icon icon-16" data-lucide="terminal"></span><span>Access via MCP</span></button>
+              <button class="btn btn-primary"><span class="icon icon-16" data-lucide="plus"></span><span>Build a workflow</span></button>
+            </div>
+          </div>
+
+          <!-- Relay prompt — Claude-style -->
+          <div class="rp-surface">
+            <div class="rp-input-wrap">
+              <textarea
+                id="workflow-prompt"
+                class="rp-textarea"
+                placeholder="Describe a business outcome — Relay will assemble the workflow."
+                oninput="rpToggleSend(this)"></textarea>
+              <button class="rp-send empty" id="rp-send-btn" onclick="submitPrompt()">
+                <i data-lucide="arrow-up" style="width:15px;height:15px;"></i>
+              </button>
+            </div>
+
+            <div class="prompt-success" id="prompt-success" style="padding:10px 18px;border-top:1px solid var(--border-subtle);display:none;align-items:center;gap:8px;font-family:var(--font-body);font-size:13px;color:var(--positive-800);">
+              <i data-lucide="check-circle" style="width:14px;height:14px;color:var(--positive-600);flex-shrink:0;"></i>
+              Request received — we'll notify you when it's ready.
+            </div>
+
+            <div class="rp-divider"></div>
+
+            <div class="rp-suggestions">
+              <button class="rp-chip"
+                data-prompt="Find where my business is losing revenue across payment events — drops, failures, RTO, disputes — and rank by recoverable rupees"
+                onclick="fillPrompt(this)">
+                <span class="rp-chip-title">Find revenue leaks</span>
+                <span class="rp-chip-desc">Where am I losing money on payments?</span>
+              </button>
+              <button class="rp-chip"
+                data-prompt="Notify my team on Slack and WhatsApp the moment any payment above ₹10,000 succeeds — with customer details"
+                onclick="fillPrompt(this)">
+                <span class="rp-chip-title">High-value alerts</span>
+                <span class="rp-chip-desc">React to big-ticket payments in real time</span>
+              </button>
+              <button class="rp-chip"
+                data-prompt="Confirm every COD order on WhatsApp before dispatch to cut return-to-origin losses"
+                onclick="fillPrompt(this)">
+                <span class="rp-chip-title">Cut COD returns</span>
+                <span class="rp-chip-desc">Verify COD orders before they ship</span>
+              </button>
+              <button class="rp-chip"
+                data-prompt="Auto-approve refunds under ₹500, route anything above ₹5,000 to a finance approver on Slack"
+                onclick="fillPrompt(this)">
+                <span class="rp-chip-title">Smarter refunds</span>
+                <span class="rp-chip-desc">Auto-approve small, route large for review</span>
+              </button>
+            </div>
+
+            <div class="rp-footer">
+              <span class="icon icon-14" data-lucide="terminal"></span>
+              Connect the
+              <a href="#" onclick="switchView('mcp');return false;">Relay MCP server</a>
+              to Claude or Cursor for code-first workflows.
+            </div>
+          </div>
+
+
+          <!-- KPI strip -->
+          <div class="kpi-strip">
+            <div class="kpi-card">
+              <div class="kpi-label">Active workflows</div>
+              <div class="kpi-value">5</div>
+              <div class="kpi-delta"><span class="icon icon-14" data-lucide="trending-up"></span> 1 <span class="kpi-delta-meta">added this week</span></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Business actions today</div>
+              <div class="kpi-value">1,428</div>
+              <div class="kpi-delta"><span class="icon icon-14" data-lucide="trending-up"></span> 22% <span class="kpi-delta-meta">vs yesterday</span></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Ops hours saved</div>
+              <div class="kpi-value">94</div>
+              <div class="kpi-delta"><span class="icon icon-14" data-lucide="trending-up"></span> 18 <span class="kpi-delta-meta">vs last week</span></div>
+            </div>
+          </div>
+
+          <!-- Workflow library -->
+          <div class="section-row">
+            <div>
+              <div class="cm-section-overline" style="margin-bottom:4px;">Workflow library</div>
+              <h2 class="cm-section-heading">Automate any payment outcome</h2>
+            </div>
+          </div>
+
+          <!-- Filter bar -->
+          <div class="filter-bar">
+            <div class="filter-search">
+              <span class="filter-search-icon icon icon-16" data-lucide="search"></span>
+              <input type="text" placeholder="Search agents by name or use case…" />
+            </div>
+            <span class="chip active">All <span class="chip-count">11</span></span>
+            <span class="chip">Reduce losses <span class="chip-count">4</span></span>
+            <span class="chip">Grow revenue <span class="chip-count">3</span></span>
+            <span class="chip">Stay informed <span class="chip-count">3</span></span>
+            <span class="chip">Compliance <span class="chip-count">1</span></span>
+          </div>
+
+          <!-- Agent grid -->
+          <div id="agent-library">
+
+            <!-- ── Live workflows ── -->
+            <div class="agents-section-label">
+              <span class="agents-section-label-text">Live now</span>
+              <div class="agents-section-line"></div>
+              <span class="agent-live-badge"><span class="agent-live-dot"></span>5 workflows running</span>
+            </div>
+
+            <div class="agent-grid">
+
+              <!-- Booked appointments -->
+              <div class="agent-card" onclick="window.location.href='https://merchant.cashfree.com/workflowbuilder'">
+                <div class="agent-card-head">
+                  <div class="agent-icon acc"><i data-lucide="calendar-check" style="width:16px;height:16px;"></i></div>
+                  <span class="agent-name">Booked appointments</span>
+                  <span class="agent-status-dot" title="Live"></span>
+                </div>
+                <div class="agent-headline">Turn every paid order into a confirmed appointment</div>
+                <div class="agent-meta">
+                  <span class="agent-meta-item"><strong>Services · clinics · SaaS</strong></span>
+                  <span class="agent-meta-item">·</span>
+                  <span class="agent-meta-item">2 min setup</span>
+                  <span class="agent-meta-item">·</span>
+                  <span class="agent-meta-item">1,420 merchants</span>
+                </div>
+                <div class="agent-card-foot">
+                  <div class="integration-pill cf">CF</div>
+                  <div class="integration-pill" style="background:#4285F4;color:white;">GC</div>
+                  <div class="integration-pill" style="background:#006BFF;color:white;">CL</div>
+                  <span class="agent-card-cta">Activate <span class="icon icon-14" data-lucide="arrow-right"></span></span>
+                </div>
+              </div>
+
+              <!-- High-value alerts -->
+              <div class="agent-card" onclick="window.location.href='https://merchant.cashfree.com/workflowbuilder'">
+                <div class="agent-card-head">
+                  <div class="agent-icon warn"><i data-lucide="bell-ring" style="width:16px;height:16px;"></i></div>
+                  <span class="agent-name">High-value alerts</span>
+                  <span class="agent-status-dot" title="Live"></span>
+                </div>
+                <div class="agent-headline">React to big-ticket payments the second they land</div>
+                <div class="agent-meta">
+                  <span class="agent-meta-item"><strong>Every business</strong></span>
+                  <span class="agent-meta-item">·</span>
+                  <span class="agent-meta-item">3 min setup</span>
+                  <span class="agent-meta-item">·</span>
+                  <span class="agent-meta-item">2,831 merchants</span>
+                </div>
+                <div class="agent-card-foot">
+                  <div class="integration-pill cf">CF</div>
+                  <div class="integration-pill wa">W</div>
+                  <div class="integration-pill sl">S</div>
+                  <div class="integration-pill" style="background:#EA4335;color:white;">Gm</div>
+                  <span class="agent-card-cta">Activate <span class="icon icon-14" data-lucide="arrow-right"></span></span>
+                </div>
+              </div>
+
+              <!-- Transaction ledger -->
+              <div class="agent-card" onclick="window.location.href='https://merchant.cashfree.com/workflowbuilder'">
+                <div class="agent-card-head">
+                  <div class="agent-icon pos"><i data-lucide="table-2" style="width:16px;height:16px;"></i></div>
+                  <span class="agent-name">Transaction ledger</span>
+                  <span class="agent-status-dot" title="Live"></span>
+                </div>
+                <div class="agent-headline">A live, audit-ready record of every transaction</div>
+                <div class="agent-meta">
+                  <span class="agent-meta-item"><strong>Finance · ops teams</strong></span>
+                  <span class="agent-meta-item">·</span>
+                  <span class="agent-meta-item">2 min setup</span>
+                  <span class="agent-meta-item">·</span>
+                  <span class="agent-meta-item">3,247 merchants</span>
+                </div>
+                <div class="agent-card-foot">
+                  <div class="integration-pill cf">CF</div>
+                  <div class="integration-pill gs">G</div>
+                  <span class="agent-card-cta">Activate <span class="icon icon-14" data-lucide="arrow-right"></span></span>
+                </div>
+              </div>
+
+              <!-- Failure intelligence -->
+              <div class="agent-card" onclick="window.location.href='https://merchant.cashfree.com/workflowbuilder'">
+                <div class="agent-card-head">
+                  <div class="agent-icon neg"><i data-lucide="alert-circle" style="width:16px;height:16px;"></i></div>
+                  <span class="agent-name">Failure intelligence</span>
+                  <span class="agent-status-dot" title="Live"></span>
+                </div>
+                <div class="agent-headline">Catch payment failures before they cost a customer</div>
+                <div class="agent-meta">
+                  <span class="agent-meta-item"><strong>Every business</strong></span>
+                  <span class="agent-meta-item">·</span>
+                  <span class="agent-meta-item">1 min setup</span>
+                  <span class="agent-meta-item">·</span>
+                  <span class="agent-meta-item">1,889 merchants</span>
+                </div>
+                <div class="agent-card-foot">
+                  <div class="integration-pill cf">CF</div>
+                  <div class="integration-pill sl">S</div>
+                  <div class="integration-pill" style="background:#EA4335;color:white;">Gm</div>
+                  <span class="agent-card-cta">Activate <span class="icon icon-14" data-lucide="arrow-right"></span></span>
+                </div>
+              </div>
+
+              <!-- Voice cart recovery -->
+              <div class="agent-card" onclick="window.location.href='https://merchant.cashfree.com/workflowbuilder'">
+                <div class="agent-card-head">
+                  <div class="agent-icon acc"><i data-lucide="phone-call" style="width:16px;height:16px;"></i></div>
+                  <span class="agent-name">Voice cart recovery</span>
+                  <span class="agent-status-dot" title="Live"></span>
+                </div>
+                <div class="agent-headline">Win back abandoned shoppers before the lead cools off</div>
+                <div class="agent-meta">
+                  <span class="agent-meta-item"><strong>D2C · e-commerce</strong></span>
+                  <span class="agent-meta-item">·</span>
+                  <span class="agent-meta-item">10 min setup</span>
+                  <span class="agent-meta-item">·</span>
+                  <span class="agent-meta-item">234 merchants</span>
+                </div>
+                <div class="agent-card-foot">
+                  <div class="integration-pill cf">CF</div>
+                  <div class="integration-pill" style="background:#FF6B35;color:white;">Bn</div>
+                  <span class="agent-card-cta">Activate <span class="icon icon-14" data-lucide="arrow-right"></span></span>
+                </div>
+              </div>
+
+            </div><!-- /agent-grid live -->
+
+            <!-- ── Coming soon ── -->
+            <div class="agents-section-label" style="margin-top:36px;">
+              <span class="agents-section-label-text">Coming soon</span>
+              <div class="agents-section-line"></div>
+              <span style="font-family:var(--font-display);font-weight:500;font-size:11px;color:var(--text-tertiary);white-space:nowrap;">Vote for what ships next</span>
+            </div>
+
+            <div class="agent-grid">
+
+              <!-- COD verification -->
+              <div class="agent-card coming-soon">
+                <div class="agent-card-head">
+                  <div class="agent-icon warn"><i data-lucide="shield-check" style="width:16px;height:16px;"></i></div>
+                  <span class="agent-name">COD verification</span>
+                  <span class="tag tag-neutral tag-sm" style="margin-left:auto;">SOON</span>
+                </div>
+                <div class="agent-headline">Cut return-to-origin losses on every COD order</div>
+                <div class="agent-meta" style="margin-bottom:auto;">
+                  <span class="agent-meta-item"><strong>D2C · e-commerce</strong></span>
+                </div>
+                <div class="agent-card-foot">
+                  <div class="integration-pill cf">CF</div>
+                  <div class="integration-pill wa">W</div>
+                  <button class="vote-btn" data-votes="67" onclick="voteAgent(this)" style="margin-left:auto;">▲ 67 votes</button>
+                </div>
+              </div>
+
+              <!-- Chargeback evidence -->
+              <div class="agent-card coming-soon">
+                <div class="agent-card-head">
+                  <div class="agent-icon neg"><i data-lucide="file-text" style="width:16px;height:16px;"></i></div>
+                  <span class="agent-name">Chargeback evidence</span>
+                  <span class="tag tag-neutral tag-sm" style="margin-left:auto;">SOON</span>
+                </div>
+                <div class="agent-headline">Win disputes with AI-drafted evidence — every time</div>
+                <div class="agent-meta" style="margin-bottom:auto;">
+                  <span class="agent-meta-item"><strong>Every business</strong></span>
+                </div>
+                <div class="agent-card-foot">
+                  <div class="integration-pill cf">CF</div>
+                  <div class="integration-pill sl">S</div>
+                  <button class="vote-btn" data-votes="114" onclick="voteAgent(this)" style="margin-left:auto;">▲ 114 votes</button>
+                </div>
+              </div>
+
+              <!-- Refund triage -->
+              <div class="agent-card coming-soon">
+                <div class="agent-card-head">
+                  <div class="agent-icon acc"><i data-lucide="undo-2" style="width:16px;height:16px;"></i></div>
+                  <span class="agent-name">Refund triage</span>
+                  <span class="tag tag-neutral tag-sm" style="margin-left:auto;">SOON</span>
+                </div>
+                <div class="agent-headline">Auto-approve small refunds, route large ones for review</div>
+                <div class="agent-meta" style="margin-bottom:auto;">
+                  <span class="agent-meta-item"><strong>D2C · SaaS</strong></span>
+                </div>
+                <div class="agent-card-foot">
+                  <div class="integration-pill cf">CF</div>
+                  <div class="integration-pill sl">S</div>
+                  <button class="vote-btn" data-votes="89" onclick="voteAgent(this)" style="margin-left:auto;">▲ 89 votes</button>
+                </div>
+              </div>
+
+              <!-- Approvals on WhatsApp -->
+              <div class="agent-card coming-soon">
+                <div class="agent-card-head">
+                  <div class="agent-icon pos"><i data-lucide="message-square" style="width:16px;height:16px;"></i></div>
+                  <span class="agent-name">Approvals on WhatsApp</span>
+                  <span class="tag tag-neutral tag-sm" style="margin-left:auto;">SOON</span>
+                </div>
+                <div class="agent-headline">Approve high-value actions from your phone, in seconds</div>
+                <div class="agent-meta" style="margin-bottom:auto;">
+                  <span class="agent-meta-item"><strong>Finance · ops teams</strong></span>
+                </div>
+                <div class="agent-card-foot">
+                  <div class="integration-pill cf">CF</div>
+                  <div class="integration-pill wa">W</div>
+                  <button class="vote-btn" data-votes="53" onclick="voteAgent(this)" style="margin-left:auto;">▲ 53 votes</button>
+                </div>
+              </div>
+
+              <!-- Payment link nudge -->
+              <div class="agent-card coming-soon">
+                <div class="agent-card-head">
+                  <div class="agent-icon neu"><i data-lucide="link-2" style="width:16px;height:16px;"></i></div>
+                  <span class="agent-name">Payment link nudge</span>
+                  <span class="tag tag-neutral tag-sm" style="margin-left:auto;">SOON</span>
+                </div>
+                <div class="agent-headline">Get paid faster — recover unpaid payment links automatically</div>
+                <div class="agent-meta" style="margin-bottom:auto;">
+                  <span class="agent-meta-item"><strong>Services · freelancers</strong></span>
+                </div>
+                <div class="agent-card-foot">
+                  <div class="integration-pill cf">CF</div>
+                  <div class="integration-pill wa">W</div>
+                  <button class="vote-btn" data-votes="78" onclick="voteAgent(this)" style="margin-left:auto;">▲ 78 votes</button>
+                </div>
+              </div>
+
+              <!-- Shopify sync -->
+              <div class="agent-card coming-soon">
+                <div class="agent-card-head">
+                  <div class="agent-icon" style="background:#F0FFF4;color:#3A7D44;"><i data-lucide="shopping-bag" style="width:16px;height:16px;"></i></div>
+                  <span class="agent-name">Shopify sync</span>
+                  <span class="tag tag-neutral tag-sm" style="margin-left:auto;">SOON</span>
+                </div>
+                <div class="agent-headline">Sync every Shopify order with its payment outcome</div>
+                <div class="agent-meta" style="margin-bottom:auto;">
+                  <span class="agent-meta-item"><strong>Shopify merchants</strong></span>
+                </div>
+                <div class="agent-card-foot">
+                  <div class="integration-pill cf">CF</div>
+                  <div class="integration-pill sh">Sh</div>
+                  <button class="vote-btn" data-votes="142" onclick="voteAgent(this)" style="margin-left:auto;">▲ 142 votes</button>
+                </div>
+              </div>
+
+            </div><!-- /agent-grid coming-soon -->
+
+          </div><!-- /agent-library -->
+
+
+          <div class="divider"></div>
+
+          <!-- Connectors -->
+          <div class="section-row">
+            <div>
+              <div class="cm-section-overline" style="margin-bottom:4px;">Integrations</div>
+              <h2 class="cm-section-heading">Plugs into the tools you already run on</h2>
+            </div>
+            <span class="section-meta">9 live · 4 coming soon</span>
+          </div>
+          <div class="connectors-card">
+
+            <!-- Live -->
+            <div class="connectors-section">
+              <div class="connectors-section-label">
+                <span class="overline">Live</span>
+                <span class="tag tag-success" style="font-size:9px;padding:2px 6px;">9 connectors</span>
+              </div>
+              <div class="connectors-pills">
+                <span class="conn-pill-rich">
+                  <div class="conn-pill-icon" style="background:#F0EFFF;"><i data-lucide="message-square" style="width:11px;height:11px;color:#4A154B;"></i></div>Slack
+                </span>
+                <span class="conn-pill-rich">
+                  <div class="conn-pill-icon" style="background:#E6FAF0;"><i data-lucide="message-circle" style="width:11px;height:11px;color:#25D366;"></i></div>WhatsApp
+                </span>
+                <span class="conn-pill-rich">
+                  <div class="conn-pill-icon" style="background:#FFF1F0;"><i data-lucide="mail" style="width:11px;height:11px;color:#EA4335;"></i></div>Gmail
+                </span>
+                <span class="conn-pill-rich">
+                  <div class="conn-pill-icon" style="background:#F0FFF4;"><i data-lucide="table-2" style="width:11px;height:11px;color:#34A853;"></i></div>Google Sheets
+                </span>
+                <span class="conn-pill-rich">
+                  <div class="conn-pill-icon" style="background:#EFF6FF;"><i data-lucide="calendar-check" style="width:11px;height:11px;color:#006BFF;"></i></div>Calendly
+                </span>
+                <span class="conn-pill-rich">
+                  <div class="conn-pill-icon" style="background:#FFF7ED;"><i data-lucide="file-text" style="width:11px;height:11px;color:#C2410C;"></i></div>Zoho Invoice
+                </span>
+                <span class="conn-pill-rich">
+                  <div class="conn-pill-icon" style="background:#F5F5F5;"><i data-lucide="cpu" style="width:11px;height:11px;color:#1A1A1A;"></i></div>OpenAI
+                </span>
+                <span class="conn-pill-rich">
+                  <div class="conn-pill-icon" style="background:#F0F9FF;"><i data-lucide="sparkles" style="width:11px;height:11px;color:#1A73E8;"></i></div>Gemini
+                </span>
+                <span class="conn-pill-rich">
+                  <div class="conn-pill-icon" style="background:var(--neutral-950);"><i data-lucide="globe" style="width:11px;height:11px;color:var(--neutral-400);"></i></div>HTTP request
+                </span>
+              </div>
+            </div>
+
+            <div class="connectors-divider"></div>
+
+            <!-- Coming soon -->
+            <div class="connectors-section">
+              <div class="connectors-section-label">
+                <span class="overline">Coming soon</span>
+              </div>
+              <div class="connectors-pills">
+                <span class="conn-pill-rich soon">
+                  <div class="conn-pill-icon" style="background:#F0FFF4;"><i data-lucide="shopping-bag" style="width:11px;height:11px;color:#96BF48;"></i></div>Shopify
+                </span>
+                <span class="conn-pill-rich soon">
+                  <div class="conn-pill-icon" style="background:#E6FAF0;"><i data-lucide="users" style="width:11px;height:11px;color:#25D366;"></i></div>WhatsApp HITL
+                </span>
+                <span class="conn-pill-rich soon">
+                  <div class="conn-pill-icon" style="background:#F0F9FF;"><i data-lucide="folder" style="width:11px;height:11px;color:#1A73E8;"></i></div>Google Drive
+                </span>
+                <span class="conn-pill-rich soon">
+                  <div class="conn-pill-icon" style="background:#FFF7F0;"><i data-lucide="bot" style="width:11px;height:11px;color:#D97706;"></i></div>Anthropic Claude
+                </span>
+              </div>
+            </div>
+
+            <div class="connectors-divider"></div>
+
+            <!-- Request a connector -->
+            <div class="connectors-request-row">
+              <div style="flex-shrink:0;">
+                <div class="conn-req-label">Don't see your tool?</div>
+                <div class="conn-req-hint">Name it below — we'll add it to the roadmap.</div>
+              </div>
+              <div class="conn-req-inputs" id="conn-req-inputs">
+                <input
+                  type="text"
+                  id="conn-req-input"
+                  class="conn-req-input"
+                  placeholder="e.g. HubSpot, Tally, Razorpay, Shopify..."
+                />
+                <button class="conn-req-btn" onclick="submitConnReq()">
+                  <i data-lucide="send" style="width:12px;height:12px;"></i>
+                  Request
+                </button>
+              </div>
+              <div class="conn-req-success" id="conn-req-success">
+                <i data-lucide="check-circle" style="width:14px;height:14px;color:var(--positive-600);"></i>
+                Noted — added to the roadmap.
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="divider"></div>
+
+          <!-- FAQ -->
+          <div class="section-row">
+            <div>
+              <div class="cm-section-overline" style="margin-bottom:4px;">Help</div>
+              <h2 class="cm-section-heading">Frequently asked questions</h2>
+            </div>
+          </div>
+          <div class="faq-card">
+            <div class="faq-item open">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span class="faq-q-text">What is Relay?</span>
+                <i data-lucide="chevron-up" class="faq-chevron" style="width:16px;height:16px;"></i>
+              </button>
+              <div class="faq-a">Relay is Cashfree's payment-native agent platform. It connects your Cashfree payment events — success, failure, refund, dispute — to the tools you already use: Slack, WhatsApp, Google Sheets, Calendly and more. Build agents in 30 minutes without code or a developer.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span class="faq-q-text">Do I need a developer to set up Relay?</span>
+                <i data-lucide="chevron-down" class="faq-chevron" style="width:16px;height:16px;"></i>
+              </button>
+              <div class="faq-a">No. Relay has a visual drag-and-drop builder inside your Cashfree Dashboard — no terminal, no code. You can also use the Claude Desktop + MCP mode: connect the Relay MCP server and describe your agent in plain English. Claude configures it automatically.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span class="faq-q-text">What payment triggers are available?</span>
+                <i data-lucide="chevron-down" class="faq-chevron" style="width:16px;height:16px;"></i>
+              </button>
+              <div class="faq-a">Payment success, payment failure, payment dropped, refund initiated, dispute created, and simple schedule (hourly/daily). More triggers are on the roadmap: Shopify orders, customer cohort segments, incoming webhooks, and Google Drive file uploads.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span class="faq-q-text">Is Relay free?</span>
+                <i data-lucide="chevron-down" class="faq-chevron" style="width:16px;height:16px;"></i>
+              </button>
+              <div class="faq-a">Yes — Relay is free during beta. You can create and test agents immediately. Going live requires a one-time activation request, which we process quickly. Long-term pricing will be usage-based for certain agent types.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span class="faq-q-text">How is Relay different from Zapier or n8n?</span>
+                <i data-lucide="chevron-down" class="faq-chevron" style="width:16px;height:16px;"></i>
+              </button>
+              <div class="faq-a">Relay is payment-native. Cashfree payment events (success, failure, refund, dispute) are first-class triggers with typed payloads — no webhook configuration, no manual field mapping. You're not building around payments; they're built in. Relay also runs execution securely in Cashfree's cloud, so the AI cost stays with your chosen model, not with us.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span class="faq-q-text">How do I go live after testing?</span>
+                <i data-lucide="chevron-down" class="faq-chevron" style="width:16px;height:16px;"></i>
+              </button>
+              <div class="faq-a">After testing your agent in sandbox against real Cashfree events, submit an activation request from the dashboard. We typically activate within 24 hours. Once active, the agent runs automatically on every matching event.</div>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- /view-builder -->
+
+
+      <!-- ══ VIEW: CONNECTIONS ══ -->
+      <div id="view-connections" class="view">
+        <div class="content">
+
+          <!-- Page header -->
+          <div class="page-header">
+            <div class="page-header-text">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+                <span class="cm-section-overline" style="color:var(--accent-600);">Connect your stack</span>
+              </div>
+              <h1 class="cm-page-heading">Connections</h1>
+              <p class="cm-page-subtext">Connect your tools once. Reuse them across every Relay workflow.</p>
+            </div>
+            <div style="display:flex;gap:8px;align-items:flex-end;padding-bottom:4px;">
+              <button class="btn btn-secondary"><span class="icon icon-16" data-lucide="book-open"></span><span>Connection docs</span></button>
+              <button class="btn btn-primary"><span class="icon icon-16" data-lucide="plus"></span><span>Add a connection</span></button>
+            </div>
+          </div>
+
+          <!-- KPI strip -->
+          <div class="kpi-strip">
+            <div class="kpi-card">
+              <div class="kpi-label">Connected accounts</div>
+              <div class="kpi-value">6</div>
+              <div class="kpi-delta"><span class="icon icon-14" data-lucide="trending-up"></span> 2 <span class="kpi-delta-meta">added this month</span></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Available to connect</div>
+              <div class="kpi-value">3</div>
+              <div class="kpi-delta-meta" style="font-family:var(--font-body);font-size:12px;">Live integrations</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Workflows using these</div>
+              <div class="kpi-value">5</div>
+              <div class="kpi-delta-meta" style="font-family:var(--font-body);font-size:12px;">across your account</div>
+            </div>
+          </div>
+
+          <!-- Workflow library -->
+          <div class="section-row">
+            <div>
+              <div class="cm-section-overline" style="margin-bottom:4px;">Your stack</div>
+              <h2 class="cm-section-heading">Tools your team already uses</h2>
+            </div>
+          </div>
+
+          <!-- Filter bar -->
+          <div class="filter-bar">
+            <div class="filter-search">
+              <span class="filter-search-icon icon icon-16" data-lucide="search"></span>
+              <input type="text" placeholder="Search integrations…" />
+            </div>
+            <span class="chip active">All <span class="chip-count">13</span></span>
+            <span class="chip">Connected <span class="chip-count">6</span></span>
+            <span class="chip">Available <span class="chip-count">3</span></span>
+            <span class="chip">Coming soon <span class="chip-count">4</span></span>
+          </div>
+
+          <!-- Connected -->
+          <div class="agents-section-label">
+            <span class="agents-section-label-text">Connected</span>
+            <div class="agents-section-line"></div>
+            <span class="agent-live-badge"><span class="agent-live-dot"></span>6 active</span>
+          </div>
+
+          <div class="cn-grid">
+
+            <!-- Slack -->
+            <div class="cn-card">
+              <div class="cn-card-head">
+                <div class="cn-card-icon" style="background:#F0EFFF;">
+                  <i data-lucide="message-square" style="width:20px;height:20px;color:#4A154B;"></i>
+                </div>
+                <div>
+                  <div class="cn-card-name">Slack</div>
+                  <div class="cn-card-account">ops@yourbiz.com</div>
+                </div>
+                <span class="cn-status connected"><span class="cn-status-dot"></span>Connected</span>
+              </div>
+              <div class="cn-card-desc">Send alerts, summaries and approval prompts straight to your team channels.</div>
+              <div class="cn-card-meta">Used in 3 workflows · linked May 12</div>
+              <div class="cn-card-foot">
+                <button class="cn-link">Manage</button>
+                <button class="cn-btn-manage">Edit channel</button>
+              </div>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="cn-card">
+              <div class="cn-card-head">
+                <div class="cn-card-icon" style="background:#E6FAF0;">
+                  <i data-lucide="message-circle" style="width:20px;height:20px;color:#25D366;"></i>
+                </div>
+                <div>
+                  <div class="cn-card-name">WhatsApp Business</div>
+                  <div class="cn-card-account">+91 98xxxxxx12</div>
+                </div>
+                <span class="cn-status connected"><span class="cn-status-dot"></span>Connected</span>
+              </div>
+              <div class="cn-card-desc">Reach customers and staff over WhatsApp — alerts, confirmations, and approvals.</div>
+              <div class="cn-card-meta">Used in 4 workflows · linked Apr 28</div>
+              <div class="cn-card-foot">
+                <button class="cn-link">Manage</button>
+                <button class="cn-btn-manage">Switch number</button>
+              </div>
+            </div>
+
+            <!-- Gmail -->
+            <div class="cn-card">
+              <div class="cn-card-head">
+                <div class="cn-card-icon" style="background:#FFF1F0;">
+                  <i data-lucide="mail" style="width:20px;height:20px;color:#EA4335;"></i>
+                </div>
+                <div>
+                  <div class="cn-card-name">Gmail</div>
+                  <div class="cn-card-account">finance@yourbiz.com</div>
+                </div>
+                <span class="cn-status connected"><span class="cn-status-dot"></span>Connected</span>
+              </div>
+              <div class="cn-card-desc">Send transactional emails and digests from a verified sender address.</div>
+              <div class="cn-card-meta">Used in 2 workflows · linked May 3</div>
+              <div class="cn-card-foot">
+                <button class="cn-link">Manage</button>
+                <button class="cn-btn-manage">Re-authorise</button>
+              </div>
+            </div>
+
+            <!-- Google Sheets -->
+            <div class="cn-card">
+              <div class="cn-card-head">
+                <div class="cn-card-icon" style="background:#F0FFF4;">
+                  <i data-lucide="table-2" style="width:20px;height:20px;color:#34A853;"></i>
+                </div>
+                <div>
+                  <div class="cn-card-name">Google Sheets</div>
+                  <div class="cn-card-account">ledger@yourbiz.com</div>
+                </div>
+                <span class="cn-status connected"><span class="cn-status-dot"></span>Connected</span>
+              </div>
+              <div class="cn-card-desc">Append every payment, refund and settlement row to an audit-ready sheet.</div>
+              <div class="cn-card-meta">Used in 1 workflow · linked May 8</div>
+              <div class="cn-card-foot">
+                <button class="cn-link">Manage</button>
+                <button class="cn-btn-manage">Open sheet</button>
+              </div>
+            </div>
+
+            <!-- Calendly -->
+            <div class="cn-card">
+              <div class="cn-card-head">
+                <div class="cn-card-icon" style="background:#EFF6FF;">
+                  <i data-lucide="calendar-check" style="width:20px;height:20px;color:#006BFF;"></i>
+                </div>
+                <div>
+                  <div class="cn-card-name">Calendly</div>
+                  <div class="cn-card-account">team-bookings</div>
+                </div>
+                <span class="cn-status connected"><span class="cn-status-dot"></span>Connected</span>
+              </div>
+              <div class="cn-card-desc">Auto-book the right slot the moment a customer pays for an appointment.</div>
+              <div class="cn-card-meta">Used in 1 workflow · linked May 11</div>
+              <div class="cn-card-foot">
+                <button class="cn-link">Manage</button>
+                <button class="cn-btn-manage">Event types</button>
+              </div>
+            </div>
+
+            <!-- OpenAI -->
+            <div class="cn-card">
+              <div class="cn-card-head">
+                <div class="cn-card-icon" style="background:#F5F5F5;">
+                  <i data-lucide="cpu" style="width:20px;height:20px;color:#1A1A1A;"></i>
+                </div>
+                <div>
+                  <div class="cn-card-name">OpenAI</div>
+                  <div class="cn-card-account">sk-•••• ZX91</div>
+                </div>
+                <span class="cn-status connected"><span class="cn-status-dot"></span>Connected</span>
+              </div>
+              <div class="cn-card-desc">Use your own GPT-4 / GPT-5 key for reasoning, summarisation and drafting steps.</div>
+              <div class="cn-card-meta">Used in 2 workflows · linked Apr 22</div>
+              <div class="cn-card-foot">
+                <button class="cn-link">Manage</button>
+                <button class="cn-btn-manage">Rotate key</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Available -->
+          <div class="agents-section-label" style="margin-top:36px;">
+            <span class="agents-section-label-text">Available to connect</span>
+            <div class="agents-section-line"></div>
+            <span style="font-family:var(--font-display);font-weight:500;font-size:11px;color:var(--text-tertiary);white-space:nowrap;">Live integrations · ready in minutes</span>
+          </div>
+
+          <div class="cn-grid">
+
+            <!-- Zoho Invoice -->
+            <div class="cn-card">
+              <div class="cn-card-head">
+                <div class="cn-card-icon" style="background:#FFF7ED;">
+                  <i data-lucide="file-text" style="width:20px;height:20px;color:#C2410C;"></i>
+                </div>
+                <div>
+                  <div class="cn-card-name">Zoho Invoice</div>
+                  <div class="cn-card-account">Not connected</div>
+                </div>
+                <span class="cn-status available">Available</span>
+              </div>
+              <div class="cn-card-desc">Generate invoices on payment success and sync them back to your finance stack.</div>
+              <div class="cn-card-meta">2-step OAuth · ~2 min setup</div>
+              <div class="cn-card-foot">
+                <button class="cn-link primary">Learn more</button>
+                <button class="cn-btn-connect"><i data-lucide="plug" style="width:13px;height:13px;"></i>Connect</button>
+              </div>
+            </div>
+
+            <!-- Gemini -->
+            <div class="cn-card">
+              <div class="cn-card-head">
+                <div class="cn-card-icon" style="background:#F0F9FF;">
+                  <i data-lucide="sparkles" style="width:20px;height:20px;color:#1A73E8;"></i>
+                </div>
+                <div>
+                  <div class="cn-card-name">Google Gemini</div>
+                  <div class="cn-card-account">Not connected</div>
+                </div>
+                <span class="cn-status available">Available</span>
+              </div>
+              <div class="cn-card-desc">Bring your Gemini API key in for low-cost reasoning across high-volume workflows.</div>
+              <div class="cn-card-meta">API key · ~1 min setup</div>
+              <div class="cn-card-foot">
+                <button class="cn-link primary">Learn more</button>
+                <button class="cn-btn-connect"><i data-lucide="plug" style="width:13px;height:13px;"></i>Connect</button>
+              </div>
+            </div>
+
+            <!-- HTTP request -->
+            <div class="cn-card">
+              <div class="cn-card-head">
+                <div class="cn-card-icon" style="background:var(--bg-subtle);">
+                  <i data-lucide="globe" style="width:20px;height:20px;color:var(--text-secondary);"></i>
+                </div>
+                <div>
+                  <div class="cn-card-name">HTTP request</div>
+                  <div class="cn-card-account">Universal connector</div>
+                </div>
+                <span class="cn-status available">Available</span>
+              </div>
+              <div class="cn-card-desc">Call any internal API, webhook or REST endpoint from inside a Relay workflow.</div>
+              <div class="cn-card-meta">No auth required · instant</div>
+              <div class="cn-card-foot">
+                <button class="cn-link primary">Learn more</button>
+                <button class="cn-btn-connect"><i data-lucide="plug" style="width:13px;height:13px;"></i>Connect</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Coming soon -->
+          <div class="agents-section-label" style="margin-top:36px;">
+            <span class="agents-section-label-text">Coming soon</span>
+            <div class="agents-section-line"></div>
+            <span style="font-family:var(--font-display);font-weight:500;font-size:11px;color:var(--text-tertiary);white-space:nowrap;">Tell us which to prioritise</span>
+          </div>
+
+          <div class="cn-grid">
+
+            <!-- Shopify -->
+            <div class="cn-card unavailable">
+              <div class="cn-card-head">
+                <div class="cn-card-icon" style="background:#F0FFF4;">
+                  <i data-lucide="shopping-bag" style="width:20px;height:20px;color:#3A7D44;"></i>
+                </div>
+                <div>
+                  <div class="cn-card-name">Shopify</div>
+                  <div class="cn-card-account">Order &amp; fulfilment events</div>
+                </div>
+                <span class="cn-status soon">Soon</span>
+              </div>
+              <div class="cn-card-desc">Connect your storefront so Relay can reason across orders, payments and fulfilment.</div>
+              <div class="cn-card-meta">In active development</div>
+              <div class="cn-card-foot">
+                <button class="cn-link">Notify me</button>
+              </div>
+            </div>
+
+            <!-- WhatsApp HITL -->
+            <div class="cn-card unavailable">
+              <div class="cn-card-head">
+                <div class="cn-card-icon" style="background:#E6FAF0;">
+                  <i data-lucide="users" style="width:20px;height:20px;color:#25D366;"></i>
+                </div>
+                <div>
+                  <div class="cn-card-name">WhatsApp approvals</div>
+                  <div class="cn-card-account">Human-in-the-loop layer</div>
+                </div>
+                <span class="cn-status soon">Soon</span>
+              </div>
+              <div class="cn-card-desc">Route high-value or risky actions to a human reviewer on WhatsApp before they execute.</div>
+              <div class="cn-card-meta">Beta in 2 weeks</div>
+              <div class="cn-card-foot">
+                <button class="cn-link">Join waitlist</button>
+              </div>
+            </div>
+
+            <!-- Google Drive -->
+            <div class="cn-card unavailable">
+              <div class="cn-card-head">
+                <div class="cn-card-icon" style="background:#F0F9FF;">
+                  <i data-lucide="folder" style="width:20px;height:20px;color:#1A73E8;"></i>
+                </div>
+                <div>
+                  <div class="cn-card-name">Google Drive</div>
+                  <div class="cn-card-account">File-trigger and store</div>
+                </div>
+                <span class="cn-status soon">Soon</span>
+              </div>
+              <div class="cn-card-desc">Trigger workflows when a file lands in a folder. Store invoices, KYC artefacts and more.</div>
+              <div class="cn-card-meta">In active development</div>
+              <div class="cn-card-foot">
+                <button class="cn-link">Notify me</button>
+              </div>
+            </div>
+
+            <!-- Anthropic Claude -->
+            <div class="cn-card unavailable">
+              <div class="cn-card-head">
+                <div class="cn-card-icon" style="background:#FFF7F0;">
+                  <i data-lucide="bot" style="width:20px;height:20px;color:#D97706;"></i>
+                </div>
+                <div>
+                  <div class="cn-card-name">Anthropic Claude</div>
+                  <div class="cn-card-account">Bring your own key</div>
+                </div>
+                <span class="cn-status soon">Soon</span>
+              </div>
+              <div class="cn-card-desc">Use Claude for higher-quality reasoning and long-context tasks in your workflows.</div>
+              <div class="cn-card-meta">Beta this quarter</div>
+              <div class="cn-card-foot">
+                <button class="cn-link">Notify me</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Request a connector -->
+          <div class="section-row" style="margin-top:40px;">
+            <div>
+              <div class="cm-section-overline" style="margin-bottom:4px;">Roadmap</div>
+              <h2 class="cm-section-heading">Don't see the tool you run on?</h2>
+            </div>
+          </div>
+
+          <div class="connectors-card">
+            <div class="connectors-request-row">
+              <div style="flex-shrink:0;">
+                <div class="conn-req-label">Request a connection</div>
+                <div class="conn-req-hint">Name the tool and we'll add it to the roadmap.</div>
+              </div>
+              <div class="conn-req-inputs" id="cn-req-inputs">
+                <input type="text" id="cn-req-input" class="conn-req-input" placeholder="e.g. HubSpot, Tally, Razorpay, Shopify…" />
+                <button class="conn-req-btn" onclick="submitCnReq()">
+                  <i data-lucide="send" style="width:12px;height:12px;"></i>
+                  Request
+                </button>
+              </div>
+              <div class="conn-req-success" id="cn-req-success">
+                <i data-lucide="check-circle" style="width:14px;height:14px;color:var(--positive-600);"></i>
+                Noted — added to the roadmap.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- /view-connections -->
+
+
+      <!-- ══ VIEW: MCP SERVER ══ -->
+      <div id="view-mcp" class="view">
+        <div class="content">
+
+          <!-- Page header -->
+          <div class="page-header">
+            <div class="page-header-text">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+                <span class="cm-section-overline" style="color:var(--accent-600);">Model Context Protocol</span>
+              </div>
+              <h1 class="cm-page-heading">Relay MCP server</h1>
+              <p class="cm-page-subtext">Bring Cashfree payments into Claude, Cursor and any MCP-compatible workspace — no glue code.</p>
+            </div>
+            <div style="display:flex;gap:8px;align-items:flex-end;padding-bottom:4px;">
+              <a href="https://docs.cashfree.com/docs/relay-mcp" class="btn btn-secondary">
+                <span class="icon icon-16" data-lucide="book-open"></span>
+                <span>Read docs</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- MCP hero banner -->
+          <div class="mcp-hero">
+            <div class="mcp-hero-text">
+              <div class="mcp-hero-overline">Relay · MCP server</div>
+              <h2 class="mcp-hero-heading">Connect Cashfree to any AI agent via MCP</h2>
+              <p class="mcp-hero-desc">The Relay MCP server exposes your Cashfree payment data and agent capabilities as tools. Ask Claude questions about your payments — or describe an agent in English and Claude builds it in Relay automatically.</p>
+              <div class="mcp-hero-ctas">
+                <a href="https://docs.cashfree.com/docs/relay-mcp" class="mcp-btn-white">
+                  <i data-lucide="download" style="width:14px;height:14px;"></i>
+                  Set up MCP server
+                </a>
+                <a href="https://docs.cashfree.com/docs/relay-mcp" class="mcp-btn-ghost">
+                  <i data-lucide="book-open" style="width:14px;height:14px;"></i>
+                  View all tools
+                </a>
+              </div>
+            </div>
+            <div class="mcp-hero-visual">
+              <div class="mcp-orb mcp-orb-center"><i data-lucide="zap" style="width:24px;height:24px;"></i></div>
+              <div class="mcp-orb mcp-orb-sm1"><i data-lucide="bot" style="width:16px;height:16px;"></i></div>
+              <div class="mcp-orb mcp-orb-sm2"><i data-lucide="banknote" style="width:14px;height:14px;"></i></div>
+              <div class="mcp-orb mcp-orb-sm3"><i data-lucide="workflow" style="width:14px;height:14px;"></i></div>
+              <div class="mcp-orb mcp-orb-sm4"><i data-lucide="terminal" style="width:12px;height:12px;"></i></div>
+            </div>
+          </div>
+
+          <!-- MCP tools -->
+          <div class="section-row">
+            <div>
+              <div class="cm-section-overline" style="margin-bottom:4px;">API surface</div>
+              <h2 class="cm-section-heading">What an AI assistant can do for your business</h2>
+            </div>
+            <span class="section-meta">9 tools · more being added</span>
+          </div>
+          <div class="mcp-tools-grid">
+            <div class="mcp-tool-card">
+              <div class="mcp-tool-name">create_payment_link</div>
+              <div class="mcp-tool-desc">Generate a payment link for a customer with amount, expiry, and notes</div>
+            </div>
+            <div class="mcp-tool-card">
+              <div class="mcp-tool-name">get_payment_details</div>
+              <div class="mcp-tool-desc">Fetch full status and metadata for any payment by order ID or reference</div>
+            </div>
+            <div class="mcp-tool-card">
+              <div class="mcp-tool-name">initiate_refund</div>
+              <div class="mcp-tool-desc">Initiate a full or partial refund on a captured payment</div>
+            </div>
+            <div class="mcp-tool-card">
+              <div class="mcp-tool-name">get_settlement_report</div>
+              <div class="mcp-tool-desc">Fetch settlement data for a date range with breakdown by payment method</div>
+            </div>
+            <div class="mcp-tool-card">
+              <div class="mcp-tool-name">create_workflow</div>
+              <div class="mcp-tool-desc">Create a new Relay agent from a natural-language description or template JSON</div>
+            </div>
+            <div class="mcp-tool-card">
+              <div class="mcp-tool-name">list_workflows</div>
+              <div class="mcp-tool-desc">List all active and paused agents for this merchant account</div>
+            </div>
+            <div class="mcp-tool-card">
+              <div class="mcp-tool-name">get_workflow_runs</div>
+              <div class="mcp-tool-desc">Fetch the run history and status for a specific agent</div>
+            </div>
+            <div class="mcp-tool-card">
+              <div class="mcp-tool-name">list_payment_events</div>
+              <div class="mcp-tool-desc">Query recent payment events with filters by status, method, or date range</div>
+            </div>
+            <div class="mcp-tool-card">
+              <div class="mcp-tool-name">get_dispute_details</div>
+              <div class="mcp-tool-desc">Fetch open disputes with evidence requirements and response deadlines</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Setup -->
+          <div class="section-row">
+            <div>
+              <div class="cm-section-overline" style="margin-bottom:4px;">Get started</div>
+              <h2 class="cm-section-heading">Live in 3 steps</h2>
+            </div>
+          </div>
+          <div class="mcp-setup-grid">
+            <!-- Config card -->
+            <div class="mcp-setup-card">
+              <div class="section-title" style="font-size:14px;margin-bottom:6px;">Claude Desktop config</div>
+              <p style="font-family:var(--font-body);font-size:12px;line-height:17px;color:var(--neutral-400);margin-bottom:4px;">Add this to your <span style="font-family:var(--font-mono);font-size:11px;color:var(--neutral-200);">claude_desktop_config.json</span></p>
+              <div class="mcp-code-block">
+<pre><span class="mcp-code-comment">{</span>
+  <span class="mcp-code-key">"mcpServers"</span><span class="mcp-code-comment">: {</span>
+    <span class="mcp-code-key">"cashfree-relay"</span><span class="mcp-code-comment">: {</span>
+      <span class="mcp-code-key">"command"</span><span class="mcp-code-comment">: </span><span class="mcp-code-str">"npx"</span><span class="mcp-code-comment">,</span>
+      <span class="mcp-code-key">"args"</span><span class="mcp-code-comment">: [</span><span class="mcp-code-str">"@cashfree/relay-mcp"</span><span class="mcp-code-comment">],</span>
+      <span class="mcp-code-key">"env"</span><span class="mcp-code-comment">: {</span>
+        <span class="mcp-code-key">"CF_APP_ID"</span><span class="mcp-code-comment">: </span><span class="mcp-code-env">"YOUR_APP_ID"</span><span class="mcp-code-comment">,</span>
+        <span class="mcp-code-key">"CF_SECRET"</span><span class="mcp-code-comment">: </span><span class="mcp-code-env">"YOUR_SECRET_KEY"</span>
+      <span class="mcp-code-comment">}</span>
+    <span class="mcp-code-comment">}</span>
+  <span class="mcp-code-comment">}</span>
+<span class="mcp-code-comment">}</span></pre>
+              </div>
+            </div>
+
+            <!-- Steps card -->
+            <div class="mcp-setup-card">
+              <div class="section-title" style="font-size:14px;margin-bottom:12px;">What you can do once connected</div>
+              <ul class="mcp-setup-steps">
+                <li class="mcp-setup-step">
+                  <div class="mcp-step-num">1</div>
+                  <div class="mcp-step-text"><strong>Ask questions about your payments.</strong> "Show me all failed payments above ₹10,000 in the last 7 days."</div>
+                </li>
+                <li class="mcp-setup-step">
+                  <div class="mcp-step-num">2</div>
+                  <div class="mcp-step-text"><strong>Build agents by describing them.</strong> "When a payment fails, send a WhatsApp to the customer and log it to Sheets."</div>
+                </li>
+                <li class="mcp-setup-step">
+                  <div class="mcp-step-num">3</div>
+                  <div class="mcp-step-text"><strong>Manage your Relay agents.</strong> List, pause, or check run history without opening the dashboard.</div>
+                </li>
+                <li class="mcp-setup-step">
+                  <div class="mcp-step-num">4</div>
+                  <div class="mcp-step-text"><strong>Handle disputes.</strong> Draft evidence responses and route for approval — all via Claude chat.</div>
+                </li>
+              </ul>
+              <div style="margin-top:18px;">
+                <a href="https://docs.cashfree.com/docs/relay-mcp" class="btn btn-primary" style="width:100%;justify-content:center;">
+                  <i data-lucide="download" style="width:14px;height:14px;"></i>
+                  Get API credentials
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Works with -->
+          <div class="section-row">
+            <div>
+              <div class="cm-section-overline" style="margin-bottom:4px;">Compatibility</div>
+              <h2 class="cm-section-heading">Works with the tools your team already uses</h2>
+            </div>
+          </div>
+          <div class="connector-row">
+            <span class="connector-badge"><i data-lucide="bot" style="width:13px;height:13px;color:var(--accent-600);"></i> Claude Desktop</span>
+            <span class="connector-badge"><i data-lucide="terminal" style="width:13px;height:13px;"></i> Cursor</span>
+            <span class="connector-badge"><i data-lucide="code-2" style="width:13px;height:13px;"></i> VS Code + Continue</span>
+            <span class="connector-badge"><i data-lucide="globe" style="width:13px;height:13px;"></i> Any MCP client</span>
+          </div>
+
+        </div>
+      </div><!-- /view-mcp -->
+
+    </div><!-- /main -->
+  </div><!-- /shell -->
+
+  <script>
+    lucide.createIcons();
+
+    /* ── Make whole template card clickable ── */
+    document.querySelectorAll('.tpl-card:not(.coming-soon)').forEach(card => {
+      card.addEventListener('click', function(e) {
+        // don't double-fire if user clicked the "Use template" link directly
+        if (e.target.closest('a')) return;
+        window.location.href = 'https://merchant.cashfree.com/workflowbuilder';
+      });
+    });
+
+    /* ── Tab switching (builder view) ── */
+    function showTab(el, id) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('tab-' + id).classList.add('active');
+    }
+
+    /* ── Sidebar view switching ── */
+    function switchView(name) {
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      document.getElementById('view-' + name).classList.add('active');
+
+      document.getElementById('nav-builder').classList.toggle('active', name === 'builder');
+      document.getElementById('nav-connections').classList.toggle('active', name === 'connections');
+      document.getElementById('nav-mcp').classList.toggle('active', name === 'mcp');
+
+      // Re-render Lucide icons for newly-visible content (needed for dynamic views)
+      if (window.lucide) lucide.createIcons();
+
+      window.scrollTo(0, 0);
+    }
+
+    /* ── Connections request ── */
+    function submitCnReq() {
+      const input = document.getElementById('cn-req-input');
+      if (!input.value.trim()) { input.focus(); return; }
+      document.getElementById('cn-req-inputs').style.display = 'none';
+      const success = document.getElementById('cn-req-success');
+      success.style.display = 'flex';
+      lucide.createIcons();
+    }
+
+    /* ── Relay prompt ── */
+    function rpToggleSend(ta) {
+      const btn = document.getElementById('rp-send-btn');
+      if (btn) btn.classList.toggle('empty', !ta.value.trim());
+    }
+
+    function fillPrompt(el) {
+      const ta = document.getElementById('workflow-prompt');
+      ta.value = el.dataset.prompt || el.querySelector('.rp-chip-title')?.textContent.trim() || el.textContent.trim();
+      ta.focus();
+      rpToggleSend(ta);
+    }
+
+    function submitPrompt() {
+      const ta = document.getElementById('workflow-prompt');
+      if (!ta.value.trim()) { ta.focus(); return; }
+      const success = document.getElementById('prompt-success');
+      success.style.display = 'flex';
+      ta.value = '';
+      rpToggleSend(ta);
+      lucide.createIcons();
+      setTimeout(() => { success.style.display = 'none'; }, 5000);
+    }
+
+    /* ── Connector request ── */
+    function submitConnReq() {
+      const input = document.getElementById('conn-req-input');
+      if (!input.value.trim()) { input.focus(); return; }
+      document.getElementById('conn-req-inputs').style.display = 'none';
+      const success = document.getElementById('conn-req-success');
+      success.style.display = 'flex';
+      lucide.createIcons();
+    }
+
+    /* ── Vote on coming-soon agents ── */
+    function voteAgent(btn) {
+      if (btn.classList.contains('voted')) return;
+      btn.classList.add('voted');
+      const current = parseInt(btn.dataset.votes || '0', 10);
+      const next = current + 1;
+      btn.dataset.votes = next;
+      btn.textContent = '▲ ' + next + ' votes · thanks!';
+    }
+
+    /* ── FAQ accordion ── */
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+
+      // close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        const chev = i.querySelector('.faq-chevron');
+        chev.setAttribute('data-lucide', 'chevron-down');
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.querySelector('.faq-chevron').setAttribute('data-lucide', 'chevron-up');
+      }
+
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

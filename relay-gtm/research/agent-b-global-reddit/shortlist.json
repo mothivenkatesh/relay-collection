@@ -1,0 +1,3849 @@
+{
+  "by_sub_count": [
+    [
+      "ai_agents",
+      700
+    ],
+    [
+      "ClaudeAI",
+      700
+    ],
+    [
+      "cursor",
+      652
+    ],
+    [
+      "automation",
+      578
+    ],
+    [
+      "n8n",
+      501
+    ],
+    [
+      "LocalLLaMA",
+      500
+    ],
+    [
+      "SaaS",
+      400
+    ],
+    [
+      "mcp",
+      300
+    ],
+    [
+      "MachineLearning",
+      248
+    ],
+    [
+      "AIBuilders",
+      225
+    ],
+    [
+      "Entrepreneur",
+      100
+    ],
+    [
+      "programming",
+      100
+    ],
+    [
+      "IndieHackers",
+      55
+    ],
+    [
+      "zapier",
+      52
+    ],
+    [
+      "AnthropicAI",
+      32
+    ]
+  ],
+  "total_conversations": 5143,
+  "tool_mentions": [
+    [
+      "cursor",
+      1047
+    ],
+    [
+      "n8n",
+      849
+    ],
+    [
+      "claude code",
+      639
+    ],
+    [
+      "zapier",
+      149
+    ],
+    [
+      "langgraph",
+      26
+    ],
+    [
+      "langchain",
+      21
+    ],
+    [
+      "temporal",
+      9
+    ],
+    [
+      "crewai",
+      7
+    ],
+    [
+      "autogen",
+      4
+    ],
+    [
+      "make.com",
+      4
+    ],
+    [
+      "gumloop",
+      3
+    ],
+    [
+      "lindy",
+      2
+    ],
+    [
+      "relevance ai",
+      2
+    ],
+    [
+      "flowise",
+      2
+    ],
+    [
+      "tray",
+      2
+    ],
+    [
+      "integromat",
+      1
+    ],
+    [
+      "composio",
+      1
+    ],
+    [
+      "smithery",
+      1
+    ],
+    [
+      "pipedream",
+      1
+    ]
+  ],
+  "mcp_top": [
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1stjcjn/i_genuinely_dont_understand_the_value_of_mcps/",
+      "sub": "ai_agents",
+      "score": 87,
+      "comments": 43,
+      "date": "2026-04-23",
+      "signals": [
+        "MCP-AWARE",
+        "WANT"
+      ],
+      "snippet": "I genuinely don't understand the value of MCPs MCP is a client-side discovery protocol being marketed as an integration pattern, and that framing mismatch is why so many people end up confused about what it's actually for. The protocol was designed for a specific shape of problem"
+    },
+    {
+      "permalink": "https://reddit.com/r/mcp/comments/1sr0vuq/fastmcp_32_show_dont_tool/",
+      "sub": "mcp",
+      "score": 118,
+      "comments": 10,
+      "date": "2026-04-20",
+      "signals": [
+        "MCP-AWARE"
+      ],
+      "snippet": "FastMCP 3.2: Show, Don't Tool [FastMCP 3.2 is out](https://jlowin.dev/blog/fastmcp-3-2) with full support for MCP Apps! Apps let a tool return an interactive application instead of text. That could be a chart, a form, a file uploader, a map... whatever it is, it renders directly "
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sxb3vz/yet_another_mcp_but_this_one_pulls_insider/",
+      "sub": "ClaudeAI",
+      "score": 112,
+      "comments": 13,
+      "date": "2026-04-27",
+      "signals": [
+        "MCP-AWARE",
+        "WANT"
+      ],
+      "snippet": "Yet Another MCP, But This One Pulls Insider Trading Data If you can't beat them, join them. Insider trading is so blatant now, all you need is to know right as everyone else does! The problem I was having with long running research task was the data it would pull was already days"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sus6zj/how_to_start_with_claude_code/",
+      "sub": "ClaudeAI",
+      "score": 82,
+      "comments": 36,
+      "date": "2026-04-24",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "WANT"
+      ],
+      "snippet": "How to start with Claude Code Hey guys, what are the first things to do, to learn to optimize Claude Code. I heard about [Claude.md](http://Claude.md), Skills, MCP Servers. Do you have any recommendations for me to start good. Can i get some good agents skills, claude.mds somewhe"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sqjyzt/i_wasted_over_1_year_building_n8n_workflows_the/",
+      "sub": "n8n",
+      "score": 82,
+      "comments": 27,
+      "date": "2026-04-20",
+      "signals": [
+        "MCP-AWARE",
+        "PAIN",
+        "WANT",
+        "BUILT-OWN",
+        "TOOL-MENTION",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "I wasted over 1 year building n8n workflows the wrong way. Here is the exact roadmap I wish I had from day one (+4 real workflows included) I built over 40 automations in my first year. Maybe 10 of them actually survived in production. What follows is a framework built from both "
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sxzlh6/pullmd_gave_claude_code_an_mcp_server_so_it_stops/",
+      "sub": "ClaudeAI",
+      "score": 85,
+      "comments": 21,
+      "date": "2026-04-28",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "PAIN",
+        "BUILT-OWN",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "PullMD - gave Claude Code an MCP server so it stops burning tokens parsing HTML Hey all, Built this over the past few weeks because I got tired of two things: **1. Mobile copy-paste is awful.** Long Reddit thread or blog post on my phone, want to ask Claude about it. Long-press, "
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sc90y5/i_automated_my_entire_x_content_strategy_with_n8n/",
+      "sub": "n8n",
+      "score": 71,
+      "comments": 28,
+      "date": "2026-04-04",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "WANT",
+        "BUILT-OWN",
+        "TOOL-MENTION"
+      ],
+      "snippet": "I automated my entire X content strategy with n8n. here's everything, open sourced I automated my entire X content strategy with n8n. here's everything, open sourced been running this for a few months now and figured I'd just put it all out there three workflows. all connected. a"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sw4zmj/cloudflare_just_shipped_enterprise_mcp_governance/",
+      "sub": "ClaudeAI",
+      "score": 78,
+      "comments": 19,
+      "date": "2026-04-26",
+      "signals": [
+        "MCP-AWARE"
+      ],
+      "snippet": "Cloudflare just shipped enterprise MCP governance, is this where the industry is heading or does nobody care Cloudflare wrapped Agents Week last week. The enterprise MCP stuff caught my eye. They shipped MCP server portals that aggregate multiple upstream servers behind Cloudflar"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1swjhx2/i_finally_get_mcp_after_a_year/",
+      "sub": "ai_agents",
+      "score": 61,
+      "comments": 27,
+      "date": "2026-04-26",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "WANT"
+      ],
+      "snippet": "I finally get MCP after a year Since the word MCP was coined about a year ago. I always been a bit of a skeptic in terms of its actual use case. To me MCP is just an API with extra information about the API itself. My criticism is, when I am able define all the tools to include w"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1sy4clx/im_not_a_dev_but_i_use_qwen_36_35b_to_code/",
+      "sub": "LocalLLaMA",
+      "score": 13,
+      "comments": 65,
+      "date": "2026-04-28",
+      "signals": [
+        "MCP-AWARE",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "I'm Not a Dev But I Use Qwen 3.6 35b to Code Full disclosure: I used to program a bit, but I was garbage at it so I found a new career. This was eons ago so I'm not a dev, obviously. There's been a few posts the last couple of days highlighting struggles with these small models a"
+    },
+    {
+      "permalink": "https://reddit.com/r/mcp/comments/1sq3ck3/the_future_of_mcp_david_soria_parra_anthropic/",
+      "sub": "mcp",
+      "score": 65,
+      "comments": 4,
+      "date": "2026-04-19",
+      "signals": [
+        "MCP-AWARE"
+      ],
+      "snippet": "The Future of MCP — David Soria Parra, Anthropic Two exciting updates coming: 1. Server discovery An agent visits a website. There will be a mechanism that helps it discover an MCP server associated with the site 2. Skills MCP servers will ship their own related skills which can "
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1spub7k/i_genuinely_dont_understand_the_value_of_mcps/",
+      "sub": "automation",
+      "score": 34,
+      "comments": 30,
+      "date": "2026-04-19",
+      "signals": [
+        "MCP-AWARE",
+        "WANT"
+      ],
+      "snippet": "I genuinely don’t understand the value of MCPs MCP is a client-side discovery protocol being marketed as an integration pattern, and that framing mismatch is why so many people end up confused about what it's actually for. The protocol was designed for a specific shape of problem"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sps50u/ai_agent_roadmap_for_developers_who_can_code_but/",
+      "sub": "ai_agents",
+      "score": 43,
+      "comments": 19,
+      "date": "2026-04-19",
+      "signals": [
+        "MCP-AWARE",
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "AI agent roadmap for developers who can code but have never built an agent When I started learning agents, the content was everywhere but the order was nowhere. Tutorials assumed you either knew nothing or everything. Framework comparisons with no context on when to use what. MCP"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1svjvvb/using_claude_code_as_my_viral_video_content/",
+      "sub": "ClaudeAI",
+      "score": 2,
+      "comments": 60,
+      "date": "2026-04-25",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "WANT"
+      ],
+      "snippet": "Using Claude Code as my viral video content pipeline now So I've been messing around trying to make viral video ideas using AI and stumbled into an MCP that's changed how I prototype content. I connected TwoShot's content creation MCP to Claude Code so it can not only plan a vide"
+    },
+    {
+      "permalink": "https://reddit.com/r/mcp/comments/1spvkrz/microsoft_recommends_cli_over_mcp_for_playwright/",
+      "sub": "mcp",
+      "score": 45,
+      "comments": 13,
+      "date": "2026-04-19",
+      "signals": [
+        "MCP-AWARE",
+        "WANT",
+        "BUILT-OWN",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Microsoft recommends CLI over MCP for Playwright. We built a cloud-browser MCP that cuts ~114K tokens to ~5K Disclosure up front: I work on ScrapingAnt. This post is about an MCP server we ship, so flag it as self-promo if that's the rule. The thing that bugged me about Playwrigh"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sxnfwh/watched_my_ai_agent_block_a_prompt_injection_that/",
+      "sub": "ai_agents",
+      "score": 27,
+      "comments": 30,
+      "date": "2026-04-28",
+      "signals": [
+        "MCP-AWARE",
+        "WANT"
+      ],
+      "snippet": "Watched my AI agent block a prompt injection that was hiding inside a webpage Was using Claude to do some research on the Model Context Protocol stuff and asked it to pull info from a few roadmap pages. Agent comes back and the first thing it tells me is that it found a fake syst"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1swm9xp/moving_from_cursor_to_vs_code_codexclaude_code_is/",
+      "sub": "cursor",
+      "score": 15,
+      "comments": 42,
+      "date": "2026-04-26",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE"
+      ],
+      "snippet": "Moving from Cursor to VS Code + Codex/Claude Code: Is it worth the switch? **Hey everyone,** I’ve been on **Cursor Pro** for a month and I love the workflow—constantly jumping between **Ask, Planning, and Agentic modes**. It just works. However, my sub is up in a week and I’m con"
+    },
+    {
+      "permalink": "https://reddit.com/r/mcp/comments/1srxqzh/how_are_you_all_handling_security_for_mcp_tool/",
+      "sub": "mcp",
+      "score": 7,
+      "comments": 45,
+      "date": "2026-04-21",
+      "signals": [
+        "MCP-AWARE"
+      ],
+      "snippet": "How are you all handling security for MCP tool calls? I've been running a few autonomous agents on a NUC at home, a course scout, a real estate scout, and an analytics agent that queries my production Postgres via an MCP server. The analytics one is what made me realize MCP has a"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1st6sym/using_n8n_hosted_with_claude_code/",
+      "sub": "n8n",
+      "score": 30,
+      "comments": 22,
+      "date": "2026-04-23",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "Using n8n (hosted) with Claude Code Does anyone use Claude Code to draft and edit n8n workflows? Curious how useful it would be here. I drifted away from n8n towards Claude Code and Clay. But I am now coming back to n8n for a variety of reasons. While I like it better in general,"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1swbew1/how_are_teams_handling_permissions_for_ai_agents/",
+      "sub": "ai_agents",
+      "score": 2,
+      "comments": 49,
+      "date": "2026-04-26",
+      "signals": [
+        "MCP-AWARE"
+      ],
+      "snippet": "How are teams handling permissions for AI agents that can call tools? For people using agents with tools, APIs, MCP servers, internal apps, Slack etc, how are you handling permissions in practice? Do you mostly keep agents read-only, or allow them to take real actions too? For hi"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sov181/the_people_who_actually_use_n8n_for_real_work/",
+      "sub": "n8n",
+      "score": 44,
+      "comments": 6,
+      "date": "2026-04-18",
+      "signals": [
+        "MCP-AWARE",
+        "PAYMENT-CONTEXT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "the people who actually use n8n for real work have been building things nobody talks about been digging through what Synta users have been deploying and there's a repo of actual production workflows that just got dropped - 13 of them, all anonymised, all from real deployments htt"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sde1kc/connected_claude_code_and_created_my_own_md_files/",
+      "sub": "n8n",
+      "score": 36,
+      "comments": 14,
+      "date": "2026-04-05",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE"
+      ],
+      "snippet": "Connected Claude code and created my own MD files🙂 Just that, I connected Claude code via mcp and instead of jumping into making workflows I decided to make several Md files every future build follows. I have a Claude.md with a directory feature that points Claude code to specifi"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1swyzvc/how_to_build_a_persistent_memory_layer_like_recall/",
+      "sub": "ClaudeAI",
+      "score": 21,
+      "comments": 28,
+      "date": "2026-04-27",
+      "signals": [
+        "MCP-AWARE",
+        "WANT"
+      ],
+      "snippet": "how to build a persistent memory layer like recall? I've been testing recall 2.0 and their context layer is exactly what i want. it sits outside the chat, ingests all my github repos and web research, and then feeds the exact right context into claude when i ask a question. i wan"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1svmavk/claude_just_rewrote_a_function_we_already_had_its/",
+      "sub": "cursor",
+      "score": 23,
+      "comments": 25,
+      "date": "2026-04-25",
+      "signals": [
+        "MCP-AWARE"
+      ],
+      "snippet": "claude just rewrote a function we already had. it's like the 12th time this month. I've been keeping a tally for two weeks and claude has recreated existing utilities 11 times across three repos. clean code every time. well typed. tests even pass. the one it wrote this morning wa"
+    },
+    {
+      "permalink": "https://reddit.com/r/mcp/comments/1st12cd/aseprite_mcp_server_that_generates_pixel_art_raw/",
+      "sub": "mcp",
+      "score": 41,
+      "comments": 7,
+      "date": "2026-04-22",
+      "signals": [
+        "MCP-AWARE"
+      ],
+      "snippet": "Aseprite MCP Server that generates pixel art (raw aseprite files that you can edit too) Sample Result with Sonnet 4.6 visible at the end of the video. Github repo - [https://github.com/diivi/aseprite-mcp](https://github.com/diivi/aseprite-mcp)"
+    }
+  ],
+  "claude_code_top": [
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1svdm1w/psa_the_string_hermesmd_in_your_git_commit/",
+      "sub": "ClaudeAI",
+      "score": 1425,
+      "comments": 193,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "PSA: The string \"HERMES.md\" in your git commit history silently routes Claude Code billing to extra usage — cost me $200 TL;DR: If your git commits mention \"HERMES.md\" (uppercase), Claude Code quietly stops using your Max plan and starts billing you at API rates. Anthropic's supp"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1suef7t/anthropic_admits_to_have_made_hosted_models_more/",
+      "sub": "LocalLLaMA",
+      "score": 1266,
+      "comments": 247,
+      "date": "2026-04-24",
+      "signals": [
+        "CLAUDE-CODE"
+      ],
+      "snippet": "Anthropic admits to have made hosted models more stupid, proving the importance of open weight, local models TL;DR: >On March 4, we changed Claude Code's default reasoning effort from `high` to `medium` to reduce the very long latency—enough to make the UI appear frozen—some user"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1sxqa2c/im_done_with_using_local_llms_for_coding/",
+      "sub": "LocalLLaMA",
+      "score": 740,
+      "comments": 653,
+      "date": "2026-04-28",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "I'm done with using local LLMs for coding I think gave it a fair shot over the past few weeks, forcing myself to use local models for non-work tech asks. I use Claude Code at my job so that's what I'm comparing to. I used Qwen 27B and Gemma 4 31B, these are considered the best lo"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sv852q/claude_code_cheat_sheet_after_6_months_of_daily/",
+      "sub": "ClaudeAI",
+      "score": 945,
+      "comments": 58,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE",
+        "WANT"
+      ],
+      "snippet": "Claude Code cheat sheet after 6 months of daily use Last week I shared a post about my Claude Code workflow and some related tips, and to be completely honest, I didn't expect such a positive response! Thank you all for sharing your own tips in the comments, I learned quite a bit"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sxi9mo/anthropic_just_quietly_locked_opus_behind_a/",
+      "sub": "ClaudeAI",
+      "score": 730,
+      "comments": 174,
+      "date": "2026-04-27",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Anthropic just quietly locked Opus behind a paywall-within-a-paywall for Pro users in Claude Code If you're on Claude Pro and using Claude Code, you might have noticed something buried in their support docs: \"When using a Pro plan with Claude Code, you will only be able to use Op"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1swy5r6/taught_my_60yearold_dad_zero_coding_exp_claude/",
+      "sub": "ClaudeAI",
+      "score": 536,
+      "comments": 93,
+      "date": "2026-04-27",
+      "signals": [
+        "CLAUDE-CODE"
+      ],
+      "snippet": "Taught my 60-year-old dad (zero coding exp) Claude and Git in Feb. Today he built a RAG solution. I finally get \"vibe coding.\" My father teaches geology and has literally zero coding expertise. Back in February, I introduced him to Claude and taught him the absolute basics of how"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1st3m8y/qwen_36_is_actually_useful_for_vibecoding_and_way/",
+      "sub": "LocalLLaMA",
+      "score": 366,
+      "comments": 118,
+      "date": "2026-04-23",
+      "signals": [
+        "CLAUDE-CODE",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Qwen 3.6 is actually useful for vibe-coding, and way cheaper than Claude Launched claude code, pointed it at my running Qwen, and, well, it vibe codes perfectly fine. I started a project with Qwen3.6-35B-A3B (Q4) yesterday, and then this morning switched to 27B (Q8), and both wor"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sxlp0i/claude_code_is_only_a_7_day_trial_on_pro_plan/",
+      "sub": "ClaudeAI",
+      "score": 327,
+      "comments": 78,
+      "date": "2026-04-28",
+      "signals": [
+        "CLAUDE-CODE"
+      ],
+      "snippet": "Claude Code is only a „7 day trial“ on Pro plan? Are they A/B testing again?"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1ss7z42/spacexs_60b_agreement_to_acquire_cursor_is_wild/",
+      "sub": "cursor",
+      "score": 197,
+      "comments": 165,
+      "date": "2026-04-22",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "SpaceX's $60B agreement to acquire Cursor is wild, but the $10B fallback is crazier. I was literally in the middle of fighting a rogue React useEffect hook at 1 AM last night. The baby started crying on the monitor, I lost my train of thought, and while I was bouncing him back to"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sxq24c/how_are_people_using_so_many_tokens/",
+      "sub": "ClaudeAI",
+      "score": 193,
+      "comments": 141,
+      "date": "2026-04-28",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "How are people using so many tokens ??? I've been using Claude basically since it launched, and use Claude Code extensively (Swift, C++, Shaders, TS, AWS, etc)... Maybe this is just tech twitter / LinkedIn garbage, but how on earth are people using so many tokens... I use maybe \\"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sc55tc/cursor_v3_is_a_significant_regression/",
+      "sub": "cursor",
+      "score": 214,
+      "comments": 118,
+      "date": "2026-04-04",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "Cursor V3 is a significant regression So I used to be a big cursor fan - striked the right balance between trusting the AI and being able to check the work. The new version however, sucks. Worktrees are now essentially AI initiated magic git commands that require manual approval,"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1swhw84/what_is_the_best_coding_agent_cli_like_claude/",
+      "sub": "LocalLLaMA",
+      "score": 165,
+      "comments": 162,
+      "date": "2026-04-26",
+      "signals": [
+        "CLAUDE-CODE",
+        "WANT"
+      ],
+      "snippet": "What is the best coding agent (CLI) like Claude Code for Local Development Hey all: I am trying to set up claude code to work with llama.cpp, I am using the Qwen3.6-35B-A3B. I usually use claude code + ZLM subscription i got lucky with $30 yearly - the set up is very simple with "
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1s9q17n/i_automated_ugc_reaction_videos_here_are_the/",
+      "sub": "automation",
+      "score": 156,
+      "comments": 162,
+      "date": "2026-04-01",
+      "signals": [
+        "CLAUDE-CODE",
+        "BUILT-OWN",
+        "TOOL-MENTION"
+      ],
+      "snippet": "I automated UGC reaction videos. Here are the results I’ve built dozens of apps and if you’re in this space, you know that ugc reaction videos on tiktok / insta are the number #1 way to distribute But it’s a pain to manage, costs a lot of money and it’s super labour intensive. So"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sqg5ew/spent_a_weekend_actually_understanding_and/",
+      "sub": "ai_agents",
+      "score": 189,
+      "comments": 86,
+      "date": "2026-04-20",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Spent a weekend actually understanding and building Karpathy's \"LLM Wiki\" — here's what worked, what didn't After Karpathy's LLM Wiki gist blew up last month, I finally sat down and built one end-to-end to see if it actually good or if it's just hype. Sharing the honest takeaways"
+    },
+    {
+      "permalink": "https://reddit.com/r/MachineLearning/comments/1sjb0qi/gary_marcus_on_the_claude_code_leak_d/",
+      "sub": "MachineLearning",
+      "score": 196,
+      "comments": 69,
+      "date": "2026-04-12",
+      "signals": [
+        "CLAUDE-CODE"
+      ],
+      "snippet": "Gary Marcus on the Claude Code leak [D] Gary Marcus just tweeted: >... the way Anthropic built that kernel is straight out of classical symbolic AI. For example, it is in large part a big IF-THEN conditional, with 486 branch points and 12 levels of nesting — all inside a determin"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1suav4f/opencode_or_claudecode_for_qwen35_27b/",
+      "sub": "LocalLLaMA",
+      "score": 84,
+      "comments": 167,
+      "date": "2026-04-24",
+      "signals": [
+        "CLAUDE-CODE"
+      ],
+      "snippet": "OpenCode or ClaudeCode for Qwen3.5 27B I'm tired of copy & pasting code. What should I try and why? Which is faster / easier to install? Which is easier to use? Which has less bugs? OpenCode or ClaudeCode with Qwen3.5/3.6 27B on Linux?"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sb17do/anyone_switched_from_cursor_to_claude_code/",
+      "sub": "cursor",
+      "score": 113,
+      "comments": 130,
+      "date": "2026-04-03",
+      "signals": [
+        "CLAUDE-CODE"
+      ],
+      "snippet": "Anyone switched from Cursor to Claude Code? They say Claude Code has the best harness engineering. I've been using Cursor as my primary workstation for a while, it gives me a sense of control that I couldn't get from pure CLI tools. What's your take? Which setup do you prefer?"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sk7qwx/someone_did_a_deep_dive_into_cursor_agent_and/",
+      "sub": "cursor",
+      "score": 186,
+      "comments": 54,
+      "date": "2026-04-13",
+      "signals": [
+        "CLAUDE-CODE",
+        "CURSOR"
+      ],
+      "snippet": "Someone did a deep dive into Cursor Agent and discovered that it was literally just Claude Code with a process that does search and replace to brand it as Cursor Agent [https://gist.github.com/jasonkneen/4c065df2d7a95610e4fd30c3e3398b17](https://gist.github.com/jasonkneen/4c065df"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sv8avi/claude_estimates_work_in_human_time_not_claude/",
+      "sub": "ClaudeAI",
+      "score": 154,
+      "comments": 57,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE"
+      ],
+      "snippet": "Claude estimates work in human time, not Claude time Whenever I ask Claude to plan a chunk of work, it comes back with wildly long timelines. For example, adding a feature to a CLI framework I'm working on got estimated at **1-2 days**, but in reality, Claude Code one-shots it in"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1svgtlh/glm_51_locally_40tps_2000_pps/",
+      "sub": "LocalLLaMA",
+      "score": 101,
+      "comments": 90,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "GLM 5.1 Locally: 40tps, 2000+ pp/s After some sglang patching and countless experiments, managed to get reap-ed nvfp4 version running stable and FAST on 4 x RTX 6000 Pros (limited to 350W). Very happy with performance and quality. Inference software is still under-optimized for t"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1supft2/opinion_qwen_36_27b_beats_sonnet_46_on_feature/",
+      "sub": "LocalLLaMA",
+      "score": 134,
+      "comments": 29,
+      "date": "2026-04-24",
+      "signals": [
+        "CLAUDE-CODE"
+      ],
+      "snippet": "Opinion: Qwen 3.6 27b Beats Sonnet 4.6 on Feature Planning I keep hearing the argument that that large models are better for high-level planning and task orchestration, since they have more general knowledge to work from when making decisions. However, I've been testing Qwen 3.6 "
+    },
+    {
+      "permalink": "https://reddit.com/r/MachineLearning/comments/1srufft/bulding_my_own_diffusion_language_model_from/",
+      "sub": "MachineLearning",
+      "score": 128,
+      "comments": 30,
+      "date": "2026-04-21",
+      "signals": [
+        "CLAUDE-CODE",
+        "BUILT-OWN"
+      ],
+      "snippet": "Bulding my own Diffusion Language Model from scratch was easier than I thought [P] Since I felt like I was relying on Claude Code a lot recently, I wanted to see how hard it is to implement a diffusion language model from scratch without the help of AI-Generated code. So I built "
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sullfu/claude_is_extremely_expensive_but_works_like/",
+      "sub": "ClaudeAI",
+      "score": 94,
+      "comments": 58,
+      "date": "2026-04-24",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Claude is extremely expensive but works like Magic! (For a non-coder) I have a small business and have ways wanted to digitized all our customer data via an app. I have a very specific way in my head for doing (how our data will be processed) it but just don't know how to do it s"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sxaj1t/i_vibe_reverseengineered_my_divoom_minitoos/",
+      "sub": "ClaudeAI",
+      "score": 133,
+      "comments": 15,
+      "date": "2026-04-27",
+      "signals": [
+        "CLAUDE-CODE"
+      ],
+      "snippet": "I vibe reverse-engineered my Divoom MiniToo's Bluetooth protocol to make a physical Claude Code status indicator I’ve been playing with a Divoom MiniToo and ended up reverse-engineering enough of its Bluetooth protocol to use it as a physical Claude Code status indicator. Pretty "
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sv0nc9/the_ai_will_replace_engineers_discourse_has_the/",
+      "sub": "ai_agents",
+      "score": 89,
+      "comments": 58,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "The \"AI will replace engineers\" discourse has the abstraction level wrong Every few months the argument resurfaces and it keeps flattening the same distinction: writing code and shipping software are different jobs, and AI is very good at one of them and barely touching the other"
+    }
+  ],
+  "cursor_top": [
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sk7qwx/someone_did_a_deep_dive_into_cursor_agent_and/",
+      "sub": "cursor",
+      "score": 186,
+      "comments": 54,
+      "date": "2026-04-13",
+      "signals": [
+        "CLAUDE-CODE",
+        "CURSOR"
+      ],
+      "snippet": "Someone did a deep dive into Cursor Agent and discovered that it was literally just Claude Code with a process that does search and replace to brand it as Cursor Agent [https://gist.github.com/jasonkneen/4c065df2d7a95610e4fd30c3e3398b17](https://gist.github.com/jasonkneen/4c065df"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sfe7p8/why_not_just_develop_two_products/",
+      "sub": "cursor",
+      "score": 84,
+      "comments": 27,
+      "date": "2026-04-08",
+      "signals": [
+        "CLAUDE-CODE",
+        "CURSOR"
+      ],
+      "snippet": "Why not just develop two products? The transition away from an AI-powered IDE seems so weird to me. The demand is obviously there, and I'd say it's the principal reason Cursor has the valuation it does. If they want to compete directly with Codex and Claude Code for an agent-only"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1slnvhm/is_this_a_bug_or_intentional/",
+      "sub": "cursor",
+      "score": 21,
+      "comments": 21,
+      "date": "2026-04-14",
+      "signals": [
+        "CURSOR"
+      ],
+      "snippet": "Is this a bug or intentional ? My usage was 200/500 but suddenly became 800/2000 UPDATE: It's a display bug and legacy plan limits have not changed [https://forum.cursor.com/t/cursor-request-quota-suddenly-changed-from-500-to-2000-what-does-this-actually-mean/157701/27](https://f"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1siv36v/has_anyone_else_noticed_an_increased_token_burn/",
+      "sub": "cursor",
+      "score": 8,
+      "comments": 16,
+      "date": "2026-04-11",
+      "signals": [
+        "CURSOR"
+      ],
+      "snippet": "Has anyone else noticed an increased token burn rate recently? In my case Composer 2 just burned 1.5M tokens on a simple doc edit. I asked the Agent to summarize the effort: \"Effort for the agent: One multi-file pass with search/replace and small structural rewrites; moderate len"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sglno2/the_appwrite_plugin_is_now_available_on_the/",
+      "sub": "cursor",
+      "score": 18,
+      "comments": 3,
+      "date": "2026-04-09",
+      "signals": [
+        "MCP-AWARE",
+        "CURSOR",
+        "WANT"
+      ],
+      "snippet": "The Appwrite plugin is now available on the Cursor marketplace Hey Cursor redditors 👋 This is Eldad from the Appwrite team. We're very happy to share that the official Appwrite plugin for Cursor is now live on the Cursor Marketplace. The new plugin includes CLI + SDK skills for a"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1ssdznj/unnecessary_bet_by_spacex/",
+      "sub": "cursor",
+      "score": 0,
+      "comments": 20,
+      "date": "2026-04-22",
+      "signals": [
+        "CLAUDE-CODE",
+        "CURSOR",
+        "WANT"
+      ],
+      "snippet": "Unnecessary bet by SpaceX Cursor IDE is anyways slowly beaten by Claude Code. It makes no sense to read or edit a 300 line per minute code generation machine’s output. We don’t need an editor anymore. We just need a way to look back at our code maybe once a while and git GUIs do "
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1skyo6e/how_is_bugbot_different_than_setting_up_a_cursor/",
+      "sub": "cursor",
+      "score": 8,
+      "comments": 7,
+      "date": "2026-04-14",
+      "signals": [
+        "CURSOR"
+      ],
+      "snippet": "How is Bugbot different than setting up a Cursor cloud agent triggered on PR open? I saw Bugbot is $40/mo, but I created a Cursor cloud agent from this page (https://cursor.com/automations) that does literally the exact same thing and its included with my plan for free. What am I"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sk75dp/using_my_own_anthropic_api_key_is_just_purely/",
+      "sub": "cursor",
+      "score": 6,
+      "comments": 9,
+      "date": "2026-04-13",
+      "signals": [
+        "CURSOR"
+      ],
+      "snippet": "Using my own Anthropic API key is just purely chats with no tools? I recently tried adding my own Anthropic API key into Cursor. My Anthropic endpoint is behind a LiteLLM proxy because of how my provider bills me. Because Cursor doesn’t let us change the Anthropic endpoint direct"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1ski5ww/why_is_the_changelog_never_updated_for_minor/",
+      "sub": "cursor",
+      "score": 13,
+      "comments": 0,
+      "date": "2026-04-13",
+      "signals": [
+        "CURSOR"
+      ],
+      "snippet": "Why is the changelog never updated for minor releases? I use cursor at work and I get updates every week - but the Cursor doesn't display the changelog inside the IDE and their webpage for this (https://cursor.com/changelog) is never up to date with all updates they send out. I j"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1shxp1k/full_auto_is_actually_more_expensive_than_using/",
+      "sub": "cursor",
+      "score": 9,
+      "comments": 4,
+      "date": "2026-04-10",
+      "signals": [
+        "CURSOR",
+        "PAIN",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "full auto is actually more expensive than using composer-2? I saw that most of regular users go full on auto. But it's actually more expensive than composer according to [https://cursor.com/docs/models-and-pricing](https://cursor.com/docs/models-and-pricing)"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1snhx68/cursor_coding_agents_course_30_minutes/",
+      "sub": "cursor",
+      "score": 6,
+      "comments": 3,
+      "date": "2026-04-16",
+      "signals": [
+        "CURSOR"
+      ],
+      "snippet": "Cursor coding agents course (30 minutes) Hey everyone! I've been working on this course for months for cursor.com/learn. Excited to hear what you think."
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1slxlob/kaspersky_flagged_cursor_ide_as_clipbanker_trojan/",
+      "sub": "cursor",
+      "score": 2,
+      "comments": 7,
+      "date": "2026-04-15",
+      "signals": [
+        "CURSOR",
+        "WANT"
+      ],
+      "snippet": "Kaspersky Flagged Cursor IDE as ClipBanker Trojan on Windows Kaspersky just flagged and removed Cursor IDE from my Windows machine as **PDM:Trojan-Banker.Win32.ClipBanker.gen (High severity)**, which caught me off guard. From what I’m seeing in the logs: • Multiple detections lin"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sy046c/so_did_cursor_just_scam_me/",
+      "sub": "cursor",
+      "score": 7,
+      "comments": 0,
+      "date": "2026-04-28",
+      "signals": [
+        "CURSOR",
+        "WANT"
+      ],
+      "snippet": "So did Cursor just scam me? I haven't used Cursor for a while and decided to get myself a pro plan again like 5 days ago . I paid my 20$ invoice, refreshed the dashboard - I'm still on a free plan. I was like WTF but gave it another go and tried to upgrade to the Pro plan again a"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1swchbz/openai_flagged_this_request_for_potential_high/",
+      "sub": "cursor",
+      "score": 2,
+      "comments": 4,
+      "date": "2026-04-26",
+      "signals": [
+        "CURSOR"
+      ],
+      "snippet": "Openai flagged this request for potential high risk cybersecurity activity message. Hello, I am developing red teamer app with vibe coding for almost 1 year. Never had an any problem. With the new Chatgpt 5.5 model cursor now generate this message and stops the run. Since my code"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sm2a8x/cursor_claude_agent_is_doing_weird_stuff_rate/",
+      "sub": "cursor",
+      "score": 3,
+      "comments": 3,
+      "date": "2026-04-15",
+      "signals": [
+        "CURSOR"
+      ],
+      "snippet": "Cursor Claude Agent is doing weird stuff - rate limiting randomly and using wrong model? 1. Getting a rate limit \"Upgrade to Ultra for more Cloud Agents: You've reached the limit for your current plan. Upgrade to Ultra to run more Cloud Agents simultaneously.\" message despite NO "
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1s9x002/mcp_server_that_gives_cursor_a_searchable_catalog/",
+      "sub": "cursor",
+      "score": 0,
+      "comments": 5,
+      "date": "2026-04-01",
+      "signals": [
+        "MCP-AWARE",
+        "CURSOR",
+        "WANT"
+      ],
+      "snippet": "mcp server that gives cursor a searchable catalog of 3100+ dev tools been using this mcp server that changed how cursor handles tool selection. instead of generating auth/payments/analytics code from scratch it searches a catalog of 3100+ real dev tools first. add to your cursor "
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1spbbo4/replicating_cursor_ide_quality_in_cli/",
+      "sub": "cursor",
+      "score": 0,
+      "comments": 4,
+      "date": "2026-04-18",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "CURSOR",
+        "WANT"
+      ],
+      "snippet": "Replicating Cursor IDE quality in CLI Hi, I have prompts running in Cursor IDE that are returning good quality output, and I am looking for help on how to replicate that outside the IDE. What I mean by replicate is to recreate my environment programmatically, in the form of porta"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sdfb9i/confirmation_for_all_cursor_code_changes/",
+      "sub": "cursor",
+      "score": 1,
+      "comments": 3,
+      "date": "2026-04-05",
+      "signals": [
+        "CLAUDE-CODE",
+        "CURSOR"
+      ],
+      "snippet": "Confirmation for all cursor code changes Come from evaluating claude code and I like the full confirmation of all changes it makes. thought I would try cursor but it seems there a not many full proof settings for making cursor confirm every single code change. I know you can use "
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1s9l3nt/terminal_sandbox_importance/",
+      "sub": "cursor",
+      "score": 4,
+      "comments": 0,
+      "date": "2026-04-01",
+      "signals": [
+        "CURSOR"
+      ],
+      "snippet": "Terminal Sandbox Importance I'm considering moving to Cursor from Windsurf, but when I open Cursor I receive the error \"Terminal sandbox could not start\" (I'm on Linux). I've tried all the fixes short of disabling a kernel security feature and I'm wondering how important this \"Te"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1s7crwp/exdev_moving_to_cursor_exposupabase_how_do_i/",
+      "sub": "cursor",
+      "score": 2,
+      "comments": 2,
+      "date": "2026-03-30",
+      "signals": [
+        "CURSOR",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "Ex-dev moving to Cursor + Expo/Supabase. How do I maintain architectural \"governance\"? Hi everyone, I’m embarking on a ground up build of a semi-complicated mobile application, and decided to use cursor as my chosen orchestrator. As I’m completely new to cursor, I’m looking for s"
+    }
+  ],
+  "payment_top": [
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1svepwo/solo_developer_from_finland_just_launched_coming/",
+      "sub": "IndieHackers",
+      "score": 29,
+      "comments": 212,
+      "date": "2026-04-25",
+      "signals": [
+        "PAYMENT-CONTEXT"
+      ],
+      "snippet": "Solo developer from Finland — just launched coming soon page for my first indie product I am a developer from Finland working full time and lately I have been building something in my spare time. Wandoria is a global company discovery platform with one core mechanic — a randomize"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sr7pni/what_actually_breaks_when_you_run_n8n_selfhosted/",
+      "sub": "n8n",
+      "score": 135,
+      "comments": 41,
+      "date": "2026-04-21",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "What actually breaks when you run n8n self-hosted for 6+ paying clients on one VPS Been running a 4 quid Hetzner box with n8n serving 6 clients for about 7 months. Here's the stuff nobody talks about until it bites you. Workflow executions compete for the same node thread. If cli"
+    },
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1skxvhn/first_month_build_saas_need_your_advices_to_get/",
+      "sub": "IndieHackers",
+      "score": 41,
+      "comments": 112,
+      "date": "2026-04-14",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "First month build saas, need your advices to get revenue This is my first month building trunktransfer, alternative to wetransfer. In my previous projects, i build many features the sell with wroing direction. sometimes after get user these feature i built need to remove. Now i c"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sgrlty/i_automated_hotel_checkout_feedback_and_i_wonder/",
+      "sub": "n8n",
+      "score": 92,
+      "comments": 11,
+      "date": "2026-04-09",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "BUILT-OWN",
+        "TOOL-MENTION"
+      ],
+      "snippet": "I automated hotel checkout feedback and I wonder what do you think about it So I built this in n8n and I'm kinda blown away by how well it works. Every day after checkout, an AI agent looks at each guest's actual stay — what they complained about, what facilities they used, their"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sxsp8i/cursor_claude_deleted_a_companys_entire_database/",
+      "sub": "cursor",
+      "score": 37,
+      "comments": 65,
+      "date": "2026-04-28",
+      "signals": [
+        "PAYMENT-CONTEXT"
+      ],
+      "snippet": "Cursor & Claude deleted a company's entire database “Yesterday afternoon, an AI coding agent — Cursor running Anthropic's flagship Claude Opus 4.6 — deleted our production database and all volume-level backups in a single API call to Railway, our infrastructure provider,” sums up"
+    },
+    {
+      "permalink": "https://reddit.com/r/Entrepreneur/comments/1ssc6q7/took_me_4_years_to_realize_we_were_just_renting/",
+      "sub": "Entrepreneur",
+      "score": 53,
+      "comments": 48,
+      "date": "2026-04-22",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "BUILT-OWN"
+      ],
+      "snippet": "Took me 4 years to realize we were just renting our own business data back from SaaS vendors We had a simple question last quarter: which customers opened a ticket AND had a billing issue in the same 30 days. Sounds easy. It took three engineers, two API integrations, and a week "
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1sb7h1v/two_people_on_our_team_lost_every_tuesday_to/",
+      "sub": "automation",
+      "score": 15,
+      "comments": 43,
+      "date": "2026-04-03",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "PAIN"
+      ],
+      "snippet": "Two people on our team lost every Tuesday to spreadsheet matching. We mapped it and fixed it. Every Tuesday, two people in finance did the same thing. Pull invoices from Stripe. Pull payments from NetSuite. Open both in Excel. Highlight what doesn't match. Chase sales for explana"
+    },
+    {
+      "permalink": "https://reddit.com/r/Entrepreneur/comments/1so1is7/looking_for_ideas_software_stackworkflow/",
+      "sub": "Entrepreneur",
+      "score": 12,
+      "comments": 41,
+      "date": "2026-04-17",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "WANT"
+      ],
+      "snippet": "Looking for ideas software stack/workflow solutions that balance efficiency and cost, with very specific requirements I run a small remote/in-person general tech support business -- like what GeekSquad used to be before it sold out, but even more personal (it's just me). Most of "
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sov181/the_people_who_actually_use_n8n_for_real_work/",
+      "sub": "n8n",
+      "score": 44,
+      "comments": 6,
+      "date": "2026-04-18",
+      "signals": [
+        "MCP-AWARE",
+        "PAYMENT-CONTEXT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "the people who actually use n8n for real work have been building things nobody talks about been digging through what Synta users have been deploying and there's a repo of actual production workflows that just got dropped - 13 of them, all anonymised, all from real deployments htt"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1s9bt78/cursor_genuinely_makes_me_mass_produce_tickets/",
+      "sub": "cursor",
+      "score": 24,
+      "comments": 25,
+      "date": "2026-04-01",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "cursor genuinely makes me mass produce tickets that used to take hours fullstack dev, mostly typescript and python. I switched from vscode to cursor about 5 months ago after hearing about it on every dev podcast for what felt like a year straight. I was skeptical because I'd trie"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sumga1/i_extracted_patterns_from_100_production_n8n/",
+      "sub": "n8n",
+      "score": 39,
+      "comments": 10,
+      "date": "2026-04-24",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "I extracted patterns from 100+ production n8n workflows into Claude Code skills (open-source) Hey everyone. Sharing something I just open-sourced that might save you a lot of time if you use Claude Code (or any AI coding agent) with n8n. The problem I kept running into: 1. Claude"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sslevp/how_to_turn_any_n8nmake_automation_into_a_saas/",
+      "sub": "n8n",
+      "score": 38,
+      "comments": 5,
+      "date": "2026-04-22",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "BUILT-OWN",
+        "TOOL-MENTION",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "How to turn any n8n/Make automation into a SaaS API in 4 steps (Open Source) Hey guys, if you’ve ever built a valuable automation in n8n or Make (like an AI content generator or a lead enrichment scraper), you know the biggest pain is figuring out how to easily sell access to it."
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1svzk5j/vs_code_extension/",
+      "sub": "LocalLLaMA",
+      "score": 9,
+      "comments": 20,
+      "date": "2026-04-26",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "WANT"
+      ],
+      "snippet": "Vs code extension Which coding agent extension are most of you fining best with LM studio as the local server 🤔 Im running qwen 3.6 27b Ive used Cline and continue mostly. I haven't checkout all the options but im looking for something that looks and feels like codex ( for me thi"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1skc8tr/payment_processing_reconciliation/",
+      "sub": "n8n",
+      "score": 17,
+      "comments": 10,
+      "date": "2026-04-13",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "WANT"
+      ],
+      "snippet": "Payment processing reconciliation So I’m really looking for help to see if anyone has done something like this before I’m more curious if there’s some security aspect that I should really be worried about I have a client who wants to combine multiple different payment processing "
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sl9rpz/ran_the_same_daily_reporting_job_on_n8n_schedule/",
+      "sub": "n8n",
+      "score": 4,
+      "comments": 20,
+      "date": "2026-04-14",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "Ran the same daily reporting job on n8n Schedule Trigger vs a RunLobster agent cron for 30 days. n8n hit 30/30. Agent hit 26/30. Not close. Where deterministic workflow still wins over agent runtime. writing this because the \"agents will replace n8n\" framing that's going around i"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1sfoazf/is_it_even_possible_to_automate_upsell_and_post/",
+      "sub": "automation",
+      "score": 8,
+      "comments": 14,
+      "date": "2026-04-08",
+      "signals": [
+        "PAYMENT-CONTEXT"
+      ],
+      "snippet": "Is it even possible to automate upsell and post purchase opportunities for an online store? I’ve been running a small store for a few months and feel like I’m leaving money on the table after checkout. I’ve tried basic email flows and discount popups but nothing really sticks. So"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sbsqa5/what_clis_are_you_running_alongside_cursor_for/",
+      "sub": "cursor",
+      "score": 14,
+      "comments": 6,
+      "date": "2026-04-03",
+      "signals": [
+        "PAYMENT-CONTEXT"
+      ],
+      "snippet": "what CLIs are you running alongside cursor for documentation? saw the thread about CLIs being better than MCPs and it got me thinking about my own setup. right now i'm using gh for PRs, ripgrep for code search, and nia-docs for documentation browsing. nia-docs is the one i've fou"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1st8pr7/last_week_in_multimodal_ai_local_edition/",
+      "sub": "LocalLLaMA",
+      "score": 14,
+      "comments": 3,
+      "date": "2026-04-23",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "Last Week in Multimodal AI - Local Edition I curate a weekly multimodal AI roundup, here are the local/open-source highlights from the last week: * Moonshot Kimi K2.6 * 1T/32B MoE, 256K context, native INT4, 400M MoonViT vision encoder. Four variants including Agent Swarm (300 su"
+    },
+    {
+      "permalink": "https://reddit.com/r/zapier/comments/1sl3yk3/advice_needed_integration_with_helloclub/",
+      "sub": "zapier",
+      "score": 3,
+      "comments": 13,
+      "date": "2026-04-14",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "Advice Needed: Integration with HelloClub Hi everyone, I am entirely new to Zapier and feel like I've been thrown in the deep end. For my work I need to create an automation to pull a monthly report of our client's club details (e.g. active memberships, financial report) on [Hell"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sumut0/most_ai_agent_skills_on_github_are_unvetted/",
+      "sub": "ai_agents",
+      "score": 0,
+      "comments": 13,
+      "date": "2026-04-24",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "PAIN",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "Most AI agent \"skills\" on GitHub are unvetted garbage. I built a marketplace to fix that. I've been using Claude Code and Cursor daily for the past 6 months. Somewhere around month 3 I started looking for SKILL.md files to make my agent better at specific things. Code review, tes"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1se32eh/help_with_my_runlobster_openclaw_setup_cron/",
+      "sub": "automation",
+      "score": 5,
+      "comments": 8,
+      "date": "2026-04-06",
+      "signals": [
+        "PAYMENT-CONTEXT"
+      ],
+      "snippet": "Help with my runLobster OpenClaw setup? cron scheduling is driving me insane been using this for about 3 weeks and honestly im hitting a wall. the agent itself works fine when it runs but the scheduling part is making me want to throw my laptop. heres my setup: i have an agent th"
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1sx59qy/i_built_the_mvp_now_need_people_to_know_the_idea/",
+      "sub": "SaaS",
+      "score": 2,
+      "comments": 11,
+      "date": "2026-04-27",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "I Built the MVP, Now need people to know the idea actually make sense? I have built a early version of Speed Speaks, but I don't have any real users, which is the actual problem I am facing rn. Is there any member of this community who is willing to be an early user? Who can tell"
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1sxky86/my_saas_doesnt_have_mrr_4_months_in_heres_what/",
+      "sub": "SaaS",
+      "score": 5,
+      "comments": 7,
+      "date": "2026-04-27",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "My SaaS doesn't have MRR. 4 months in, here's what that game looks like. https://preview.redd.it/2w72z7w9jtxg1.png?width=1702&format=png&auto=webp&s=4d2927e2b8fe3a6a63cc32b60da1315d7988314a €142 in 4 months of Stripe for [ThreadRecap](https://www.threadrecap.com/). Monthly: aroun"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1sb59oz/how_to_solve_multiclient_management/",
+      "sub": "automation",
+      "score": 6,
+      "comments": 5,
+      "date": "2026-04-03",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "PAIN",
+        "TOOL-MENTION",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "How to solve multi-client management I’ve spent the last 18 months building a workflow automation platform (iPaaS) similar to Zapier and n8n. During that time I’ve spent quite a bit of time in their communities studying user paint points. The biggest recurring issues I saw were a"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1s8ndda/i_opensourced_a_whitelabel_client_portal_for/",
+      "sub": "automation",
+      "score": 8,
+      "comments": 3,
+      "date": "2026-03-31",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "I open-sourced a white-label client portal for handing off n8n automations If you build automations for clients or internal teams, the handoff phase is usually a mess. Giving non-technical users raw n8n access is dangerous, and asking for API keys over email or Slack is unprofess"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1sm2fqb/how_are_you_handling_sales_tax_with_custom/",
+      "sub": "automation",
+      "score": 4,
+      "comments": 6,
+      "date": "2026-04-15",
+      "signals": [
+        "PAYMENT-CONTEXT"
+      ],
+      "snippet": "How are you handling sales tax with custom billing or commerce setups? Between subscriptions, custom checkout flows and accounting integrations, keeping tax calculations consistent across everything is harder than expected. For teams with custom stacks how are you handling sales "
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sxr9q9/built_a_real_estate_saas_with_no_traditional_dev/",
+      "sub": "ClaudeAI",
+      "score": 0,
+      "comments": 10,
+      "date": "2026-04-28",
+      "signals": [
+        "PAYMENT-CONTEXT"
+      ],
+      "snippet": "Built a real estate SaaS with no traditional dev background using Claude as my co-developer — here’s what I shipped I’m an MSBA student — analytics background, not engineering. Used Claude to build OfferRead, a real estate deal analyzer that: - Pulls live AVM data and rental comp"
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1sxiy52/thinking_of_building_a_starter_kit_that_handles/",
+      "sub": "SaaS",
+      "score": 4,
+      "comments": 6,
+      "date": "2026-04-27",
+      "signals": [
+        "PAYMENT-CONTEXT"
+      ],
+      "snippet": "Thinking of building a starter kit that handles: double-entry ledger, reconciliation Thinking of building a starter kit that handles: * double-entry ledger * idempotent transactions * Stripe ↔ DB reconciliation for Next.js apps Would this actually be useful, or do most people rol"
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1swytbm/is_railway_hobby_vercel_stripe_enough_for_a_small/",
+      "sub": "SaaS",
+      "score": 2,
+      "comments": 8,
+      "date": "2026-04-27",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Is Railway (Hobby) + Vercel + Stripe enough for a small SaaS? Trying to keep costs low I just put together a small SaaS using: * Railway (backend, currently on the Hobby plan) * Vercel (frontend) * Stripe (payments) and it’s actually working end-to-end, which is kinda wild to me "
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1sl2mgg/found_a_use_for_my_agents_when_theyre_sitting/",
+      "sub": "automation",
+      "score": 3,
+      "comments": 6,
+      "date": "2026-04-14",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "Found a use for my agents when they're sitting idle between workflows So I've been running a handful of persistent agents for about 8 months now. Mostly doing research aggregation, monitoring tasks, and some light content workflows. Pretty standard stuff for this sub I imagine. O"
+    }
+  ],
+  "india_top": [
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1sf6csq/were_paying_40_recurring_commission_to_anyone_who/",
+      "sub": "IndieHackers",
+      "score": 8,
+      "comments": 53,
+      "date": "2026-04-07",
+      "signals": [
+        "INDIA-DEV",
+        "WANT"
+      ],
+      "snippet": "We're paying 40% recurring commission to anyone who refers devs to our IDE We're Contral, an AI-powered IDE that teaches you to code while you build. Launched 2 weeks ago, hit #1 Product of the Week on Product Hunt. Bootstrapped with $0. Now we're launching an affiliate program. "
+    },
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1sdskjr/70_of_my_mac_app_traffic_from_india_018/",
+      "sub": "IndieHackers",
+      "score": 15,
+      "comments": 40,
+      "date": "2026-04-06",
+      "signals": [
+        "INDIA-DEV"
+      ],
+      "snippet": "70% of my Mac app traffic from India, 0.18% conversions. Any feedback?"
+    },
+    {
+      "permalink": "https://reddit.com/r/MachineLearning/comments/1sv1473/how_to_find_to_collaborate_with_professors_to_get/",
+      "sub": "MachineLearning",
+      "score": 33,
+      "comments": 12,
+      "date": "2026-04-25",
+      "signals": [
+        "INDIA-DEV"
+      ],
+      "snippet": "How to find to 'collaborate' with Professors to get funding for my research papers? [D] So, I have a few research papers, which I feel are good enough for top conferences' workshops or adjacent proceedings, and maybe even the main conference itself. I recently, submitted to and g"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1sws712/drop_your_business_and_operational_issue_and_i/",
+      "sub": "automation",
+      "score": 10,
+      "comments": 27,
+      "date": "2026-04-27",
+      "signals": [
+        "INDIA-DEV",
+        "WANT"
+      ],
+      "snippet": "drop your business and operational issue and i will automate it for free. been building automation systems for a while now. currently working with radisson, sky properties and a few local brokers in india on speed to lead and lead qualification systems. trying to expand into new "
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sa9qj8/serious_help_needed/",
+      "sub": "n8n",
+      "score": 4,
+      "comments": 25,
+      "date": "2026-04-02",
+      "signals": [
+        "INDIA-DEV",
+        "WANT"
+      ],
+      "snippet": "Serious help needed so I just started working on workflows for about 5-6 days I am building a workflow in which basically http extract top news from India and stock market , and then I append in sheets . which would be then analysed by ai agent to predict next days market predict"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1sjwder/laptop_recommendation_for_automation/",
+      "sub": "automation",
+      "score": 7,
+      "comments": 18,
+      "date": "2026-04-13",
+      "signals": [
+        "INDIA-DEV",
+        "TOOL-MENTION"
+      ],
+      "snippet": "Laptop recommendation for automation Hello all, since my laptop is not working, I am planning to get it with the following configurations (refurbished). Please let me know if this works for n8n, uipath and other automation tools from your experience. model: Dell Precision 3561 pr"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1sb4h8r/built_an_ai_project_brain_to_run_and_manage/",
+      "sub": "automation",
+      "score": 8,
+      "comments": 14,
+      "date": "2026-04-03",
+      "signals": [
+        "INDIA-DEV",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "Built an AI “project brain” to run and manage engineering projects solo, how can I make this more efficient? Recently, I built something I call a “project brain” using Google AI Studio. It helps me manage end to end operations for engineering projects across different states in I"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1srhhu5/i_want_to_learn_artificial_intelligence_online/",
+      "sub": "ai_agents",
+      "score": 7,
+      "comments": 12,
+      "date": "2026-04-21",
+      "signals": [
+        "INDIA-DEV",
+        "WANT"
+      ],
+      "snippet": "I want to learn artificial intelligence online. I want to learn AI but don’t have a tech background. What basic skills should I build first and how do I start learning AI in India? Also what career opportunities are available in AI and which specific skills are most important to "
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1shbsr2/getting_on_demo_call_but_not_converting/",
+      "sub": "automation",
+      "score": 4,
+      "comments": 15,
+      "date": "2026-04-10",
+      "signals": [
+        "INDIA-DEV"
+      ],
+      "snippet": "Getting on demo call but not converting I sell WhatsApp automations mostly to different industries like real estate, hotels, fnb, nightlife etc. The value we provide is high because conversions increase significantly because there’s no delay in response to the customer. We also h"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1stuejs/running_glm_51_on_rtx_5090_via_runpod_for/",
+      "sub": "LocalLLaMA",
+      "score": 0,
+      "comments": 18,
+      "date": "2026-04-23",
+      "signals": [
+        "INDIA-DEV",
+        "WANT"
+      ],
+      "snippet": "Running GLM 5.1 on RTX 5090 via RunPod for document OCR(bank statements and invoices)— costs killing us, need advice on reducing inference costs. We are building a tax compliance SaaS for Indian CAs and businesses. Our AI pipeline processes invoices, bank statements, and financia"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1sid9gb/speed_is_the_only_thing_separating_you_from_the/",
+      "sub": "automation",
+      "score": 3,
+      "comments": 14,
+      "date": "2026-04-11",
+      "signals": [
+        "INDIA-DEV"
+      ],
+      "snippet": "Speed is the only thing separating you from the business. I'll set up an automation for you for free. We build automations that respond to leads the moment they come in. WhatsApp, whatever channel works. The whole point is speed — because most leads go cold not because the produc"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1seywqk/using_telegram_for_leads/",
+      "sub": "automation",
+      "score": 1,
+      "comments": 14,
+      "date": "2026-04-07",
+      "signals": [
+        "INDIA-DEV",
+        "WANT"
+      ],
+      "snippet": "using telegram for leads I’ve been trying to reach out to real estate brokers especially in Bangalore and Dubai, I’ve had no luck and the leads I generated haven’t been what I wanted. I found a couple of Dubai real estate groups, I thought I can just spam my pitch to hundreds of "
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1s8inmk/how_to_automate_lead_generation_of_solo_founders/",
+      "sub": "n8n",
+      "score": 2,
+      "comments": 13,
+      "date": "2026-03-31",
+      "signals": [
+        "INDIA-DEV",
+        "WANT"
+      ],
+      "snippet": "How to automate lead generation of solo founders process? How can I get the leads of solo founders/ founders with team size 1-10 from Pune, I want their contact number too.. One method is by using Apollo.io but it requires credits to reveal each person's contact info, another met"
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1swi9b5/what_i_learned_building_a_free_expense_tracker/",
+      "sub": "SaaS",
+      "score": 3,
+      "comments": 9,
+      "date": "2026-04-26",
+      "signals": [
+        "INDIA-DEV",
+        "WANT",
+        "BUILT-OWN",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "What I learned building a free expense tracker after every \"free\" SaaS turned out to be a paywall in disguise I'm an engineer with a side hustle. Last year I needed a simple tool to track income, expenses, and generate invoices. Tried 7 tools. Every single one had a paywall withi"
+    },
+    {
+      "permalink": "https://reddit.com/r/MachineLearning/comments/1spoj6t/tier3_ise_final_year_with_ongoing_ml_research/",
+      "sub": "MachineLearning",
+      "score": 0,
+      "comments": 11,
+      "date": "2026-04-19",
+      "signals": [
+        "INDIA-DEV",
+        "WANT"
+      ],
+      "snippet": "Tier-3 ISE final year with ongoing ML research (TMLR/Q1/NeurIPS target), trying to understand real impact in India [D] I went through a bunch of older posts here about research vs dev roles, but most of them were either very general or not really in a similar situation, so postin"
+    },
+    {
+      "permalink": "https://reddit.com/r/MachineLearning/comments/1sl9yh9/20m_indian_legal_documents_with_citation_graphs/",
+      "sub": "MachineLearning",
+      "score": 4,
+      "comments": 6,
+      "date": "2026-04-14",
+      "signals": [
+        "INDIA-DEV"
+      ],
+      "snippet": "20M+ Indian legal documents with citation graphs and vector embeddings – potential uses for legal NLP? [D] been working on structuring India's legal corpus for the past 2 years and wanted to share what I've built and hear from people working on legal NLP or low-resource Indian la"
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1sx4rjh/i_built_a_whatsapp_ai_agent_for_small_clinics_in/",
+      "sub": "SaaS",
+      "score": 2,
+      "comments": 8,
+      "date": "2026-04-27",
+      "signals": [
+        "INDIA-DEV",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "I built a WhatsApp AI agent for small clinics in India, here's what I learned talking to 30 doctors I'm building a WhatsApp AI agent for small clinics in India. Before coding anything, I forced myself to do 30 customer conversations. Here's what I didn't expect: 1. They don't wan"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sw3gox/best_voice_ai_stack_for_india_not_calling_bots/",
+      "sub": "ai_agents",
+      "score": 0,
+      "comments": 9,
+      "date": "2026-04-26",
+      "signals": [
+        "INDIA-DEV",
+        "WANT"
+      ],
+      "snippet": "Best Voice AI stack for India (not calling bots, just voice agents) Hey folks, I’m building a product in India where users interact with an AI agent using voice (like talking to an assistant to get tasks done). I’m specifically looking for the best voice AI stack for Indian use c"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sv4pdc/automated_filing_of_multiple_rtis_using_claude/",
+      "sub": "ClaudeAI",
+      "score": 3,
+      "comments": 5,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "INDIA-DEV"
+      ],
+      "snippet": "Automated filing of multiple RTIs using Claude Code + Playwright CLI (worked better than expected) Just tried something interesting — automated the process of filing multiple RTI applications using **Claude Code + Playwright CLI**. What normally takes a lot of repetitive manual e"
+    },
+    {
+      "permalink": "https://reddit.com/r/mcp/comments/1st7rx3/i_built_a_free_remote_mcp_for_indian_stock_market/",
+      "sub": "mcp",
+      "score": 3,
+      "comments": 5,
+      "date": "2026-04-23",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "INDIA-DEV",
+        "BUILT-OWN"
+      ],
+      "snippet": "I built a free remote MCP for Indian stock market data — 8,200 NSE/BSE stocks, 35 tools Been using Claude and ChatGPT to research Indian stocks and kept hitting the same wall — LLMs know the concepts, but have no live data on NSE/BSE. So I wired my backend up as a remote MCP. No "
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1su9rp8/anyone_know_what_prompt_wars_events_are_like/",
+      "sub": "ai_agents",
+      "score": 2,
+      "comments": 5,
+      "date": "2026-04-24",
+      "signals": [
+        "INDIA-DEV",
+        "WANT"
+      ],
+      "snippet": "anyone know what “prompt wars” events are like? Just randomly stumbled on this tech fest in bangalore (ASCENT, may 15–17) and one thing that caught my eye was this “prompt wars” thing they’re saying is hosted by google and also a crazy kaggle competition?? not fully sure what tha"
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1sy2975/i_am_a_saas_founder_looking_for_aws_credits/",
+      "sub": "SaaS",
+      "score": 3,
+      "comments": 3,
+      "date": "2026-04-28",
+      "signals": [
+        "INDIA-DEV",
+        "WANT"
+      ],
+      "snippet": "I am a SaaS founder looking for AWS credits Hi I am a Saas founder and I am interested in AWS credits as per founder program (1k USD) context -- \\- My product is currently in final development process and early production phase \\- I have registered a Legal Limited liability firm "
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1sx87l3/i_recently_completed_my_undergraduate_degree_and/",
+      "sub": "SaaS",
+      "score": 1,
+      "comments": 5,
+      "date": "2026-04-27",
+      "signals": [
+        "INDIA-DEV"
+      ],
+      "snippet": "I recently completed my undergraduate degree and am now in the process of deploying an app that helps Telegram group owners automate their payment collection. I’ve noticed a recurring problem for educators, stock traders, and community group owners in India. They have amazing val"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1subogi/i_developed_a_real_time_trivia_multiplayer_game/",
+      "sub": "ai_agents",
+      "score": 1,
+      "comments": 3,
+      "date": "2026-04-24",
+      "signals": [
+        "INDIA-DEV",
+        "BUILT-OWN"
+      ],
+      "snippet": "I developed a real time trivia multiplayer game for students I utilized my whole 6th semester to build a game that I can play with my friends and realized that building a real world project is the one and only way to get confidence in your skills, textbook knowledge can only get "
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1sxvm1y/built_a_voicefirst_ai_notetaking_app_after_years/",
+      "sub": "SaaS",
+      "score": 1,
+      "comments": 3,
+      "date": "2026-04-28",
+      "signals": [
+        "INDIA-DEV",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "Built a voice-first AI note-taking app after years of losing ideas at the wrong moment, launching on Product Hunt today The idea for VoiceLab came from a specific moment. I am a content creator/podcaster. I was driving and had one of those ideas that felt genuinely useful - clear"
+    }
+  ],
+  "india_self_identified": [
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1sdskjr/70_of_my_mac_app_traffic_from_india_018/",
+      "sub": "IndieHackers",
+      "score": 15,
+      "comments": 40,
+      "date": "2026-04-06",
+      "signals": [
+        "INDIA-DEV"
+      ],
+      "snippet": "70% of my Mac app traffic from India, 0.18% conversions. Any feedback?"
+    },
+    {
+      "permalink": "https://reddit.com/r/MachineLearning/comments/1sv1473/how_to_find_to_collaborate_with_professors_to_get/",
+      "sub": "MachineLearning",
+      "score": 33,
+      "comments": 12,
+      "date": "2026-04-25",
+      "signals": [
+        "INDIA-DEV"
+      ],
+      "snippet": "How to find to 'collaborate' with Professors to get funding for my research papers? [D] So, I have a few research papers, which I feel are good enough for top conferences' workshops or adjacent proceedings, and maybe even the main conference itself. I recently, submitted to and got accepted at a CVPR Archival Workshop (which is considered to be gre"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sa9qj8/serious_help_needed/",
+      "sub": "n8n",
+      "score": 4,
+      "comments": 25,
+      "date": "2026-04-02",
+      "signals": [
+        "INDIA-DEV",
+        "WANT"
+      ],
+      "snippet": "Serious help needed so I just started working on workflows for about 5-6 days I am building a workflow in which basically http extract top news from India and stock market , and then I append in sheets . which would be then analysed by ai agent to predict next days market prediction using tools like getting the appended news articles . # but !!! My"
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1sxt21b/six_6_technical_lessons_building_a_whatsapp/",
+      "sub": "SaaS",
+      "score": 1,
+      "comments": 8,
+      "date": "2026-04-28",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Six (6) technical lessons building a WhatsApp payment automation tool as a solo Data Engineer I spent 6 weeks building an invoicing + WhatsApp reminder tool. Here's what actually broke things: 1. WhatsApp Cloud API approval takes 2 weeks Don't plan your launch around it 2. jsPDF breaks on Vercel free tier WorkerError crashes the build Fix: switch t"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sv4pdc/automated_filing_of_multiple_rtis_using_claude/",
+      "sub": "ClaudeAI",
+      "score": 3,
+      "comments": 5,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "INDIA-DEV"
+      ],
+      "snippet": "Automated filing of multiple RTIs using Claude Code + Playwright CLI (worked better than expected) Just tried something interesting — automated the process of filing multiple RTI applications using **Claude Code + Playwright CLI**. What normally takes a lot of repetitive manual effort (filling forms, payments, confirmations, etc.) was handled end-t"
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1sx87l3/i_recently_completed_my_undergraduate_degree_and/",
+      "sub": "SaaS",
+      "score": 1,
+      "comments": 5,
+      "date": "2026-04-27",
+      "signals": [
+        "INDIA-DEV"
+      ],
+      "snippet": "I recently completed my undergraduate degree and am now in the process of deploying an app that helps Telegram group owners automate their payment collection. I’ve noticed a recurring problem for educators, stock traders, and community group owners in India. They have amazing value to share on Telegram, but managing the business side is a mess: Man"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1st9v5j/video_avatar_creation_with_character_and_voice/",
+      "sub": "n8n",
+      "score": 2,
+      "comments": 1,
+      "date": "2026-04-23",
+      "signals": [
+        "INDIA-DEV",
+        "WANT"
+      ],
+      "snippet": "Video Avatar Creation with character and voice consistency Require someone who's worked with heygen and higgsfield to create AI Video avatars with reasonable consistency. We need around 5 characters. These are the kind of vids to be created: [https://www.youtube.com/shorts/gZeoTeiSHeg](https://www.youtube.com/shorts/gZeoTeiSHeg) Please dm with exam"
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1swioj3/roast_my_new_saas_an_ai_proposal_generator_for/",
+      "sub": "SaaS",
+      "score": 1,
+      "comments": 2,
+      "date": "2026-04-26",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "INDIA-DEV",
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Roast my new SaaS: An AI proposal generator for Indian Agencies. Tell me why it sucks. Hey guys, I just finished building v1 of my website The core thesis is that Indian IT and marketing agencies waste way too much time making PDF proposals, and existing tools (like PandaDoc) are too expensive and don't handle local things like GST and UPI well. Th"
+    }
+  ],
+  "razorpay_agent_studio": [],
+  "built_own_top": [
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1sx8uok/luce_dflash_qwen3627b_at_up_to_2x_throughput_on_a/",
+      "sub": "LocalLLaMA",
+      "score": 639,
+      "comments": 176,
+      "date": "2026-04-27",
+      "signals": [
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "Luce DFlash: Qwen3.6-27B at up to 2x throughput on a single RTX 3090 Hey fellow Llamas, your time is precious, so I'll keep it short. We built a GGUF port of DFlash speculative decoding. Standalone C++/CUDA stack on top of ggml, runs on a single 24 GB RTX 3090, hosts the new Qwen"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sx0ngg/built_an_interactive_daily_workout_app_with/",
+      "sub": "ClaudeAI",
+      "score": 333,
+      "comments": 101,
+      "date": "2026-04-27",
+      "signals": [
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "Built an interactive daily workout app with Claude in one conversation, no coding experience required I told Claude I had a workout plan PDF and wanted it to actually do something on my phone. One conversation later: a fully functional Progressive Web App living on my iOS home sc"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sv4qnh/how_anthropic_can_save_opus_47_with_one_change/",
+      "sub": "ClaudeAI",
+      "score": 335,
+      "comments": 91,
+      "date": "2026-04-25",
+      "signals": [
+        "PAIN",
+        "BUILT-OWN"
+      ],
+      "snippet": "How Anthropic can save Opus 4.7 with one change. The model now decides how hard to think about your question. Not you. The model. So when people keep saying “4.7 gives me shallow answers on complex problems” … yeah. It decided your problem wasn’t worth the compute. And the part a"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sc3i30/i_built_a_whatsapp_voice_ai_agent_in_n8n_that/",
+      "sub": "n8n",
+      "score": 316,
+      "comments": 52,
+      "date": "2026-04-04",
+      "signals": [
+        "WANT",
+        "BUILT-OWN",
+        "TOOL-MENTION"
+      ],
+      "snippet": "I built a WhatsApp + voice AI agent in n8n that handles 90% of customer service. Sold the business, the buyer kept it running without me https://preview.redd.it/m1bxfpxxs4tg1.jpg?width=2512&format=pjpg&auto=webp&s=d5328c59e7a695a2763b29235216a064a28fcc8a I owned a device repair s"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1s9q17n/i_automated_ugc_reaction_videos_here_are_the/",
+      "sub": "automation",
+      "score": 156,
+      "comments": 162,
+      "date": "2026-04-01",
+      "signals": [
+        "CLAUDE-CODE",
+        "BUILT-OWN",
+        "TOOL-MENTION"
+      ],
+      "snippet": "I automated UGC reaction videos. Here are the results I’ve built dozens of apps and if you’re in this space, you know that ugc reaction videos on tiktok / insta are the number #1 way to distribute But it’s a pain to manage, costs a lot of money and it’s super labour intensive. So"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sx0qol/why_ai_is_erasing_your_mental_map_of_your_projects/",
+      "sub": "ClaudeAI",
+      "score": 180,
+      "comments": 58,
+      "date": "2026-04-27",
+      "signals": [
+        "PAIN",
+        "BUILT-OWN"
+      ],
+      "snippet": "Why AI is erasing your mental map of your projects Lately, a concerning pattern is emerging: developers are struggling to maintain a mental map of their own projects. We can recall the logic of a project we hand-coded five years ago, yet the one we built with an LLM last week fee"
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1sxwh5z/ai_slop_is_out_of_control_on_here/",
+      "sub": "SaaS",
+      "score": 87,
+      "comments": 99,
+      "date": "2026-04-28",
+      "signals": [
+        "BUILT-OWN"
+      ],
+      "snippet": "AI slop is out of control on here. This post was NOT generated with AI. Real thoughts bu a real human. Every single day when im scrolling this subreddit it's the same. AI generated posts like \"How i Made $20K MRR while living in my uncle's brother's garage\" Or \"How am I supposed "
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1stfjg5/claude_nano_banana_for_ads_is_so_good_i_made_it_a/",
+      "sub": "n8n",
+      "score": 142,
+      "comments": 33,
+      "date": "2026-04-23",
+      "signals": [
+        "WANT",
+        "BUILT-OWN",
+        "TOOL-MENTION"
+      ],
+      "snippet": "claude + nano banana for ads is so good i made it a product (300+ users in 1st month) i used to handle performance marketing for an ecommerce brand with around $4M monthly spend, so naturally i started experimenting with ai creatives pretty early. 2 years ago, most of it honestly"
+    },
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1sgq9vh/i_built_a_reddit_marketing_tool_for_saas_founders/",
+      "sub": "IndieHackers",
+      "score": 23,
+      "comments": 149,
+      "date": "2026-04-09",
+      "signals": [
+        "WANT",
+        "BUILT-OWN",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "I built a Reddit marketing tool for SaaS founders, would love feedback on our landing page Hey everyone! I've been lurking here for a while and decided to build something I wish existed when I was struggling to market my own SaaS. The problem: Reddit is incredibly valuable for Sa"
+    },
+    {
+      "permalink": "https://reddit.com/r/MachineLearning/comments/1srufft/bulding_my_own_diffusion_language_model_from/",
+      "sub": "MachineLearning",
+      "score": 128,
+      "comments": 30,
+      "date": "2026-04-21",
+      "signals": [
+        "CLAUDE-CODE",
+        "BUILT-OWN"
+      ],
+      "snippet": "Bulding my own Diffusion Language Model from scratch was easier than I thought [P] Since I felt like I was relying on Claude Code a lot recently, I wanted to see how hard it is to implement a diffusion language model from scratch without the help of AI-Generated code. So I built "
+    },
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1skxvhn/first_month_build_saas_need_your_advices_to_get/",
+      "sub": "IndieHackers",
+      "score": 41,
+      "comments": 112,
+      "date": "2026-04-14",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "First month build saas, need your advices to get revenue This is my first month building trunktransfer, alternative to wetransfer. In my previous projects, i build many features the sell with wroing direction. sometimes after get user these feature i built need to remove. Now i c"
+    },
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1skh6rz/im_building_my_6th_saas_after_building_5_over_the/",
+      "sub": "IndieHackers",
+      "score": 37,
+      "comments": 116,
+      "date": "2026-04-13",
+      "signals": [
+        "PAIN",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "I’m building my 6th SaaS after building 5 over the past 3 years. Here’s what I do differently now. Hey everyone, I’ve been building SaaS products for ~3 years now, all while working full-time as a developer. I’ve built 5 products so far. Some failed, some made money, some got acq"
+    },
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1sm23ml/i_hate_managing_twitter_linkedin_and_a_blog_while/",
+      "sub": "IndieHackers",
+      "score": 31,
+      "comments": 120,
+      "date": "2026-04-15",
+      "signals": [
+        "PAIN",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "i hate managing twitter, linkedin, and a blog while coding. so i built an over-engineered voice memo app to do it for me. honestly, context-switching between writing code and writing linkedin posts was killing my momentum. i'd have a decent idea while walking to get coffee, forge"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sj85kg/tried_claude_code_hate_it/",
+      "sub": "cursor",
+      "score": 57,
+      "comments": 84,
+      "date": "2026-04-12",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "BUILT-OWN"
+      ],
+      "snippet": "Tried claude code. Hate it. Just posted this in r/ClaudeCode , thought I'd come to a different flavoured echo chamber and see what the cursor community makes of my experience. Note I've not upgraded to cursor v3 yet, and I don't know if I want to. Maybe 'trust-me-bro' vibes from "
+    },
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1sweumr/i_got_into_a_bad_habit_with_youtube_so_i_built/",
+      "sub": "IndieHackers",
+      "score": 26,
+      "comments": 110,
+      "date": "2026-04-26",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "I got into a bad habit with YouTube… so I built something to fix it (I can't code either!) I've been trying to grow my main business and as a byproduct of that, I got into a bad habit with YouTube. Basically, most nights I'd get into in bed and fire up YouTube and start watching "
+    },
+    {
+      "permalink": "https://reddit.com/r/Entrepreneur/comments/1srugyv/i_think_im_done_potential_sell_out/",
+      "sub": "Entrepreneur",
+      "score": 52,
+      "comments": 83,
+      "date": "2026-04-21",
+      "signals": [
+        "PAIN",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "I think I’m done, potential sell out It’s been a long journey and I feel like I’m getting nowhere. 5 years ago I decided to embark on my first business adventure. I started a men’s jewellery business as I saw there was a gap in the market in this space for affordable jewellery th"
+    },
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1sqrsgv/i_saw_clicky_go_viral_on_twitter_so_i_built_the/",
+      "sub": "IndieHackers",
+      "score": 27,
+      "comments": 95,
+      "date": "2026-04-20",
+      "signals": [
+        "PAIN",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "I saw Clicky go viral on Twitter, so I built the web version If you've been on Twitter/X lately you might have seen this new tool called [Clicky](https://x.com/farzatv/status/2041314633978659092?s=46) which is basically an ai that can see your screen and teach you stuff in real t"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1stda86/opensource_dashboard_to_visualize_ai_coding/",
+      "sub": "LocalLLaMA",
+      "score": 96,
+      "comments": 25,
+      "date": "2026-04-23",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "BUILT-OWN"
+      ],
+      "snippet": "Open-source dashboard to visualize AI coding agents (Claude Code) I built a real-time visual layer for Claude Code agents in a medieval fantasy style. **Repo:** [https://github.com/FulAppiOS/Agent-Quest](https://github.com/FulAppiOS/Agent-Quest) When running multiple Claude Code "
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1ssljn8/i_automated_most_of_my_daily_decisions_and/",
+      "sub": "automation",
+      "score": 64,
+      "comments": 56,
+      "date": "2026-04-22",
+      "signals": [
+        "PAIN",
+        "BUILT-OWN"
+      ],
+      "snippet": "I automated most of my daily decisions and accidentally removed decision-making from my life I automated my life to reduce decision fatigue. Now I don’t really make decisions anymore. \\- meals are auto planned \\- calendar auto assigns work and rest \\- tasks are ranked by a system"
+    },
+    {
+      "permalink": "https://reddit.com/r/MachineLearning/comments/1shtv0r/d_60_matmul_performance_bug_in_cublas_on_rtx_5090/",
+      "sub": "MachineLearning",
+      "score": 109,
+      "comments": 9,
+      "date": "2026-04-10",
+      "signals": [
+        "BUILT-OWN"
+      ],
+      "snippet": "[D] 60% MatMul Performance Bug in cuBLAS on RTX 5090 [D] cuBLAS dispatches an inefficient kernel for every batched FP32 workload, from 256×256 to 8192×8192×8. It only uses \\~40% of the available compute on RTX GPUs. Tested with RTX 5090, but likely all RTX non-Pro GPUs are affect"
+    }
+  ],
+  "price_sensitive_top": [
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sxi9mo/anthropic_just_quietly_locked_opus_behind_a/",
+      "sub": "ClaudeAI",
+      "score": 730,
+      "comments": 174,
+      "date": "2026-04-27",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Anthropic just quietly locked Opus behind a paywall-within-a-paywall for Pro users in Claude Code If you're on Claude Pro and using Claude Code, you might have noticed something buried in their support docs: \"When using a Pro plan with Claude Code, you will only be able to use Op"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sxcxge/github_copilot_9x_price_increase_for_claude_models/",
+      "sub": "ClaudeAI",
+      "score": 566,
+      "comments": 125,
+      "date": "2026-04-27",
+      "signals": [
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "GitHub Copilot 9x price increase for Claude models So it seems that GitHub Copilot is increasing their costs by 900% for Claude models starting in June: See https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing#model-multipliers-for-annual-copilot-pro-an"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1st3m8y/qwen_36_is_actually_useful_for_vibecoding_and_way/",
+      "sub": "LocalLLaMA",
+      "score": 366,
+      "comments": 118,
+      "date": "2026-04-23",
+      "signals": [
+        "CLAUDE-CODE",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Qwen 3.6 is actually useful for vibe-coding, and way cheaper than Claude Launched claude code, pointed it at my running Qwen, and, well, it vibe codes perfectly fine. I started a project with Qwen3.6-35B-A3B (Q4) yesterday, and then this morning switched to 27B (Q8), and both wor"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sshtml/did_elon_just_kill_the_appeal_of_cursor/",
+      "sub": "cursor",
+      "score": 211,
+      "comments": 213,
+      "date": "2026-04-22",
+      "signals": [
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Did Elon just kill the appeal of Cursor? If Elon takes control of cursor, do you think he will lock out all the model choices we have now and force us to use GROK? What i like most about cursor is the ability to use SOTA models for heavy coding tasks but use auto mode or cheaper "
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1swy9ap/metas_2_billion_manus_acquisition_blocked_by_china/",
+      "sub": "LocalLLaMA",
+      "score": 317,
+      "comments": 99,
+      "date": "2026-04-27",
+      "signals": [
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Meta’s $2 billion Manus acquisition blocked by China. From 猫总 on 𝕏: [https://x.com/catmangox/status/2048680484037935200](https://x.com/catmangox/status/2048680484037935200) \"National Development and Reform Commission of the People’s Republic of China Government Information Disclo"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sqg5ew/spent_a_weekend_actually_understanding_and/",
+      "sub": "ai_agents",
+      "score": 189,
+      "comments": 86,
+      "date": "2026-04-20",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Spent a weekend actually understanding and building Karpathy's \"LLM Wiki\" — here's what worked, what didn't After Karpathy's LLM Wiki gist blew up last month, I finally sat down and built one end-to-end to see if it actually good or if it's just hype. Sharing the honest takeaways"
+    },
+    {
+      "permalink": "https://reddit.com/r/Entrepreneur/comments/1ssfcii/what_actually_surprised_you_the_most_once_you/",
+      "sub": "Entrepreneur",
+      "score": 79,
+      "comments": 182,
+      "date": "2026-04-22",
+      "signals": [
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "What actually surprised you the most once you started running a business? Everyone talks about ideas, funding, growth, and freedom. But once you’re actually running the business day to day, what part hit harder than you expected? For me, it wasn’t the big decisions, it was the co"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1sxch39/the_4b_class_of_2026_benchmark/",
+      "sub": "LocalLLaMA",
+      "score": 200,
+      "comments": 53,
+      "date": "2026-04-27",
+      "signals": [
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "The 4B class of 2026 (benchmark) Bench 2 from my 18GB M3 Pro. Last week was specialists vs generalists at 7-8B (which I hosed by giving thinking models a 128-token budget, so half the post was an apology). This week: the 4B class of 2026, every model released or actively-current "
+    },
+    {
+      "permalink": "https://reddit.com/r/Entrepreneur/comments/1sxqj9i/everyone_thinks_your_business_idea_sucks_stop/",
+      "sub": "Entrepreneur",
+      "score": 124,
+      "comments": 113,
+      "date": "2026-04-28",
+      "signals": [
+        "PAIN",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Everyone thinks your business idea sucks, stop taking advice from strangers and just start You have a business idea, everyone will start giving advice on why it’s not as simple as it seems and you probably won’t make any money, its true but you have to be in it to win it, if you "
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1subuve/takeaways_discussion_about_the_deepseek_v4/",
+      "sub": "LocalLLaMA",
+      "score": 139,
+      "comments": 86,
+      "date": "2026-04-24",
+      "signals": [
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Takeaways & discussion about the DeepSeek V4 architecture Spent the morning looking at the V4 tech report. The benchmarks are getting deserved attention, but I think the architecture is also worth digging into. Quick thoughts below to encourage feedback and discussions. **TL;DR**"
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1swvs7i/charged_299month_instead_of_49_churn_dropped_by/",
+      "sub": "SaaS",
+      "score": 105,
+      "comments": 77,
+      "date": "2026-04-27",
+      "signals": [
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Charged $299/month instead of $49. Churn dropped by half. Spent the first eight months convinced the product was not converting because the price was too high. Kept it at $49 to stay accessible. Trial-to-paid was sitting around 8%. Raised it to $299 as an experiment. Expected sig"
+    },
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1sgq9vh/i_built_a_reddit_marketing_tool_for_saas_founders/",
+      "sub": "IndieHackers",
+      "score": 23,
+      "comments": 149,
+      "date": "2026-04-09",
+      "signals": [
+        "WANT",
+        "BUILT-OWN",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "I built a Reddit marketing tool for SaaS founders, would love feedback on our landing page Hey everyone! I've been lurking here for a while and decided to build something I wish existed when I was struggling to market my own SaaS. The problem: Reddit is incredibly valuable for Sa"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1ssf0f9/why_i_stopped_building_autonomous_agents_for/",
+      "sub": "ai_agents",
+      "score": 116,
+      "comments": 55,
+      "date": "2026-04-22",
+      "signals": [
+        "PAIN",
+        "WANT",
+        "TOOL-MENTION",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Why I Stopped Building Autonomous Agents for Clients I spent the better part of last year trying to sell fully autonomous AI agents to my clients. I promised them systems that could think, plan, and execute complex tasks while they slept. It sounded like the future, but in realit"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1sw7e0g/hardware_choice_for_27b_to_31b_models/",
+      "sub": "LocalLLaMA",
+      "score": 55,
+      "comments": 108,
+      "date": "2026-04-26",
+      "signals": [
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Hardware Choice for 27b to 31b models. I've come to a point where I find the 27b and 31b models quite impressive. I have a 16 GB AMD Radeon 7800xt. It performs quite well. It was $700. Here is my question: Is the dual GPU approach performance hit worth it if I save around $400 ov"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sxpslr/after_automating_workflows_for_30_professional/",
+      "sub": "ai_agents",
+      "score": 118,
+      "comments": 38,
+      "date": "2026-04-28",
+      "signals": [
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "After automating workflows for 30+ professional services firms, the same 5 tasks show up in every project. None of them need AI agents. Bit of context. Over the last couple of years I've shipped automation projects for around 30 professional services founders. Law firms, accounti"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sullfu/claude_is_extremely_expensive_but_works_like/",
+      "sub": "ClaudeAI",
+      "score": 94,
+      "comments": 58,
+      "date": "2026-04-24",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Claude is extremely expensive but works like Magic! (For a non-coder) I have a small business and have ways wanted to digitized all our customer data via an app. I have a very specific way in my head for doing (how our data will be processed) it but just don't know how to do it s"
+    },
+    {
+      "permalink": "https://reddit.com/r/Entrepreneur/comments/1sqv7be/figma_just_got_what_zoominfo_is_about_to_get/",
+      "sub": "Entrepreneur",
+      "score": 92,
+      "comments": 59,
+      "date": "2026-04-20",
+      "signals": [
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Figma just got what ZoomInfo is about to get Watching Claude Design launch this week and Figma drop 4% in a session, and the thing I can't stop thinking about is how cleanly this maps onto what's coming for the sales tool stack . A category gets built in layers over a decade, eac"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sv0nc9/the_ai_will_replace_engineers_discourse_has_the/",
+      "sub": "ai_agents",
+      "score": 89,
+      "comments": 58,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "The \"AI will replace engineers\" discourse has the abstraction level wrong Every few months the argument resurfaces and it keeps flattening the same distinction: writing code and shipping software are different jobs, and AI is very good at one of them and barely touching the other"
+    },
+    {
+      "permalink": "https://reddit.com/r/MachineLearning/comments/1sa4rlx/d_selfpromotion_thread/",
+      "sub": "MachineLearning",
+      "score": 21,
+      "comments": 126,
+      "date": "2026-04-02",
+      "signals": [
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "[D] Self-Promotion Thread Please post your personal projects, startups, product placements, collaboration needs, blogs etc. Please mention the payment and pricing requirements for products and services. Please do not post link shorteners, link aggregator websites , or auto-subscr"
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1sxa340/its_taken_me_two_weeks_to_get_my_first_real/",
+      "sub": "SaaS",
+      "score": 57,
+      "comments": 90,
+      "date": "2026-04-27",
+      "signals": [
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "It’s taken me two weeks to get my first real client (not my mom). Here’s what I figured out that works I launched my app two weeks ago. At first it was very difficult to get the first members,but yesterday it happened we had a first member who actually paid. My mistake was that I"
+    }
+  ],
+  "cc_cursor_pain": [
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1svdm1w/psa_the_string_hermesmd_in_your_git_commit/",
+      "sub": "ClaudeAI",
+      "score": 1425,
+      "comments": 193,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "PSA: The string \"HERMES.md\" in your git commit history silently routes Claude Code billing to extra usage — cost me $200 TL;DR: If your git commits mention \"HERMES.md\" (uppercase), Claude Code quietly stops using your Max plan and starts billing you at API rates. Anthropic's support acknowledged the bug, thanked me for finding it, and refused a ref"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1sxqa2c/im_done_with_using_local_llms_for_coding/",
+      "sub": "LocalLLaMA",
+      "score": 740,
+      "comments": 653,
+      "date": "2026-04-28",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "I'm done with using local LLMs for coding I think gave it a fair shot over the past few weeks, forcing myself to use local models for non-work tech asks. I use Claude Code at my job so that's what I'm comparing to. I used Qwen 27B and Gemma 4 31B, these are considered the best local models under the multi-hundred LLMs. I also tried multiple agentic"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sxi9mo/anthropic_just_quietly_locked_opus_behind_a/",
+      "sub": "ClaudeAI",
+      "score": 730,
+      "comments": 174,
+      "date": "2026-04-27",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Anthropic just quietly locked Opus behind a paywall-within-a-paywall for Pro users in Claude Code If you're on Claude Pro and using Claude Code, you might have noticed something buried in their support docs: \"When using a Pro plan with Claude Code, you will only be able to use Opus models after enabling and purchasing extra usage.\" So let me get th"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1ss7z42/spacexs_60b_agreement_to_acquire_cursor_is_wild/",
+      "sub": "cursor",
+      "score": 197,
+      "comments": 165,
+      "date": "2026-04-22",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "SpaceX's $60B agreement to acquire Cursor is wild, but the $10B fallback is crazier. I was literally in the middle of fighting a rogue React useEffect hook at 1 AM last night. The baby started crying on the monitor, I lost my train of thought, and while I was bouncing him back to sleep, I pulled up my feed. SpaceX is acquiring Cursor for $60B. Well"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sxq24c/how_are_people_using_so_many_tokens/",
+      "sub": "ClaudeAI",
+      "score": 193,
+      "comments": 141,
+      "date": "2026-04-28",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "How are people using so many tokens ??? I've been using Claude basically since it launched, and use Claude Code extensively (Swift, C++, Shaders, TS, AWS, etc)... Maybe this is just tech twitter / LinkedIn garbage, but how on earth are people using so many tokens... I use maybe \\~20M tokens per month, with multiple sessions per day, across my 3-4 c"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sc55tc/cursor_v3_is_a_significant_regression/",
+      "sub": "cursor",
+      "score": 214,
+      "comments": 118,
+      "date": "2026-04-04",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "Cursor V3 is a significant regression So I used to be a big cursor fan - striked the right balance between trusting the AI and being able to check the work. The new version however, sucks. Worktrees are now essentially AI initiated magic git commands that require manual approval, which is slow and annoying, and means I have to read through a bunch "
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sqg5ew/spent_a_weekend_actually_understanding_and/",
+      "sub": "ai_agents",
+      "score": 189,
+      "comments": 86,
+      "date": "2026-04-20",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Spent a weekend actually understanding and building Karpathy's \"LLM Wiki\" — here's what worked, what didn't After Karpathy's LLM Wiki gist blew up last month, I finally sat down and built one end-to-end to see if it actually good or if it's just hype. Sharing the honest takeaways because most of the writeups I've seen are either breathless \"bye bye"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1svgtlh/glm_51_locally_40tps_2000_pps/",
+      "sub": "LocalLLaMA",
+      "score": 101,
+      "comments": 90,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "GLM 5.1 Locally: 40tps, 2000+ pp/s After some sglang patching and countless experiments, managed to get reap-ed nvfp4 version running stable and FAST on 4 x RTX 6000 Pros (limited to 350W). Very happy with performance and quality. Inference software is still under-optimized for those cards. I think we will see their true potential unfold this or ea"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sullfu/claude_is_extremely_expensive_but_works_like/",
+      "sub": "ClaudeAI",
+      "score": 94,
+      "comments": 58,
+      "date": "2026-04-24",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Claude is extremely expensive but works like Magic! (For a non-coder) I have a small business and have ways wanted to digitized all our customer data via an app. I have a very specific way in my head for doing (how our data will be processed) it but just don't know how to do it since I am not a coder. Thought of buying 3rd party subscription busine"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sv0nc9/the_ai_will_replace_engineers_discourse_has_the/",
+      "sub": "ai_agents",
+      "score": 89,
+      "comments": 58,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "The \"AI will replace engineers\" discourse has the abstraction level wrong Every few months the argument resurfaces and it keeps flattening the same distinction: writing code and shipping software are different jobs, and AI is very good at one of them and barely touching the other. Writing code — translating a specified problem into working syntax —"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1sj85kg/tried_claude_code_hate_it/",
+      "sub": "cursor",
+      "score": 57,
+      "comments": 84,
+      "date": "2026-04-12",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "BUILT-OWN"
+      ],
+      "snippet": "Tried claude code. Hate it. Just posted this in r/ClaudeCode , thought I'd come to a different flavoured echo chamber and see what the cursor community makes of my experience. Note I've not upgraded to cursor v3 yet, and I don't know if I want to. Maybe 'trust-me-bro' vibes from your agentic coding platform are fine for trivial work or vibe-coded a"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sw4bl6/how_do_you_decide_which_claude_code_tasks_to_run/",
+      "sub": "ClaudeAI",
+      "score": 94,
+      "comments": 44,
+      "date": "2026-04-26",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "How do you decide which Claude Code tasks to run with Opus vs Sonnet vs Haiku? Been vibe coding full-time for a few months. One workflow question I haven't nailed down yet: how do you decide which model to use for which task in Claude Code? I know Opus is overkill for simple edits and Haiku is too weak for complex refactors — but in practice I end "
+    },
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1sweumr/i_got_into_a_bad_habit_with_youtube_so_i_built/",
+      "sub": "IndieHackers",
+      "score": 26,
+      "comments": 110,
+      "date": "2026-04-26",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "I got into a bad habit with YouTube… so I built something to fix it (I can't code either!) I've been trying to grow my main business and as a byproduct of that, I got into a bad habit with YouTube. Basically, most nights I'd get into in bed and fire up YouTube and start watching videos finding it hard to stop... AI, business, side hustles... it was"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1svdep5/field_report_coding_with_qwen_36_35ba3b_on_an_m2/",
+      "sub": "LocalLLaMA",
+      "score": 79,
+      "comments": 46,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Field report: coding with Qwen 3.6 35B-A3B on an M2 Macbook Pro with 32GB RAM TL;DR: I finally have this working and doing real work within the tight specs of my 32GB RAM Mac. So for those who would like to fly like [Julien Chaumond](https://x.com/julien_c/status/2047647522173104145), here's an updated HOW-TO, an explanation of why I did everything"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1stda86/opensource_dashboard_to_visualize_ai_coding/",
+      "sub": "LocalLLaMA",
+      "score": 96,
+      "comments": 25,
+      "date": "2026-04-23",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "BUILT-OWN"
+      ],
+      "snippet": "Open-source dashboard to visualize AI coding agents (Claude Code) I built a real-time visual layer for Claude Code agents in a medieval fantasy style. **Repo:** [https://github.com/FulAppiOS/Agent-Quest](https://github.com/FulAppiOS/Agent-Quest) When running multiple Claude Code agents across different CLI sessions and projects, I found it hard to "
+    },
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1sk46gr/running_a_complete_ai_agent_team_for_your_company/",
+      "sub": "IndieHackers",
+      "score": 18,
+      "comments": 91,
+      "date": "2026-04-13",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Running a complete AI agent team for your company. Is it real or not? I am trying to understand one thing: is it actually possible to run a real AI agent team for a company in a practical and sustainable way, or are we still not there yet? From what I have seen so far, [Paperclip](https://paperclip.ing/) looks like one of the fastest and easiest to"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sxzlh6/pullmd_gave_claude_code_an_mcp_server_so_it_stops/",
+      "sub": "ClaudeAI",
+      "score": 85,
+      "comments": 21,
+      "date": "2026-04-28",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "PAIN",
+        "BUILT-OWN",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "PullMD - gave Claude Code an MCP server so it stops burning tokens parsing HTML Hey all, Built this over the past few weeks because I got tired of two things: **1. Mobile copy-paste is awful.** Long Reddit thread or blog post on my phone, want to ask Claude about it. Long-press, drag selection handles past nav/sidebar/footer, copy, switch app, past"
+    },
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1ssewaf/something_different_than_any_other_marketing_apps/",
+      "sub": "IndieHackers",
+      "score": 15,
+      "comments": 85,
+      "date": "2026-04-22",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "something different than any other marketing apps While I was in college, I built a voice dictation app. Got few users. But balancing college, building the app and marketing it was a nightmare. I even tried some automation tools, pure shit. lol. Every AI writing tool out there starts from a blank prompt, or just your brand details. You type \"write "
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1saabgz/the_bull_around_ai_agent_capabilities_on_reddit/",
+      "sub": "automation",
+      "score": 40,
+      "comments": 32,
+      "date": "2026-04-02",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN"
+      ],
+      "snippet": "The bull** around AI agent capabilities on Reddit is getting out of hand I’ve spent the last few months actually building with agent tools instead of just watching demos and reading hype threads. A big chunk of that time has been in Claude Code, plus a couple of months building a personal AI agent on the side. My honest takeaway so far: AI agents c"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1st6sym/using_n8n_hosted_with_claude_code/",
+      "sub": "n8n",
+      "score": 30,
+      "comments": 22,
+      "date": "2026-04-23",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "Using n8n (hosted) with Claude Code Does anyone use Claude Code to draft and edit n8n workflows? Curious how useful it would be here. I drifted away from n8n towards Claude Code and Clay. But I am now coming back to n8n for a variety of reasons. While I like it better in general, there are some things I now feel like I'm missing from CC and Clay Up"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1svnl16/whats_the_consensus_on_superior_local_models_for/",
+      "sub": "LocalLLaMA",
+      "score": 9,
+      "comments": 39,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "What's the consensus on superior local models for code generation? Is my setup competitive? I'm trying as hard as I can to get a local setup somewhere in the ballpark of proprietary LLMs for code generation. My computer is running a Intel(R) Core(TM) Ultra 7 265K (3.90 GHz) with 128 GB of DDR5 RAM and an Nvidia Geforce RTX 5090 that has 32 GB of GD"
+    },
+    {
+      "permalink": "https://reddit.com/r/Entrepreneur/comments/1sqv68q/how_to_actually_automate_your_agency_not_just/",
+      "sub": "Entrepreneur",
+      "score": 7,
+      "comments": 38,
+      "date": "2026-04-20",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT",
+        "TOOL-MENTION",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "how to ACTUALLY automate your agency (not just build random claude skills) step by step Everyone is building claude skills right now, little automations, custom gpts, claude code, zapier flows. That's cool but its also maybe 10% of what ai can do for your agency if you approach it properly Ive been building ai systems for agencies for a few years n"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1swdjkz/qwen_36_27b_in_claude_code_says_it_will_do/",
+      "sub": "LocalLLaMA",
+      "score": 13,
+      "comments": 31,
+      "date": "2026-04-26",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN"
+      ],
+      "snippet": "Qwen 3.6 27B in Claude Code says it will do something then stops and prompts for user reply (not failing a tool call) I'm running Qwen/Qwen3.6-27B-FP8 via vLLM using this command: ``` vllm serve Qwen/Qwen3.6-27B-FP8 --tensor-parallel-size 4 --gpu-memory-utilization 0.95 --max-num-seqs 8 \\ --enable-auto-tool-choice --tool-call-parser qwen3_xml \\ --e"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sy1vcw/toothcomb_is_an_opensource_tool_for_analysing_and/",
+      "sub": "ClaudeAI",
+      "score": 28,
+      "comments": 10,
+      "date": "2026-04-28",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN",
+        "WANT"
+      ],
+      "snippet": "Toothcomb is an open-source tool for analysing and fact-checking speech in real time. Give Toothcomb a speech transcript and it will fact-check and analyse it. If you have an MP3 file of someone speaking, it can generate the transcript for you. You can also stream audio in real time from your device's microphone. You can see a [demo running here](h"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1swsoe7/can_i_use_claude_code_with_own_llmnonclaude_apis/",
+      "sub": "LocalLLaMA",
+      "score": 0,
+      "comments": 34,
+      "date": "2026-04-27",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN"
+      ],
+      "snippet": "Can I use Claude code with own LLM/non-claude APIs? Anybody using claude code with local LLMs/non-claude APIs - does it work and work well? I really dont like opencode. I find the UX/permission management somehow better. Its hard to explain - really intangible. And I suspect that claude code uses less context (in default settings)"
+    }
+  ],
+  "n8n_vs_zapier": [
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sige0r/what_nobody_tells_you_before_you_start_with_n8n/",
+      "sub": "n8n",
+      "score": 120,
+      "comments": 41,
+      "date": "2026-04-11",
+      "signals": [
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "what nobody tells you before you start with n8n I've been running n8n builds for about two years now and there's a pattern to how people learn it - they hit the same walls in the same order most courses and tutorials teach you to think of n8n like a flowchart. trigger → node → node → result. clean, linear, logical but the moment you hit a real prod"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1stmn09/is_it_worth_learning_n8n/",
+      "sub": "n8n",
+      "score": 41,
+      "comments": 53,
+      "date": "2026-04-23",
+      "signals": [
+        "TOOL-MENTION"
+      ],
+      "snippet": "Is it worth learning n8n Is n8n worth learning in 2026, or is it a trap to go all-in? My current thinking: n8n is great for learning automation, APIs, and building real workflows fast but AI tools (Claude, GPT, etc.) are starting to generate and debug workflows So I’m wondering: Is it still smart to go deep into n8n or should I treat it as just one"
+    },
+    {
+      "permalink": "https://reddit.com/r/zapier/comments/1sepw8b/i_think_i_just_inherited_a_zapier_nightmare/",
+      "sub": "zapier",
+      "score": 13,
+      "comments": 55,
+      "date": "2026-04-07",
+      "signals": [
+        "PAIN",
+        "TOOL-MENTION"
+      ],
+      "snippet": "I think I just inherited a Zapier nightmare Opened a Zapier account today that I’m now “responsible” for. ~40 Zaps. Random names. Some turned off. Some half-working. Connections to tools we don’t even use anymore. And the best part? Zero documentation. I’m honestly afraid to touch anything because I have no idea what might break. How do you even st"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1slschf/is_claude_rapidly_replacing_make_and_n8n/",
+      "sub": "automation",
+      "score": 9,
+      "comments": 53,
+      "date": "2026-04-15",
+      "signals": [
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "Is Claude rapidly replacing Make and n8n? I’ve been learning Make and n8n for the past 2 weeks, and with the announcement of routines and managed agents, am I just learning platforms that will eventually become obsolete? My goal is to start an automation agency, so I know I need to be tool agnostic, but I just want to spend my time wisely at the be"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1sfmp7t/state_of_automation_in_2026_are_you_powering/",
+      "sub": "automation",
+      "score": 10,
+      "comments": 39,
+      "date": "2026-04-08",
+      "signals": [
+        "WANT",
+        "TOOL-MENTION",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "State of automation in 2026: Are you powering through n8n, or sticking to Zapier/Make? Hi, Lately, I’ve been diving deep into automating workflows for my projects, as I used to use Bubble and retool but wanted more control over back-end automation taks. I finally hit a breaking point with doing repetitive admin work manually, so I decided to seriou"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1swchki/free_n8n_hosting_setup_guide_for_hugging_face/",
+      "sub": "n8n",
+      "score": 33,
+      "comments": 14,
+      "date": "2026-04-26",
+      "signals": [
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "Free n8n Hosting? Setup guide for Hugging Face Spaces + n8n Hi n8n community! I’ve seen a lot of people asking about low-cost or free hosting options lately. I just finished a repository that makes it super simple to run **n8n on Hugging Face Spaces** via Docker. And I name it **Hugging8n** **The Setup:** 1. Duplicate the Space. 2. Set your HF\\_TOK"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sfbbdk/n8n_vs_claude_code_cursor/",
+      "sub": "n8n",
+      "score": 23,
+      "comments": 23,
+      "date": "2026-04-07",
+      "signals": [
+        "CLAUDE-CODE",
+        "TOOL-MENTION"
+      ],
+      "snippet": "n8n vs Claude Code / Cursor Hi all, I’m a fairly advanced n8n user, building complex workflows to automate business processes and AI agents that improve both personal and business productivity. Recently, I’ve been hearing more often that n8n may not be the most effective approach, and that tools like Claude Code and Cursor can spin up agents and bu"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1sk33co/zapier_vs_n8n_stop_asking_which_is_better_start/",
+      "sub": "automation",
+      "score": 13,
+      "comments": 23,
+      "date": "2026-04-13",
+      "signals": [
+        "PAIN",
+        "WANT",
+        "TOOL-MENTION",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Zapier vs n8n. Stop asking which is better. Start asking which is better for what you're actually doing. Every week this community has the same debate that Zapier is too expensive, n8n has too steep a learning curve. Make sits somewhere in the middle that satisfies nobody completely. And the debate goes in circles because everyone is answering a di"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sbk5lu/docker_n8n_question/",
+      "sub": "n8n",
+      "score": 7,
+      "comments": 28,
+      "date": "2026-04-03",
+      "signals": [
+        "TOOL-MENTION"
+      ],
+      "snippet": "Docker n8n question Hey, I'm running n8n on Docker. I was wondering: is it okay to use this same setup for a production environment? thanks"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1s8g9k0/finding_good_resource_to_learn_n8n/",
+      "sub": "n8n",
+      "score": 9,
+      "comments": 21,
+      "date": "2026-03-31",
+      "signals": [
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "FINDING GOOD RESOURCE TO LEARN N8N hey i want to explore n8n but I am confused from where to I start learning. Can anyone suggest some good resources for n8n"
+    },
+    {
+      "permalink": "https://reddit.com/r/zapier/comments/1sasms2/sign_up_for_zapier_sdk_inside_code_by_zapier_steps/",
+      "sub": "zapier",
+      "score": 9,
+      "comments": 17,
+      "date": "2026-04-02",
+      "signals": [
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "Sign up for Zapier SDK inside Code by Zapier steps We've been working on bringing the Zapier SDK into Code by Zapier steps. Learn more about the power of Zapier SDK [here](https://www.reddit.com/r/zapier/comments/1retvzx/zapier_sdk_now_available_in_closed_beta_looking/) (also in closed beta). With Zapier SDK in Code by Zapier, you can call any Zapi"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sh2jzh/want_to_learn_n8n_need_help/",
+      "sub": "n8n",
+      "score": 1,
+      "comments": 24,
+      "date": "2026-04-09",
+      "signals": [
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "Want to learn N8N, need help! I am not a technical person, do not know to code. However, I have jumped into technical functional work in the past. That mentioned, I am not highly technical I can manage surface level technical stuff. I need some good resources where I can learn how to create workflows for my role as Client Account Management role, m"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sl9rpz/ran_the_same_daily_reporting_job_on_n8n_schedule/",
+      "sub": "n8n",
+      "score": 4,
+      "comments": 20,
+      "date": "2026-04-14",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "Ran the same daily reporting job on n8n Schedule Trigger vs a RunLobster agent cron for 30 days. n8n hit 30/30. Agent hit 26/30. Not close. Where deterministic workflow still wins over agent runtime. writing this because the \"agents will replace n8n\" framing that's going around is wrong in a specific way i can now back up with 30 days of logs. the "
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1ssjcan/ghl_vs_n8n_allinone_system_vs_automation_engine/",
+      "sub": "automation",
+      "score": 11,
+      "comments": 10,
+      "date": "2026-04-22",
+      "signals": [
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "GHL vs n8n - “All-in-one system” vs “automation engine”: which actually scales better? I’ve been working in AI automation and system design for a while, and I keep seeing people compare GoHighLevel (GHL) and n8n as if they’re direct competitors. From my experience, they solve *very different problems*. **n8n:** Great as an automation engine. If you"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1sa2sgg/with_all_this_automation_going_on_how_are_you_guy/",
+      "sub": "automation",
+      "score": 3,
+      "comments": 17,
+      "date": "2026-04-02",
+      "signals": [
+        "TOOL-MENTION"
+      ],
+      "snippet": "With all this automation going on how are you guy monitoring everything? Genuine question for anyone running multiple automations across their business (or businesses, in my case). I've got automations running in Make, Zapier, n8n, custom scripts — you name it. The problem isn't building them anymore. It's that they interact with each other in ways"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sw2sjt/opensource_n8n_workflow_multiturn_agentvsagent/",
+      "sub": "n8n",
+      "score": 4,
+      "comments": 16,
+      "date": "2026-04-26",
+      "signals": [
+        "MCP-AWARE",
+        "BUILT-OWN",
+        "TOOL-MENTION"
+      ],
+      "snippet": "Open-source n8n workflow: multi-turn agent-vs-agent eval with blind judging [raw gpt 4.1 agent vs gpt 4.1 + ejentum reasoning tool](https://preview.redd.it/i687ye7q0ixg1.png?width=1471&format=png&auto=webp&s=d9c6028a422a0bd1e5f8fb2f315c55f3d66ab018) I built an n8n workflow that does the cheapest viable version of automated multi-turn agent evaluati"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sdygue/n8n_vs_make/",
+      "sub": "n8n",
+      "score": 1,
+      "comments": 19,
+      "date": "2026-04-06",
+      "signals": [
+        "TOOL-MENTION"
+      ],
+      "snippet": "N8N vs MAKE How are they different?"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1sqqlej/whats_the_one_workflow_you_still_cant_automate_no/",
+      "sub": "automation",
+      "score": 7,
+      "comments": 12,
+      "date": "2026-04-20",
+      "signals": [
+        "PAIN",
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "What's the one workflow you still can't automate no matter what you've tried? I keep running into this wall. There's a category of workflows that tools like Zapier, Make, n8n, and even RPA just can't handle — the ones that need actual judgment, not just \"if X then Y.\" For me it's stuff like: looking at campaign results across 3 platforms, figuring "
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1so3h06/are_you_comfortable_pasting_api_keys_into_the/",
+      "sub": "automation",
+      "score": 8,
+      "comments": 11,
+      "date": "2026-04-17",
+      "signals": [
+        "TOOL-MENTION"
+      ],
+      "snippet": "Are you comfortable pasting API keys into the automation tools you use? I use a few tools that require API keys to connect services. n8n, Zapier, some newer ones. For the established ones I just do it. For newer tools I hesitate. What's your actual decision process here?"
+    },
+    {
+      "permalink": "https://reddit.com/r/zapier/comments/1sd7icq/we_created_a_custom_customer_survey_system_with/",
+      "sub": "zapier",
+      "score": 6,
+      "comments": 13,
+      "date": "2026-04-05",
+      "signals": [
+        "BUILT-OWN",
+        "TOOL-MENTION"
+      ],
+      "snippet": "We created a custom customer survey system with Zapier - no more Survey Monkey We were paying so much with Survey Monkey, and while it's a powerful system we didn't use most of it so we built a system using Zapier and Zapier tables. We cover events that customers are registering for that could be 6mo in advance. We want to text them a customer surv"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1stj9oq/starting_out_on_n8n/",
+      "sub": "n8n",
+      "score": 8,
+      "comments": 9,
+      "date": "2026-04-23",
+      "signals": [
+        "TOOL-MENTION"
+      ],
+      "snippet": "Starting out on N8N I'm just starting out on N8N, would like to know if there are any communities I can join as I am looking to learn more about it, anything will be thankful, appreciate it much!"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1ssqsny/how_long_do_you_usually_spend_debugging_broken/",
+      "sub": "n8n",
+      "score": 6,
+      "comments": 11,
+      "date": "2026-04-22",
+      "signals": [
+        "PAIN",
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "How long do you usually spend debugging broken automations? Quick question for people using Zapier / Make / n8n. When one of your automations breaks, how long do you usually spend figuring out what went wrong? Is it usually: • a few minutes • 30–60 minutes • several hours Also curious — what’s the most frustrating part of debugging automations for "
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sbl7ci/shopify_amazon_and_zendesk_ai_agent/",
+      "sub": "n8n",
+      "score": 4,
+      "comments": 12,
+      "date": "2026-04-03",
+      "signals": [
+        "TOOL-MENTION"
+      ],
+      "snippet": "Shopify, Amazon and Zendesk AI Agent How do you plan to get this done? Ideally we wanted a high level ai agent that can solve issues or customers, like answering order inquiries and shipping status. Zendesk AI Agent advance is not part of the solution since it's quite costly.. can we intergrate all of these to N8N and build an AI Agent inside N8N i"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1strwba/looking_for_ideas_for_something_to_build_to_learn/",
+      "sub": "n8n",
+      "score": 8,
+      "comments": 7,
+      "date": "2026-04-23",
+      "signals": [
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "Looking for ideas for something to build to learn n8n on my own I'm looking to get into AI Automation as a career. I see Zapier, n8n, and similar platforms mentioned often, and it seems crucial to gain some experience with these platforms. They seem really powerful for creating complex automations across multiple enterprise-grade softwares, but I'm"
+    },
+    {
+      "permalink": "https://reddit.com/r/zapier/comments/1s9rekt/api_key_storage/",
+      "sub": "zapier",
+      "score": 8,
+      "comments": 7,
+      "date": "2026-04-01",
+      "signals": [
+        "TOOL-MENTION"
+      ],
+      "snippet": "API key storage what is best practice for API key storage in Zapier. I have a few custom system and making API calls using code by zapier or zapier webhooks. I store the API keys in a zapier table. is this really bad practice security wise? I cant think of a way to make it any more secure because even if I add a step to retrieve an API key from a s"
+    }
+  ],
+  "mcp_sentiment": {
+    "positive": [
+      {
+        "permalink": "https://reddit.com/r/cursor/comments/1sf6stw/my_opus_46_highthinking_calls_went_from_008_to/",
+        "sub": "cursor",
+        "score": 23,
+        "comments": 12,
+        "date": "2026-04-07",
+        "snippet": "My Opus 4.6 high-thinking calls went from $0.08 to $1.40 each over 10 days for identical work. What changed? Posting this because I want to know if anyone else is seeing the same pattern, and because I'd love a sanity check on what I'm looking at before I escalate with Cursor support. **TL;DR:** Between Mar 9 and Apr 7"
+      },
+      {
+        "permalink": "https://reddit.com/r/ClaudeAI/comments/1swyzvc/how_to_build_a_persistent_memory_layer_like_recall/",
+        "sub": "ClaudeAI",
+        "score": 21,
+        "comments": 28,
+        "date": "2026-04-27",
+        "snippet": "how to build a persistent memory layer like recall? I've been testing recall 2.0 and their context layer is exactly what i want. it sits outside the chat, ingests all my github repos and web research, and then feeds the exact right context into claude when i ask a question. i want to build my own version of this using "
+      },
+      {
+        "permalink": "https://reddit.com/r/ClaudeAI/comments/1sxdrex/i_gave_claude_memory_3_months_ago_now_it_can/",
+        "sub": "ClaudeAI",
+        "score": 19,
+        "comments": 16,
+        "date": "2026-04-27",
+        "snippet": "I gave Claude memory 3 months ago. Now it can reason over it, forget intentionally, dream, and veto bad answers before I see them Three months ago, I dropped a project here called Vestige, a local MCP memory server for Claude built on cognitive science rather than brute-force vector search. The philosophy was simple: C"
+      },
+      {
+        "permalink": "https://reddit.com/r/cursor/comments/1swm9xp/moving_from_cursor_to_vs_code_codexclaude_code_is/",
+        "sub": "cursor",
+        "score": 15,
+        "comments": 42,
+        "date": "2026-04-26",
+        "snippet": "Moving from Cursor to VS Code + Codex/Claude Code: Is it worth the switch? **Hey everyone,** I’ve been on **Cursor Pro** for a month and I love the workflow—constantly jumping between **Ask, Planning, and Agentic modes**. It just works. However, my sub is up in a week and I’m considering moving back to **VS Code** to c"
+      },
+      {
+        "permalink": "https://reddit.com/r/ClaudeAI/comments/1suuohd/i_built_a_full_ai_rpg_sandbox_with_claude_code/",
+        "sub": "ClaudeAI",
+        "score": 14,
+        "comments": 6,
+        "date": "2026-04-24",
+        "snippet": "I built a full AI RPG sandbox with Claude Code because Claude's RP kept breaking on me I spent hundreds of hours roleplaying fantasy/medieval type campaigns in Claude. It was great, sometimes genuinely amazing, but it always broke the same way. It would forget the tavern I was in, invent characters that didn't exist, c"
+      },
+      {
+        "permalink": "https://reddit.com/r/mcp/comments/1swf259/is_there_a_decent_apple_mcp_mail_notes_reminders/",
+        "sub": "mcp",
+        "score": 14,
+        "comments": 12,
+        "date": "2026-04-26",
+        "snippet": "Is there a decent Apple MCP? (Mail, Notes, Reminders, Calendar, etc.) I have looked at a few MCP's for apple on github. apple-mcp, apple-mcp-enhanced, etc. Most of them are not fully operation, full of stubs, or behave in dumb ways (list notes rerturns all notes with full bodies!). Does anyone know of a GOOD MCP for Ap"
+      },
+      {
+        "permalink": "https://reddit.com/r/mcp/comments/1sw27db/what_are_the_best_free_mcp_servers_youre_actually/",
+        "sub": "mcp",
+        "score": 13,
+        "comments": 31,
+        "date": "2026-04-26",
+        "snippet": "What are the best free MCP servers you’re actually using with ChatGPT / Claude? I’ve been going down the MCP (Model Context Protocol) rabbit hole recently and I’m trying to figure out what’s actually useful vs just “cool in theory”. I get the idea, connect external tools/data to LLMs so they can actually *do* things, n"
+      },
+      {
+        "permalink": "https://reddit.com/r/mcp/comments/1srurwc/i_built_an_mcp_server_giving_coding_agents_access/",
+        "sub": "mcp",
+        "score": 12,
+        "comments": 6,
+        "date": "2026-04-21",
+        "snippet": "I built an MCP server giving coding agents access to 2M research papers. It improves even the best coding agents - across 9 coding tasks. I built Paper Lantern, an MCP server that retrieves techniques from 2M+ CS research papers and hands them to coding agents as implementation guidance (hyperparameters, failure modes,"
+      },
+      {
+        "permalink": "https://reddit.com/r/mcp/comments/1sx45zv/browser_mcp_or_playwright_mcp/",
+        "sub": "mcp",
+        "score": 9,
+        "comments": 14,
+        "date": "2026-04-27",
+        "snippet": "Browser MCP or playwright MCP? I want to add a browser MCP to test next.js and angular apps (but not exclusively). What's the best option between the ones in the title? Browser mcp has an awful name and it's very hard to find feedback about."
+      },
+      {
+        "permalink": "https://reddit.com/r/mcp/comments/1stm1o2/everyone_is_talking_about_mcp_whats_next/",
+        "sub": "mcp",
+        "score": 9,
+        "comments": 23,
+        "date": "2026-04-23",
+        "snippet": "Everyone is talking about MCP. What's next? Right now, MCP feels like connecting your tools to AI, pulling data, giving prompts, and getting insights. That already feels like a major shift. I’m curious though; what’s the next real innovation from here? We already hear about AI agents and autonomous workflows, but speci"
+      },
+      {
+        "permalink": "https://reddit.com/r/mcp/comments/1sqbyck/i_built_an_mcp_server_that_lets_claude_manage/",
+        "sub": "mcp",
+        "score": 9,
+        "comments": 17,
+        "date": "2026-04-20",
+        "snippet": "I built an MCP server that lets Claude manage your infrastructure Hey r/mcp, I built SentinelX — an MCP server that gives LLMs structured access to real server infrastructure. Not raw SSH, not a toy sandbox. You can connect it directly from [claude.ai](http://claude.ai) via Connectors (just add the URL), or through any"
+      },
+      {
+        "permalink": "https://reddit.com/r/mcp/comments/1sxakhi/i_built_an_mcp_app_that_lets_your_ai_have_a/",
+        "sub": "mcp",
+        "score": 6,
+        "comments": 5,
+        "date": "2026-04-27",
+        "snippet": "I built an MCP app that lets your AI have a visual presence on your desktop [Sped up demo of two Claude's showing off](https://i.redd.it/t0nm8z8wgrxg1.gif) Transparent desktop overlay; no AI in it, you connect your own. When the agent connects via MCP, it picks its own body, color, name, emotion, and accessories from a"
+      },
+      {
+        "permalink": "https://reddit.com/r/ClaudeAI/comments/1sx1rhp/claude_or_another_one/",
+        "sub": "ClaudeAI",
+        "score": 5,
+        "comments": 8,
+        "date": "2026-04-27",
+        "snippet": "Claude or another one? So i’ve been on the max plan for claude code for around 3 months now. And yeah somehow i was burning through all my tokens lol For context i’m a doctor. I’m not really doing deep engineering work or building some huge production system. I mostly mess around with ai as a hobby. Research stuff, mak"
+      },
+      {
+        "permalink": "https://reddit.com/r/MachineLearning/comments/1se1rmd/p_easily_provide_wandb_logs_as_context_to_agents/",
+        "sub": "MachineLearning",
+        "score": 5,
+        "comments": 1,
+        "date": "2026-04-06",
+        "snippet": "[P] Easily provide Wandb logs as context to agents for analysis and planning. It is frustrating to use the Wandb CLI and MCP tools with my agents. For one, the MCP tool basically floods the context window and frequently errors out :/ So I built a cli tool that: * imports my wandb projects; * uses algorithms from [Alpha"
+      },
+      {
+        "permalink": "https://reddit.com/r/AI_Agents/comments/1srjtod/looking_for_free_resources_to_master_rag_llm/",
+        "sub": "ai_agents",
+        "score": 3,
+        "comments": 8,
+        "date": "2026-04-21",
+        "snippet": "Looking for FREE resources to master RAG + LLM Agents + MCP (and build real projects for freelancing/jobs) Hey everyone, I’m currently trying to go deep into: \\- RAG (Retrieval-Augmented Generation) \\- LLM Agents \\- MCP (Model Context Protocol) My goal is NOT just theory — I want to: 1. Learn everything using free reso"
+      }
+    ],
+    "negative": [
+      {
+        "permalink": "https://reddit.com/r/n8n/comments/1sqjyzt/i_wasted_over_1_year_building_n8n_workflows_the/",
+        "sub": "n8n",
+        "score": 82,
+        "comments": 27,
+        "date": "2026-04-20",
+        "snippet": "I wasted over 1 year building n8n workflows the wrong way. Here is the exact roadmap I wish I had from day one (+4 real workflows included) I built over 40 automations in my first year. Maybe 10 of them actually survived in production. What follows is a framework built from both failure and analysis. Twelve months of b"
+      },
+      {
+        "permalink": "https://reddit.com/r/ClaudeAI/comments/1svsr7w/putting_lipstyk_on_a_pig_agents_write_most_of_my/",
+        "sub": "ClaudeAI",
+        "score": 15,
+        "comments": 12,
+        "date": "2026-04-26",
+        "snippet": "Putting Lipstyk on a pig - agents write most of my code, so I wound up making a static slop analysis tool **lipstyk** — static analysis for machine-generated code patterns I've been neck deep in agentic dev for a while. Started on Pi, ended up building my own toolset on top of it, and at this point the agents output mo"
+      },
+      {
+        "permalink": "https://reddit.com/r/LocalLLaMA/comments/1sy4clx/im_not_a_dev_but_i_use_qwen_36_35b_to_code/",
+        "sub": "LocalLLaMA",
+        "score": 13,
+        "comments": 65,
+        "date": "2026-04-28",
+        "snippet": "I'm Not a Dev But I Use Qwen 3.6 35b to Code Full disclosure: I used to program a bit, but I was garbage at it so I found a new career. This was eons ago so I'm not a dev, obviously. There's been a few posts the last couple of days highlighting struggles with these small models and coding so I wanted to just share what"
+      },
+      {
+        "permalink": "https://reddit.com/r/ClaudeAI/comments/1svuhuu/is_the_google_drive_connector_in_claudeai_just/",
+        "sub": "ClaudeAI",
+        "score": 10,
+        "comments": 7,
+        "date": "2026-04-26",
+        "snippet": "Is the Google Drive connector in Claude.ai just… broken for everyone? \\*\\*Claude.ai MCP connectors seem to be silently degrading — Google Drive broken, Gmail now only reads metadata. Anyone else?\\*\\* I use Claude as a personal finance assistant. Two connectors that used to work are now broken in different ways: \\*\\*Goo"
+      },
+      {
+        "permalink": "https://reddit.com/r/AI_Agents/comments/1sqj1hx/been_using_llm_wiki_compiler_since_its_early_days/",
+        "sub": "ai_agents",
+        "score": 3,
+        "comments": 5,
+        "date": "2026-04-20",
+        "snippet": "Been using LLM Wiki Compiler since it's early days, it’s getting better! So I’ve been using LLM Wiki Compiler since it first launched, inspired by Andrej Karpathy’s LLM knowledge base idea. Early version was promising but rough. This 0.02.0 update makes it feel way more usable. **Key upgrades:** * **Paragraph level cit"
+      },
+      {
+        "permalink": "https://reddit.com/r/AI_Agents/comments/1spvzt0/how_i_automate_jira_tickets_investigation_using/",
+        "sub": "ai_agents",
+        "score": 2,
+        "comments": 9,
+        "date": "2026-04-19",
+        "snippet": "How I Automate Jira Tickets Investigation using Claude Code & MCP As a software engineer, I hate context switching. Investigating a Jira ticket usually means bouncing between Jira for the context, Confluence for the high-level logic, the Codebase for the actual implementation, and finally Slack to ping the reporter abo"
+      },
+      {
+        "permalink": "https://reddit.com/r/cursor/comments/1sq6og3/mempalace_ai_memory_system_basically_useless_for/",
+        "sub": "cursor",
+        "score": 2,
+        "comments": 1,
+        "date": "2026-04-19",
+        "snippet": "MemPalace AI memory system basically useless for Cursor/PHP/MySQL? I just now finished setting up mempalace to use as an MCP in cursor, and one of the first things I did was try to process/mine my repo, which reported 30 files, mostly CSS and JS. Y'all - there are over 50 PHP files in there too. None were able to be mi"
+      },
+      {
+        "permalink": "https://reddit.com/r/mcp/comments/1sybwbv/showcase_uiprompt_a_canvas_to_plan_your_ui_and/",
+        "sub": "mcp",
+        "score": 2,
+        "comments": 0,
+        "date": "2026-04-28",
+        "snippet": "[Showcase] UIPrompt – a canvas to plan your UI and export structured XML context for Claude Code, Cursor, and other agents Built UIPrompt after getting frustrated with how AI coding agents handle UI tasks. The problem: when you ask Claude Code, Cursor, or Copilot to \"build a hero section,\" you get something that techni"
+      },
+      {
+        "permalink": "https://reddit.com/r/mcp/comments/1srki12/tool_to_verify_hadith_citations_when_using_ai/",
+        "sub": "mcp",
+        "score": 2,
+        "comments": 0,
+        "date": "2026-04-21",
+        "snippet": "Tool to verify hadith citations when using AI (search + open source) I’ve been frustrated by how easy it is for AI chatbots to sound confident while mixing up collections, numbers, or wording of hadith. I put together something practical: a free web search over a large hadith database (Arabic + English), plus optional "
+      },
+      {
+        "permalink": "https://reddit.com/r/n8n/comments/1s7ndr9/release_we_finally_solved_the_uibounce_problem/",
+        "sub": "n8n",
+        "score": 2,
+        "comments": 3,
+        "date": "2026-03-30",
+        "snippet": "[Release] We finally solved the \"UI-bounce\" problem for AI-generated n8n workflows (Autonomous execution, credentials & debugging in the IDE) Hey r/n8n, Following up on the recent discussions about using local IDEs (like Cursor) vs the native MCP to build workflows, I wanted to share a major update to the \\`n8n-as-code"
+      },
+      {
+        "permalink": "https://reddit.com/r/AI_Agents/comments/1ssekkw/i_replaced_my_500mo_seo_google_ads_stack_with_a/",
+        "sub": "ai_agents",
+        "score": 1,
+        "comments": 3,
+        "date": "2026-04-22",
+        "snippet": "I replaced my $500/mo SEO + Google Ads stack with a Claude Code plugin. Open-sourcing it. For the last few months I've been slowly moving my agency workflow out of Semrush, Ahrefs, and the Google Ads UI and into Claude Code. At some point I realized 80% of what I was paying for was stuff Claude could do directly if it "
+      },
+      {
+        "permalink": "https://reddit.com/r/AiBuilders/comments/1sjk822/anyone_else_annoyed_by_switching_between_ai_tools/",
+        "sub": "AIBuilders",
+        "score": 1,
+        "comments": 11,
+        "date": "2026-04-12",
+        "snippet": "Anyone else annoyed by switching between AI tools? I use a bunch of AI tools and it honestly feels like each one lives in its own bubble. Tell GPT something, Claude has no clue - then you paste the same context into both, and repeat. It ends up being a lot of repeated setup, broken workflows, and just wasting time, whi"
+      },
+      {
+        "permalink": "https://reddit.com/r/cursor/comments/1sgr8r6/how_do_you_currently_handle_seo_for_the_stuff_you/",
+        "sub": "cursor",
+        "score": 1,
+        "comments": 3,
+        "date": "2026-04-09",
+        "snippet": "How do you currently handle SEO for the stuff you ship? Genuine question. I'm seeing a lot of people shipping side projects and SaaS with Claude Code / Cursor / Lovable / Bolt, and I'm wondering — what do you actually do about SEO? Do you just... not? Run a Lighthouse check once and call it done? Pay for Ahrefs? I'm th"
+      },
+      {
+        "permalink": "https://reddit.com/r/mcp/comments/1su57sd/whats_the_most_frustrating_part_of_building_mcp/",
+        "sub": "mcp",
+        "score": 1,
+        "comments": 5,
+        "date": "2026-04-24",
+        "snippet": "What's the most frustrating part of building MCP servers? Sharing what I found Spent the last few months deep in MCP development. The debugging experience is unlike anything else — errors are silent, the protocol is unforgiving, and most issues only show up after you've connected everything. A few things that wasted my"
+      },
+      {
+        "permalink": "https://reddit.com/r/AI_Agents/comments/1sumut0/most_ai_agent_skills_on_github_are_unvetted/",
+        "sub": "ai_agents",
+        "score": 0,
+        "comments": 13,
+        "date": "2026-04-24",
+        "snippet": "Most AI agent \"skills\" on GitHub are unvetted garbage. I built a marketplace to fix that. I've been using Claude Code and Cursor daily for the past 6 months. Somewhere around month 3 I started looking for SKILL.md files to make my agent better at specific things. Code review, testing, commit messages, that kind of stuf"
+      }
+    ],
+    "mixed": []
+  },
+  "whitespace": [
+    {
+      "permalink": "https://reddit.com/r/Entrepreneur/comments/1sqktqm/successful_entrepreneurs_what_are_your_best/",
+      "sub": "Entrepreneur",
+      "score": 85,
+      "comments": 144,
+      "date": "2026-04-20",
+      "signals": [],
+      "match": "now, not just product",
+      "snippet": "Successful Entrepreneurs, what are your best marketing channels in 2026? Marketing channels feel like they’re shifting faster than ever in 2026. What worked even a year ago either got saturated, algorithmically nerfed, or just stopped converting the same way. It seems like distribution is becoming the real moat now, not just product quality. I’ve been also noticing that a lot o"
+    },
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1sc7zl0/got_2_signups_in_12_hrs_yesterday_took_me_6_years/",
+      "sub": "IndieHackers",
+      "score": 56,
+      "comments": 171,
+      "date": "2026-04-04",
+      "signals": [
+        "WANT"
+      ],
+      "match": "now. Built 5 product",
+      "snippet": "Got 2 signups in 12 hrs yesterday. Took me 6 years across 5 products. I've been building stuff on the side for years now. Built 5 products in total, and got zero signups. Not a single one ever. But yesterday something changed... Had built a running app for myself that connects to my Whoop and decided to share it in r/whoop as well. Within 12 hours, two people I've never met in "
+    },
+    {
+      "permalink": "https://reddit.com/r/indiehackers/comments/1sl7xpt/i_am_a_solo_entrepreneur_learnt_one_new_thing/",
+      "sub": "IndieHackers",
+      "score": 51,
+      "comments": 128,
+      "date": "2026-04-14",
+      "signals": [],
+      "match": "not the usual AI product",
+      "snippet": "I am a solo entrepreneur , learnt one new thing . What I found changed how I look at websites . Want to share with all indiehackers. so this is a 6-7 month old story that I kept to myself because honestly it felt too niche to share. I do read along building my own stuff. the usual loop. find client, write code, deliver, get paid, chill,read things, repeat. the reading part is w"
+    },
+    {
+      "permalink": "https://reddit.com/r/Entrepreneur/comments/1sthfgz/how_do_you_decide_between_code_and_marketing_in/",
+      "sub": "Entrepreneur",
+      "score": 35,
+      "comments": 113,
+      "date": "2026-04-23",
+      "signals": [
+        "WANT"
+      ],
+      "match": "can't find any",
+      "snippet": "How do you decide between code and marketing in your project? So, I was making this project which has been completed due to help from many individuals from this community. And thanks to them, I launched my tool recently. And now I have been trying to get my first user. The problem is, I can't find any. Then I found another tool which was like my tool but addressed the part whic"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sri9oj/which_ai_agents_delivers_real_roi_not_just_hype/",
+      "sub": "ai_agents",
+      "score": 61,
+      "comments": 61,
+      "date": "2026-04-21",
+      "signals": [],
+      "match": "now. Every other tool",
+      "snippet": "Which AI agents delivers real ROI, not just hype? Feels like we’re in peak \"AI everything\" right now. Every other tool claims to save hours, replace teams, or 10x your output- but when you actually use them, a lot of it ends up being surface-level value. Nice demos, decent outputs, but not something that truly moves revenue, saves real time, or compounds over time. So let me as"
+    },
+    {
+      "permalink": "https://reddit.com/r/Entrepreneur/comments/1suuqth/ai_is_not_the_product_a_smoother_business_is/",
+      "sub": "Entrepreneur",
+      "score": 39,
+      "comments": 79,
+      "date": "2026-04-24",
+      "signals": [
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "match": "not the product",
+      "snippet": "AI is not the product. A smoother business is. I think most businesses are buying AI for the wrong reason. They hear “AI” and think the value is in the tool. Chatbots. Automations. Agents. Whatever new thing is trending this week. But from what I’ve seen, the real value is much more boring. But from what I’ve seen, the real value is much simpler. Companies want the outcome with"
+    },
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1s9sc7l/whats_one_small_automation_youve_built_that_saves/",
+      "sub": "n8n",
+      "score": 26,
+      "comments": 38,
+      "date": "2026-04-01",
+      "signals": [
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "match": "no-code tool",
+      "snippet": "What’s one small automation you’ve built that saves you way more time than it should? New to n8n here, I am so fascinated by this new platform and its abilities, especially for someone like me who has had no experience with coding and primarily work with no-code tools like Bubble and Retool to build little projects. I know this may sound a bit silly, but what kind of automation"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1slschf/is_claude_rapidly_replacing_make_and_n8n/",
+      "sub": "automation",
+      "score": 9,
+      "comments": 53,
+      "date": "2026-04-15",
+      "signals": [
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "match": "now I need to be tool",
+      "snippet": "Is Claude rapidly replacing Make and n8n? I’ve been learning Make and n8n for the past 2 weeks, and with the announcement of routines and managed agents, am I just learning platforms that will eventually become obsolete? My goal is to start an automation agency, so I know I need to be tool agnostic, but I just want to spend my time wisely at the beginning of my journey."
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1swng6j/car_wash_mystery_solvedtool_call_degrades/",
+      "sub": "LocalLLaMA",
+      "score": 35,
+      "comments": 26,
+      "date": "2026-04-26",
+      "signals": [],
+      "match": "no tool",
+      "snippet": "Car Wash Mystery solved--Tool Call Degrades Intelligence. I asked the OG question to the kimi k2.5: *\"I want to wash my car and the car wash is just 10 metres away. Should I walk or drive there?\"* **Kimi-k2.5 via NIM -- Three Modes.** I tested three modes: no tools, XML pseudo-tools, and JSON schema tools. \"Tools\" here means web search + Python in a Docker sandbox. 3 tests were"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1swf8hx/how_do_you_get_ai_to_generate_ui_that_actually/",
+      "sub": "ClaudeAI",
+      "score": 23,
+      "comments": 29,
+      "date": "2026-04-26",
+      "signals": [
+        "WANT"
+      ],
+      "match": "no sense of product",
+      "snippet": "How do you get AI to generate UI that actually feels designed? I’m building a dashboard-style app (React + Tailwind), mostly focused on content consumption, and I’ve been trying to use AI to generate the UI directly in code. The issue is… everything looks “fine”, but nothing feels *designed*. It’s always * clean spacing * decent components * modern-ish look …but: * no strong hi"
+    },
+    {
+      "permalink": "https://reddit.com/r/mcp/comments/1srxqzh/how_are_you_all_handling_security_for_mcp_tool/",
+      "sub": "mcp",
+      "score": 7,
+      "comments": 45,
+      "date": "2026-04-21",
+      "signals": [
+        "MCP-AWARE"
+      ],
+      "match": "NOT want: any tool",
+      "snippet": "How are you all handling security for MCP tool calls? I've been running a few autonomous agents on a NUC at home, a course scout, a real estate scout, and an analytics agent that queries my production Postgres via an MCP server. The analytics one is what made me realize MCP has a gap I hadn't thought hard about. The agent needs to read. SELECTs across tables, joins, aggregates,"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1swdjkz/qwen_36_27b_in_claude_code_says_it_will_do/",
+      "sub": "LocalLLaMA",
+      "score": 13,
+      "comments": 31,
+      "date": "2026-04-26",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAIN"
+      ],
+      "match": "not failing a tool",
+      "snippet": "Qwen 3.6 27B in Claude Code says it will do something then stops and prompts for user reply (not failing a tool call) I'm running Qwen/Qwen3.6-27B-FP8 via vLLM using this command: ``` vllm serve Qwen/Qwen3.6-27B-FP8 --tensor-parallel-size 4 --gpu-memory-utilization 0.95 --max-num-seqs 8 \\ --enable-auto-tool-choice --tool-call-parser qwen3_xml \\ --enable-prefix-caching --attenti"
+    },
+    {
+      "permalink": "https://reddit.com/r/cursor/comments/1ssr010/the_eloncursor_deal_and_the_rise_of_manbaby/",
+      "sub": "cursor",
+      "score": 0,
+      "comments": 43,
+      "date": "2026-04-22",
+      "signals": [
+        "PAIN",
+        "PRICE-SENSITIVE"
+      ],
+      "match": "not because the tool",
+      "snippet": "The Elon-Cursor Deal and the Rise of \"Manbaby Developers\" in Modern Tech What’s happening here is honestly embarrassing. You have a group of grown adults behaving like children complaining, threatening to cancel Cursor, not because of the quality of the product, not because the tool stopped being useful, but because of who owns it (or could eventully own it). That’s not rationa"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1sxi02y/local_vs_cloud_llms_are_we_pretending_its_one_or/",
+      "sub": "LocalLLaMA",
+      "score": 0,
+      "comments": 40,
+      "date": "2026-04-27",
+      "signals": [
+        "WANT"
+      ],
+      "match": "not serving product",
+      "snippet": "Local vs Cloud LLMs… are we pretending it’s one or the other? IMO: You’re not running a real 70B workload on a laptop. You’re not handling spiky multi user demand locally. You’re not serving production agents from a MacBook. And if tool calling isn’t set up right, most “local AI” is just a chat box Local is great for privacy, dev, quick iteration, but the moment you need scale,"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1spozfh/are_we_still_stuck_reviewing_ai_meeting_notes_in/",
+      "sub": "ai_agents",
+      "score": 12,
+      "comments": 23,
+      "date": "2026-04-19",
+      "signals": [
+        "PAIN",
+        "WANT"
+      ],
+      "match": "note-taking tool",
+      "snippet": "Are we still stuck reviewing AI meeting notes in 2025? I’ve been looking into a bunch of AI note-taking tools for meetings, and while they’ve definitely improved, they all seem to hit the same ceiling. They’re great at summaries and pulling out action items, but there’s almost always some context missing or small inaccuracies that need cleanup. Tools like Bluedot and even newer"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1subsl4/we_spent_3_months_building_an_ai_agent_for/",
+      "sub": "ai_agents",
+      "score": 1,
+      "comments": 33,
+      "date": "2026-04-24",
+      "signals": [
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "match": "nodding, product",
+      "snippet": "We spent 3 months building an ai agent for browser automation but mfa and anti bot detection broke everything. I cannot even process this. Our team just demoed our shiny new AI agent to the entire company. We built it to handle stealth web scraping, human like web automation, all that. Computer vision AI for browser tasks, anti bot browser agent, the works. Supposed to log into"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1saq8sv/automation_or_tool_to_scrape_job_postings_meeting/",
+      "sub": "automation",
+      "score": 8,
+      "comments": 26,
+      "date": "2026-04-02",
+      "signals": [
+        "PAIN",
+        "PRICE-SENSITIVE"
+      ],
+      "match": "no cost option",
+      "snippet": "Automation or tool to scrape job postings meeting certain criteria? Noob here. Still learning my way. Am working on a project that needs to pull 100+ job postings meeting a particular set of criteria and analyze how the requirements have evolved over time. I know there are paid services that do this but for individual research it is too expensive. I am right now doing this manu"
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1sww91l/why_are_we_still_charging_extra_for_sso_in_2026/",
+      "sub": "SaaS",
+      "score": 21,
+      "comments": 12,
+      "date": "2026-04-27",
+      "signals": [
+        "PRICE-SENSITIVE"
+      ],
+      "match": "now? self-service",
+      "snippet": "why are we still charging extra for SSO in 2026. the SSO tax makes zero sense anymore [sso.tax](http://sso.tax) tracks SaaS products that charge insane premiums for SSO. common pattern: $20/user/month normally. $50/user with SSO. 150% premium for a federated login redirect. this made sense 5 years ago when SSO required dedicated engineering time per customer. now? self-service "
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sw2o2o/anthropic_earned_our_goodwillnow_they_need_to/",
+      "sub": "ClaudeAI",
+      "score": 19,
+      "comments": 13,
+      "date": "2026-04-26",
+      "signals": [
+        "WANT"
+      ],
+      "match": "not purely as a product",
+      "snippet": "Anthropic earned our goodwill—now they need to stop squandering it Not sure if this will be a productive discussion, but it might be useful for those who support Anthropic and Claude not purely as a product, but as a company worth rallying behind for what it stands for. Post the Pentagon fiasco—where Anthropic held its ground against allowing Claude to be used for autonomous we"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1snvco3/is_ui_actually_dying_or_is_agents_replace/",
+      "sub": "automation",
+      "score": 7,
+      "comments": 24,
+      "date": "2026-04-17",
+      "signals": [
+        "PAIN",
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "match": "nother SaaS tool",
+      "snippet": "Is UI actually dying, or is \"agents replace interfaces\" just good positioning? Sierra's co-founder has been making the rounds with the claim that AI agents will make traditional software interfaces obsolete, and I keep going back and forth on whether it's a real shift or just a well-packaged pitch for where Sierra wants the market to go. The argument lands on the surface. If an"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1swwbr3/ive_been_looking_at_an_opensource_external_brain/",
+      "sub": "ai_agents",
+      "score": 2,
+      "comments": 27,
+      "date": "2026-04-27",
+      "signals": [
+        "WANT"
+      ],
+      "match": "not just “LLM + tool",
+      "snippet": "I’ve been looking at an open-source “external brain” for AI agents. The architecture is interesting, but I’m not sure if it’s the right direction. I recently came across an open-source project called AnimoCerebro, and I thought it was worth discussing here because it’s trying to build something a bit different from the usual agent framework. The core idea is not just “LLM + too"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1stehdu/confused_about_ai_subscriptions_budget_1530/",
+      "sub": "ai_agents",
+      "score": 8,
+      "comments": 19,
+      "date": "2026-04-23",
+      "signals": [
+        "WANT"
+      ],
+      "match": "Now I’m seeing tool",
+      "snippet": "Confused about AI subscriptions 🤯 (budget 15–30€) Hi Everyones, I have a limited budget (around 15–30€ per month). I previously had a ChatGPT subscription and I was really happy with it. Now I’m seeing tools like Claude and they also look very good. So I’m confused 😅 Is there any platform where I can use multiple AI models (like ChatGPT, Claude, maybe Gemini) with just ONE subs"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sx15tb/has_ai_killed_the_execution_moat_if_anyone_can/",
+      "sub": "ClaudeAI",
+      "score": 3,
+      "comments": 24,
+      "date": "2026-04-27",
+      "signals": [
+        "WANT"
+      ],
+      "match": "Now tool",
+      "snippet": "Has AI killed the “execution moat”? If anyone can generate 40 versions of a deliverable in a minute, what are clients actually paying us for? &#x200B; Feels like the old advantage used to be: “we can execute better/faster than others” Now tools can generate drafts, designs, code, copy… instantly. So if execution is getting commoditized, what’s left? 1/ taste? 2/ judgment? 3/ di"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sx8402/metas_acquisition_of_the_ai_startup_manus_was/",
+      "sub": "ai_agents",
+      "score": 6,
+      "comments": 16,
+      "date": "2026-04-27",
+      "signals": [],
+      "match": "nomenal AI Agent product",
+      "snippet": "Meta’s acquisition of the AI startup Manus was blocked by China government! CNBC, CNN, and other major media sources have just reported that Meta’s acquisition of the AI startup Manus was blocked! Interestingly, I shared a survey on AI Agent platforms for knowledge workers. People might soon abandon Manus AI, which was once a phenomenal AI Agent product. I will share the links "
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sv54dg/planning_to_start_build_ai_agents_is_n8n_still_is/",
+      "sub": "ai_agents",
+      "score": 5,
+      "comments": 16,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE",
+        "WANT",
+        "TOOL-MENTION"
+      ],
+      "match": "now n8n is a platform",
+      "snippet": "Planning to start build ai agents - is n8n still is the best and less complicated tool everyone use? I'm looking to explore this ai agent fields and planning to start building some ai agents and automations - as much as i know n8n is a platform people have been using to automate taskk but nowadays claude code and open claw kind of platforms exists too Just need some guidance ho"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1su73ri/i_built_30_automations_this_year_most_of_them/",
+      "sub": "ai_agents",
+      "score": 7,
+      "comments": 14,
+      "date": "2026-04-24",
+      "signals": [
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "match": "not about tool",
+      "snippet": "I built 30+ automations this year. Most of them should not have been automations. I run an agency that builds AI agents, MVPs, and custom automations for startups and more traditional businesses. This year we shipped 30+ projects across a pretty mixed set of industries: e-commerce, legal, healthcare, real estate, B2B services. The biggest lesson was not about tools, models, or "
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1sxbhd9/3_months_in_good_sign_ups_waiting_for_first/",
+      "sub": "SaaS",
+      "score": 2,
+      "comments": 19,
+      "date": "2026-04-27",
+      "signals": [
+        "WANT"
+      ],
+      "match": "not share my service",
+      "snippet": "3 months in, good sign ups, waiting for first paying customer! I get around 10 sign ups a day, however having a hard time converting users to paid, what tactics do you guys use to test different prices and or should I work more on features? Will not share my service, just looking for conversation how others think about this!"
+    },
+    {
+      "permalink": "https://reddit.com/r/AiBuilders/comments/1sgxrra/underrated_ai_tools_ive_been_using_lately/",
+      "sub": "AIBuilders",
+      "score": 8,
+      "comments": 12,
+      "date": "2026-04-09",
+      "signals": [
+        "PAIN",
+        "WANT"
+      ],
+      "match": "nown AI tool",
+      "snippet": "Underrated AI tools I’ve been using lately Everyone talks about the same tools…They’re great, no doubt. But I wanted to try some lesser known AI tools that actually help in day to day work. I’ve been testing a few recently, and some of them turned out actually useful. **Here’s what I’ve been using:** **• Anything AI :** Good when I’m stuck on something. Helps turn random though"
+    },
+    {
+      "permalink": "https://reddit.com/r/automation/comments/1sn52jw/ai_agents_in_production_vs_ai_agents_in_demos_the/",
+      "sub": "automation",
+      "score": 2,
+      "comments": 18,
+      "date": "2026-04-16",
+      "signals": [
+        "WANT"
+      ],
+      "match": "not product",
+      "snippet": "AI agents in production vs. AI agents in demos, the gap is embarrassing The stat that keeps nagging me: 52% of executives say they have AI agents in production (per, a Google Cloud study), but anecdotally it feels like actual scaled deployments are a tiny fraction of that. Those two things can both be true if \"production\" means something very different to different people. I th"
+    },
+    {
+      "permalink": "https://reddit.com/r/LocalLLaMA/comments/1st1y20/fallen_gemma_4_model/",
+      "sub": "LocalLLaMA",
+      "score": 10,
+      "comments": 9,
+      "date": "2026-04-22",
+      "signals": [
+        "WANT"
+      ],
+      "match": "can't find any",
+      "snippet": "Fallen Gemma 4 model? Hey folks! I've been searching online for information when theDrummer might release another Fallen model. Does anyone know anything? So far the Fallen series have been my absolute favorite local LLM (I've tried so MANY) Does anyone know anything by any chance? I can't find anything. Gemma 4 Fallen would be amazing."
+    }
+  ],
+  "mcp_x_payment": [
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sov181/the_people_who_actually_use_n8n_for_real_work/",
+      "sub": "n8n",
+      "score": 44,
+      "comments": 6,
+      "date": "2026-04-18",
+      "signals": [
+        "MCP-AWARE",
+        "PAYMENT-CONTEXT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "the people who actually use n8n for real work have been building things nobody talks about been digging through what Synta users have been deploying and there's a repo of actual production workflows that just got dropped - 13 of them, all anonymised, all from real deployments https://preview.redd.it/0p5nuaseoxvg1.png?w"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sumut0/most_ai_agent_skills_on_github_are_unvetted/",
+      "sub": "ai_agents",
+      "score": 0,
+      "comments": 13,
+      "date": "2026-04-24",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "PAIN",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "Most AI agent \"skills\" on GitHub are unvetted garbage. I built a marketplace to fix that. I've been using Claude Code and Cursor daily for the past 6 months. Somewhere around month 3 I started looking for SKILL.md files to make my agent better at specific things. Code review, testing, commit messages, that kind of stuf"
+    },
+    {
+      "permalink": "https://reddit.com/r/mcp/comments/1sox0tm/raw_openapitomcp_conversion_is_why_your_agent/",
+      "sub": "mcp",
+      "score": 2,
+      "comments": 6,
+      "date": "2026-04-18",
+      "signals": [
+        "MCP-AWARE",
+        "PAYMENT-CONTEXT",
+        "PAIN",
+        "BUILT-OWN"
+      ],
+      "snippet": "Raw OpenAPI-to-MCP conversion is why your agent keeps failing on tool calls Been building in the MCP space for about 6 months now. Something I see a lot when people ask why their MCP servers suck. Everyone reaches for the OSS OpenAPI-to-MCP converters. You have a spec, you want MCP tools, there's a tool that does that."
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sy4pay/i_built_a_search_engine_for_claude_using_llmstxt/",
+      "sub": "ClaudeAI",
+      "score": 1,
+      "comments": 1,
+      "date": "2026-04-28",
+      "signals": [
+        "MCP-AWARE",
+        "PAYMENT-CONTEXT",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "I built a search engine for Claude using llms.txt sites More companies, especially devtools, are publishing AI-friendly versions of their websites and docs with llms.txt. However, there's still no good way for developers or Claude to search across these sites. So I built [Statespace](https://statespace.com), the first "
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sxhww4/toolconnector_schemas_leaking_into_user_message/",
+      "sub": "ClaudeAI",
+      "score": 1,
+      "comments": 1,
+      "date": "2026-04-27",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "Tool/connector schemas leaking into user message stream. Anyone else seeing this? Posting to see if anyone else has hit this and figured out a fix. For about a week, my Claude Chat conversations (opus 4.7) have been showing what looks like tool-registration leakage at the end of every user message I send. It started as"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sx937f/built_a_22endpoint_api_delivering_enriched_uk_gov/",
+      "sub": "ClaudeAI",
+      "score": 1,
+      "comments": 1,
+      "date": "2026-04-27",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Built a 22-endpoint API delivering enriched UK Gov Data — with x402 for agentic buyers [Homescreen - Try all endpoints for free](https://reddit.com/link/1sx937f/video/at4v3vm1frxg1/player) I wanted share a recent project I wanted to build a project around free-to-use data, that when brought together, enriched and made "
+    },
+    {
+      "permalink": "https://reddit.com/r/mcp/comments/1stn97q/my_cybersecurity_engineer_friend_and_i_built/",
+      "sub": "mcp",
+      "score": 0,
+      "comments": 1,
+      "date": "2026-04-23",
+      "signals": [
+        "MCP-AWARE",
+        "PAYMENT-CONTEXT",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "My cybersecurity engineer friend and I built McpSecRouter to control which tools your AI agent can use from any MCP server – would love your feedback Hey r/mcp, When you connect an MCP server to your agent, it gets all the tools by default. For something like Stripe MCP, that means your agent can `retrieve_balance` and"
+    },
+    {
+      "permalink": "https://reddit.com/r/mcp/comments/1srk5qr/introduction_to_mcp/",
+      "sub": "mcp",
+      "score": 1,
+      "comments": 0,
+      "date": "2026-04-21",
+      "signals": [
+        "MCP-AWARE",
+        "PAYMENT-CONTEXT"
+      ],
+      "snippet": "Introduction to MCP checkout my latest learnings on MCP https://aihutt.in/projects/ffcb2b59-c719-44fc-94c8-7f333a3fc217"
+    }
+  ],
+  "india_x_payment": [
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sv4pdc/automated_filing_of_multiple_rtis_using_claude/",
+      "sub": "ClaudeAI",
+      "score": 3,
+      "comments": 5,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "INDIA-DEV"
+      ],
+      "snippet": "Automated filing of multiple RTIs using Claude Code + Playwright CLI (worked better than expected) Just tried something interesting — automated the process of filing multiple RTI applications using **Claude Code + Playwright CLI**. What normally takes a lot of repetitive manual effort (filling forms, payments, confirma"
+    },
+    {
+      "permalink": "https://reddit.com/r/SaaS/comments/1swioj3/roast_my_new_saas_an_ai_proposal_generator_for/",
+      "sub": "SaaS",
+      "score": 1,
+      "comments": 2,
+      "date": "2026-04-26",
+      "signals": [
+        "PAYMENT-CONTEXT",
+        "INDIA-DEV",
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Roast my new SaaS: An AI proposal generator for Indian Agencies. Tell me why it sucks. Hey guys, I just finished building v1 of my website The core thesis is that Indian IT and marketing agencies waste way too much time making PDF proposals, and existing tools (like PandaDoc) are too expensive and don't handle local th"
+    }
+  ],
+  "india_x_mcp": [
+    {
+      "permalink": "https://reddit.com/r/mcp/comments/1st7rx3/i_built_a_free_remote_mcp_for_indian_stock_market/",
+      "sub": "mcp",
+      "score": 3,
+      "comments": 5,
+      "date": "2026-04-23",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "INDIA-DEV",
+        "BUILT-OWN"
+      ],
+      "snippet": "I built a free remote MCP for Indian stock market data — 8,200 NSE/BSE stocks, 35 tools Been using Claude and ChatGPT to research Indian stocks and kept hitting the same wall — LLMs know the concepts, but have no live data on NSE/BSE. So I wired my backend up as a remote MCP. No local install, no Node — sign in with Go"
+    },
+    {
+      "permalink": "https://reddit.com/r/mcp/comments/1sxyqha/tally_prime_mcp/",
+      "sub": "mcp",
+      "score": 1,
+      "comments": 0,
+      "date": "2026-04-28",
+      "signals": [
+        "MCP-AWARE",
+        "INDIA-DEV",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "Tally Prime MCP Hi everyone, I've been exploring how AI can actually help with real accounting workflows in India. One thing became clear: most accounting still happens in Tally, but getting AI to work with Tally was basically impossible. So I started thinking what if Claude could query Tally directly? Not just blindly"
+    },
+    {
+      "permalink": "https://reddit.com/r/mcp/comments/1sxoa00/built_an_mcp_server_for_indian_mutual_fund_data/",
+      "sub": "mcp",
+      "score": 1,
+      "comments": 0,
+      "date": "2026-04-28",
+      "signals": [
+        "MCP-AWARE",
+        "INDIA-DEV"
+      ],
+      "snippet": "Built an MCP server for Indian mutual fund data (14k+ funds, 20y NAV history)"
+    }
+  ],
+  "cc_x_payment": [
+    {
+      "permalink": "https://reddit.com/r/n8n/comments/1sumga1/i_extracted_patterns_from_100_production_n8n/",
+      "sub": "n8n",
+      "score": 39,
+      "comments": 10,
+      "date": "2026-04-24",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "I extracted patterns from 100+ production n8n workflows into Claude Code skills (open-source) Hey everyone. Sharing something I just open-sourced that might save you a lot of time if you use Claude Code (or any AI coding agent) with n8n. The problem I kept running into: 1. Claude would hallucinate node names like \"Goog"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sumut0/most_ai_agent_skills_on_github_are_unvetted/",
+      "sub": "ai_agents",
+      "score": 0,
+      "comments": 13,
+      "date": "2026-04-24",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "PAIN",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "Most AI agent \"skills\" on GitHub are unvetted garbage. I built a marketplace to fix that. I've been using Claude Code and Cursor daily for the past 6 months. Somewhere around month 3 I started looking for SKILL.md files to make my agent better at specific things. Code review, testing, commit messages, that kind of stuf"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sv4pdc/automated_filing_of_multiple_rtis_using_claude/",
+      "sub": "ClaudeAI",
+      "score": 3,
+      "comments": 5,
+      "date": "2026-04-25",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "INDIA-DEV"
+      ],
+      "snippet": "Automated filing of multiple RTIs using Claude Code + Playwright CLI (worked better than expected) Just tried something interesting — automated the process of filing multiple RTI applications using **Claude Code + Playwright CLI**. What normally takes a lot of repetitive manual effort (filling forms, payments, confirma"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1swc93r/renda_built_with_claude_code_for_claude_design/",
+      "sub": "ClaudeAI",
+      "score": 2,
+      "comments": 3,
+      "date": "2026-04-26",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "PAIN",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "Renda — built with Claude Code, for Claude Design users. Renders HTML exports as clean social PNGs. If you've used Claude Design for slides, ad sets, or social posts, you've probably hit this: the design is great, the export is HTML, and getting actual usable PNGs out of it is annoying. Browser chrome shows up, carouse"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1sxwv1c/running_an_autonomous_agent_across_claude_code/",
+      "sub": "ai_agents",
+      "score": 1,
+      "comments": 2,
+      "date": "2026-04-28",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "PAIN",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Running an autonomous agent across Claude Code + Codex + a local 35B almost killed my host. The harnesses were heavier than the model. I run an autonomous agent on a 16GB Mac Mini. Two cloud harnesses (Claude Code with Opus/Sonnet, Codex CLI on GPT-5.4/5.5) plus a local-LLM tier for triage and fallback. It has been wor"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1swzyse/terminal_tab_titles_for_claude_code_with_topic/",
+      "sub": "ClaudeAI",
+      "score": 1,
+      "comments": 2,
+      "date": "2026-04-27",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT"
+      ],
+      "snippet": "Terminal tab titles for Claude Code with topic + busy/idle marker Built a small thing for Claude Code: terminal tab/window titles that show the topic of each session and a busy/idle marker. I usually run multiple claude sessions in VS Code and all the titles just say ‘2.1.119’ or whatever version you are on. I can't te"
+    },
+    {
+      "permalink": "https://reddit.com/r/AI_Agents/comments/1st5vi8/alwaysbeshippingai/",
+      "sub": "ai_agents",
+      "score": 0,
+      "comments": 2,
+      "date": "2026-04-23",
+      "signals": [
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "WANT",
+        "BUILT-OWN"
+      ],
+      "snippet": "AlwaysBeShipping.AI I built Always Be Shipping AI and it is a CLI AI agent social network and marketplace and it has CLI AI agent payments built into it via my other project Ra Pay AI (Ra Pay processes payments through Stripe which handles all payments, KYC and AML). Both projects are CLI AI agent focused and are in be"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sxhww4/toolconnector_schemas_leaking_into_user_message/",
+      "sub": "ClaudeAI",
+      "score": 1,
+      "comments": 1,
+      "date": "2026-04-27",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "TOOL-MENTION"
+      ],
+      "snippet": "Tool/connector schemas leaking into user message stream. Anyone else seeing this? Posting to see if anyone else has hit this and figured out a fix. For about a week, my Claude Chat conversations (opus 4.7) have been showing what looks like tool-registration leakage at the end of every user message I send. It started as"
+    },
+    {
+      "permalink": "https://reddit.com/r/ClaudeAI/comments/1sx937f/built_a_22endpoint_api_delivering_enriched_uk_gov/",
+      "sub": "ClaudeAI",
+      "score": 1,
+      "comments": 1,
+      "date": "2026-04-27",
+      "signals": [
+        "MCP-AWARE",
+        "CLAUDE-CODE",
+        "PAYMENT-CONTEXT",
+        "PAIN",
+        "WANT",
+        "PRICE-SENSITIVE"
+      ],
+      "snippet": "Built a 22-endpoint API delivering enriched UK Gov Data — with x402 for agentic buyers [Homescreen - Try all endpoints for free](https://reddit.com/link/1sx937f/video/at4v3vm1frxg1/player) I wanted share a recent project I wanted to build a project around free-to-use data, that when brought together, enriched and made "
+    }
+  ]
+}

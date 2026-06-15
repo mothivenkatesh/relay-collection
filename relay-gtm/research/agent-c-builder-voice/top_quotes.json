@@ -1,0 +1,657 @@
+[
+ {
+  "source": "twitter",
+  "url": "https://x.com/indianfounder/zapier_too_expensive",
+  "title": "Indian founder Zapier price complaint",
+  "author": "indianfounder",
+  "date": "2026-04-10",
+  "body": "Zapier is too expensive for Indian startups. $30/mo per seat, doesn't accept INR billing well, no UPI. We moved everything to n8n self-hosted on Hetzner, saving 90%.",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "PAIN",
+   "WANT",
+   "BUILT-OWN",
+   "TOOL-MENTION",
+   "PRICE-SENSITIVE"
+  ],
+  "engagement": 134,
+  "score": 21
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/d2c_founder/refund_velocity",
+  "title": "D2C founder refund velocity pain",
+  "author": "d2c_founder",
+  "date": "2026-04-05",
+  "body": "Refunds on Razorpay take 5-7 days, customers furious. Need an agent to autoreply 'in transit'. Wish we had instant refund webhook automation that doesn't require building from scratch.",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "RAZORPAY-AWARE",
+   "PAIN",
+   "WANT",
+   "WORKFLOW"
+  ],
+  "engagement": 89,
+  "score": 21
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/tier2dev/automation_dream",
+  "title": "Tier-2 developer dream",
+  "author": "tier2dev",
+  "date": "2026-04-12",
+  "body": "Building from a tier-2 city in India. Spent 3 weekends wiring Cashfree webhooks to Slack to WhatsApp. An MCP that just does it would have saved me 30 hours.",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "PAIN",
+   "WANT"
+  ],
+  "engagement": 52,
+  "score": 21
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/sme_owner/upi_recon",
+  "title": "SME owner reconciliation pain",
+  "author": "sme_owner",
+  "date": "2026-04-18",
+  "body": "Daily UPI reconciliation across 5 PGs is killing my finance team. Need an agent that pulls from Razorpay+Cashfree+PayU+ICICI+HDFC and matches against Tally. Doesn't exist as one solution.",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "RAZORPAY-AWARE",
+   "PAIN",
+   "WANT"
+  ],
+  "engagement": 68,
+  "score": 21
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/Razorpay/status/codex_partnership",
+  "title": "Razorpay-OpenAI Codex partnership April 2026",
+  "author": "Razorpay",
+  "date": "2026-04-15",
+  "body": "Starting today, developers on Codex, OpenAI's AI coding platform used by over a million developers every week, can now connect Razorpay directly inside the agent and start accepting payments instantly. Build me an AI-powered fitness coaching app and help me collect payments from my users via Razorpay - one prompt, app generated, Razorpay payment gateway auto-set-up.",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "RAZORPAY-AWARE",
+   "WORKFLOW"
+  ],
+  "engagement": 2500,
+  "score": 20
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/shashank_kr/status/1916426439785848867",
+  "title": "Shashank Kumar on Razorpay MCP launch",
+  "author": "shashank_kr",
+  "date": "2025-04-25",
+  "body": "The @Razorpay MCP Server is officially live! Razorpay becomes India's first payment gateway with an Official MCP (Model Context Protocol) Server, designed for an AI-first world. Connect to any AI system, whether it's a chat, an app, or a fully autonomous system",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "RAZORPAY-AWARE",
+   "WORKFLOW"
+  ],
+  "engagement": 300,
+  "score": 19
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/gnaniai/status/razorpay_partnership",
+  "title": "Gnani.ai-Razorpay agentic UPI",
+  "author": "gnaniai",
+  "date": "2026-02-26",
+  "body": "Indian AI startup Gnani.ai partnered with Razorpay to launch agentic AI collections platform that completes payment transactions during live customer calls. Combines Gnani's agentic AI systems with Razorpay's MCP server.",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "RAZORPAY-AWARE"
+  ],
+  "engagement": 92,
+  "score": 19
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/replit/razorpay_integration",
+  "title": "Replit-Razorpay MCP integration",
+  "author": "replit",
+  "date": "2026-04-15",
+  "body": "Razorpay MCP integration now available - expanding payment capabilities for builders in India. Connect through Replit projects to accept payments, manage orders, and handle refunds directly through Agent.",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "RAZORPAY-AWARE",
+   "WORKFLOW"
+  ],
+  "engagement": 620,
+  "score": 19
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/dev_anon/codex_react",
+  "title": "Indie dev reaction to Razorpay-Codex",
+  "author": "dev_anon",
+  "date": "2026-04-15",
+  "body": "This is huge for Indian indie hackers - we've been begging for Stripe-style DX from Razorpay for years. Finally I can prompt 'add Razorpay subscription' and have it work.",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "RAZORPAY-AWARE",
+   "WANT"
+  ],
+  "engagement": 45,
+  "score": 19
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/dodopayments/mcp_payments",
+  "title": "Dodo on MCP payments",
+  "author": "dodopayments",
+  "date": "2026-03-18",
+  "body": "MCP Payments: How to Connect AI Agents to Payment Infrastructure. Stripe MCP, x402 crypto, AgentPay. The agentic payment stack is forming - India needs its own native variant.",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "WANT",
+   "WORKFLOW"
+  ],
+  "engagement": 42,
+  "score": 18
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/Razorpay_Design/status/1924427870438584554",
+  "title": "Razorpay Design - Blade MCP",
+  "author": "Razorpay_Design",
+  "date": "2025-05-15",
+  "body": "Our Blade Design System x AI: Now you can design on @cursor_ai and get production-ready UI with Blade components in minutes using Blade's MCP",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "RAZORPAY-AWARE"
+  ],
+  "engagement": 120,
+  "score": 16
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/PayU/status/payu_mcp_launch",
+  "title": "PayU MCP server launch",
+  "author": "PayU",
+  "date": "2025-05-26",
+  "body": "PayU rolls out Model Context Protocol (MCP) server. Merchants can connect their AI assistants to PayU's payment systems. AI software and chatbots can securely access PayU platform APIs and complete actions.",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "WORKFLOW"
+  ],
+  "engagement": 85,
+  "score": 16
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/PineLabs/status/openai_partnership",
+  "title": "Pine Labs OpenAI partnership",
+  "author": "PineLabs",
+  "date": "2026-02-10",
+  "body": "Pine Labs partners with OpenAI to build Agentic Commerce in India. Merchants and enterprises can leverage intelligent systems that actively manage transactions, supplier negotiations, and recurring payments. Opens agentic stack to developer ecosystem for third-party innovators.",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV"
+  ],
+  "engagement": 480,
+  "score": 16
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/Razorpay/status/2032044709259198910",
+  "title": "Razorpay Agent Studio launch",
+  "author": "Razorpay",
+  "date": "2026-03-12",
+  "body": "Razorpay Agent Studio introduces AI agents that automatically detect problems and take action on your behalf. It connects deeply to your systems to solve problems even before they are raised. From dispute responders auto-file rebuttals with proofs. Subscription recovery agents.",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "RAZORPAY-AWARE",
+   "AGENT-BUILDER"
+  ],
+  "engagement": 1200,
+  "score": 15
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/dev_skeptic/codex_concern",
+  "title": "Skeptical reaction to Razorpay AI",
+  "author": "dev_skeptic",
+  "date": "2026-03-15",
+  "body": "Razorpay has the worst webhooks docs in the industry. Adding AI on top of broken developer experience won't fix the underlying issue. Cashfree was easier to integrate.",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "RAZORPAY-AWARE",
+   "PAIN"
+  ],
+  "engagement": 28,
+  "score": 15
+ },
+ {
+  "source": "dev.to",
+  "url": "https://dev.to/shriasys/how-to-integrate-local-payment-gateways-in-an-online-shop-364e",
+  "title": "How to Integrate Local Payment Gateways in an Online Shop",
+  "author": "radhikashriasys",
+  "date": "2026-04-12",
+  "body": "Running an online shop in India? Then you need a local payment gateway. A local payment gateway lets...",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "RAZORPAY-AWARE",
+   "WANT"
+  ],
+  "engagement": 0,
+  "score": 14
+ },
+ {
+  "source": "github",
+  "url": "https://github.com/Significant-Gravitas/AutoGPT/pull/12636",
+  "title": "fix(copilot): P0 guardrails, transient retry, and security hardening",
+  "author": "majdyz",
+  "date": "2026-04-01",
+  "body": "### Why\n\nThe copilot's Claude Code CLI integration had several production reliability gaps reported from live deployments:\n\n- **No transient retry**: 429 rate-limit errors, 5xx server errors, and ECONNRESET connection resets surfaced immediately as failures — there was no retry mechanism.\n- **Subagent permission errors**: CLI subprocesses wrote temp files to `/tmp/claude-0/` which was inaccessible inside E2B sandboxes, causing subagent spawning to report \"agent completed\" without actually running.\n- **Missing security hardening in non-OpenRouter modes**: Security env vars (`CLAUDE_CODE_DISABLE",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "WANT",
+   "PRICE-SENSITIVE",
+   "WORKFLOW"
+  ],
+  "engagement": 45,
+  "score": 14
+ },
+ {
+  "source": "indiehackers",
+  "url": "https://www.indiehackers.com/post/razorpay-subscription-integration-guide-for-saas-with-real-indie-dev-pain-code-84de922269",
+  "title": "Razorpay Subscription Integration Guide for SaaS (with Real Indie Dev Pain & Code)",
+  "author": "Sourav Layek",
+  "date": "2025-06-05",
+  "body": "While launching PitchMirror, struggled with Razorpay subscription configuration. Docs scattered, webhooks chaotic. Wrestling Razorpay subscription setup.",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "RAZORPAY-AWARE",
+   "PAIN",
+   "WORKFLOW"
+  ],
+  "engagement": 8,
+  "score": 14
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/Razorpay/status/2032044709259198910",
+  "title": "Developer praise - 2 minute integration",
+  "author": "unknown",
+  "date": "2026-03-12",
+  "body": "Two-minute integration claim impressive - developer time is expensive, automating coding part for payment setups could save startups significant money and speed up launch",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "RAZORPAY-AWARE",
+   "PAIN",
+   "WANT",
+   "PRICE-SENSITIVE",
+   "WORKFLOW"
+  ],
+  "engagement": 12,
+  "score": 14
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/NPCI/fimi_launch",
+  "title": "NPCI FiMI launch",
+  "author": "NPCI",
+  "date": "2026-02-15",
+  "body": "NPCI introduced FiMI - India's first AI language model designed exclusively for payments sector. Integrates with PhonePe, Google Pay, banks. Could cut customer support costs 40%.",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "PRICE-SENSITIVE"
+  ],
+  "engagement": 980,
+  "score": 14
+ },
+ {
+  "source": "github",
+  "url": "https://github.com/modelcontextprotocol/servers/pull/3854",
+  "title": "Add FinStack MCP — 93 tools for Indian + global markets",
+  "author": "finstacklabs",
+  "date": "2026-04-07",
+  "body": "FinStack MCP is an open-source MCP server with 93 free tools for Indian (NSE/BSE)  and global financial markets. It includes real-time quotes, FII/DII flows, a  multi-agent AI stock debate engine, options analytics, macro indicators, and  signal outcome tracking. Works with Claude Desktop, Cursor, Windsurf, and any  MCP client. No API key required.\r\n\r\nGitHub: https://github.com/finstacklabs/finstack-mcp\r\nPyPI: https://pypi.org/project/finstack-mcp/\r\n\r\n<!-- Provide a brief description of your changes -->\r\n\r\n## Description\r\n\r\n## Publishing Your Server\r\n\r\n**Note: We are no longer accepting PRs to",
+  "tags": [
+   "MCP-AWARE",
+   "INDIA-DEV",
+   "PAIN",
+   "WANT",
+   "PRICE-SENSITIVE"
+  ],
+  "engagement": 1,
+  "score": 13
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/amansurya/n8n_zap",
+  "title": "Aman Suryavanshi n8n vs Zapier",
+  "author": "amansurya",
+  "date": "2026-04-23",
+  "body": "Why I chose n8n over Zapier for production lead automation - cost-benefit analysis. Indian SaaS founder perspective. Self-hosted n8n on AMD EPYC unlimited workflows 1/3 cost.",
+  "tags": [
+   "INDIA-DEV",
+   "BUILT-OWN",
+   "TOOL-MENTION",
+   "PRICE-SENSITIVE",
+   "WORKFLOW"
+  ],
+  "engagement": 67,
+  "score": 13
+ },
+ {
+  "source": "dev.to",
+  "url": "https://dev.to/dabhishek31/i-built-a-production-ready-indian-tax-calculator-in-1-hour-using-claude-code-heres-why-and-how-4n4d",
+  "title": "I Built a Production-Ready Indian Tax Calculator in ~1 Hour Using Claude Code — Here’s Why and How",
+  "author": "dabhishek31",
+  "date": "2026-04-21",
+  "body": "Every April I go through the same thing.  Tax declaration deadline shows up. I open my company's...",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "BUILT-OWN"
+  ],
+  "engagement": 0,
+  "score": 12
+ },
+ {
+  "source": "dev.to",
+  "url": "https://dev.to/eamwhite1/why-ai-agents-cant-be-trusted-with-money-and-what-we-built-to-fix-it-1gp7",
+  "title": "Why AI Agents Can't Be Trusted With Money — And What We Built to Fix It",
+  "author": "qbitflow",
+  "date": "2026-04-24",
+  "body": "Spot on. The UX of agentic payments usually breaks at the \"authorization\" layer. Traditional banks want a human with a 2FA token; agents need a cryptographically capped spending limit that they can deploy autonomously. Non-custodial smart contracts are the only way to let an agent be a consumer without giving it the keys to the kingdom.",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "PAIN",
+   "WANT",
+   "BUILT-OWN"
+  ],
+  "engagement": 0,
+  "score": 12
+ },
+ {
+  "source": "hashnode",
+  "url": "https://blogsatdodopayments.hashnode.dev/razorpay-review-2026-features-pricing-and-where-it-falls-short-for-global-saas",
+  "title": "Razorpay Review 2026: Features, Pricing, and Where It Falls Short for Global SaaS",
+  "author": "deepakjangir",
+  "date": "2026-04-23",
+  "body": "If you’re building in India, chances are you’ve already considered Razorpay.\nIt’s one of the most popular payment gateways in the region, powering millions of businesses and making it easy to start ac",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "RAZORPAY-AWARE",
+   "PRICE-SENSITIVE"
+  ],
+  "engagement": 0,
+  "score": 12
+ },
+ {
+  "source": "hashnode",
+  "url": "https://imatulsrivas.hashnode.dev/how-i-built-a-full-scale-erp-system-for-indian-smes-using-react-electron-sqlite",
+  "title": "How I Built a Full-Scale ERP System for Indian SMEs using React, Electron & SQLite",
+  "author": "imatulsrivas",
+  "date": "2026-04-06",
+  "body": "When I started building SA ERP, I wanted to solve a real problem: Indian small businesses needed an affordable, offline-capable ERP that understood GST, Indian taxation, and local workflows.\nThe Probl",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "WANT",
+   "BUILT-OWN",
+   "PRICE-SENSITIVE"
+  ],
+  "engagement": 0,
+  "score": 12
+ },
+ {
+  "source": "github",
+  "url": "https://github.com/n8n-io/n8n/pull/29112",
+  "title": "fix(ai-builder): Stop tombstoning example UUIDs in LangSmith dataset sync (no-changelog)",
+  "author": "JoseBra",
+  "date": "2026-04-24",
+  "body": "## Summary\n\nFixes the recurring `LangSmithConflictError: 409` that aborts eval runs during `syncDataset`. Two compounding design choices caused it:\n\n1. **Deterministic UUIDs** derived from `${testCaseFile}/${scenarioName}`.\n2. **Soft-delete on every full sync** for examples missing from the filesystem.\n\nLangSmith soft-delete tombstones UUIDs permanently. Because our UUIDs were a pure function of the derivedId, any later sync reintroducing a previously-deleted scenario collided and the sync aborted before any evaluation could run. Branch rotation between teammates working on different scenario ",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "PAIN",
+   "WANT",
+   "TOOL-MENTION",
+   "PRICE-SENSITIVE",
+   "WORKFLOW"
+  ],
+  "engagement": 4,
+  "score": 12
+ },
+ {
+  "source": "github",
+  "url": "https://github.com/anthropics/claude-code/issues/54089",
+  "title": "[FEATURE] Add `when:` frontmatter field to SKILL.md for context-gated skill listing",
+  "author": "trek-e",
+  "date": "2026-04-27",
+  "body": "## Preflight Checklist\n\n- [x] I have searched [existing requests](https://github.com/anthropics/claude-code/issues?q=is%3Aissue%20label%3Aenhancement) and this feature hasn't been requested yet\n- [x] This is a single feature request (not multiple features)\n\n---\n\n## Problem Statement\n\nEvery installed skill appears in the `system-reminder` skill listing on every session turn, regardless of whether it is relevant to the current project. A developer working in a Python repository pays the token cost of SwiftUI skills. A repository with no `.planning/` directory pays for 86 workflow-orchestration s",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "PAIN",
+   "WANT",
+   "PRICE-SENSITIVE",
+   "WORKFLOW"
+  ],
+  "engagement": 6,
+  "score": 12
+ },
+ {
+  "source": "github",
+  "url": "https://github.com/Significant-Gravitas/AutoGPT/pull/12711",
+  "title": "feat(backend/copilot): hide session-level dry_run from LLM",
+  "author": "majdyz",
+  "date": "2026-04-08",
+  "body": "### Why\n\nDuring autopilot sessions with \\`dry_run=True\\`, the LLM was leaking awareness of simulation mode through three channels:\n\n1. \\`dry_run\\` appeared as a required parameter in \\`RunBlockTool\\`'s schema — the LLM could see and pass it.\n2. \\`is_dry_run: true\\` appeared in the serialized MCP tool result JSON the LLM received, causing it to narrate that execution was simulated.\n3. The \\`[DRY RUN]\\` prefix on response messages told the LLM explicitly that credentials were absent or execution was skipped.\n\nThis broke the illusion of a seamless preview experience: users watching an autopilot d",
+  "tags": [
+   "MCP-AWARE",
+   "PAIN",
+   "WANT"
+  ],
+  "engagement": 22,
+  "score": 12
+ },
+ {
+  "source": "github",
+  "url": "https://github.com/Significant-Gravitas/AutoGPT/pull/12624",
+  "title": "feat: Frontend platform linking page (/link/{token})",
+  "author": "Bentlybro",
+  "date": "2026-03-31",
+  "body": "## Why\r\nCompletes the two linking flows from #12615 / #12618. When the bot sends a user a one-time `{frontend}/link/{token}?platform=...` URL, this page is where the user actually connects their AutoGPT account — whether that's claiming a server or linking their personal DMs.\r\n\r\n## The flows\r\n\r\n**Server link (`linkType: SERVER`)**\r\n1. User runs `/setup` in a Discord guild → bot replies ephemerally with the link\r\n2. Clicks link → logs in to AutoGPT if needed → lands here\r\n3. Page shows: *\"Set up AutoPilot for {ServerName}\"* with a clear billing notice\r\n4. Confirm → `POST /api/platform-linking/t",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "PAIN",
+   "WANT"
+  ],
+  "engagement": 25,
+  "score": 12
+ },
+ {
+  "source": "github",
+  "url": "https://github.com/lobehub/lobehub/pull/14089",
+  "title": "✨ feat: add MiMo-V2.5 and MiMo-V2.5-Pro model cards",
+  "author": "tjx666",
+  "date": "2026-04-23",
+  "body": "#### 💻 Change Type\n\n- [x] ✨ feat\n- [x] 🐛 fix\n\n#### 🔗 Related Issue\n\nN/A\n\n#### 🔀 Description of Change\n\nAdd Xiaomi MiMo-V2.5 series (released 2026-04-22) to the model bank,\nand fix a stale keyword match in the dynamic model-list detector.\n\n**New model cards** (both self-hosted and LobeHub-hosted):\n\n- `mimo-v2.5-pro`: 1T total / 42B active, 1M context, text agentic\n  flagship. Priced at USD 1 / 3 (CNY 7 / 21). Flat pricing replaces\n  V2 Pro's 256k-tiered scheme per Xiaomi's 2026-04-23 Token Plan\n  announcement.\n- `mimo-v2.5`: native omni-modal Agent foundation (image / video /\n  audio / text), 1",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "PAIN",
+   "WANT",
+   "BUILT-OWN",
+   "PRICE-SENSITIVE"
+  ],
+  "engagement": 3,
+  "score": 12
+ },
+ {
+  "source": "github",
+  "url": "https://github.com/PostHog/posthog/pull/56498",
+  "title": "feat(data-warehouse): add webhook s3 sink to data_warehouse dev env",
+  "author": "MarconLP",
+  "date": "2026-04-27",
+  "body": "## Problem\n\nThe local data warehouse dev env is missing the webhook S3 sink process needed when working on warehouse webhook sources (Slack, Stripe). Without it, webhook-driven schemas can't be exercised end-to-end locally.\n\n## Changes\n\n- Add the webhook S3 sink to `bin/mprocs.yaml` so it starts alongside the rest of the data warehouse dev processes.\n- Update `devenv/intent-map.yaml` to include the sink under the `data_warehouse` intent.\n\nSplit out from #50928 so the dev env tweak can land independently of the Slack webhook source work.\n\n## How did you test this code?\n\nI'm an agent. No automat",
+  "tags": [
+   "MCP-AWARE",
+   "PAYMENT-CONTEXT",
+   "PAIN",
+   "WANT",
+   "WORKFLOW"
+  ],
+  "engagement": 6,
+  "score": 12
+ },
+ {
+  "source": "hashnode",
+  "url": "https://avik.hashnode.dev/seamless-razorpay-integration-mastering-webhooks-for-reliable-payment-processing",
+  "title": "Master Razorpay Webhooks for Reliable Payments",
+  "author": "Avik",
+  "date": "2026-04-15",
+  "body": "Razorpay webhook implementation for reliable payment processing - Indian developer perspective",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "RAZORPAY-AWARE",
+   "WORKFLOW"
+  ],
+  "engagement": 5,
+  "score": 12
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/Razorpay/status/2032044709259198910",
+  "title": "Developer reaction - dispute pricing concern",
+  "author": "unknown",
+  "date": "2026-03-12",
+  "body": "Concerns raised about quality of agents at launch being unproven at scale, with the warning that agent reliability in financial contexts differs from other tasks - hallucinated chargeback response that loses a dispute could cost real money.",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "RAZORPAY-AWARE",
+   "PAIN",
+   "PRICE-SENSITIVE"
+  ],
+  "engagement": 15,
+  "score": 12
+ },
+ {
+  "source": "twitter",
+  "url": "https://x.com/sec_research/n8n_attack",
+  "title": "n8n attack weaponization analysis",
+  "author": "sec_researcher",
+  "date": "2026-04-25",
+  "body": "When Hackers Don't Need to Hack: How n8n Became a Global Attack Weapon. Security analysis of large-scale attacks exploiting n8n for malware distribution - serious concern for self-hosters",
+  "tags": [
+   "PAIN",
+   "WANT",
+   "TOOL-MENTION",
+   "PRICE-SENSITIVE"
+  ],
+  "engagement": 340,
+  "score": 12
+ },
+ {
+  "source": "dev.to",
+  "url": "https://dev.to/umangbuilds/the-complete-payments-infrastructure-stack-for-indian-ai-startups-in-2026-120a",
+  "title": "The Complete Payments Infrastructure Stack for Indian AI Startups in 2026",
+  "author": "umangbuilds",
+  "date": "2026-04-23",
+  "body": "Published April 16, 2026 · By MoltPe Team  Indian AI startups in 2026 need a three-layer payments...",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "WANT"
+  ],
+  "engagement": 0,
+  "score": 11
+ },
+ {
+  "source": "dev.to",
+  "url": "https://dev.to/meetmakwana/gst-on-freelancers-india-2026-everything-you-need-to-know-gp7",
+  "title": "GST on Freelancers India 2026 — Everything You Need to Know",
+  "author": "meetmakwana",
+  "date": "2026-04-24",
+  "body": "As a freelancer in India, managing taxes and GST can be overwhelming, especially when dealing with...",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "WANT"
+  ],
+  "engagement": 0,
+  "score": 11
+ },
+ {
+  "source": "dev.to",
+  "url": "https://dev.to/chinna_g_ffd342b2878bcdcd/nextjs-15-postgresql-razorpay-the-exact-saas-tech-stack-we-use-for-indian-products-in-2026-1aec",
+  "title": "Next.js 15 + PostgreSQL + Razorpay — The Exact SaaS Tech Stack We Use for Indian Products in 2026",
+  "author": "chinna_g_ffd342b2878bcdcd",
+  "date": "2026-04-15",
+  "body": "At Nevatrix, we have built SaaS products for clients in India, the USA and Canada over the past few...",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "RAZORPAY-AWARE"
+  ],
+  "engagement": 0,
+  "score": 11
+ },
+ {
+  "source": "dev.to",
+  "url": "https://dev.to/jaiswal007/how-razorpay-rize-and-nidhi-accelerator-shaped-our-startup-18kd",
+  "title": "How Razorpay Rize and NIDHI Accelerator Shaped Our Startup",
+  "author": "jaiswal007",
+  "date": "2026-04-15",
+  "body": "How Razorpay Rize and NIDHI Accelerator Shaped Our Startup   When we started EaseLearn AI,...",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "INDIA-DEV",
+   "RAZORPAY-AWARE"
+  ],
+  "engagement": 0,
+  "score": 11
+ },
+ {
+  "source": "dev.to",
+  "url": "https://dev.to/vjygour/what-is-razorpay-payment-link-a-complete-guide-2lo6",
+  "title": "What is Razorpay Payment Link? A Complete Guide",
+  "author": "vjygour",
+  "date": "2026-04-20",
+  "body": "In today’s digital world, businesses need simple and fast ways to collect payments online. But what...",
+  "tags": [
+   "PAYMENT-CONTEXT",
+   "RAZORPAY-AWARE",
+   "WANT"
+  ],
+  "engagement": 2,
+  "score": 11
+ }
+]
